@@ -38,7 +38,17 @@ const posProviders = [
     monthlyFee: "0 TL / Ay",
     commissionRate: "%3,99",
     features: [
-      "Cep POS ile işletmenizi her yerde yönetin!"
+      "İşbaşı POS ile mobilden temassız ödeme alarak fiziksel POS ve sarf malzemesi maliyetini ortadan kaldırın."
+    ],
+  },
+  {
+    logo: "/akbank-logo.svg",
+    name: "Akbank CebePOS",
+    type: "Cep POS",
+    monthlyFee: "0 TL / Ay",
+    commissionRate: "%1,79",
+    features: [
+      "Akbank POS ile 3 ay boyunca %1,79 komisyon ve 1 yıl ücretsizlik avantajına ek, şimdi başvuranlara 1.500 TL chip-para fırsatı!"
     ],
   },
   {
@@ -62,23 +72,13 @@ const posProviders = [
     ],
   },
   {
-    logo: "/paytr-logo.svg",
-    name: "Sanal POS",
-    type: "Sanal POS",
+    logo: "/wallet-logo.svg",
+    name: "Vallet Mobil Pos",
+    type: "Cep POS",
     monthlyFee: "0 TL / Ay",
-    commissionRate: "%0,59",
+    commissionRate: "%0,29",
     features: [
-      "PayTR ile Sanal POS'unuzu 2 saat içerisinde aktif hale getirerek tüm banka kartlarından peşin veya taksitli ödeme almaya başlayabilirsiniz."
-    ],
-  },
-  {
-    logo: "/moka-logo.svg",
-    name: "Moka Sanal POS",
-    type: "Sanal POS",
-    monthlyFee: "0 TL / Ay",
-    commissionRate: "%1,89",
-    features: [
-      "%1,89 komisyon oranıyla ödemeleriniz ertesi gün hesabınızda."
+      "%0,29'dan başlayan komisyon avantajı!"
     ],
   }
 ];
