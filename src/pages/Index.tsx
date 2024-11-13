@@ -2,41 +2,85 @@ import POSCard from "../components/POSCard";
 
 const posProviders = [
   {
-    logo: "/placeholder.svg",
-    name: "Enpara.com Masaüstü/Mobil POS",
-    type: "Mobil (Taşınabilir) POS",
+    logo: "/enpara-logo.svg",
+    name: "Enpara.com Yazar Kasa POS",
+    type: "Yazar Kasa (ÖKC) POS",
     monthlyFee: "0 TL / Ay",
     commissionRate: "%1,99",
     features: [
-      "%1,99 oran ve taksitli satış imkanı!",
-      "Mobil uygulama üzerinden kolay kullanım",
-      "7/24 teknik destek",
+      "%1,99 oran ve taksitli satış imkanı!"
     ],
   },
   {
-    logo: "/placeholder.svg",
-    name: "Ödeal Yazar Kasa POS",
+    logo: "/esnekpos-logo.svg",
+    name: "Android POS",
+    type: "Mobil (Taşınabilir) POS",
+    monthlyFee: "0 TL / Ay",
+    commissionRate: "%0,10",
+    features: [
+      "EsnekPOS'tan kobilere özel 10 numara oranın hazır!"
+    ],
+  },
+  {
+    logo: "/tosla-logo.svg",
+    name: "Tosla İşim POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthlyFee: "0 TL / Ay",
-    commissionRate: "%0,00",
+    commissionRate: "%1,69",
     features: [
-      "HangiKredi KOBİ'ye Özel Ertesi Güne %0 Komisyonlu POS!",
-      "İlk Ay Aidat Hediye!",
-      "Hızlı kurulum ve aktivasyon",
+      "Ertesi Güne %1,69 Komisyonlu POS!"
     ],
   },
   {
-    logo: "/placeholder.svg",
-    name: "Akbank Yazar Kasa POS",
-    type: "Yazar Kasa (ÖKC) POS",
+    logo: "/akbank-logo.svg",
+    name: "Akbank CebePOS",
+    type: "Cep POS",
     monthlyFee: "0 TL / Ay",
     commissionRate: "%1,79",
     features: [
-      "3 ay boyunca %1,79 komisyon",
-      "1 yıl ücretsizlik avantajı",
-      "1.500 TL chip-para fırsatı",
+      "Akbank POS ile 3 ay boyunca %1,79 komisyon ve 1 yıl ücretsizlik avantajına ek, şimdi başvuranlara 1.500 TL chip-para fırsatı!"
     ],
   },
+  {
+    logo: "/wallet-logo.svg",
+    name: "Sanal Pos",
+    type: "Sanal POS",
+    monthlyFee: "0 TL / Ay",
+    commissionRate: "%0,49",
+    features: [
+      "Dijital başvurularda 16 gün valör ile %0, 1 gün valör %1,69 komisyon oranı fırsatı!"
+    ],
+  },
+  {
+    logo: "/garanti-logo.svg",
+    name: "Fiziki POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    monthlyFee: "145 TL / Ay",
+    commissionRate: "%2,09",
+    features: [
+      "İlk 3 ay ücretsiz!"
+    ],
+  },
+  {
+    logo: "/paytr-logo.svg",
+    name: "Sanal POS",
+    type: "Sanal POS",
+    monthlyFee: "0 TL / Ay",
+    commissionRate: "%0,59",
+    features: [
+      "PayTR ile Sanal POS'unuzu 2 saat içerisinde aktif hale getirerek tüm banka kartlarından peşin veya taksitli ödeme almaya başlayabilirsiniz."
+    ],
+  },
+  {
+    logo: "/moka-logo.svg",
+    name: "Moka Sanal POS",
+    type: "Sanal POS",
+    monthlyFee: "0 TL / Ay",
+    commissionRate: "%1,89",
+    features: [
+      "%1,89 komisyon oranıyla ödemeleriniz ertesi gün hesabınızda."
+    ],
+  }
 ];
 
 const Index = () => {
