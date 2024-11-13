@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Info } from "lucide-react";
+import { Info, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { posProviders } from "../data/posProviders";
+import { Card } from "@/components/ui/card";
 
 const POSDetail = () => {
   const { id } = useParams();
@@ -45,24 +46,67 @@ const POSDetail = () => {
       </div>
 
       <Tabs defaultValue="explanation" className="w-full">
-        <TabsList className="w-full justify-start border-b mb-8">
-          <TabsTrigger value="explanation">Açıklama</TabsTrigger>
-          <TabsTrigger value="commissions">Komisyon Oranları</TabsTrigger>
-          <TabsTrigger value="features">Özellikler</TabsTrigger>
+        <TabsList className="w-full justify-start border-b rounded-none bg-transparent space-x-8">
+          <TabsTrigger 
+            value="explanation" 
+            className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
+          >
+            Açıklama
+          </TabsTrigger>
+          <TabsTrigger 
+            value="commissions" 
+            className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
+          >
+            Komisyon Oranları
+          </TabsTrigger>
+          <TabsTrigger 
+            value="features" 
+            className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
+          >
+            Özellikler
+          </TabsTrigger>
         </TabsList>
-        <TabsContent value="explanation" className="text-gray-600 space-y-4">
-          <p>30 Nisan 2025 tarihine kadar her ay güncel sürpriz komisyon oranlarından faydalanın!</p>
-          <p>İlk POS'unuzu {pos.name}'den almak istiyorsanız öncelikle belli bir süre diğer işlemleriniz (ödemeler, transferler, mevduat hesapları vb.) için kullanmanız gerekmektedir.</p>
-          <p>POS başvurunuzun değerlendirmeye alınabilmesi için mevcutta herhangi bir bankanın POS'unu aktif bir şekilde kullanıyor olmanız gerekmektedir.</p>
-          <p>Kampanya, henüz müşterisi olmayan firmalar için geçerlidir.</p>
+
+        <TabsContent value="explanation" className="mt-8">
+          <Card className="border-none shadow-none">
+            <div className="space-y-6 text-gray-600">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
+                <p>30 Nisan 2025 tarihine kadar her ay güncel sürpriz komisyon oranlarından faydalanın!</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
+                <p>İlk POS'unuzu {pos.name}'den almak istiyorsanız öncelikle belli bir süre diğer işlemleriniz (ödemeler, transferler, mevduat hesapları vb.) için kullanmanız gerekmektedir.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
+                <p>POS başvurunuzun değerlendirmeye alınabilmesi için mevcutta herhangi bir bankanın POS'unu aktif bir şekilde kullanıyor olmanız gerekmektedir.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
+                <p>Kampanya, henüz müşterisi olmayan firmalar için geçerlidir.</p>
+              </div>
+            </div>
+          </Card>
         </TabsContent>
-        <TabsContent value="commissions">
-          <p>Tek çekim haricindeki diğer komisyon oranlarını başvuru adımında görüntüleyebilirsiniz.</p>
+
+        <TabsContent value="commissions" className="mt-8">
+          <Card className="border-none shadow-none">
+            <p className="text-gray-600">Tek çekim haricindeki diğer komisyon oranlarını başvuru adımında görüntüleyebilirsiniz.</p>
+          </Card>
         </TabsContent>
-        <TabsContent value="features" className="space-y-2">
-          {pos.features.map((feature, index) => (
-            <p key={index}>{feature}</p>
-          ))}
+
+        <TabsContent value="features" className="mt-8">
+          <Card className="border-none shadow-none">
+            <div className="space-y-4">
+              {pos.features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
+                  <p className="text-gray-600">{feature}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
         </TabsContent>
       </Tabs>
     </div>
