@@ -31,13 +31,13 @@ const BankInfoSection = ({
           placeholder="Örn: Garanti BBVA"
         />
       </div>
-      <div>
+      <div className="relative">
         <Label>POS Türü</Label>
         <Select value={posType} onValueChange={setPosType}>
-          <SelectTrigger>
+          <SelectTrigger className="bg-white">
             <SelectValue placeholder="POS türü seçin" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="bg-white z-50 relative shadow-lg">
             <SelectItem value="physical">Fiziksel POS</SelectItem>
             <SelectItem value="virtual">Sanal POS</SelectItem>
             <SelectItem value="mobile">Mobil POS</SelectItem>
