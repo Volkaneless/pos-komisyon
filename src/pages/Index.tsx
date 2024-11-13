@@ -1,4 +1,6 @@
+import { useState } from "react";
 import POSCard from "../components/POSCard";
+import POSFilter from "../components/POSFilter";
 
 const posProviders = [
   {
@@ -154,6 +156,24 @@ const posProviders = [
 ];
 
 const Index = () => {
+  const [filteredProviders, setFilteredProviders] = useState(posProviders);
+
+  const handleFilter = (selectedProviders: string[], selectedTypes: string[]) => {
+    if (selectedProviders.length === 0 && selectedTypes.length === 0) {
+      setFilteredProviders(posProviders);
+      return;
+    }
+
+    const filtered = posProviders.filter(provider => {
+      const providerName = provider.name.split(" ")[0];
+      const matchesProvider = selectedProviders.length === 0 || selectedProviders.includes(providerName);
+      const matchesType = selectedTypes.length === 0 || selectedTypes.includes(provider.type);
+      return matchesProvider && matchesType;
+    });
+
+    setFilteredProviders(filtered);
+  };
+
   return (
     <div className="container mx-auto px-4 pt-24 pb-12">
       <div className="text-center mb-12">
@@ -165,8 +185,10 @@ const Index = () => {
         </p>
       </div>
 
+      <POSFilter providers={posProviders} onFilter={handleFilter} />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posProviders.map((provider, index) => (
+        {filteredProviders.map((provider, index) => (
           <POSCard key={index} {...provider} />
         ))}
       </div>
