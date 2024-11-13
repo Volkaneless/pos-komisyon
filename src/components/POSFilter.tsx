@@ -57,77 +57,76 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-4 mb-8 shadow-sm">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-medium text-gray-700">Filtrele</h2>
+    <div className="bg-white rounded-lg shadow-sm mb-8">
+      <div className="flex items-center gap-2 p-2">
         <button
           onClick={handleClear}
           className="text-primary hover:text-primary-hover text-sm"
         >
           Temizle
         </button>
+
+        <div className="flex-1 flex items-center gap-4">
+          <Collapsible open={isProvidersOpen} onOpenChange={setIsProvidersOpen}>
+            <CollapsibleTrigger className="flex items-center gap-2 text-left px-3 py-1.5 hover:bg-gray-50 rounded-md">
+              <span className="text-sm text-gray-600">Kuruma Göre</span>
+              <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform ${isProvidersOpen ? 'transform rotate-180' : ''}`} />
+            </CollapsibleTrigger>
+            <CollapsibleContent className="absolute z-10 mt-1 bg-white rounded-lg shadow-lg p-3 border">
+              <div className="space-y-2 min-w-[200px]">
+                {Object.entries(uniqueProviders).map(([provider, count]) => (
+                  <div key={provider} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={`provider-${provider}`}
+                      checked={selectedProviders.includes(provider)}
+                      onCheckedChange={() => handleProviderChange(provider)}
+                    />
+                    <label
+                      htmlFor={`provider-${provider}`}
+                      className="text-sm text-gray-600 cursor-pointer"
+                    >
+                      {provider} ({count})
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+
+          <Collapsible open={isTypesOpen} onOpenChange={setIsTypesOpen}>
+            <CollapsibleTrigger className="flex items-center gap-2 text-left px-3 py-1.5 hover:bg-gray-50 rounded-md">
+              <span className="text-sm text-gray-600">POS Türüne Göre</span>
+              <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform ${isTypesOpen ? 'transform rotate-180' : ''}`} />
+            </CollapsibleTrigger>
+            <CollapsibleContent className="absolute z-10 mt-1 bg-white rounded-lg shadow-lg p-3 border">
+              <div className="space-y-2 min-w-[200px]">
+                {Object.entries(uniqueTypes).map(([type, count]) => (
+                  <div key={type} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={`type-${type}`}
+                      checked={selectedTypes.includes(type)}
+                      onCheckedChange={() => handleTypeChange(type)}
+                    />
+                    <label
+                      htmlFor={`type-${type}`}
+                      className="text-sm text-gray-600 cursor-pointer"
+                    >
+                      {type} ({count})
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+        </div>
+
+        <Button
+          onClick={handleApply}
+          className="bg-primary hover:bg-primary-hover text-white text-sm px-4"
+        >
+          Uygula
+        </Button>
       </div>
-
-      <div className="space-y-4">
-        <Collapsible open={isProvidersOpen} onOpenChange={setIsProvidersOpen}>
-          <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left">
-            <span className="text-sm font-medium text-gray-700">Kuruma Göre</span>
-            <ChevronDown className={`h-4 w-4 text-gray-500 transition-transform ${isProvidersOpen ? 'transform rotate-180' : ''}`} />
-          </CollapsibleTrigger>
-          <CollapsibleContent className="pt-2 pb-4">
-            <div className="space-y-2">
-              {Object.entries(uniqueProviders).map(([provider, count]) => (
-                <div key={provider} className="flex items-center space-x-2">
-                  <Checkbox
-                    id={`provider-${provider}`}
-                    checked={selectedProviders.includes(provider)}
-                    onCheckedChange={() => handleProviderChange(provider)}
-                  />
-                  <label
-                    htmlFor={`provider-${provider}`}
-                    className="text-sm text-gray-600 cursor-pointer"
-                  >
-                    {provider} ({count})
-                  </label>
-                </div>
-              ))}
-            </div>
-          </CollapsibleContent>
-        </Collapsible>
-
-        <Collapsible open={isTypesOpen} onOpenChange={setIsTypesOpen}>
-          <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left">
-            <span className="text-sm font-medium text-gray-700">POS Türüne Göre</span>
-            <ChevronDown className={`h-4 w-4 text-gray-500 transition-transform ${isTypesOpen ? 'transform rotate-180' : ''}`} />
-          </CollapsibleTrigger>
-          <CollapsibleContent className="pt-2 pb-4">
-            <div className="space-y-2">
-              {Object.entries(uniqueTypes).map(([type, count]) => (
-                <div key={type} className="flex items-center space-x-2">
-                  <Checkbox
-                    id={`type-${type}`}
-                    checked={selectedTypes.includes(type)}
-                    onCheckedChange={() => handleTypeChange(type)}
-                  />
-                  <label
-                    htmlFor={`type-${type}`}
-                    className="text-sm text-gray-600 cursor-pointer"
-                  >
-                    {type} ({count})
-                  </label>
-                </div>
-              ))}
-            </div>
-          </CollapsibleContent>
-        </Collapsible>
-      </div>
-
-      <Button
-        onClick={handleApply}
-        className="w-full mt-4 bg-primary hover:bg-primary-hover text-white"
-      >
-        Uygula
-      </Button>
     </div>
   );
 };
