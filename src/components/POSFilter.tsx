@@ -57,7 +57,7 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm mb-8">
+    <div className="bg-white rounded-lg shadow-sm mb-8 max-w-2xl mx-auto">
       <div className="flex items-center gap-2 p-2">
         <button
           onClick={handleClear}
@@ -66,7 +66,7 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
           Temizle
         </button>
 
-        <div className="flex-1 flex items-center gap-4">
+        <div className="flex-1 flex items-center justify-center gap-4">
           <Collapsible open={isProvidersOpen} onOpenChange={setIsProvidersOpen}>
             <CollapsibleTrigger className="flex items-center gap-2 text-left px-3 py-1.5 hover:bg-gray-50 rounded-md">
               <span className="text-sm text-gray-600">Kuruma Göre</span>
