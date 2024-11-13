@@ -62,10 +62,10 @@ const CommissionSection = ({
       <div className="relative z-10">
         <Label>Taksit Sayısı</Label>
         <Select value={installment} onValueChange={setInstallment}>
-          <SelectTrigger>
+          <SelectTrigger className="bg-white">
             <SelectValue placeholder="Taksit seçin" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="bg-white z-50 relative shadow-lg">
             <SelectItem value="1">Peşin</SelectItem>
             <SelectItem value="3">3 Taksit</SelectItem>
             <SelectItem value="6">6 Taksit</SelectItem>
