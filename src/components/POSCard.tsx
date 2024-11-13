@@ -13,46 +13,52 @@ interface POSCardProps {
 
 const POSCard = ({ logo, name, type, monthlyFee, commissionRate, features }: POSCardProps) => {
   return (
-    <div className="glass-card rounded-xl p-6 animate-fade-in">
-      <div className="flex items-center gap-4 mb-6">
-        <img src={logo} alt={name} className="w-12 h-12 object-contain" />
-        <div>
-          <h3 className="font-semibold text-lg">{name}</h3>
-          <p className="text-sm text-gray-500">{type}</p>
+    <div className="glass-card rounded-2xl p-8 animate-fade-in">
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center gap-4">
+          <img src={logo} alt={name} className="w-16 h-16 object-contain" />
+          <h3 className="font-semibold text-xl">{name}</h3>
+        </div>
+        <div className="flex gap-3">
+          <button className="button-primary">Hemen Başvur</button>
+          <button className="border border-primary text-primary hover:bg-primary-light px-8 py-2 rounded-lg transition-all duration-200">
+            İncele
+          </button>
         </div>
       </div>
       
-      <div className="space-y-4 mb-6">
+      <div className="grid grid-cols-3 gap-8 mb-8">
         <div>
-          <p className="text-sm text-gray-500">Aidat Ödemesi</p>
-          <p className="text-lg font-semibold">{monthlyFee}</p>
+          <p className="text-gray-500 mb-2">POS Türü</p>
+          <p className="font-medium text-lg">{type}</p>
         </div>
-        <div className="flex items-center gap-2">
-          <p className="text-sm text-gray-500">Komisyon Oranı</p>
-          <HoverCard>
-            <HoverCardTrigger>
-              <Info className="w-4 h-4 text-gray-400" />
-            </HoverCardTrigger>
-            <HoverCardContent>
-              Bu oran, işlem tutarı üzerinden alınan komisyon oranını gösterir.
-            </HoverCardContent>
-          </HoverCard>
-          <p className="text-lg font-semibold">{commissionRate}</p>
+        <div>
+          <p className="text-gray-500 mb-2">Aidat Ödemesi</p>
+          <p className="font-medium text-lg">{monthlyFee}</p>
+        </div>
+        <div>
+          <div className="flex items-center gap-2">
+            <p className="text-gray-500 mb-2">Komisyon Oranı</p>
+            <HoverCard>
+              <HoverCardTrigger>
+                <Info className="w-4 h-4 text-gray-400" />
+              </HoverCardTrigger>
+              <HoverCardContent>
+                Bu oran, işlem tutarı üzerinden alınan komisyon oranını gösterir.
+              </HoverCardContent>
+            </HoverCard>
+          </div>
+          <p className="font-medium text-lg">{commissionRate}</p>
         </div>
       </div>
       
-      <div className="space-y-2">
+      <div className="border-t pt-6">
         {features.map((feature, index) => (
-          <div key={index} className="flex items-start gap-2 text-sm text-gray-600">
-            <Check size={16} className="text-primary mt-1 flex-shrink-0" />
+          <div key={index} className="flex items-start gap-2 text-gray-600">
+            <Check size={20} className="text-primary mt-1 flex-shrink-0" />
             <span>{feature}</span>
           </div>
         ))}
-      </div>
-      
-      <div className="mt-6 flex gap-3">
-        <button className="button-primary w-full">Hemen Başvur</button>
-        <button className="button-secondary w-full">İncele</button>
       </div>
     </div>
   );
