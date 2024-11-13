@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { posProviders } from "../data/posProviders";
 
 const POSDetail = () => {
   const { id } = useParams();
