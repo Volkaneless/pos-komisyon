@@ -32,13 +32,13 @@ const posProviders = [
     ],
   },
   {
-    logo: "/akbank-logo.svg",
-    name: "Akbank CebePOS",
+    logo: "/logo-isbasi-logo.svg",
+    name: "Logo İşbaşı POS",
     type: "Cep POS",
     monthlyFee: "0 TL / Ay",
-    commissionRate: "%1,79",
+    commissionRate: "%3,99",
     features: [
-      "Akbank POS ile 3 ay boyunca %1,79 komisyon ve 1 yıl ücretsizlik avantajına ek, şimdi başvuranlara 1.500 TL chip-para fırsatı!"
+      "Cep POS ile işletmenizi her yerde yönetin!"
     ],
   },
   {
