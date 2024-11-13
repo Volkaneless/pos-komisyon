@@ -1,6 +1,8 @@
 import { useState } from "react";
 import POSCard from "../components/POSCard";
 import POSFilter from "../components/POSFilter";
+import FAQ from "../components/FAQ";
+import Footer from "../components/Footer";
 
 const posProviders = [
   {
@@ -175,23 +177,28 @@ const Index = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 pt-24 pb-12">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">
-          En İyi POS Cihazı Teklifleri
-        </h1>
-        <p className="text-xl text-gray-600">
-          Karşılaştırın, en uygun POS çözümünü seçin
-        </p>
-      </div>
+    <div>
+      <div className="container mx-auto px-4 pt-24 pb-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">
+            En İyi POS Cihazı Teklifleri
+          </h1>
+          <p className="text-xl text-gray-600">
+            Karşılaştırın, en uygun POS çözümünü seçin
+          </p>
+        </div>
 
-      <POSFilter providers={posProviders} onFilter={handleFilter} />
+        <POSFilter providers={posProviders} onFilter={handleFilter} />
 
-      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        {filteredProviders.map((provider, index) => (
-          <POSCard key={index} {...provider} />
-        ))}
+        <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
+          {filteredProviders.map((provider, index) => (
+            <POSCard key={index} {...provider} />
+          ))}
+        </div>
       </div>
+      
+      <FAQ />
+      <Footer />
     </div>
   );
 };
