@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Checkbox } from "./ui/checkbox";
 import { Button } from "./ui/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible";
+import { ChevronDown } from "lucide-react";
 
 interface FilterProps {
   providers: Array<{
@@ -14,6 +16,8 @@ interface FilterProps {
 const POSFilter = ({ providers, onFilter }: FilterProps) => {
   const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [isProvidersOpen, setIsProvidersOpen] = useState(false);
+  const [isTypesOpen, setIsTypesOpen] = useState(false);
 
   const uniqueProviders = providers.reduce((acc, curr) => {
     const name = curr.name.split(" ")[0];
@@ -65,47 +69,57 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
       </div>
 
       <div className="grid grid-cols-2 gap-8">
-        <div>
-          <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Kuruma Göre</h3>
-          <div className="space-y-3">
-            {Object.entries(uniqueProviders).map(([provider, count]) => (
-              <div key={provider} className="flex items-center space-x-2">
-                <Checkbox
-                  id={`provider-${provider}`}
-                  checked={selectedProviders.includes(provider)}
-                  onCheckedChange={() => handleProviderChange(provider)}
-                />
-                <label
-                  htmlFor={`provider-${provider}`}
-                  className="text-sm text-gray-600 cursor-pointer"
-                >
-                  {provider} ({count})
-                </label>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Collapsible open={isProvidersOpen} onOpenChange={setIsProvidersOpen}>
+          <CollapsibleTrigger className="flex items-center justify-between w-full">
+            <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Kuruma Göre</h3>
+            <ChevronDown className={`h-4 w-4 transition-transform ${isProvidersOpen ? 'transform rotate-180' : ''}`} />
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className="space-y-3">
+              {Object.entries(uniqueProviders).map(([provider, count]) => (
+                <div key={provider} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={`provider-${provider}`}
+                    checked={selectedProviders.includes(provider)}
+                    onCheckedChange={() => handleProviderChange(provider)}
+                  />
+                  <label
+                    htmlFor={`provider-${provider}`}
+                    className="text-sm text-gray-600 cursor-pointer"
+                  >
+                    {provider} ({count})
+                  </label>
+                </div>
+              ))}
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
 
-        <div>
-          <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">POS Türüne Göre</h3>
-          <div className="space-y-3">
-            {Object.entries(uniqueTypes).map(([type, count]) => (
-              <div key={type} className="flex items-center space-x-2">
-                <Checkbox
-                  id={`type-${type}`}
-                  checked={selectedTypes.includes(type)}
-                  onCheckedChange={() => handleTypeChange(type)}
-                />
-                <label
-                  htmlFor={`type-${type}`}
-                  className="text-sm text-gray-600 cursor-pointer"
-                >
-                  {type} ({count})
-                </label>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Collapsible open={isTypesOpen} onOpenChange={setIsTypesOpen}>
+          <CollapsibleTrigger className="flex items-center justify-between w-full">
+            <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">POS Türüne Göre</h3>
+            <ChevronDown className={`h-4 w-4 transition-transform ${isTypesOpen ? 'transform rotate-180' : ''}`} />
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className="space-y-3">
+              {Object.entries(uniqueTypes).map(([type, count]) => (
+                <div key={type} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={`type-${type}`}
+                    checked={selectedTypes.includes(type)}
+                    onCheckedChange={() => handleTypeChange(type)}
+                  />
+                  <label
+                    htmlFor={`type-${type}`}
+                    className="text-sm text-gray-600 cursor-pointer"
+                  >
+                    {type} ({count})
+                  </label>
+                </div>
+              ))}
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
       </div>
 
       <Button
