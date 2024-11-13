@@ -1,7 +1,7 @@
 export const posProviders = [
   {
     id: "enpara-pos",
-    logo: "/enpara-logo.svg",
+    logo: "/logo.svg",
     name: "Enpara.com Yazar Kasa POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthlyFee: "0 TL / Ay",
@@ -12,7 +12,7 @@ export const posProviders = [
   },
   {
     id: "esnekpos-android",
-    logo: "/esnekpos-logo.svg",
+    logo: "/logo.svg",
     name: "Android POS",
     type: "Mobil (Taşınabilir) POS",
     monthlyFee: "0 TL / Ay",
@@ -23,7 +23,7 @@ export const posProviders = [
   },
   {
     id: "tosla-isim",
-    logo: "/tosla-logo.svg",
+    logo: "/logo.svg",
     name: "Tosla İşim POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthlyFee: "0 TL / Ay",
@@ -34,7 +34,7 @@ export const posProviders = [
   },
   {
     id: "logo-isbasi",
-    logo: "/logo-isbasi-logo.svg",
+    logo: "/logo.svg",
     name: "Logo İşbaşı POS",
     type: "Cep POS",
     monthlyFee: "0 TL / Ay",
@@ -45,7 +45,7 @@ export const posProviders = [
   },
   {
     id: "akbank-fiziki",
-    logo: "/akbank-logo.svg",
+    logo: "/logo.svg",
     name: "Akbank Fiziki / Masaüstü POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthlyFee: "0 TL / Ay",
@@ -56,7 +56,7 @@ export const posProviders = [
   },
   {
     id: "paytr-neopos",
-    logo: "/paytr-logo.svg",
+    logo: "/logo.svg",
     name: "NeoPOS+",
     type: "Cep POS",
     monthlyFee: "0 TL / Ay",
@@ -67,7 +67,7 @@ export const posProviders = [
   },
   {
     id: "akbank-sanal",
-    logo: "/akbank-logo.svg",
+    logo: "/logo.svg",
     name: "Akbank Sanal POS",
     type: "Sanal POS",
     monthlyFee: "0 TL / Ay",
@@ -78,7 +78,7 @@ export const posProviders = [
   },
   {
     id: "tosla-sanal",
-    logo: "/tosla-logo.svg",
+    logo: "/logo.svg",
     name: "Tosla İşim Sanal POS",
     type: "Sanal POS",
     monthlyFee: "0 TL / Ay",
@@ -89,7 +89,7 @@ export const posProviders = [
   },
   {
     id: "moka-sanal",
-    logo: "/moka-logo.svg",
+    logo: "/logo.svg",
     name: "Moka Sanal POS",
     type: "Sanal POS",
     monthlyFee: "0 TL / Ay",
@@ -100,7 +100,7 @@ export const posProviders = [
   },
   {
     id: "esnekpos-cep",
-    logo: "/esnekpos-logo.svg",
+    logo: "/logo.svg",
     name: "Cep POS",
     type: "Cep POS",
     monthlyFee: "0 TL / Ay",
@@ -111,7 +111,7 @@ export const posProviders = [
   },
   {
     id: "garanti-sanal",
-    logo: "/garanti-logo.svg",
+    logo: "/logo.svg",
     name: "Sanal POS",
     type: "Sanal POS",
     monthlyFee: "0 TL / Ay",
@@ -122,7 +122,7 @@ export const posProviders = [
   },
   {
     id: "isbank-aninda",
-    logo: "/isbank-logo.svg",
+    logo: "/logo.svg",
     name: "Anında POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthlyFee: "119 TL / Ay",
@@ -133,7 +133,7 @@ export const posProviders = [
   },
   {
     id: "esnekpos-pazaryeri",
-    logo: "/esnekpos-logo.svg",
+    logo: "/logo.svg",
     name: "Pazaryeri POS",
     type: "Sanal POS",
     monthlyFee: "0 TL / Ay",
@@ -144,7 +144,7 @@ export const posProviders = [
   },
   {
     id: "esnekpos-sanal",
-    logo: "/esnekpos-logo.svg",
+    logo: "/logo.svg",
     name: "EsnekPOS",
     type: "Sanal POS",
     monthlyFee: "0 TL / Ay",
@@ -155,7 +155,7 @@ export const posProviders = [
   },
   {
     id: "paycell-sanal",
-    logo: "/paycell-logo.svg",
+    logo: "/logo.svg",
     name: "Sanal POS",
     type: "Sanal POS",
     monthlyFee: "0 TL / Ay",
