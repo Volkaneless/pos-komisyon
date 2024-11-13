@@ -16,47 +16,49 @@ const Calculator = () => {
   const { toast } = useToast();
 
   return (
-    <div className="space-y-8 w-full">
-      <div className="glass-card rounded-xl p-8 max-w-6xl w-full mx-auto animate-fade-in">
-        <div className="flex items-center gap-3 mb-6">
-          <CalculatorIcon className="text-primary" size={24} />
-          <h2 className="text-xl font-semibold">POS Komisyon Hesaplayıcı</h2>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-8">
-            <BankInfoSection
-              bankName={bankName}
-              setBankName={setBankName}
-              posType={posType}
-              setPosType={setPosType}
-            />
-
-            <CommissionSection
-              amount={amount}
-              setAmount={setAmount}
-              rate={rate}
-              setRate={setRate}
-              installment={installment}
-              setInstallment={setInstallment}
-              fixedFee={fixedFee}
-              setFixedFee={setFixedFee}
-            />
+    <div className="flex flex-col items-center justify-center w-full max-w-7xl mx-auto">
+      <div className="space-y-8 w-full">
+        <div className="glass-card rounded-xl p-8 max-w-6xl w-full mx-auto animate-fade-in">
+          <div className="flex items-center gap-3 mb-6">
+            <CalculatorIcon className="text-primary" size={24} />
+            <h2 className="text-xl font-semibold">POS Komisyon Hesaplayıcı</h2>
           </div>
 
-          <div className="space-y-8">
-            <ResultSection
-              amount={amount}
-              rate={rate}
-              installment={installment}
-              fixedFee={fixedFee}
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="space-y-8">
+              <BankInfoSection
+                bankName={bankName}
+                setBankName={setBankName}
+                posType={posType}
+                setPosType={setPosType}
+              />
+
+              <CommissionSection
+                amount={amount}
+                setAmount={setAmount}
+                rate={rate}
+                setRate={setRate}
+                installment={installment}
+                setInstallment={setInstallment}
+                fixedFee={fixedFee}
+                setFixedFee={setFixedFee}
+              />
+            </div>
+
+            <div className="space-y-8">
+              <ResultSection
+                amount={amount}
+                rate={rate}
+                installment={installment}
+                fixedFee={fixedFee}
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="glass-card rounded-xl p-8 max-w-6xl w-full mx-auto">
-        <InfoSection />
+        <div className="glass-card rounded-xl p-8 max-w-6xl w-full mx-auto">
+          <InfoSection />
+        </div>
       </div>
     </div>
   );
