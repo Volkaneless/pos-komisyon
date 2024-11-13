@@ -15,14 +15,12 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
   const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
-  // Get unique providers and count their occurrences
   const uniqueProviders = providers.reduce((acc, curr) => {
     const name = curr.name.split(" ")[0];
     acc[name] = (acc[name] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
-  // Get unique types and count their occurrences
   const uniqueTypes = providers.reduce((acc, curr) => {
     acc[curr.type] = (acc[curr.type] || 0) + 1;
     return acc;
@@ -68,8 +66,8 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
 
       <div className="grid grid-cols-2 gap-8">
         <div>
-          <h3 className="font-medium mb-3">Kuruma Göre</h3>
-          <div className="space-y-2">
+          <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Kuruma Göre</h3>
+          <div className="space-y-3">
             {Object.entries(uniqueProviders).map(([provider, count]) => (
               <div key={provider} className="flex items-center space-x-2">
                 <Checkbox
@@ -89,8 +87,8 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
         </div>
 
         <div>
-          <h3 className="font-medium mb-3">POS Türüne Göre</h3>
-          <div className="space-y-2">
+          <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">POS Türüne Göre</h3>
+          <div className="space-y-3">
             {Object.entries(uniqueTypes).map(([type, count]) => (
               <div key={type} className="flex items-center space-x-2">
                 <Checkbox
