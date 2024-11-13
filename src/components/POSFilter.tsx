@@ -57,9 +57,9 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-6 mb-8 shadow-sm">
+    <div className="bg-white rounded-lg p-4 mb-8 shadow-sm">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold">Filtrele</h2>
+        <h2 className="text-lg font-medium text-gray-700">Filtrele</h2>
         <button
           onClick={handleClear}
           className="text-primary hover:text-primary-hover text-sm"
@@ -68,14 +68,14 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
         </button>
       </div>
 
-      <div className="grid grid-cols-2 gap-8">
+      <div className="space-y-4">
         <Collapsible open={isProvidersOpen} onOpenChange={setIsProvidersOpen}>
-          <CollapsibleTrigger className="flex items-center justify-between w-full">
-            <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Kuruma Göre</h3>
-            <ChevronDown className={`h-4 w-4 transition-transform ${isProvidersOpen ? 'transform rotate-180' : ''}`} />
+          <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left">
+            <span className="text-sm font-medium text-gray-700">Kuruma Göre</span>
+            <ChevronDown className={`h-4 w-4 text-gray-500 transition-transform ${isProvidersOpen ? 'transform rotate-180' : ''}`} />
           </CollapsibleTrigger>
-          <CollapsibleContent>
-            <div className="space-y-3">
+          <CollapsibleContent className="pt-2 pb-4">
+            <div className="space-y-2">
               {Object.entries(uniqueProviders).map(([provider, count]) => (
                 <div key={provider} className="flex items-center space-x-2">
                   <Checkbox
@@ -96,12 +96,12 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
         </Collapsible>
 
         <Collapsible open={isTypesOpen} onOpenChange={setIsTypesOpen}>
-          <CollapsibleTrigger className="flex items-center justify-between w-full">
-            <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">POS Türüne Göre</h3>
-            <ChevronDown className={`h-4 w-4 transition-transform ${isTypesOpen ? 'transform rotate-180' : ''}`} />
+          <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left">
+            <span className="text-sm font-medium text-gray-700">POS Türüne Göre</span>
+            <ChevronDown className={`h-4 w-4 text-gray-500 transition-transform ${isTypesOpen ? 'transform rotate-180' : ''}`} />
           </CollapsibleTrigger>
-          <CollapsibleContent>
-            <div className="space-y-3">
+          <CollapsibleContent className="pt-2 pb-4">
+            <div className="space-y-2">
               {Object.entries(uniqueTypes).map(([type, count]) => (
                 <div key={type} className="flex items-center space-x-2">
                   <Checkbox
@@ -124,7 +124,7 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
 
       <Button
         onClick={handleApply}
-        className="w-full mt-6 bg-primary hover:bg-primary-hover text-white"
+        className="w-full mt-4 bg-primary hover:bg-primary-hover text-white"
       >
         Uygula
       </Button>
