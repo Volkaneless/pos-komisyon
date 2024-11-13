@@ -31,7 +31,7 @@ const CommissionSection = ({
   setFixedFee,
 }: CommissionSectionProps) => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-6 relative">
       <div>
         <Label>İşlem Tutarı (TL)</Label>
         <Input
@@ -59,7 +59,7 @@ const CommissionSection = ({
           />
         </div>
       </div>
-      <div>
+      <div className="relative z-10">
         <Label>Taksit Sayısı</Label>
         <Select value={installment} onValueChange={setInstallment}>
           <SelectTrigger>
@@ -74,7 +74,7 @@ const CommissionSection = ({
           </SelectContent>
         </Select>
       </div>
-      <div>
+      <div className="relative z-0">
         <Label>Sabit Ücret (TL)</Label>
         <Input
           type="number"
