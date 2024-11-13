@@ -1,8 +1,10 @@
 import { Check } from "lucide-react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { Info } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface POSCardProps {
+  id: string;
   logo: string;
   name: string;
   type: string;
@@ -11,7 +13,7 @@ interface POSCardProps {
   features: string[];
 }
 
-const POSCard = ({ logo, name, type, monthlyFee, commissionRate, features }: POSCardProps) => {
+const POSCard = ({ id, logo, name, type, monthlyFee, commissionRate, features }: POSCardProps) => {
   return (
     <div className="glass-card rounded-2xl p-8 animate-fade-in">
       <div className="flex items-center justify-between mb-8">
@@ -21,9 +23,12 @@ const POSCard = ({ logo, name, type, monthlyFee, commissionRate, features }: POS
         </div>
         <div className="flex gap-3">
           <button className="button-primary">Hemen Başvur</button>
-          <button className="border border-primary text-primary hover:bg-primary-light px-8 py-2 rounded-lg transition-all duration-200">
+          <Link 
+            to={`/pos/${id}`}
+            className="border border-primary text-primary hover:bg-primary-light px-8 py-2 rounded-lg transition-all duration-200"
+          >
             İncele
-          </button>
+          </Link>
         </div>
       </div>
       
