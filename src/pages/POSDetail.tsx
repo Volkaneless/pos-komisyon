@@ -1,9 +1,15 @@
 import { useParams } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Info, CheckCircle2 } from "lucide-react";
+import { Info, CheckCircle2, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { posProviders } from "../data/posProviders";
 import { Card } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const POSDetail = () => {
   const { id } = useParams();
@@ -14,8 +20,8 @@ const POSDetail = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 pt-24">
-      <div className="glass-card rounded-2xl p-8 mb-8">
+    <div className="container mx-auto px-4 pt-24 pb-16">
+      <div className="glass-card rounded-2xl p-8 mb-12">
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-4">
             <img src={pos.logo} alt={pos.name} className="w-16 h-16 object-contain" />
@@ -67,8 +73,8 @@ const POSDetail = () => {
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="explanation" className="mt-8">
-          <Card className="border-none shadow-none">
+        <TabsContent value="explanation" className="mt-12">
+          <Card className="border-none shadow-none mb-12">
             <div className="space-y-6 text-gray-600">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
@@ -88,16 +94,58 @@ const POSDetail = () => {
               </div>
             </div>
           </Card>
+
+          <div className="mt-12">
+            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+              <HelpCircle className="w-5 h-5" />
+              Sıkça Sorulan Sorular
+            </h3>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Başvuru için gerekli belgeler nelerdir?</AccordionTrigger>
+                <AccordionContent>
+                  Başvuru için vergi levhanız, işletme sahibinin kimlik fotokopisi ve işletmenizin faaliyet belgesi gerekmektedir.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Başvuru sonrası POS kurulumu ne kadar sürer?</AccordionTrigger>
+                <AccordionContent>
+                  Başvurunuz onaylandıktan sonra ortalama 2-3 iş günü içerisinde POS kurulumu gerçekleştirilir.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </TabsContent>
 
-        <TabsContent value="commissions" className="mt-8">
-          <Card className="border-none shadow-none">
+        <TabsContent value="commissions" className="mt-12">
+          <Card className="border-none shadow-none mb-12">
             <p className="text-gray-600">Tek çekim haricindeki diğer komisyon oranlarını başvuru adımında görüntüleyebilirsiniz.</p>
           </Card>
+
+          <div className="mt-12">
+            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+              <HelpCircle className="w-5 h-5" />
+              Komisyonlar Hakkında SSS
+            </h3>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Taksitli işlemlerde komisyon oranı değişir mi?</AccordionTrigger>
+                <AccordionContent>
+                  Evet, taksit sayısına göre komisyon oranları farklılık gösterebilir. Detaylı bilgi için müşteri temsilcinizle görüşebilirsiniz.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Komisyon oranları sabit midir?</AccordionTrigger>
+                <AccordionContent>
+                  Komisyon oranları piyasa koşullarına göre değişiklik gösterebilir. Güncel oranlar için başvuru sırasında bilgilendirileceksiniz.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </TabsContent>
 
-        <TabsContent value="features" className="mt-8">
-          <Card className="border-none shadow-none">
+        <TabsContent value="features" className="mt-12">
+          <Card className="border-none shadow-none mb-12">
             <div className="space-y-4">
               {pos.features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -107,6 +155,27 @@ const POSDetail = () => {
               ))}
             </div>
           </Card>
+
+          <div className="mt-12">
+            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+              <HelpCircle className="w-5 h-5" />
+              Özellikler Hakkında SSS
+            </h3>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>POS cihazı arızalanırsa ne yapmalıyım?</AccordionTrigger>
+                <AccordionContent>
+                  Teknik destek hattımızı arayarak arıza kaydı oluşturabilirsiniz. En kısa sürede teknik ekibimiz sorununuzla ilgilenecektir.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Yeni özellikler eklenebilir mi?</AccordionTrigger>
+                <AccordionContent>
+                  Evet, ihtiyaçlarınıza göre ek özellikler ve hizmetler talep edebilirsiniz. Müşteri temsilcinizle görüşerek detaylı bilgi alabilirsiniz.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </TabsContent>
       </Tabs>
     </div>
