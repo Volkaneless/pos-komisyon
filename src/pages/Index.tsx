@@ -2,7 +2,6 @@ import { useState } from "react";
 import POSCard from "../components/POSCard";
 import POSFilter from "../components/POSFilter";
 import FAQ from "../components/FAQ";
-import Footer from "../components/Footer";
 
 const posProviders = [
   {
@@ -198,7 +197,6 @@ const Index = () => {
       </div>
       
       <FAQ />
-      <Footer />
     </div>
   );
 };

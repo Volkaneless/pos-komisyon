@@ -30,6 +30,36 @@ const Navigation = () => {
           >
             Hesaplayıcı
           </Link>
+          <Link 
+            to="/blog" 
+            className={`transition-colors duration-200 ${
+              location.pathname === "/blog" 
+                ? "text-primary font-medium" 
+                : "text-gray-600 hover:text-gray-900"
+            }`}
+          >
+            Blog
+          </Link>
+          <Link 
+            to="/about" 
+            className={`transition-colors duration-200 ${
+              location.pathname === "/about" 
+                ? "text-primary font-medium" 
+                : "text-gray-600 hover:text-gray-900"
+            }`}
+          >
+            Hakkımızda
+          </Link>
+          <Link 
+            to="/contact" 
+            className={`transition-colors duration-200 ${
+              location.pathname === "/contact" 
+                ? "text-primary font-medium" 
+                : "text-gray-600 hover:text-gray-900"
+            }`}
+          >
+            İletişim
+          </Link>
         </div>
       </div>
     </nav>
