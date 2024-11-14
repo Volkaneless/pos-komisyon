@@ -2,26 +2,11 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Loader2, Plus } from "lucide-react";
 import { toast } from "sonner";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Loader2, Plus, Pencil, Trash } from "lucide-react";
-
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  content: string;
-  date: string;
-}
+import { BlogPostForm } from "./blog/BlogPostForm";
+import { BlogPostList } from "./blog/BlogPostList";
+import type { BlogPost, BlogPostInput } from "@/types/blog";
 
 const BlogPostsManager = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -36,18 +21,16 @@ const BlogPostsManager = () => {
         .order("date", { ascending: false });
       
       if (error) throw error;
-      return data;
+      return data as BlogPost[];
     },
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
+  const handleSubmit = async (postData: BlogPostInput) => {
     try {
       if (currentPost.id) {
         const { error } = await supabase
           .from("blog_posts")
-          .update(currentPost)
+          .update(postData)
           .eq("id", currentPost.id);
         
         if (error) throw error;
@@ -55,7 +38,7 @@ const BlogPostsManager = () => {
       } else {
         const { error } = await supabase
           .from("blog_posts")
-          .insert([currentPost]);
+          .insert([postData]);
         
         if (error) throw error;
         toast.success("Blog yazısı eklendi");
@@ -107,98 +90,24 @@ const BlogPostsManager = () => {
             Yeni Blog Yazısı
           </Button>
 
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Başlık</TableHead>
-                <TableHead>Özet</TableHead>
-                <TableHead>Tarih</TableHead>
-                <TableHead>İşlemler</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {posts?.map((post) => (
-                <TableRow key={post.id}>
-                  <TableCell>{post.title}</TableCell>
-                  <TableCell>{post.excerpt}</TableCell>
-                  <TableCell>
-                    {new Date(post.date).toLocaleDateString("tr-TR")}
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex gap-2">
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        onClick={() => {
-                          setCurrentPost(post);
-                          setIsEditing(true);
-                        }}
-                      >
-                        <Pencil className="w-4 h-4" />
-                      </Button>
-                      <Button
-                        variant="destructive"
-                        size="icon"
-                        onClick={() => handleDelete(post.id)}
-                      >
-                        <Trash className="w-4 h-4" />
-                      </Button>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+          <BlogPostList
+            posts={posts || []}
+            onEdit={(post) => {
+              setCurrentPost(post);
+              setIsEditing(true);
+            }}
+            onDelete={handleDelete}
+          />
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block mb-2">Başlık</label>
-            <Input
-              value={currentPost.title || ""}
-              onChange={(e) =>
-                setCurrentPost({ ...currentPost, title: e.target.value })
-              }
-              required
-            />
-          </div>
-          <div>
-            <label className="block mb-2">Özet</label>
-            <Input
-              value={currentPost.excerpt || ""}
-              onChange={(e) =>
-                setCurrentPost({ ...currentPost, excerpt: e.target.value })
-              }
-              required
-            />
-          </div>
-          <div>
-            <label className="block mb-2">İçerik</label>
-            <Textarea
-              value={currentPost.content || ""}
-              onChange={(e) =>
-                setCurrentPost({ ...currentPost, content: e.target.value })
-              }
-              required
-              rows={10}
-            />
-          </div>
-          <div className="flex gap-2">
-            <Button type="submit">
-              {currentPost.id ? "Güncelle" : "Ekle"}
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              onClick={() => {
-                setCurrentPost({});
-                setIsEditing(false);
-              }}
-            >
-              İptal
-            </Button>
-          </div>
-        </form>
+        <BlogPostForm
+          initialData={currentPost}
+          onSubmit={handleSubmit}
+          onCancel={() => {
+            setCurrentPost({});
+            setIsEditing(false);
+          }}
+        />
       )}
     </div>
   );
