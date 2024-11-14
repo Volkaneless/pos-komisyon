@@ -21,7 +21,7 @@ const Calculator = () => {
         <div className="glass-card rounded-xl p-8 max-w-6xl w-full mx-auto animate-fade-in">
           <div className="flex items-center gap-3 mb-6">
             <CalculatorIcon className="text-primary" size={24} />
-            <h2 className="text-xl font-semibold">POS Komisyon Hesaplayıcı</h2>
+            <h2 className="text-xl font-semibold">POS Komisyon Oranları Hesaplama</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
