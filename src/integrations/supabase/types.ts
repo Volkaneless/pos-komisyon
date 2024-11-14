@@ -9,6 +9,66 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      blog_posts: {
+        Row: {
+          content: string
+          created_at: string | null
+          date: string | null
+          excerpt: string
+          id: number
+          title: string
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          date?: string | null
+          excerpt: string
+          id?: number
+          title: string
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          date?: string | null
+          excerpt?: string
+          id?: number
+          title?: string
+        }
+        Relationships: []
+      }
+      pos_providers: {
+        Row: {
+          commission_rate: string
+          created_at: string | null
+          features: string[]
+          id: string
+          logo: string
+          monthly_fee: string
+          name: string
+          type: string
+        }
+        Insert: {
+          commission_rate: string
+          created_at?: string | null
+          features: string[]
+          id: string
+          logo: string
+          monthly_fee: string
+          name: string
+          type: string
+        }
+        Update: {
+          commission_rate?: string
+          created_at?: string | null
+          features?: string[]
+          id?: string
+          logo?: string
+          monthly_fee?: string
+          name?: string
+          type?: string
+        }
+        Relationships: []
+      }
       Poslar: {
         Row: {
           created_at: string
