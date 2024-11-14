@@ -48,12 +48,16 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
 
   const handleApply = () => {
     onFilter(selectedProviders, selectedTypes);
+    setIsProvidersOpen(false);
+    setIsTypesOpen(false);
   };
 
   const handleClear = () => {
     setSelectedProviders([]);
     setSelectedTypes([]);
     onFilter([], []);
+    setIsProvidersOpen(false);
+    setIsTypesOpen(false);
   };
 
   return (
