@@ -20,7 +20,7 @@ export const POSForm = ({ initialData, onSubmit, onCancel }: POSFormProps) => {
     features: Array.isArray(initialData?.features) 
       ? initialData.features 
       : typeof initialData?.features === 'string'
-        ? initialData.features.split('\n').filter(f => f.trim())
+        ? (initialData.features as string).split('\n').filter(f => f.trim())
         : [],
   });
 
