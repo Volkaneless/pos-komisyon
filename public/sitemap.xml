@@ -1,121 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pos-faircalcs.vercel.app/</loc>
+    <loc>https://poskomisyon.com/</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/calculator</loc>
+    <loc>https://poskomisyon.com/calculator</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/blog</loc>
+    <loc>https://poskomisyon.com/blog</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/about</loc>
+    <loc>https://poskomisyon.com/about</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/contact</loc>
+    <loc>https://poskomisyon.com/contact</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/enpara-pos</loc>
+    <loc>https://poskomisyon.com/pos/enpara-pos</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/esnekpos-android</loc>
+    <loc>https://poskomisyon.com/pos/esnekpos-android</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/tosla-isim</loc>
+    <loc>https://poskomisyon.com/pos/tosla-isim</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/logo-isbasi</loc>
+    <loc>https://poskomisyon.com/pos/logo-isbasi</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/akbank-fiziki</loc>
+    <loc>https://poskomisyon.com/pos/akbank-fiziki</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/paytr-neopos</loc>
+    <loc>https://poskomisyon.com/pos/paytr-neopos</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/akbank-sanal</loc>
+    <loc>https://poskomisyon.com/pos/akbank-sanal</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/tosla-sanal</loc>
+    <loc>https://poskomisyon.com/pos/tosla-sanal</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/moka-sanal</loc>
+    <loc>https://poskomisyon.com/pos/moka-sanal</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/esnekpos-cep</loc>
+    <loc>https://poskomisyon.com/pos/esnekpos-cep</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/garanti-sanal</loc>
+    <loc>https://poskomisyon.com/pos/garanti-sanal</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/isbank-aninda</loc>
+    <loc>https://poskomisyon.com/pos/isbank-aninda</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/esnekpos-pazaryeri</loc>
+    <loc>https://poskomisyon.com/pos/esnekpos-pazaryeri</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/esnekpos-sanal</loc>
+    <loc>https://poskomisyon.com/pos/esnekpos-sanal</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pos-faircalcs.vercel.app/pos/paycell-sanal</loc>
+    <loc>https://poskomisyon.com/pos/paycell-sanal</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
