@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pos-faircalcs.vercel.app/sitemap.xml
