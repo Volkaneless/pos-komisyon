@@ -39,14 +39,14 @@ const POSDetail = () => {
           </div>
           <div>
             <p className="text-gray-500 mb-2">Aidat Ödemesi</p>
-            <p className="font-medium text-lg">{pos.monthlyFee}</p>
+            <p className="font-medium text-lg">{pos.monthly_fee}</p>
           </div>
           <div>
             <div className="flex items-center gap-2">
               <p className="text-gray-500 mb-2">Komisyon Oranı</p>
               <Info className="w-4 h-4 text-gray-400" />
             </div>
-            <p className="font-medium text-lg">{pos.commissionRate}</p>
+            <p className="font-medium text-lg">{pos.commission_rate}</p>
           </div>
         </div>
       </div>
