@@ -8,12 +8,12 @@ interface POSCardProps {
   logo: string;
   name: string;
   type: string;
-  monthlyFee: string;
-  commissionRate: string;
+  monthly_fee: string;
+  commission_rate: string;
   features: string[];
 }
 
-const POSCard = ({ id, logo, name, type, monthlyFee, commissionRate, features }: POSCardProps) => {
+const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features }: POSCardProps) => {
   return (
     <div className="glass-card rounded-2xl p-8 animate-fade-in">
       <div className="flex items-center justify-between mb-8">
@@ -39,7 +39,7 @@ const POSCard = ({ id, logo, name, type, monthlyFee, commissionRate, features }:
         </div>
         <div>
           <p className="text-gray-500 mb-2">Aidat Ödemesi</p>
-          <p className="font-medium text-lg">{monthlyFee}</p>
+          <p className="font-medium text-lg">{monthly_fee}</p>
         </div>
         <div>
           <div className="flex items-center gap-2">
@@ -53,7 +53,7 @@ const POSCard = ({ id, logo, name, type, monthlyFee, commissionRate, features }:
               </HoverCardContent>
             </HoverCard>
           </div>
-          <p className="font-medium text-lg">{commissionRate}</p>
+          <p className="font-medium text-lg">{commission_rate}</p>
         </div>
       </div>
       
