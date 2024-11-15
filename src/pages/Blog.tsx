@@ -1,22 +1,23 @@
 import { BookOpen } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
-import { Link } from "react-router-dom";
-import type { BlogPost } from "@/types/blog";
 
 const Blog = () => {
-  const { data: posts, isLoading } = useQuery({
-    queryKey: ["blog-posts"],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("blog_posts")
-        .select("*")
-        .order("date", { ascending: false });
-      
-      if (error) throw error;
-      return data as BlogPost[];
+  const posts = [
+    {
+      title: "POS Cihazı Seçerken Dikkat Edilmesi Gerekenler",
+      excerpt: "İşletmeniz için en uygun POS cihazını seçerken göz önünde bulundurmanız gereken önemli faktörler...",
+      date: "15 Mart 2024",
     },
-  });
+    {
+      title: "Mobil POS vs Sabit POS: Hangisi Sizin İçin Daha Uygun?",
+      excerpt: "Mobil ve sabit POS cihazlarının avantaj ve dezavantajlarını karşılaştırıyoruz...",
+      date: "10 Mart 2024",
+    },
+    {
+      title: "POS Komisyon Oranlarını Nasıl Düşürebilirsiniz?",
+      excerpt: "İşletmenizin kârlılığını artırmak için POS komisyon oranlarını optimize etmenin yolları...",
+      date: "5 Mart 2024",
+    },
+  ];
 
   return (
     <div className="container mx-auto px-4 pt-24 pb-12">
@@ -31,20 +32,15 @@ const Blog = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts?.map((post) => (
-          <article key={post.id} className="glass-card p-6 rounded-lg">
+        {posts.map((post, index) => (
+          <article key={index} className="glass-card p-6 rounded-lg">
             <h2 className="text-xl font-semibold mb-3">{post.title}</h2>
             <p className="text-gray-600 mb-4">{post.excerpt}</p>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-500">
-                {new Date(post.date).toLocaleDateString("tr-TR")}
-              </span>
-              <Link 
-                to={`/blog/${post.id}`}
-                className="text-primary hover:text-primary-hover font-medium"
-              >
+              <span className="text-sm text-gray-500">{post.date}</span>
+              <button className="text-primary hover:text-primary-hover font-medium">
                 Devamını Oku
-              </Link>
+              </button>
             </div>
           </article>
         ))}
