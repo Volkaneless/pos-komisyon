@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://poskomisyon.com/sitemap.xml
