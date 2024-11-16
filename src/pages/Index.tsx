@@ -7,6 +7,11 @@ import { Helmet } from "react-helmet";
 
 const Index = () => {
   const [filteredProviders, setFilteredProviders] = useState(posProviders);
+  const currentDate = new Date().toLocaleDateString('tr-TR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
 
   const handleFilter = (selectedProviders: string[], selectedTypes: string[]) => {
     if (selectedProviders.length === 0 && selectedTypes.length === 0) {
@@ -27,8 +32,8 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>POS Komisyon Oranları & En Uygun POS Komisyon Oranları 2024</title>
-        <meta name="description" content="POS komisyon oranları 2024 sayfasından bankaların fiziki, yazar kasa, sanal POS komisyon oranları bulabilirsiniz. İşte en uygun POS komisyon oranları" />
+        <title>POS Komisyon Oranları & En Uygun POS Komisyon Oranları {new Date().getFullYear()}</title>
+        <meta name="description" content={`POS komisyon oranları ${currentDate} tarihli güncel verilerle bankaların fiziki, yazar kasa, sanal POS komisyon oranlarını bulabilirsiniz.`} />
         <link rel="canonical" href="https://poskomisyon.com" />
       </Helmet>
 
@@ -40,6 +45,9 @@ const Index = () => {
             </h1>
             <p className="text-xl text-gray-600">
               Bankaların en uygun fiziki, yazar kasa, sanal POS komisyon oranları
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              Son güncelleme: {currentDate}
             </p>
           </div>
 
