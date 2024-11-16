@@ -8,7 +8,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Hakkımızda</h3>
             <p className="text-sm">
-              POS komisyon oranları 2024 sayfasından bankaların fiziki, yazar kasa, sanal POS komisyon oranları bulabilirsiniz. İşte en uygun POS komisyon oranları
+              POS karşılaştırma platformumuz ile işletmeniz için en uygun POS çözümünü bulmanıza yardımcı oluyoruz.
             </p>
           </div>
           
@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-          <p>&copy; En Uygun POS Komisyon Oranları. Tüm hakları saklıdır.</p>
+          <p>&copy; 2024 POS Hesaplayıcı. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>
