@@ -12,6 +12,10 @@ const Index = () => {
     month: 'long',
     day: 'numeric'
   });
+  
+  const currentYear = new Date().getFullYear();
+  const pageTitle = `POS Komisyon Oranları & En Uygun POS Komisyon Oranları ${currentYear}`;
+  const pageDescription = `POS komisyon oranları ${currentDate} tarihli güncel verilerle bankaların fiziki, yazar kasa, sanal POS komisyon oranlarını bulabilirsiniz.`;
 
   const handleFilter = (selectedProviders: string[], selectedTypes: string[]) => {
     if (selectedProviders.length === 0 && selectedTypes.length === 0) {
@@ -32,8 +36,8 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>POS Komisyon Oranları & En Uygun POS Komisyon Oranları {new Date().getFullYear()}</title>
-        <meta name="description" content={`POS komisyon oranları ${currentDate} tarihli güncel verilerle bankaların fiziki, yazar kasa, sanal POS komisyon oranlarını bulabilirsiniz.`} />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
         <link rel="canonical" href="https://poskomisyon.com" />
       </Helmet>
 
