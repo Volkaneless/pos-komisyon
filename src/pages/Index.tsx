@@ -31,7 +31,7 @@ const Index = () => {
             En Uygun POS Komisyon Oranları
           </h1>
           <p className="text-xl text-gray-600">
-            POS komisyon oranları 2024 sayfasından bankaların fiziki, yazar kasa, sanal POS komisyon oranları bulabilirsiniz. İşte en uygun POS komisyon oranları
+            Bankaların en uygun fiziki, yazar kasa, sanal POS komisyon oranları
           </p>
         </div>
 
