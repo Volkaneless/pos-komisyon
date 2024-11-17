@@ -11,6 +11,7 @@ import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
+import YazarkasaPOS from "./pages/pos-types/YazarkasaPOS";
 import EnparaPOS from "./pages/pos/EnparaPOS";
 import EsnekPOSAndroid from "./pages/pos/EsnekPOSAndroid";
 import ToslaIsimPOS from "./pages/pos/ToslaIsimPOS";
@@ -45,6 +46,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/pos-types/yazarkasa-pos" element={<YazarkasaPOS />} />
               <Route path="/pos/enpara-pos" element={<EnparaPOS />} />
               <Route path="/pos/esnekpos-android" element={<EsnekPOSAndroid />} />
               <Route path="/pos/tosla-isim" element={<ToslaIsimPOS />} />
