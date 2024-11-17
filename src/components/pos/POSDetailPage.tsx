@@ -1,5 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Info, CheckCircle2, HelpCircle } from "lucide-react";
+import { Info, CheckCircle2, HelpCircle, Phone, FileText, CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Helmet } from "react-helmet";
@@ -17,8 +17,8 @@ interface POSDetailPageProps {
 
 const POSDetailPage = ({ provider }: POSDetailPageProps) => {
   const currentYear = new Date().getFullYear();
-  const pageTitle = `${provider.name} Komisyon Oranları ${currentYear}`;
-  const pageDescription = `${provider.name} komisyon oranları ${currentYear}: ${provider.type} için ${provider.commission_rate} komisyon oranı ve ${provider.monthly_fee} aylık ücret ile hizmet veriyor. Güncel ${provider.name.toLowerCase()} komisyon oranları ve detayları.`;
+  const pageTitle = `${provider.name} Komisyon Oranları & ${provider.name} Destek Hattı`;
+  const pageDescription = `${currentYear} ${provider.name} komisyon oranları: ${provider.type} için ${provider.commission_rate} komisyon oranı ve ${provider.monthly_fee} aylık ücret. Güncel ${provider.name} başvuru şartları, destek hattı ve detaylı bilgiler.`;
 
   return (
     <>
@@ -58,129 +58,179 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
           </div>
         </div>
 
-      <Tabs defaultValue="explanation" className="w-full">
-        <TabsList className="w-full justify-start border-b rounded-none bg-transparent space-x-8">
-          <TabsTrigger 
-            value="explanation" 
-            className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
-          >
-            Açıklama
-          </TabsTrigger>
-          <TabsTrigger 
-            value="commissions" 
-            className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
-          >
-            Komisyon Oranları
-          </TabsTrigger>
-          <TabsTrigger 
-            value="features" 
-            className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
-          >
-            Özellikler
-          </TabsTrigger>
-        </TabsList>
+        <Tabs defaultValue="explanation" className="w-full">
+          <TabsList className="w-full justify-start border-b rounded-none bg-transparent space-x-8">
+            <TabsTrigger 
+              value="explanation" 
+              className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
+            >
+              Açıklama
+            </TabsTrigger>
+            <TabsTrigger 
+              value="commissions" 
+              className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
+            >
+              Komisyon Oranları
+            </TabsTrigger>
+            <TabsTrigger 
+              value="features" 
+              className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
+            >
+              Özellikler
+            </TabsTrigger>
+            <TabsTrigger 
+              value="support" 
+              className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
+            >
+              Destek Hattı
+            </TabsTrigger>
+            <TabsTrigger 
+              value="requirements" 
+              className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
+            >
+              Başvuru Şartları
+            </TabsTrigger>
+            <TabsTrigger 
+              value="fees" 
+              className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
+            >
+              Ücretler
+            </TabsTrigger>
+          </TabsList>
 
-        <TabsContent value="explanation" className="mt-12">
-          <Card className="border-none shadow-none mb-12">
-            <div className="space-y-6 text-gray-600">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
-                <p>30 Nisan 2025 tarihine kadar her ay güncel sürpriz komisyon oranlarından faydalanın!</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
-                <p>İlk POS'unuzu {provider.name}'den almak istiyorsanız öncelikle belli bir süre diğer işlemleriniz için kullanmanız gerekmektedir.</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
-                <p>POS başvurunuzun değerlendirmeye alınabilmesi için mevcutta herhangi bir bankanın POS'unu aktif bir şekilde kullanıyor olmanız gerekmektedir.</p>
-              </div>
-            </div>
-          </Card>
-
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-              <HelpCircle className="w-5 h-5" />
-              Sıkça Sorulan Sorular
-            </h3>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Başvuru için gerekli belgeler nelerdir?</AccordionTrigger>
-                <AccordionContent>
-                  Başvuru için vergi levhanız, işletme sahibinin kimlik fotokopisi ve işletmenizin faaliyet belgesi gerekmektedir.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Başvuru sonrası POS kurulumu ne kadar sürer?</AccordionTrigger>
-                <AccordionContent>
-                  Başvurunuz onaylandıktan sonra ortalama 2-3 iş günü içerisinde POS kurulumu gerçekleştirilir.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </TabsContent>
-
-        <TabsContent value="commissions" className="mt-12">
-          <Card className="border-none shadow-none mb-12">
-            <p className="text-gray-600">Tek çekim haricindeki diğer komisyon oranlarını başvuru adımında görüntüleyebilirsiniz.</p>
-          </Card>
-
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-              <HelpCircle className="w-5 h-5" />
-              Komisyonlar Hakkında SSS
-            </h3>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Taksitli işlemlerde komisyon oranı değişir mi?</AccordionTrigger>
-                <AccordionContent>
-                  Evet, taksit sayısına göre komisyon oranları farklılık gösterebilir. Detaylı bilgi için müşteri temsilcinizle görüşebilirsiniz.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Komisyon oranları sabit midir?</AccordionTrigger>
-                <AccordionContent>
-                  Komisyon oranları piyasa koşullarına göre değişiklik gösterebilir. Güncel oranlar için başvuru sırasında bilgilendirileceksiniz.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </TabsContent>
-
-        <TabsContent value="features" className="mt-12">
-          <Card className="border-none shadow-none mb-12">
-            <div className="space-y-4">
-              {provider.features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
+          <TabsContent value="explanation" className="mt-12">
+            <Card className="border-none shadow-none mb-12">
+              <div className="space-y-6 text-gray-600">
+                <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
-                  <p className="text-gray-600">{feature}</p>
+                  <p>{currentYear} yılı sonuna kadar özel komisyon oranlarından faydalanın!</p>
                 </div>
-              ))}
-            </div>
-          </Card>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
+                  <p>İlk POS'unuzu {provider.name}'den almak için hemen başvurun, size özel avantajlardan yararlanın.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
+                  <p>Hızlı başvuru süreci ve kolay kullanım imkanı ile işletmenizi büyütün.</p>
+                </div>
+              </div>
+            </Card>
+          </TabsContent>
 
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-              <HelpCircle className="w-5 h-5" />
-              Özellikler Hakkında SSS
-            </h3>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>POS cihazı arızalanırsa ne yapmalıyım?</AccordionTrigger>
-                <AccordionContent>
-                  Teknik destek hattımızı arayarak arıza kaydı oluşturabilirsiniz. En kısa sürede teknik ekibimiz sorununuzla ilgilenecektir.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Yeni özellikler eklenebilir mi?</AccordionTrigger>
-                <AccordionContent>
-                  Evet, ihtiyaçlarınıza göre ek özellikler ve hizmetler talep edebilirsiniz. Müşteri temsilcinizle görüşerek detaylı bilgi alabilirsiniz.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </TabsContent>
-      </Tabs>
+          <TabsContent value="commissions" className="mt-12">
+            <Card className="border-none shadow-none mb-12">
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold mb-4">Komisyon Oranları Detayları</h3>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="p-4 border rounded-lg">
+                    <h4 className="font-medium mb-2">Tek Çekim İşlemler</h4>
+                    <p className="text-gray-600">{provider.commission_rate}</p>
+                  </div>
+                  <div className="p-4 border rounded-lg">
+                    <h4 className="font-medium mb-2">Taksitli İşlemler</h4>
+                    <p className="text-gray-600">Taksit sayısına göre değişkenlik gösterir</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="features" className="mt-12">
+            <Card className="border-none shadow-none mb-12">
+              <div className="space-y-4">
+                {provider.features.map((feature, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
+                    <p className="text-gray-600">{feature}</p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="support" className="mt-12">
+            <Card className="border-none shadow-none mb-12">
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold mb-4">7/24 Destek Hattı</h3>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="p-6 border rounded-lg">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Phone className="w-6 h-6 text-primary" />
+                      <h4 className="font-medium">Teknik Destek</h4>
+                    </div>
+                    <p className="text-gray-600 mb-2">0850 XXX XX XX</p>
+                    <p className="text-sm text-gray-500">7/24 teknik destek hattımız arıza ve sorunlarınız için hizmetinizdedir.</p>
+                  </div>
+                  <div className="p-6 border rounded-lg">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Phone className="w-6 h-6 text-primary" />
+                      <h4 className="font-medium">Müşteri Hizmetleri</h4>
+                    </div>
+                    <p className="text-gray-600 mb-2">0850 XXX XX XX</p>
+                    <p className="text-sm text-gray-500">Genel bilgi ve başvuru süreçleri için müşteri hizmetlerimiz size yardımcı olacaktır.</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="requirements" className="mt-12">
+            <Card className="border-none shadow-none mb-12">
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold mb-4">Başvuru Şartları ve Gerekli Belgeler</h3>
+                <div className="grid gap-4">
+                  <div className="flex items-start gap-3">
+                    <FileText className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-medium mb-1">Vergi Levhası</p>
+                      <p className="text-gray-600">Güncel vergi levhanızın fotokopisi</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <FileText className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-medium mb-1">Kimlik Fotokopisi</p>
+                      <p className="text-gray-600">İşletme sahibinin kimlik fotokopisi</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <FileText className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-medium mb-1">İmza Sirküleri</p>
+                      <p className="text-gray-600">Şirket imza sirkülerinin fotokopisi</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="fees" className="mt-12">
+            <Card className="border-none shadow-none mb-12">
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold mb-4">POS Ücretleri ve Maliyetler</h3>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="p-6 border rounded-lg">
+                    <div className="flex items-center gap-3 mb-4">
+                      <CreditCard className="w-6 h-6 text-primary" />
+                      <h4 className="font-medium">Aylık POS Ücreti</h4>
+                    </div>
+                    <p className="text-xl font-semibold text-primary mb-2">{provider.monthly_fee}</p>
+                    <p className="text-sm text-gray-500">POS cihazı için aylık sabit ücret</p>
+                  </div>
+                  <div className="p-6 border rounded-lg">
+                    <div className="flex items-center gap-3 mb-4">
+                      <CreditCard className="w-6 h-6 text-primary" />
+                      <h4 className="font-medium">Komisyon Oranı</h4>
+                    </div>
+                    <p className="text-xl font-semibold text-primary mb-2">{provider.commission_rate}</p>
+                    <p className="text-sm text-gray-500">Her işlem için alınan komisyon oranı</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </TabsContent>
+        </Tabs>
       </div>
     </>
   );
