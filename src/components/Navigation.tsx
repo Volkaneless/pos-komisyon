@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { terminal, smartphone, computer, cloud, creditCard, list } from "lucide-react";
+import { Terminal, Smartphone, Computer, Cloud, CreditCard, List } from "lucide-react";
 
 const Navigation = () => {
   const location = useLocation();
@@ -15,55 +15,55 @@ const Navigation = () => {
   const posTypes = [
     { 
       name: "Yazarkasa POS",
-      icon: terminal,
+      icon: Terminal,
       path: "/pos-types/yazarkasa-pos",
       description: "Yazarkasa POS sistemleri ve komisyon oranları"
     },
     { 
       name: "Sanal POS",
-      icon: computer,
+      icon: Computer,
       path: "/pos-types/sanal-pos",
       description: "E-ticaret için sanal POS çözümleri"
     },
     { 
       name: "CepPOS",
-      icon: smartphone,
+      icon: Smartphone,
       path: "/pos-types/cep-pos",
       description: "Mobil cihazlar için CepPOS sistemleri"
     },
     { 
       name: "Sabit POS",
-      icon: terminal,
+      icon: Terminal,
       path: "/pos-types/sabit-pos",
       description: "Masaüstü sabit POS cihazları"
     },
     { 
       name: "Ortak POS",
-      icon: creditCard,
+      icon: CreditCard,
       path: "/pos-types/ortak-pos",
       description: "Çoklu banka destekli ortak POS sistemleri"
     },
     { 
       name: "Döviz POS",
-      icon: creditCard,
+      icon: CreditCard,
       path: "/pos-types/doviz-pos",
       description: "Dövizli işlemler için POS çözümleri"
     },
     { 
       name: "Bulut Tabanlı POS",
-      icon: cloud,
+      icon: Cloud,
       path: "/pos-types/bulut-pos",
       description: "Cloud tabanlı modern POS sistemleri"
     },
     { 
       name: "Self-Servis POS",
-      icon: terminal,
+      icon: Terminal,
       path: "/pos-types/self-servis-pos",
       description: "Self servis ödeme sistemleri"
     },
     { 
       name: "Mobil POS",
-      icon: smartphone,
+      icon: Smartphone,
       path: "/pos-types/mobil-pos",
       description: "Taşınabilir mobil POS çözümleri"
     }

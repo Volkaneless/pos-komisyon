@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import { posProviders } from "@/data/posProviders";
 import POSCard from "@/components/POSCard";
-import { terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
 
 const YazarkasaPOS = () => {
   const yazarkasaPOSProviders = posProviders.filter(
@@ -21,7 +21,7 @@ const YazarkasaPOS = () => {
       <div className="container mx-auto px-4 pt-24 pb-16">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
-            <terminal className="w-16 h-16 text-primary" />
+            <Terminal className="w-16 h-16 text-primary" />
           </div>
           <h1 className="text-4xl font-bold mb-4">
             Yazarkasa POS Sistemleri
