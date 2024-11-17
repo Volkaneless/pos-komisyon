@@ -4,17 +4,20 @@ import POSTypePage from "@/components/pos-types/POSTypePage";
 const CepPOS = () => {
   return (
     <POSTypePage
-      title="CepPOS Sistemleri"
-      description="Mobil cihazlar için CepPOS sistemleri ve komisyon oranlarını karşılaştırın. Size en uygun CepPOS çözümünü seçin."
+      title="CepPOS Sistemleri ve Komisyon Oranları 2024"
+      description="2024 yılı güncel CepPOS sistemleri, komisyon oranları ve karşılaştırmaları. İşletmeniz için en uygun mobil ödeme çözümünü seçin."
       type="CepPOS"
       Icon={Smartphone}
-      whatIsContent="CepPOS sistemleri, akıllı telefonları ödeme terminaline dönüştüren modern çözümlerdir. Bu sistemler, özellikle mobil satış yapan işletmeler için ideal bir ödeme çözümü sunar."
+      whatIsContent="CepPOS sistemleri, akıllı telefonları ödeme terminaline dönüştüren yenilikçi çözümlerdir. NFC teknolojisi sayesinde temassız ödemeleri destekleyen bu sistemler, özellikle küçük işletmeler ve seyyar satıcılar için ideal bir ödeme çözümüdür. Düşük maliyetli ve taşınabilir yapısıyla, geleneksel POS cihazlarına modern bir alternatif sunar."
       advantages={[
-        "Düşük donanım maliyeti",
-        "Mobil kullanım esnekliği",
-        "Hızlı kurulum ve kullanım",
-        "Anlık satış takibi",
-        "Kompakt ve taşınabilir yapı"
+        "Düşük başlangıç maliyeti",
+        "Mobil cihazlarla kolay entegrasyon",
+        "Temassız ödeme desteği",
+        "Anlık satış takibi ve raporlama",
+        "Hızlı kurulum ve kullanıma başlama",
+        "Kompakt ve taşınabilir yapı",
+        "Düzenli yazılım güncellemeleri",
+        "Çoklu kullanıcı desteği"
       ]}
     />
   );
