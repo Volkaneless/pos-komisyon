@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Info, CheckCircle2, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Helmet } from "react-helmet";
 import {
   Accordion,
   AccordionContent,
@@ -15,37 +16,47 @@ interface POSDetailPageProps {
 }
 
 const POSDetailPage = ({ provider }: POSDetailPageProps) => {
-  return (
-    <div className="container mx-auto px-4 pt-24 pb-16">
-      <div className="glass-card rounded-2xl p-8 mb-12">
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-4">
-            <img src={provider.logo} alt={provider.name} className="w-16 h-16 object-contain" />
-            <h1 className="font-semibold text-2xl">{provider.name}</h1>
-          </div>
-          <Button size="lg" className="bg-primary hover:bg-primary-hover">
-            Hemen Başvur
-          </Button>
-        </div>
+  const currentYear = new Date().getFullYear();
+  const pageTitle = `${provider.name} Komisyon Oranları ${currentYear}`;
+  const pageDescription = `${provider.name} komisyon oranları ${currentYear}: ${provider.type} için ${provider.commission_rate} komisyon oranı ve ${provider.monthly_fee} aylık ücret ile hizmet veriyor. Güncel ${provider.name.toLowerCase()} komisyon oranları ve detayları.`;
 
-        <div className="grid grid-cols-3 gap-8">
-          <div>
-            <p className="text-gray-500 mb-2">POS Türü</p>
-            <p className="font-medium text-lg">{provider.type}</p>
-          </div>
-          <div>
-            <p className="text-gray-500 mb-2">Aidat Ödemesi</p>
-            <p className="font-medium text-lg">{provider.monthly_fee}</p>
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <p className="text-gray-500 mb-2">Komisyon Oranı</p>
-              <Info className="w-4 h-4 text-gray-400" />
+  return (
+    <>
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={`https://poskomisyon.com/pos/${provider.id}`} />
+      </Helmet>
+      <div className="container mx-auto px-4 pt-24 pb-16">
+        <div className="glass-card rounded-2xl p-8 mb-12">
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-4">
+              <img src={provider.logo} alt={provider.name} className="w-16 h-16 object-contain" />
+              <h1 className="font-semibold text-2xl">{provider.name}</h1>
             </div>
-            <p className="font-medium text-lg">{provider.commission_rate}</p>
+            <Button size="lg" className="bg-primary hover:bg-primary-hover">
+              Hemen Başvur
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-3 gap-8">
+            <div>
+              <p className="text-gray-500 mb-2">POS Türü</p>
+              <p className="font-medium text-lg">{provider.type}</p>
+            </div>
+            <div>
+              <p className="text-gray-500 mb-2">Aidat Ödemesi</p>
+              <p className="font-medium text-lg">{provider.monthly_fee}</p>
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <p className="text-gray-500 mb-2">Komisyon Oranı</p>
+                <Info className="w-4 h-4 text-gray-400" />
+              </div>
+              <p className="font-medium text-lg">{provider.commission_rate}</p>
+            </div>
           </div>
         </div>
-      </div>
 
       <Tabs defaultValue="explanation" className="w-full">
         <TabsList className="w-full justify-start border-b rounded-none bg-transparent space-x-8">
@@ -170,7 +181,8 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
           </div>
         </TabsContent>
       </Tabs>
-    </div>
+      </div>
+    </>
   );
 };
 
