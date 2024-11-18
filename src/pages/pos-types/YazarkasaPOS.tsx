@@ -1,8 +1,7 @@
 import { Terminal } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import { posProviders } from "@/data/posProviders";
-import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import POSCard from "@/components/POSCard";
 
 const YazarkasaPOS = () => {
   const yazarkasaPOSProviders = posProviders.filter(
@@ -12,9 +11,9 @@ const YazarkasaPOS = () => {
   return (
     <>
       <POSTypePage
-        title="Yazarkasa POS Sistemleri"
-        description="En uygun yazarkasa POS cihazları ve komisyon oranlarını karşılaştırın. Size en uygun yazarkasa POS sistemini seçin."
-        type="Yazarkasa POS"
+        title="Yazarkasa POS Sistemleri ve Komisyon Oranları 2024"
+        description="2024 yılı güncel yazarkasa POS sistemleri, komisyon oranları ve karşılaştırmaları. İşletmeniz için en uygun yazarkasa POS çözümünü seçin."
+        type="Yazar Kasa (ÖKC) POS"
         Icon={Terminal}
         whatIsContent="Yazarkasa POS cihazları, ödeme alma ve fiş kesme işlemlerini tek bir cihaz üzerinden yapmanıza olanak sağlayan entegre sistemlerdir. Yeni nesil ÖKC (Ödeme Kaydedici Cihaz) olarak da bilinen bu cihazlar, işletmelerin yasal zorunluluklarını yerine getirmelerini sağlarken, modern ödeme çözümleri sunar."
         advantages={[
@@ -30,31 +29,11 @@ const YazarkasaPOS = () => {
       />
 
       <div className="container mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-8">Sık Sorulan Sorular</h2>
-        <Card className="p-6">
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Yazarkasa POS nedir?</h3>
-              <p className="text-gray-600">
-                Yazarkasa POS, ödeme alma ve fiş kesme işlemlerini tek bir cihaz üzerinden yapmanıza olanak tanıyan yeni nesil ödeme kaydedici cihazdır. Bu cihazlar, işletmelerin yasal yükümlülüklerini yerine getirmelerini sağlarken modern ödeme çözümleri sunar.
-              </p>
-            </div>
-            <Separator />
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Yazarkasa POS kullanmak zorunlu mu?</h3>
-              <p className="text-gray-600">
-                Evet, belirli işletmeler için Yazarkasa POS kullanımı yasal bir zorunluluktur. Maliye Bakanlığı'nın belirlediği kriterlere göre, perakende satış yapan işletmelerin Yeni Nesil ÖKC kullanması gerekmektedir.
-              </p>
-            </div>
-            <Separator />
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Yazarkasa POS komisyon oranları nasıl belirlenir?</h3>
-              <p className="text-gray-600">
-                Komisyon oranları, bankaların ve POS sağlayıcılarının belirlediği kriterlere göre değişiklik gösterir. İşletmenizin cirosu, sektörü ve tercih ettiğiniz ödeme planına göre farklı oranlar sunulabilir.
-              </p>
-            </div>
-          </div>
-        </Card>
+        <div className="grid gap-8">
+          {yazarkasaPOSProviders.map((provider) => (
+            <POSCard key={provider.id} {...provider} />
+          ))}
+        </div>
 
         <div className="mt-16">
           <h2 className="text-2xl font-bold mb-8">Yazarkasa POS Ekran Görüntüleri</h2>
