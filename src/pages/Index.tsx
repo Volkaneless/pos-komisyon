@@ -14,7 +14,7 @@ const Index = () => {
   });
   
   const currentYear = new Date().getFullYear();
-  const pageTitle = `POS Komisyon Oranları 2024 (En Uygun POS Oranları) ${currentYear}`;
+  const pageTitle = `POS Komisyon Oranları 2024 (En Uygun POS Komisyon Oranları)`;
   const pageDescription = `POS komisyon oranları ${currentDate} tarihli güncel verilerle bankaların fiziki, yazar kasa, sanal POS komisyon oranlarını bulabilirsiniz.`;
 
   const handleFilter = (selectedProviders: string[], selectedTypes: string[]) => {
