@@ -5,19 +5,19 @@ const CalculatorPage = () => {
   return (
     <>
       <Helmet>
-        <title>POS Komisyon Hesaplayıcı | Ücretsiz POS Komisyon Hesaplama</title>
+        <title>POS Komisyon Hesaplama 2024 (Ücretsiz POS Komisyon Aracı)</title>
         <meta name="description" content="Ücretsiz POS komisyon hesaplama aracımız ile işlem tutarı ve komisyon oranına göre ödeyeceğiniz tutarı kolayca hesaplayın." />
         <link rel="canonical" href="https://poskomisyon.com/calculator" />
       </Helmet>
 
       <div className="container mx-auto px-4 pt-24 pb-12 min-h-screen flex flex-col items-center">
         <div className="text-center mb-12 max-w-2xl">
-          <h1 className="text-4xl font-bold mb-4">POS Komisyon Hesaplayıcı</h1>
+          <h1 className="text-4xl font-bold mb-4">POS Komisyon Hesaplama</h1>
           <p className="text-xl text-gray-600 mb-4">
-            İşlem tutarı ve komisyon oranına göre ödeyeceğiniz tutarı hesaplayın
+            İşlem tutarı ve komisyon oranına göre ödeyeceğiniz POS komisyon tutarı hesaplayın
           </p>
           <p className="text-sm text-gray-500">
-            Bu hesaplayıcı, günlük POS işlemlerinizden kaynaklanan komisyon
+            POS komisyon hesaplama, günlük POS işlemlerinizden kaynaklanan komisyon
             tutarlarını hesaplamanıza yardımcı olur. Ayrıca aylık ve yıllık
             tahminler sunar.
           </p>
