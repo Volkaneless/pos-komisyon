@@ -4,8 +4,11 @@ import { posProviders } from "@/data/posProviders";
 import POSCard from "@/components/POSCard";
 
 const YazarkasaPOS = () => {
-  const yazarkasaPOSProviders = posProviders.filter(
-    provider => provider.type === "Yazar Kasa (ÖKC) POS"
+  // Filter unique providers by id to prevent duplicates
+  const uniqueProviders = posProviders.filter(
+    (provider, index, self) =>
+      provider.type === "Yazar Kasa (ÖKC) POS" &&
+      index === self.findIndex((p) => p.id === provider.id)
   );
 
   return (
@@ -30,23 +33,9 @@ const YazarkasaPOS = () => {
 
       <div className="container mx-auto px-4 pb-16">
         <div className="grid gap-8">
-          {yazarkasaPOSProviders.map((provider) => (
+          {uniqueProviders.map((provider) => (
             <POSCard key={provider.id} {...provider} />
           ))}
-        </div>
-
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold mb-8">Yazarkasa POS Ekran Görüntüleri</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <img 
-              src="/lovable-uploads/94b76f85-f46d-4697-9e85-37175b139351.png" 
-              alt="Yazarkasa POS Örnek Ekran Görüntüsü" 
-              className="rounded-lg shadow-lg w-full"
-            />
-            <div className="bg-gray-100 rounded-lg p-6 flex items-center justify-center">
-              <p className="text-gray-500 text-center">Daha fazla ekran görüntüsü yakında eklenecek</p>
-            </div>
-          </div>
         </div>
       </div>
     </>
