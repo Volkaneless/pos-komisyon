@@ -13,6 +13,11 @@ import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import YazarkasaPOS from "./pages/pos-types/YazarkasaPOS";
 import CepPOS from "./pages/pos-types/CepPOS";
+import OrtakPOS from "./pages/pos-types/OrtakPOS";
+import DovizPOS from "./pages/pos-types/DovizPOS";
+import BulutPOS from "./pages/pos-types/BulutPOS";
+import SelfServisPOS from "./pages/pos-types/SelfServisPOS";
+import MobilPOS from "./pages/pos-types/MobilPOS";
 import EnparaPOS from "./pages/pos/EnparaPOS";
 import EsnekPOSAndroid from "./pages/pos/EsnekPOSAndroid";
 import ToslaIsimPOS from "./pages/pos/ToslaIsimPOS";
@@ -49,6 +54,11 @@ const App = () => (
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/pos-types/yazarkasa-pos" element={<YazarkasaPOS />} />
               <Route path="/pos-types/cep-pos" element={<CepPOS />} />
+              <Route path="/pos-types/ortak-pos" element={<OrtakPOS />} />
+              <Route path="/pos-types/doviz-pos" element={<DovizPOS />} />
+              <Route path="/pos-types/bulut-pos" element={<BulutPOS />} />
+              <Route path="/pos-types/self-servis-pos" element={<SelfServisPOS />} />
+              <Route path="/pos-types/mobil-pos" element={<MobilPOS />} />
               <Route path="/pos/enpara-pos" element={<EnparaPOS />} />
               <Route path="/pos/esnekpos-android" element={<EsnekPOSAndroid />} />
               <Route path="/pos/tosla-isim" element={<ToslaIsimPOS />} />
