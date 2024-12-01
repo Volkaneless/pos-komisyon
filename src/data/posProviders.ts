@@ -240,5 +240,16 @@ export const posProviders = [
     features: [
       "Tek entegrasyonla 24 saat içinde bütün bankalar elinizin altında! valörlü çalışma için %0'dan başlayan komisyon oranları sizi bekliyor."
     ],
-  }
+  },
+  {
+    id: "vallet-mobil-pos",
+    logo: "/logo.svg",
+    name: "Vallet Mobil Pos",
+    type: "Cep POS",
+    monthly_fee: "0 TL / Ay",
+    commission_rate: "%0,29",
+    features: [
+      "%0,29'dan başlayan komisyon avantajı!"
+    ],
+  },
 ];
