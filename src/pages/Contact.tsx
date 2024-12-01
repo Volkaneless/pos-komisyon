@@ -1,10 +1,14 @@
-import { Mail } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 import { Helmet } from "react-helmet";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("Form submitted");
     toast({
       title: "Mesajınız alındı",
       description: "En kısa sürede size geri dönüş yapacağız.",
@@ -21,77 +25,114 @@ const Contact = () => {
 
       <div className="container mx-auto px-4 pt-24 pb-12">
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Mail className="w-8 h-8 text-primary" />
-            <h1 className="text-4xl font-bold">İletişim</h1>
-          </div>
-          <p className="text-xl text-gray-600">
-            Sorularınız için bize ulaşın
+          <h1 className="text-4xl font-bold mb-4">Bizimle İletişime Geçin</h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            POS cihazları ve komisyon oranları hakkında sorularınız mı var? Size yardımcı olmaktan mutluluk duyarız.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="glass-card p-8 rounded-lg">
-              <h2 className="text-2xl font-semibold mb-6">İletişim Bilgileri</h2>
-              <div className="space-y-4">
-                <p>
-                  <strong>Adres:</strong><br />
-                  Maslak, Büyükdere Cad. No:123<br />
-                  Sarıyer/İstanbul
-                </p>
-                <p>
-                  <strong>Telefon:</strong><br />
-                  +90 (212) 123 45 67
-                </p>
-                <p>
-                  <strong>E-posta:</strong><br />
-                  info@poscompare.com
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="space-y-8">
+            <div className="glass-card p-8 rounded-xl space-y-6">
+              <div className="flex items-start gap-4">
+                <MapPin className="w-6 h-6 text-primary mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Adres</h3>
+                  <p className="text-gray-600">
+                    Maslak, Büyükdere Cad. No:123<br />
+                    Sarıyer/İstanbul
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Phone className="w-6 h-6 text-primary mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Telefon</h3>
+                  <p className="text-gray-600">+90 (212) 123 45 67</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Mail className="w-6 h-6 text-primary mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">E-posta</h3>
+                  <p className="text-gray-600">info@poskomisyon.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Clock className="w-6 h-6 text-primary mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Çalışma Saatleri</h3>
+                  <p className="text-gray-600">
+                    Pazartesi - Cuma: 09:00 - 18:00<br />
+                    Cumartesi: 09:00 - 13:00
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="glass-card p-8 rounded-lg">
-              <h2 className="text-2xl font-semibold mb-6">Bize Yazın</h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Ad Soyad
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="input-field w-full"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    E-posta
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="input-field w-full"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Mesajınız
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    className="input-field w-full"
-                    required
-                  ></textarea>
-                </div>
-                <button type="submit" className="button-primary w-full">
-                  Gönder
-                </button>
-              </form>
+            <div className="glass-card p-8 rounded-xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.1461981207147!2d29.0196383!3d41.1115863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab5c7b4b09f3b%3A0x5f3b5b0f5fb6f84f!2sMaslak%2C%20B%C3%BCy%C3%BCkdere%20Cd.%2C%2034485%20Sar%C4%B1yer%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1647523697854!5m2!1str!2str"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-lg"
+              ></iframe>
             </div>
+          </div>
+
+          <div className="glass-card p-8 rounded-xl">
+            <h2 className="text-2xl font-semibold mb-6">Bize Mesaj Gönderin</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="name">Ad Soyad</Label>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder="Adınız ve soyadınız"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email">E-posta</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="E-posta adresiniz"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="phone">Telefon</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="Telefon numaranız"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message">Mesajınız</Label>
+                <Textarea
+                  id="message"
+                  placeholder="Mesajınızı buraya yazın..."
+                  className="min-h-[150px]"
+                  required
+                />
+              </div>
+
+              <button type="submit" className="button-primary w-full">
+                Gönder
+              </button>
+            </form>
           </div>
         </div>
       </div>
