@@ -3,7 +3,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -23,6 +22,58 @@ const Navigation = () => {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>POS Türleri</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-4 w-[400px]">
+                      <Link 
+                        to="/pos-types/yazarkasa"
+                        className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md"
+                      >
+                        <Terminal className="w-4 h-4" />
+                        <div>
+                          <div className="font-medium">Yazar Kasa POS</div>
+                          <p className="text-sm text-gray-500">Yazar kasa entegreli POS cihazları</p>
+                        </div>
+                      </Link>
+                      <Link 
+                        to="/pos-types/sanal"
+                        className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md"
+                      >
+                        <Cloud className="w-4 h-4" />
+                        <div>
+                          <div className="font-medium">Sanal POS</div>
+                          <p className="text-sm text-gray-500">E-ticaret ve online ödemeler için</p>
+                        </div>
+                      </Link>
+                      <Link 
+                        to="/pos-types/mobil"
+                        className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md"
+                      >
+                        <Smartphone className="w-4 h-4" />
+                        <div>
+                          <div className="font-medium">Mobil POS</div>
+                          <p className="text-sm text-gray-500">Taşınabilir POS cihazları</p>
+                        </div>
+                      </Link>
+                      <Link 
+                        to="/pos-types/cep"
+                        className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md"
+                      >
+                        <CreditCard className="w-4 h-4" />
+                        <div>
+                          <div className="font-medium">Cep POS</div>
+                          <p className="text-sm text-gray-500">Akıllı telefon uygulamalı POS çözümleri</p>
+                        </div>
+                      </Link>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            
             <Link 
               to="/blog" 
               className={`text-sm transition-colors duration-200 ${
