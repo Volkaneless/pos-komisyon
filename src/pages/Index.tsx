@@ -12,8 +12,7 @@ const Index = () => {
     month: 'long',
     day: 'numeric'
   });
-  
-  const currentYear = new Date().getFullYear();
+
   const pageTitle = `POS Komisyon Oranları | En Uygun Banka Pos​ Komisyon`;
   const pageDescription = `POS komisyon oranları ${currentDate} tarihli güncel verilerle en uygun banka yazar kasa, sanal POS komisyon oranlarını bulabilirsiniz.`;
 
@@ -32,6 +31,13 @@ const Index = () => {
 
     setFilteredProviders(filtered);
   };
+
+  const categories = [
+    "Yazar Kasa (ÖKC) POS",
+    "Mobil (Taşınabilir) POS",
+    "Cep POS",
+    "Sanal POS"
+  ];
 
   return (
     <>
@@ -57,10 +63,25 @@ const Index = () => {
 
           <POSFilter providers={posProviders} onFilter={handleFilter} />
 
-          <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-            {filteredProviders.map((provider, index) => (
-              <POSCard key={index} {...provider} />
-            ))}
+          <div className="space-y-16">
+            {categories.map(category => {
+              const categoryProviders = filteredProviders.filter(
+                provider => provider.type === category
+              );
+
+              if (categoryProviders.length === 0) return null;
+
+              return (
+                <div key={category} className="space-y-6">
+                  <h2 className="text-2xl font-semibold mb-6">{category}</h2>
+                  <div className="grid gap-6">
+                    {categoryProviders.map((provider) => (
+                      <POSCard key={provider.id} {...provider} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
         
