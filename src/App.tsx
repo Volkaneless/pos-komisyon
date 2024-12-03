@@ -31,6 +31,13 @@ import QNBPayPOS from "./pages/pos/QNBPayPOS";
 import ValletMobilPOS from "./pages/pos/ValletMobilPOS";
 import ValletSanalPOS from "./pages/pos/ValletSanalPOS";
 import QNBPaySanalPOS from "./pages/pos/QNBPaySanalPOS";
+import CeptebIstePOS from "./pages/pos/CeptebIstePOS";
+import AkbankYazarkasaPOS from "./pages/pos/AkbankYazarkasaPOS";
+import LogoIsbasiCepPOS from "./pages/pos/LogoIsbasiCepPOS";
+import AkbankCebePOS from "./pages/pos/AkbankCebePOS";
+import PayTRSanalPOS from "./pages/pos/PayTRSanalPOS";
+import ToslaIsimSanalPOS from "./pages/pos/ToslaIsimSanalPOS";
+import EsnekSanalPOS from "./pages/pos/EsnekSanalPOS";
 
 const queryClient = new QueryClient();
 
@@ -70,6 +77,13 @@ const App = () => (
               <Route path="/pos/vallet-mobil" element={<ValletMobilPOS />} />
               <Route path="/pos/vallet-sanal" element={<ValletSanalPOS />} />
               <Route path="/pos/qnbpay-sanal" element={<QNBPaySanalPOS />} />
+              <Route path="/pos/cepteb-iste" element={<CeptebIstePOS />} />
+              <Route path="/pos/akbank-yazarkasa" element={<AkbankYazarkasaPOS />} />
+              <Route path="/pos/logo-isbasi-cep" element={<LogoIsbasiCepPOS />} />
+              <Route path="/pos/akbank-cebe" element={<AkbankCebePOS />} />
+              <Route path="/pos/paytr-sanal" element={<PayTRSanalPOS />} />
+              <Route path="/pos/tosla-isim-sanal" element={<ToslaIsimSanalPOS />} />
+              <Route path="/pos/esnekpos" element={<EsnekSanalPOS />} />
             </Routes>
           </main>
           <Footer />
