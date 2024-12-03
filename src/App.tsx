@@ -26,6 +26,11 @@ import IsbankAnindaPOS from "./pages/pos/IsbankAnindaPOS";
 import EsnekPOSPazaryeri from "./pages/pos/EsnekPOSPazaryeri";
 import EsnekPOSSanal from "./pages/pos/EsnekPOSSanal";
 import PaycellSanalPOS from "./pages/pos/PaycellSanalPOS";
+import OdealPOS from "./pages/pos/OdealPOS";
+import QNBPayPOS from "./pages/pos/QNBPayPOS";
+import ValletMobilPOS from "./pages/pos/ValletMobilPOS";
+import ValletSanalPOS from "./pages/pos/ValletSanalPOS";
+import QNBPaySanalPOS from "./pages/pos/QNBPaySanalPOS";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +65,11 @@ const App = () => (
               <Route path="/pos/esnekpos-pazaryeri" element={<EsnekPOSPazaryeri />} />
               <Route path="/pos/esnekpos-sanal" element={<EsnekPOSSanal />} />
               <Route path="/pos/paycell-sanal" element={<PaycellSanalPOS />} />
+              <Route path="/pos/odeal-pos" element={<OdealPOS />} />
+              <Route path="/pos/qnbpay-pos" element={<QNBPayPOS />} />
+              <Route path="/pos/vallet-mobil" element={<ValletMobilPOS />} />
+              <Route path="/pos/vallet-sanal" element={<ValletSanalPOS />} />
+              <Route path="/pos/qnbpay-sanal" element={<QNBPaySanalPOS />} />
             </Routes>
           </main>
           <Footer />
