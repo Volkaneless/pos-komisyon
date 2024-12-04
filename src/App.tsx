@@ -13,6 +13,8 @@ import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import YazarkasaPOS from "./pages/pos-types/YazarkasaPOS";
 import SanalPOS from "./pages/pos-types/SanalPOS";
+import MobilPOS from "./pages/pos-types/MobilPOS";
+import CepPOS from "./pages/pos-types/CepPOS";
 import EnparaPOS from "./pages/pos/EnparaPOS";
 import EsnekPOSAndroid from "./pages/pos/EsnekPOSAndroid";
 import ToslaIsimPOS from "./pages/pos/ToslaIsimPOS";
@@ -61,6 +63,8 @@ const App = () => (
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/pos-types/yazarkasa" element={<YazarkasaPOS />} />
               <Route path="/pos-types/sanal" element={<SanalPOS />} />
+              <Route path="/pos-types/mobil" element={<MobilPOS />} />
+              <Route path="/pos-types/cep" element={<CepPOS />} />
               <Route path="/pos/enpara-pos" element={<EnparaPOS />} />
               <Route path="/pos/esnekpos-android" element={<EsnekPOSAndroid />} />
               <Route path="/pos/tosla-isim" element={<ToslaIsimPOS />} />
