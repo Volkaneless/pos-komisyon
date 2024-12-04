@@ -13,7 +13,7 @@ const Index = () => {
     day: 'numeric'
   });
 
-  const pageTitle = `POS Komisyon Oranları | En Uygun Banka Pos​ Komisyon`;
+  const pageTitle = `POS Komisyon Oranları 2024 - POS Başvurusu`;
   const pageDescription = `POS komisyon oranları ${currentDate} tarihli güncel verilerle en uygun banka yazar kasa, sanal POS komisyon oranlarını bulabilirsiniz.`;
 
   const handleFilter = (selectedProviders: string[], selectedTypes: string[]) => {
@@ -51,7 +51,7 @@ const Index = () => {
         <div className="container mx-auto px-4 pt-24 pb-12">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">
-              En Uygun Banka POS Komisyon Oranları 2024
+              POS Komisyon Oranları 2024 - POS Başvurusu
             </h1>
             <p className="text-xl text-gray-600">
               Bankaların en uygun fiziki, yazar kasa, sanal POS komisyon oranları
