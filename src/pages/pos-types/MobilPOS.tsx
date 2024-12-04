@@ -5,7 +5,7 @@ import POSTypePage from "@/components/pos-types/POSTypePage";
 const MobilPOS = () => {
   return (
     <POSTypePage
-      title="Mobil (Taşınabilir) POS Cihazları"
+      title="Mobil POS Başvurusu ve Komisyon Oranları 2024"
       description="En uygun mobil POS cihazlarını karşılaştırın, size en uygun mobil POS çözümünü bulun."
       type="Mobil (Taşınabilir) POS"
       Icon={Smartphone}

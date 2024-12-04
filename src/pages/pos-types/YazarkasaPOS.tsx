@@ -11,7 +11,7 @@ const YazarkasaPOS = () => {
   return (
     <>
       <Helmet>
-        <title>Yazar Kasa POS Cihazları ve Komisyon Oranları | POS Compare</title>
+        <title>Yazar Kasa POS Komisyon Oranları 2024 | POS Compare</title>
         <meta 
           name="description" 
           content="En uygun yazar kasa POS cihazları, komisyon oranları ve özellikleri. Bankaların yazar kasa POS cihazlarını karşılaştırın." 
@@ -23,7 +23,7 @@ const YazarkasaPOS = () => {
           <div className="flex justify-center mb-4">
             <Terminal className="w-16 h-16 text-primary" />
           </div>
-          <h1 className="text-4xl font-bold mb-4">Yazar Kasa POS Cihazları</h1>
+          <h1 className="text-4xl font-bold mb-4">Yazar Kasa POS Komisyon Oranları 2024</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             En uygun yazar kasa POS cihazlarını karşılaştırın, size en uygun POS cihazını seçin.
           </p>

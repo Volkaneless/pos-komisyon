@@ -5,7 +5,7 @@ import { sanalPOSProviders } from "@/data/pos-types/sanalPOS";
 const SanalPOS = () => {
   return (
     <POSTypePage
-      title="Sanal POS"
+      title="Sanal POS Komisyon Oranları 2024"
       description="E-ticaret ve online ödemeler için sanal POS çözümleri"
       type="Sanal POS"
       Icon={Cloud}

@@ -5,7 +5,7 @@ import POSTypePage from "@/components/pos-types/POSTypePage";
 const CepPOS = () => {
   return (
     <POSTypePage
-      title="Cep POS Çözümleri"
+      title="Cep POS Başvurusu ve Komisyon Oranları 2024"
       description="En uygun cep POS uygulamalarını karşılaştırın, işletmeniz için en uygun cep POS çözümünü seçin."
       type="Cep POS"
       Icon={Smartphone}
