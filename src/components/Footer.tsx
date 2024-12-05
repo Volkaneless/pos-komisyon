@@ -17,8 +17,10 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="/" className="hover:text-white transition-colors">Ana Sayfa</a></li>
               <li><a href="/calculator" className="hover:text-white transition-colors">Komisyon Hesaplayıcı</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">İletişim</a></li>
+              <li><a href="/banka-pos" className="hover:text-white transition-colors">Banka POS Komisyonları</a></li>
+              <li><a href="/pos-fiyatlari" className="hover:text-white transition-colors">POS Cihazı Fiyatları</a></li>
+              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">İletişim</a></li>
             </ul>
           </div>
           
