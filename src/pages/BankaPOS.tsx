@@ -155,7 +155,7 @@ const BankaPOS = () => {
   return (
     <>
       <Helmet>
-        <title>Banka POS Komisyon Oranları 2024 | POS Komisyon</title>
+        <title>Banka POS Komisyon Oranları 2024</title>
         <meta 
           name="description" 
           content="2024 yılı güncel banka POS komisyon oranlarını karşılaştırın. En uygun banka POS komisyon oranlarını bulun ve hemen başvurun." 
@@ -163,7 +163,8 @@ const BankaPOS = () => {
       </Helmet>
       
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Banka POS Komisyon Oranları 2024</h1>
+        <h1 className="text-3xl font-bold mb-2">Banka POS Komisyon Oranları 2024</h1>
+        <p className="text-gray-600 mb-8">En uygun POS komisyon oranlarını karşılaştırın, size en uygun POS cihazını seçin.</p>
         
         <div className="space-y-16">
           {categories.map(category => {

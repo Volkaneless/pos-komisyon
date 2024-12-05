@@ -17,6 +17,16 @@ import MobilPOS from "./pages/pos-types/MobilPOS";
 import CepPOS from "./pages/pos-types/CepPOS";
 import BankaPOS from "./pages/BankaPOS";
 import POSFiyatlari from "./pages/POSFiyatlari";
+import AkbankYazarkasaPOS from "./pages/pos/AkbankYazarkasaPOS";
+import EnparaPOS from "./pages/pos/EnparaPOS";
+import QNBPayPOS from "./pages/pos/QNBPayPOS";
+import GarantiPOS from "./pages/pos/GarantiPOS";
+import IsbankAnindaPOS from "./pages/pos/IsbankAnindaPOS";
+import EnparaMobilPOS from "./pages/pos/EnparaMobilPOS";
+import AkbankCebePOS from "./pages/pos/AkbankCebePOS";
+import QNBPaySanalPOS from "./pages/pos/QNBPaySanalPOS";
+import AkbankSanalPOS from "./pages/pos/AkbankSanalPOS";
+import GarantiSanalPOS from "./pages/pos/GarantiSanalPOS";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +52,16 @@ const App = () => (
               <Route path="/pos-types/cep" element={<CepPOS />} />
               <Route path="/banka-pos" element={<BankaPOS />} />
               <Route path="/pos-fiyatlari" element={<POSFiyatlari />} />
+              <Route path="/pos/akbank-yazarkasa" element={<AkbankYazarkasaPOS />} />
+              <Route path="/pos/enpara-pos" element={<EnparaPOS />} />
+              <Route path="/pos/qnbpay-pos" element={<QNBPayPOS />} />
+              <Route path="/pos/garanti-pos" element={<GarantiPOS />} />
+              <Route path="/pos/isbank-aninda" element={<IsbankAnindaPOS />} />
+              <Route path="/pos/enpara-mobil" element={<EnparaMobilPOS />} />
+              <Route path="/pos/akbank-cebe" element={<AkbankCebePOS />} />
+              <Route path="/pos/qnbpay-sanal" element={<QNBPaySanalPOS />} />
+              <Route path="/pos/akbank-sanal" element={<AkbankSanalPOS />} />
+              <Route path="/pos/garanti-sanal" element={<GarantiSanalPOS />} />
             </Routes>
           </main>
           <Footer />
