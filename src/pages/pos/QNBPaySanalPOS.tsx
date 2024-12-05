@@ -1,8 +1,21 @@
 import POSDetailPage from "@/components/pos/POSDetailPage";
-import { posProviders } from "@/data/posProviders";
+
+const provider = {
+  id: "qnbpay-sanal",
+  name: "QNBpay Sanal POS",
+  type: "Sanal POS",
+  logo: "/logos/qnbpay.webp",
+  monthly_fee: "0TL",
+  commission_rate: "1,99",
+  features: [
+    "E-ticaret uyumlu",
+    "Kolay entegrasyon",
+    "Güvenli altyapı",
+    "7/24 destek"
+  ]
+};
 
 const QNBPaySanalPOS = () => {
-  const provider = posProviders.find(p => p.id === "qnbpay-sanal")!;
   console.log('Rendering QNBPaySanalPOS with provider:', provider);
   return <POSDetailPage provider={provider} />;
 };
