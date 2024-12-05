@@ -1,21 +1,8 @@
 import POSDetailPage from "@/components/pos/POSDetailPage";
-
-const provider = {
-  id: "akbank-yazarkasa",
-  name: "Akbank POS",
-  type: "Yazar Kasa (ÖKC) POS",
-  logo: "/logos/akbank.webp",
-  monthly_fee: "0TL",
-  commission_rate: "1,79",
-  features: [
-    "Güvenli ödeme altyapısı",
-    "Tüm kartlarla uyumlu",
-    "Hızlı kurulum",
-    "7/24 destek"
-  ]
-};
+import { posProviders } from "@/data/posProviders";
 
 const AkbankYazarkasaPOS = () => {
+  const provider = posProviders.find(p => p.id === "akbank-pos")!;
   console.log('Rendering AkbankYazarkasaPOS with provider:', provider);
   return <POSDetailPage provider={provider} />;
 };

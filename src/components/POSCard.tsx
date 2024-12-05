@@ -14,8 +14,6 @@ interface POSCardProps {
 }
 
 const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features }: POSCardProps) => {
-  console.log('Rendering POSCard for:', { id, name, type });
-  
   return (
     <div className="glass-card rounded-2xl p-8 animate-fade-in">
       <div className="flex items-center justify-between mb-8">

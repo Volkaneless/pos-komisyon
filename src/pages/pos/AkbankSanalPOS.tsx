@@ -1,22 +1,9 @@
 import POSDetailPage from "@/components/pos/POSDetailPage";
-
-const provider = {
-  id: "akbank-sanal",
-  name: "Akbank Sanal POS",
-  type: "Sanal POS",
-  logo: "/logos/akbank.webp",
-  monthly_fee: "0TL",
-  commission_rate: "1,79",
-  features: [
-    "E-ticaret uyumlu",
-    "Düşük komisyon",
-    "Kolay entegrasyon",
-    "7/24 destek"
-  ]
-};
+import { posProviders } from "@/data/posProviders";
 
 const AkbankSanalPOS = () => {
-  console.log('Rendering AkbankSanalPOS with provider:', provider);
+  const provider = posProviders.find(p => p.id === "akbank-sanal")!;
+  
   return <POSDetailPage provider={provider} />;
 };
 
