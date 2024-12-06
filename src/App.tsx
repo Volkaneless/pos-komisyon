@@ -42,6 +42,9 @@ import AkbankCebePOS from "./pages/pos/AkbankCebePOS";
 import PayTRSanalPOS from "./pages/pos/PayTRSanalPOS";
 import ToslaIsimSanalPOS from "./pages/pos/ToslaIsimSanalPOS";
 import EsnekSanalPOS from "./pages/pos/EsnekSanalPOS";
+import GarantiPOS from "./pages/pos/GarantiPOS";
+import EnparaMobilPOS from "./pages/pos/EnparaMobilPOS";
+import PaycellMobilPOS from "./pages/pos/PaycellMobilPOS";
 
 const queryClient = new QueryClient();
 
@@ -92,6 +95,9 @@ const App = () => (
               <Route path="/pos/paytr-sanal" element={<PayTRSanalPOS />} />
               <Route path="/pos/tosla-isim-sanal" element={<ToslaIsimSanalPOS />} />
               <Route path="/pos/esnekpos" element={<EsnekSanalPOS />} />
+              <Route path="/pos/garanti-pos" element={<GarantiPOS />} />
+              <Route path="/pos/enpara-mobil" element={<EnparaMobilPOS />} />
+              <Route path="/pos/paycell-mobil" element={<PaycellMobilPOS />} />
             </Routes>
           </main>
           <Footer />
