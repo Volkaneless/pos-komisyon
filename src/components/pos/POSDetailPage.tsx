@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import POSHeader from "./POSHeader";
 import POSInfo from "./POSInfo";
+import SimilarProviders from "./SimilarProviders";
 import type { POSProvider } from "@/types/pos";
 
 interface POSDetailPageProps {
@@ -193,6 +194,8 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
             </Card>
           </TabsContent>
         </Tabs>
+
+        <SimilarProviders currentProvider={provider} />
       </div>
     </>
   );
