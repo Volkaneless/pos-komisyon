@@ -2,53 +2,87 @@ import { BookOpen } from "lucide-react";
 import { Helmet } from "react-helmet";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import type { BlogPost } from "@/types/blog";
 
 const Blog = () => {
-  const { data: posts, isLoading } = useQuery({
+  const { data: posts, isLoading, error } = useQuery({
     queryKey: ['blog-posts'],
     queryFn: async () => {
-      // Insert blog posts if they don't exist
-      const { data: existingPosts } = await supabase
-        .from('blog_posts')
-        .select('*');
-
-      if (!existingPosts || existingPosts.length === 0) {
-        const newPosts = [
-          {
-            title: "2024 POS Komisyon Oranları: Kapsamlı Rehber",
-            excerpt: "2024 yılı için güncel POS komisyon oranları, karşılaştırmalar ve işletmeniz için en uygun POS seçimi hakkında detaylı bilgiler.",
-            content: "POS komisyon oranları, işletmelerin kârlılığını doğrudan etkileyen önemli bir faktördür. 2024 yılında bankalar ve ödeme kuruluşları tarafından sunulan POS cihazlarının komisyon oranları, işletme türüne ve işlem hacmine göre %0,29 ile %2,70 arasında değişmektedir...",
-            date: new Date().toISOString(),
-          },
-          {
-            title: "Yazar Kasa POS Cihazları: Avantajlar ve Dezavantajlar",
-            excerpt: "Yazar kasa POS cihazlarının özellikleri, maliyetleri ve işletmenize sağlayacağı faydalar hakkında detaylı inceleme.",
-            content: "Yazar kasa POS cihazları, tek bir cihazda hem yazar kasa hem de POS özelliklerini birleştirerek işletmelere önemli avantajlar sağlar. Bu rehberde, yazar kasa POS cihazlarının tüm yönlerini inceliyoruz...",
-            date: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
-          },
-          {
-            title: "Sanal POS vs Fiziki POS: Hangisi Sizin İçin Daha Uygun?",
-            excerpt: "E-ticaret ve fiziki mağazalar için sanal POS ve fiziki POS karşılaştırması, maliyet analizi ve seçim kriterleri.",
-            content: "Günümüzde işletmeler için ödeme alma yöntemleri çeşitlendi. Sanal POS ve fiziki POS sistemleri arasında seçim yaparken dikkat edilmesi gereken birçok faktör bulunuyor...",
-            date: new Date(Date.now() - 172800000).toISOString(), // 2 days ago
-          }
-        ];
-
-        await supabase
+      try {
+        console.log("Fetching blog posts...");
+        
+        // Check if posts exist
+        const { data: existingPosts, error: checkError } = await supabase
           .from('blog_posts')
-          .insert(newPosts);
-      }
+          .select('*');
 
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select('*')
-        .order('date', { ascending: false });
-      
-      if (error) throw error;
-      return data as BlogPost[];
-    }
+        if (checkError) {
+          console.error("Error checking existing posts:", checkError);
+          throw checkError;
+        }
+
+        console.log("Existing posts:", existingPosts?.length || 0);
+
+        if (!existingPosts || existingPosts.length === 0) {
+          console.log("No posts found, inserting default posts...");
+          const newPosts = [
+            {
+              title: "2024 POS Komisyon Oranları: Kapsamlı Rehber",
+              excerpt: "2024 yılı için güncel POS komisyon oranları, karşılaştırmalar ve işletmeniz için en uygun POS seçimi hakkında detaylı bilgiler.",
+              content: "POS komisyon oranları, işletmelerin kârlılığını doğrudan etkileyen önemli bir faktördür. 2024 yılında bankalar ve ödeme kuruluşları tarafından sunulan POS cihazlarının komisyon oranları, işletme türüne ve işlem hacmine göre %0,29 ile %2,70 arasında değişmektedir...",
+              date: new Date().toISOString(),
+            },
+            {
+              title: "Yazar Kasa POS Cihazları: Avantajlar ve Dezavantajlar",
+              excerpt: "Yazar kasa POS cihazlarının özellikleri, maliyetleri ve işletmenize sağlayacağı faydalar hakkında detaylı inceleme.",
+              content: "Yazar kasa POS cihazları, tek bir cihazda hem yazar kasa hem de POS özelliklerini birleştirerek işletmelere önemli avantajlar sağlar. Bu rehberde, yazar kasa POS cihazlarının tüm yönlerini inceliyoruz...",
+              date: new Date(Date.now() - 86400000).toISOString(),
+            },
+            {
+              title: "Sanal POS vs Fiziki POS: Hangisi Sizin İçin Daha Uygun?",
+              excerpt: "E-ticaret ve fiziki mağazalar için sanal POS ve fiziki POS karşılaştırması, maliyet analizi ve seçim kriterleri.",
+              content: "Günümüzde işletmeler için ödeme alma yöntemleri çeşitlendi. Sanal POS ve fiziki POS sistemleri arasında seçim yaparken dikkat edilmesi gereken birçok faktör bulunuyor...",
+              date: new Date(Date.now() - 172800000).toISOString(),
+            }
+          ];
+
+          const { error: insertError } = await supabase
+            .from('blog_posts')
+            .insert(newPosts);
+
+          if (insertError) {
+            console.error("Error inserting default posts:", insertError);
+            throw insertError;
+          }
+        }
+
+        // Fetch all posts
+        const { data, error: fetchError } = await supabase
+          .from('blog_posts')
+          .select('*')
+          .order('date', { ascending: false });
+        
+        if (fetchError) {
+          console.error("Error fetching posts:", fetchError);
+          throw fetchError;
+        }
+
+        console.log("Successfully fetched posts:", data?.length || 0);
+        return data as BlogPost[];
+      } catch (error) {
+        console.error("Blog posts fetch error:", error);
+        toast.error("Blog yazıları yüklenirken bir hata oluştu");
+        throw error;
+      }
+    },
+    retry: 3,
+    retryDelay: 1000,
   });
+
+  if (error) {
+    console.error("Query error:", error);
+  }
 
   return (
     <>
@@ -97,6 +131,7 @@ const Blog = () => {
       </div>
     </>
   );
+
 };
 
 export default Blog;
