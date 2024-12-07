@@ -133,27 +133,63 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://poskomisyon.com/pos/qnbpay-pos/komisyon-oranlari</loc>
+    <loc>https://poskomisyon.com/pos/vallet-mobil</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://poskomisyon.com/pos/qnbpay-pos/ozellikleri</loc>
+    <loc>https://poskomisyon.com/pos/vallet-sanal</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://poskomisyon.com/pos/qnbpay-pos/iletisim</loc>
+    <loc>https://poskomisyon.com/pos/qnbpay-sanal</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://poskomisyon.com/pos/qnbpay-pos/destek-hatti</loc>
+    <loc>https://poskomisyon.com/pos/cepteb-iste</loc>
     <lastmod>2024-03-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poskomisyon.com/pos/akbank-yazarkasa</loc>
+    <lastmod>2024-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poskomisyon.com/pos/logo-isbasi-cep</loc>
+    <lastmod>2024-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poskomisyon.com/pos/akbank-cebe</loc>
+    <lastmod>2024-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poskomisyon.com/pos/paytr-sanal</loc>
+    <lastmod>2024-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poskomisyon.com/pos/tosla-isim-sanal</loc>
+    <lastmod>2024-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poskomisyon.com/pos/esnekpos</loc>
+    <lastmod>2024-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
