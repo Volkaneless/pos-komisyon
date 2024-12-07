@@ -13,36 +13,11 @@ import MobilPOS from "@/pages/pos-types/MobilPOS";
 import CepPOS from "@/pages/pos-types/CepPOS";
 
 // POS Provider Pages
-import EnparaPOS from "@/pages/pos/EnparaPOS";
-import EsnekPOSAndroid from "@/pages/pos/EsnekPOSAndroid";
-import ToslaIsimPOS from "@/pages/pos/ToslaIsimPOS";
-import LogoIsbasiPOS from "@/pages/pos/LogoIsbasiPOS";
-import AkbankFizikiPOS from "@/pages/pos/AkbankFizikiPOS";
-import PayTRNeoPOS from "@/pages/pos/PayTRNeoPOS";
-import AkbankSanalPOS from "@/pages/pos/AkbankSanalPOS";
-import ToslaSanalPOS from "@/pages/pos/ToslaSanalPOS";
-import MokaSanalPOS from "@/pages/pos/MokaSanalPOS";
-import EsnekPOSCep from "@/pages/pos/EsnekPOSCep";
-import GarantiSanalPOS from "@/pages/pos/GarantiSanalPOS";
-import IsbankAnindaPOS from "@/pages/pos/IsbankAnindaPOS";
-import EsnekPOSPazaryeri from "@/pages/pos/EsnekPOSPazaryeri";
-import EsnekPOSSanal from "@/pages/pos/EsnekPOSSanal";
-import PaycellSanalPOS from "@/pages/pos/PaycellSanalPOS";
-import OdealPOS from "@/pages/pos/OdealPOS";
 import QNBPayPOS from "@/pages/pos/QNBPayPOS";
-import ValletMobilPOS from "@/pages/pos/ValletMobilPOS";
-import ValletSanalPOS from "@/pages/pos/ValletSanalPOS";
-import QNBPaySanalPOS from "@/pages/pos/QNBPaySanalPOS";
-import CeptebIstePOS from "@/pages/pos/CeptebIstePOS";
-import AkbankYazarkasaPOS from "@/pages/pos/AkbankYazarkasaPOS";
-import LogoIsbasiCepPOS from "@/pages/pos/LogoIsbasiCepPOS";
-import AkbankCebePOS from "@/pages/pos/AkbankCebePOS";
-import PayTRSanalPOS from "@/pages/pos/PayTRSanalPOS";
-import ToslaIsimSanalPOS from "@/pages/pos/ToslaIsimSanalPOS";
-import EsnekSanalPOS from "@/pages/pos/EsnekSanalPOS";
-import GarantiPOS from "@/pages/pos/GarantiPOS";
-import EnparaMobilPOS from "@/pages/pos/EnparaMobilPOS";
-import PaycellMobilPOS from "@/pages/pos/PaycellMobilPOS";
+import QNBPayPOSKomisyon from "@/pages/pos/QNBPayPOSKomisyon";
+import QNBPayPOSOzellikler from "@/pages/pos/QNBPayPOSOzellikler";
+import QNBPayPOSIletisim from "@/pages/pos/QNBPayPOSIletisim";
+import QNBPayPOSDestek from "@/pages/pos/QNBPayPOSDestek";
 
 // Main Routes
 export const mainRoutes: RouteObject[] = [
@@ -64,36 +39,11 @@ export const posTypeRoutes: RouteObject[] = [
 
 // POS Provider Routes
 export const posProviderRoutes: RouteObject[] = [
-  { path: "/pos/enpara-pos", element: <EnparaPOS /> },
-  { path: "/pos/esnekpos-android", element: <EsnekPOSAndroid /> },
-  { path: "/pos/tosla-isim", element: <ToslaIsimPOS /> },
-  { path: "/pos/logo-isbasi", element: <LogoIsbasiPOS /> },
-  { path: "/pos/akbank-fiziki", element: <AkbankFizikiPOS /> },
-  { path: "/pos/paytr-neopos", element: <PayTRNeoPOS /> },
-  { path: "/pos/akbank-sanal", element: <AkbankSanalPOS /> },
-  { path: "/pos/tosla-sanal", element: <ToslaSanalPOS /> },
-  { path: "/pos/moka-sanal", element: <MokaSanalPOS /> },
-  { path: "/pos/esnekpos-cep", element: <EsnekPOSCep /> },
-  { path: "/pos/garanti-sanal", element: <GarantiSanalPOS /> },
-  { path: "/pos/isbank-aninda", element: <IsbankAnindaPOS /> },
-  { path: "/pos/esnekpos-pazaryeri", element: <EsnekPOSPazaryeri /> },
-  { path: "/pos/esnekpos-sanal", element: <EsnekPOSSanal /> },
-  { path: "/pos/paycell-sanal", element: <PaycellSanalPOS /> },
-  { path: "/pos/odeal-pos", element: <OdealPOS /> },
   { path: "/pos/qnbpay-pos", element: <QNBPayPOS /> },
-  { path: "/pos/vallet-mobil", element: <ValletMobilPOS /> },
-  { path: "/pos/vallet-sanal", element: <ValletSanalPOS /> },
-  { path: "/pos/qnbpay-sanal", element: <QNBPaySanalPOS /> },
-  { path: "/pos/cepteb-iste", element: <CeptebIstePOS /> },
-  { path: "/pos/akbank-yazarkasa", element: <AkbankYazarkasaPOS /> },
-  { path: "/pos/logo-isbasi-cep", element: <LogoIsbasiCepPOS /> },
-  { path: "/pos/akbank-cebe", element: <AkbankCebePOS /> },
-  { path: "/pos/paytr-sanal", element: <PayTRSanalPOS /> },
-  { path: "/pos/tosla-isim-sanal", element: <ToslaIsimSanalPOS /> },
-  { path: "/pos/esnekpos", element: <EsnekSanalPOS /> },
-  { path: "/pos/garanti-pos", element: <GarantiPOS /> },
-  { path: "/pos/enpara-mobil", element: <EnparaMobilPOS /> },
-  { path: "/pos/paycell-mobil", element: <PaycellMobilPOS /> },
+  { path: "/pos/qnbpay-pos/komisyon-oranlari", element: <QNBPayPOSKomisyon /> },
+  { path: "/pos/qnbpay-pos/ozellikleri", element: <QNBPayPOSOzellikler /> },
+  { path: "/pos/qnbpay-pos/iletisim", element: <QNBPayPOSIletisim /> },
+  { path: "/pos/qnbpay-pos/destek-hatti", element: <QNBPayPOSDestek /> },
 ];
 
 // Combine all routes
