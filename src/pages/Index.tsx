@@ -13,8 +13,8 @@ const Index = () => {
     day: 'numeric'
   });
 
-  const pageTitle = `POS Komisyon Oranları 2024 - POS Başvurusu`;
-  const pageDescription = `POS komisyon oranları ${currentDate} tarihli güncel verilerle en uygun banka yazar kasa, sanal POS komisyon oranlarını bulabilirsiniz.`;
+  const pageTitle = `En Uygun POS Komisyon Oranları 2024 | POS Başvurusu`;
+  const pageDescription = `En uygun POS komisyon oranları ${currentDate} tarihli güncel verilerle bankaların yazar kasa, sanal POS komisyon oranlarını karşılaştırın ve hemen başvurun.`;
 
   const handleFilter = (selectedProviders: string[], selectedTypes: string[]) => {
     if (selectedProviders.length === 0 && selectedTypes.length === 0) {
@@ -44,14 +44,22 @@ const Index = () => {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
+        <meta name="keywords" content="pos komisyon oranları, en uygun pos, pos başvurusu, pos cihazı, pos karşılaştırma, sanal pos, yazarkasa pos" />
         <link rel="canonical" href="https://poskomisyon.com" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://poskomisyon.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
       </Helmet>
 
       <div>
         <div className="container mx-auto px-4 pt-24 pb-12">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">
-              POS Komisyon Oranları 2024 - POS Başvurusu
+              En Uygun POS Komisyon Oranları 2024 | POS Başvurusu
             </h1>
             <p className="text-xl text-gray-600">
               Bankaların en uygun fiziki, yazar kasa, sanal POS komisyon oranları
