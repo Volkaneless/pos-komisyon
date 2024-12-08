@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import POSCard from "../components/POSCard";
 import POSFilter from "../components/POSFilter";
 import FAQ from "../components/FAQ";
@@ -15,7 +16,7 @@ const Index = () => {
   });
 
   const pageTitle = `En Uygun POS Komisyon Oranları 2024 | POS Başvurusu`;
-  const pageDescription = `En uygun POS komisyon oranları ${currentDate} tarihli güncel verilerle bankaların yazar kasa, sanal POS komisyon oranlarını karşılaştırın ve hemen başvurun.`;
+  const pageDescription = `${currentDate} tarihli güncel verilerle bankaların yazar kasa, sanal POS komisyon oranları karşılaştırın ve hemen başvurun. En uygun POS komisyon oranları ve detaylı bilgiler.`;
 
   const handleFilter = (selectedProviders: string[], selectedTypes: string[]) => {
     if (selectedProviders.length === 0 && selectedTypes.length === 0) {
@@ -38,6 +39,13 @@ const Index = () => {
     "Mobil (Taşınabilir) POS",
     "Cep POS",
     "Sanal POS"
+  ];
+
+  const quickLinks = [
+    { title: "POS Komisyon Hesaplayıcı", path: "/calculator", description: "Güncel POS komisyon oranlarını hesaplayın" },
+    { title: "Sanal POS Çözümleri", path: "/pos-types/sanal", description: "E-ticaret için sanal POS seçenekleri" },
+    { title: "Mobil POS Sistemleri", path: "/pos-types/mobil", description: "Taşınabilir POS cihazları" },
+    { title: "Yazar Kasa POS", path: "/pos-types/yazarkasa", description: "ÖKC entegreli POS sistemleri" }
   ];
 
   return (
@@ -72,6 +80,20 @@ const Index = () => {
             </div>
           </div>
 
+          {/* Hızlı Erişim Linkleri */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            {quickLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="p-4 border rounded-lg hover:shadow-md transition-shadow bg-white"
+              >
+                <h3 className="font-medium text-primary mb-2">{link.title}</h3>
+                <p className="text-sm text-gray-600">{link.description}</p>
+              </Link>
+            ))}
+          </div>
+
           <POSFilter providers={posProviders} onFilter={handleFilter} />
 
           <div className="space-y-16">
@@ -84,7 +106,14 @@ const Index = () => {
 
               return (
                 <div key={category} className="space-y-6">
-                  <h2 className="text-2xl font-semibold mb-6">{category}</h2>
+                  <h2 className="text-2xl font-semibold mb-6">
+                    <Link 
+                      to={`/pos-types/${category.toLowerCase().replace(/[\s()]/g, '-')}`}
+                      className="hover:text-primary transition-colors"
+                    >
+                      {category}
+                    </Link>
+                  </h2>
                   <div className="grid gap-6">
                     {categoryProviders.map((provider) => (
                       <POSCard key={provider.id} {...provider} />
@@ -93,6 +122,16 @@ const Index = () => {
                 </div>
               );
             })}
+          </div>
+
+          {/* İlgili Sayfalar */}
+          <div className="mt-16 p-6 bg-gray-50 rounded-lg">
+            <h2 className="text-xl font-semibold mb-4">İlgili Sayfalar</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Link to="/blog" className="text-primary hover:underline">POS Sistemleri Blog</Link>
+              <Link to="/about" className="text-primary hover:underline">Hakkımızda</Link>
+              <Link to="/contact" className="text-primary hover:underline">İletişim</Link>
+            </div>
           </div>
         </div>
         
