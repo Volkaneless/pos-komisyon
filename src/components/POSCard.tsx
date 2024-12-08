@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, CreditCard } from "lucide-react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { Info } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -14,11 +14,19 @@ interface POSCardProps {
 }
 
 const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features }: POSCardProps) => {
+  console.log('Rendering POSCard with logo:', logo);
+  
   return (
     <div className="glass-card rounded-2xl p-8 animate-fade-in">
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-4">
-          <img src={logo} alt={name} className="w-16 h-16 object-contain" />
+          {logo ? (
+            <img src={logo} alt={name} className="w-16 h-16 object-contain" />
+          ) : (
+            <div className="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-lg">
+              <CreditCard className="w-8 h-8 text-primary" />
+            </div>
+          )}
           <h3 className="font-semibold text-xl">{name}</h3>
         </div>
         <div className="flex gap-3">
