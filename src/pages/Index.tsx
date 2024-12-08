@@ -42,10 +42,16 @@ const Index = () => {
   ];
 
   const quickLinks = [
-    { title: "POS Komisyon Hesaplayıcı", path: "/calculator", description: "Güncel POS komisyon oranlarını hesaplayın" },
-    { title: "Sanal POS Çözümleri", path: "/pos-types/sanal", description: "E-ticaret için sanal POS seçenekleri" },
-    { title: "Mobil POS Sistemleri", path: "/pos-types/mobil", description: "Taşınabilir POS cihazları" },
-    { title: "Yazar Kasa POS", path: "/pos-types/yazarkasa", description: "ÖKC entegreli POS sistemleri" }
+    { title: "POS Komisyon Hesaplayıcı", path: "/calculator", description: "Güncel POS komisyon oranlarını hesaplayın", icon: "calculator" },
+    { title: "Sanal POS Çözümleri", path: "/pos-types/sanal", description: "E-ticaret için sanal POS seçenekleri", icon: "globe" },
+    { title: "Mobil POS Sistemleri", path: "/pos-types/mobil", description: "Taşınabilir POS cihazları", icon: "smartphone" },
+    { title: "Yazar Kasa POS", path: "/pos-types/yazarkasa", description: "ÖKC entegreli POS sistemleri", icon: "printer" }
+  ];
+
+  const relatedContent = [
+    { title: "POS Cihazı Nasıl Alınır?", path: "/blog/pos-cihazi-nasil-alinir" },
+    { title: "POS Komisyon Oranları", path: "/blog/pos-komisyon-oranlari" },
+    { title: "Sanal POS vs Fiziki POS", path: "/blog/sanal-pos-fiziki-pos-karsilastirma" }
   ];
 
   return (
@@ -53,7 +59,7 @@ const Index = () => {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <meta name="keywords" content="pos komisyon oranları, en uygun pos, pos başvurusu, pos cihazı, pos karşılaştırma, sanal pos, yazarkasa pos" />
+        <meta name="keywords" content="pos komisyon oranları, en uygun pos, pos başvurusu, pos cihazı, pos karşılaştırma, sanal pos, yazarkasa pos, mobil pos, android pos, ios pos" />
         <link rel="canonical" href="https://poskomisyon.com" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
@@ -78,6 +84,17 @@ const Index = () => {
               <span>•</span>
               <span>Giriş tarihi: 1 Kasım 2024</span>
             </div>
+          </div>
+
+          {/* Öne Çıkan İçerik */}
+          <div className="bg-primary/5 p-6 rounded-lg mb-12">
+            <h2 className="text-xl font-semibold mb-4">Öne Çıkan Bilgiler</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-600">
+              <li>2024 yılı güncel POS komisyon oranları ve karşılaştırmaları</li>
+              <li>Tüm banka ve fintech POS çözümleri tek platformda</li>
+              <li>Ücretsiz POS başvurusu ve danışmanlık hizmeti</li>
+              <li>Detaylı POS komisyon hesaplama araçları</li>
+            </ul>
           </div>
 
           {/* Hızlı Erişim Linkleri */}
@@ -122,6 +139,22 @@ const Index = () => {
                 </div>
               );
             })}
+          </div>
+
+          {/* Önerilen İçerikler */}
+          <div className="mt-16 mb-12">
+            <h2 className="text-xl font-semibold mb-6">Önerilen İçerikler</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {relatedContent.map((content) => (
+                <Link
+                  key={content.path}
+                  to={content.path}
+                  className="p-6 border rounded-lg hover:shadow-md transition-shadow bg-white"
+                >
+                  <h3 className="font-medium text-primary mb-2">{content.title}</h3>
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* İlgili Sayfalar */}
