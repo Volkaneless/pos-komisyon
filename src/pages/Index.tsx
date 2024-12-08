@@ -63,11 +63,13 @@ const Index = () => {
               En Uygun POS Komisyon Oranları 2024 | POS Başvurusu
             </h1>
             <p className="text-xl text-gray-600">
-              Bankaların en uygun fiziki, yazar kasa, sanal POS komisyon oranları
+              2024 yılında en uygun POS komisyon oranları ile işletme maliyetlerinizi düşürmek mümkün. Bankaların POS komisyon oranları ve yazarkasa, sanal POS komisyon oranları için detaylı POS komisyon hesaplama araçlarını kullanabilirsiniz.
             </p>
-            <p className="text-sm text-gray-500 mt-2">
-              Son güncelleme: {currentDate}
-            </p>
+            <div className="text-sm text-gray-500 mt-2 flex items-center justify-center gap-4">
+              <span>Son güncelleme: {currentDate}</span>
+              <span>•</span>
+              <span>Giriş tarihi: 1 Kasım 2024</span>
+            </div>
           </div>
 
           <POSFilter providers={posProviders} onFilter={handleFilter} />
