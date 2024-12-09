@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const POSCihaziNasilAlinir = () => {
   return (
@@ -9,9 +11,15 @@ const POSCihaziNasilAlinir = () => {
           name="description" 
           content="POS cihazı alma rehberi: Başvuru şartları, gerekli belgeler ve dikkat edilmesi gerekenler hakkında detaylı bilgi." 
         />
+        <link rel="canonical" href="https://poskomisyon.com/blog/pos-cihazi-nasil-alinir" />
       </Helmet>
 
       <div className="container mx-auto px-4 pt-24 pb-16">
+        <Link to="/blog" className="inline-flex items-center text-primary hover:text-primary-hover mb-8">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Blog'a Dön
+        </Link>
+
         <article className="prose prose-lg max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-8">POS Cihazı Nasıl Alınır?</h1>
           
