@@ -1,40 +1,28 @@
 import { BookOpen } from "lucide-react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "POS Cihazı Nasıl Alınır?",
-    excerpt: "POS cihazı başvurusu, gerekli belgeler ve seçim kriterleri hakkında detaylı rehber.",
-    date: "2024-03-01",
-    slug: "pos-cihazi-nasil-alinir"
-  },
-  {
-    id: 2,
-    title: "POS Komisyon Oranları 2024",
-    excerpt: "Güncel POS komisyon oranları ve en uygun POS seçenekleri karşılaştırması.",
-    date: "2024-03-01",
-    slug: "pos-komisyon-oranlari"
-  },
-  {
-    id: 3,
-    title: "Sanal POS vs Fiziki POS Karşılaştırması",
-    excerpt: "Sanal POS ve fiziki POS sistemlerinin avantajları ve dezavantajları.",
-    date: "2024-03-01",
-    slug: "sanal-pos-fiziki-pos-karsilastirma"
-  }
-];
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+import type { BlogPost } from "@/types/blog";
 
 const Blog = () => {
+  const { data: posts, isLoading } = useQuery({
+    queryKey: ['blog-posts'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .order('date', { ascending: false });
+      
+      if (error) throw error;
+      return data as BlogPost[];
+    }
+  });
+
   return (
     <>
       <Helmet>
         <title>Blog | POS Komisyon Haberleri</title>
-        <meta 
-          name="description" 
-          content="POS sistemleri, komisyon oranları ve güncel POS haberleri hakkında bilgi edinebileceğiniz blog sayfamızı ziyaret edin." 
-        />
+        <meta name="description" content="POS sistemleri, komisyon oranları ve güncel POS haberleri hakkında bilgi edinebileceğiniz blog sayfamızı ziyaret edin." />
         <link rel="canonical" href="https://poskomisyon.com/blog" />
       </Helmet>
 
@@ -50,20 +38,19 @@ const Blog = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <article key={post.id} className="glass-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          {isLoading ? (
+            <p className="text-center col-span-full">Yükleniyor...</p>
+          ) : posts?.map((post) => (
+            <article key={post.id} className="glass-card p-6 rounded-lg">
               <h2 className="text-xl font-semibold mb-3">{post.title}</h2>
               <p className="text-gray-600 mb-4">{post.excerpt}</p>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-500">
-                  {new Date(post.date).toLocaleDateString('tr-TR')}
+                  {new Date(post.date || '').toLocaleDateString('tr-TR')}
                 </span>
-                <Link 
-                  to={`/blog/${post.slug}`}
-                  className="text-primary hover:text-primary-hover font-medium"
-                >
+                <button className="text-primary hover:text-primary-hover font-medium">
                   Devamını Oku
-                </Link>
+                </button>
               </div>
             </article>
           ))}

@@ -17,32 +17,41 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="/" className="hover:text-white transition-colors">Ana Sayfa</a></li>
               <li><a href="/calculator" className="hover:text-white transition-colors">Komisyon Hesaplayıcı</a></li>
-              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">İletişim</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">İletişim</a></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-white font-semibold mb-4">İletişim</h3>
             <ul className="space-y-2 text-sm">
-              <li>info@poskomisyon.com</li>
+              <li>info@poshesaplayici.com</li>
               <li>+90 (212) 123 45 67</li>
               <li>İstanbul, Türkiye</li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-white font-semibold mb-4">Yasal</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="/privacy-policy" className="hover:text-white transition-colors">Gizlilik Politikası</a></li>
-              <li><a href="/terms-of-service" className="hover:text-white transition-colors">Kullanım Koşulları</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">İletişim</a></li>
-            </ul>
+            <h3 className="text-white font-semibold mb-4">Bizi Takip Edin</h3>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-white transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </div>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-          <p>&copy; 2024 POS Komisyon. Tüm hakları saklıdır.</p>
+          <p>&copy; 2024 POS Hesaplayıcı. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>
