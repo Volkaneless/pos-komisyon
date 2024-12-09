@@ -5,7 +5,7 @@ import POSCihaziNasilAlinir from "@/pages/blog/pos-cihazi-nasil-alinir";
 import POSKomisyonOranlari from "@/pages/blog/pos-komisyon-oranlari";
 import SanalPOSFizikiPOS from "@/pages/blog/sanal-pos-fiziki-pos-karsilastirma";
 
-export const router = createBrowserRouter([
+export const routes = [
   {
     path: "/",
     element: <Index />,
@@ -26,6 +26,8 @@ export const router = createBrowserRouter([
     path: "/blog/sanal-pos-fiziki-pos-karsilastirma",
     element: <SanalPOSFizikiPOS />,
   },
-]);
+];
+
+export const router = createBrowserRouter(routes);
 
 export default router;
