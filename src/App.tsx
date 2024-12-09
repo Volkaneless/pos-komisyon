@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import CookieConsent from "./components/CookieConsent";
 import { routes } from "./routes";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
             </Routes>
           </main>
           <Footer />
+          <CookieConsent />
         </div>
       </BrowserRouter>
     </TooltipProvider>
