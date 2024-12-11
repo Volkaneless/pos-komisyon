@@ -1,3 +1,13 @@
 User-agent: *
 Allow: /
+
+# Allow crawling of all content
+Allow: /pos-types/
+Allow: /pos/
+Allow: /blog/
+Allow: /about
+Allow: /contact
+Allow: /calculator
+
+# Sitemap location
 Sitemap: https://poskomisyon.com/sitemap.xml
