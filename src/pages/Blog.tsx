@@ -5,16 +5,21 @@ import { supabase } from "@/integrations/supabase/client";
 import type { BlogPost } from "@/types/blog";
 
 const Blog = () => {
-  const { data: posts, isLoading } = useQuery({
+  const { data: posts, isLoading, isError } = useQuery({
     queryKey: ['blog-posts'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select('*')
-        .order('date', { ascending: false });
-      
-      if (error) throw error;
-      return data as BlogPost[];
+      try {
+        const { data, error } = await supabase
+          .from('blog_posts')
+          .select('*')
+          .order('date', { ascending: false });
+        
+        if (error) throw error;
+        return data as BlogPost[];
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+        return [];
+      }
     }
   });
 
@@ -83,20 +88,22 @@ const Blog = () => {
 
           {isLoading ? (
             <p className="text-center col-span-full">Yükleniyor...</p>
-          ) : posts?.map((post) => (
-            <article key={post.id} className="glass-card p-6 rounded-lg">
-              <h2 className="text-xl font-semibold mb-3">{post.title}</h2>
-              <p className="text-gray-600 mb-4">{post.excerpt}</p>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-500">
-                  {new Date(post.date || '').toLocaleDateString('tr-TR')}
-                </span>
-                <button className="text-primary hover:text-primary-hover font-medium">
-                  Devamını Oku
-                </button>
-              </div>
-            </article>
-          ))}
+          ) : isError ? null : (
+            posts?.map((post) => (
+              <article key={post.id} className="glass-card p-6 rounded-lg">
+                <h2 className="text-xl font-semibold mb-3">{post.title}</h2>
+                <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-500">
+                    {new Date(post.date || '').toLocaleDateString('tr-TR')}
+                  </span>
+                  <button className="text-primary hover:text-primary-hover font-medium">
+                    Devamını Oku
+                  </button>
+                </div>
+              </article>
+            ))
+          )}
         </div>
       </div>
     </>
