@@ -1,15 +1,16 @@
-import Calculator from "../components/Calculator";
 import { Helmet } from "react-helmet";
+import Calculator from "../components/Calculator";
 
 const CalculatorPage = () => {
   return (
     <>
       <Helmet>
-        <title>POS Komisyon Oranları Hesaplama 2024 (Ücretsiz POS Aracı)</title>
+        <title>POS Komisyon Hesaplama Aracı 2024 | Ücretsiz Hesaplayıcı</title>
         <meta
           name="description"
-          content="Ücretsiz POS komisyon oranları hesaplama aracımız ile işlem tutarı ve komisyon oranına göre ödeyeceğiniz tutarı kolayca hesaplayın. Güncel POS komisyon oranları ve detaylı bilgiler için tıklayın."
+          content="POS komisyon hesaplama aracı ile işlem tutarı ve komisyon oranına göre ödeyeceğiniz tutarı kolayca hesaplayın. Güncel POS komisyon oranları ve detaylı bilgiler."
         />
+        <meta name="keywords" content="pos komisyon hesaplama, pos hesaplayıcı, pos komisyon oranı hesaplama, pos maliyet hesaplama, pos ücret hesaplama" />
         <link rel="canonical" href="https://poskomisyon.com/calculator" />
       </Helmet>
 

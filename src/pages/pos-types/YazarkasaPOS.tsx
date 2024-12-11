@@ -1,40 +1,33 @@
 import { Helmet } from "react-helmet";
 import { Terminal } from "lucide-react";
-import POSCard from "@/components/POSCard";
-import { posProviders } from "@/data/posProviders";
+import POSTypePage from "@/components/pos-types/POSTypePage";
 
 const YazarkasaPOS = () => {
-  const yazarkasaProviders = posProviders.filter(
-    provider => provider.type === "Yazar Kasa (ÖKC) POS"
-  );
-
   return (
     <>
       <Helmet>
-        <title>Yazar Kasa POS Cihazları ve Komisyon Oranları 2024 | POS Compare</title>
+        <title>Yazar Kasa POS Cihazları ve Komisyonları 2024</title>
         <meta 
           name="description" 
-          content="Bankaların yazar kasa POS cihazları, komisyon oranları ve özellikleri. Yazar kasa POS cihazlarını karşılaştırın." 
+          content="Yazar kasa POS cihazları, ÖKC entegreli POS sistemleri ve komisyon oranları hakkında detaylı bilgi alın." 
         />
+        <meta name="keywords" content="yazar kasa pos, ökc pos, yeni nesil yazar kasa, entegre pos cihazı, yazarkasa pos fiyatları" />
+        <link rel="canonical" href="https://poskomisyon.com/pos-types/yazarkasa" />
       </Helmet>
-
-      <div className="container mx-auto px-4 pt-24 pb-16">
-        <div className="text-center mb-12">
-          <div className="flex justify-center mb-4">
-            <Terminal className="w-16 h-16 text-primary" />
-          </div>
-          <h1 className="text-4xl font-bold mb-4">Yazar Kasa POS Komisyon Oranları 2024</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            En uygun yazar kasa POS cihazlarını karşılaştırın, size en uygun POS cihazını seçin.
-          </p>
-        </div>
-
-        <div className="grid gap-8">
-          {yazarkasaProviders.map((provider) => (
-            <POSCard key={provider.id} {...provider} />
-          ))}
-        </div>
-      </div>
+      <POSTypePage
+        title="Yazar Kasa POS Cihazları ve Komisyonları 2024"
+        description="Yazar kasa POS cihazlarını karşılaştırın, size en uygun ÖKC POS çözümünü bulun."
+        type="Yazar Kasa (ÖKC) POS"
+        Icon={Terminal}
+        whatIsContent="Yazar kasa POS cihazları, Ödeme Kaydedici Cihaz (ÖKC) özelliği ile birlikte kredi kartı ödeme alma imkanı sunan entegre cihazlardır. Bu cihazlar, yasal gereklilikleri karşılarken işletmelere tek bir cihazda hem fiş kesme hem de ödeme alma imkanı sağlar."
+        advantages={[
+          "Yasal gerekliliklere uygunluk",
+          "Tek cihazda entegre çözüm",
+          "Otomatik mali raporlama",
+          "Gelişmiş yönetim paneli",
+          "Güvenilir ödeme altyapısı"
+        ]}
+      />
     </>
   );
 };

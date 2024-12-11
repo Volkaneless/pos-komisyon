@@ -21,8 +21,12 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Blog | POS Komisyon Haberleri</title>
-        <meta name="description" content="POS sistemleri, komisyon oranları ve güncel POS haberleri hakkında bilgi edinebileceğiniz blog sayfamızı ziyaret edin." />
+        <title>POS Sistemleri Blog | Güncel POS Haberleri</title>
+        <meta 
+          name="description" 
+          content="POS sistemleri, komisyon oranları ve güncel POS haberleri hakkında detaylı bilgiler. POS dünyasındaki son gelişmeleri takip edin." 
+        />
+        <meta name="keywords" content="pos blog, pos haberleri, pos sistemleri, pos teknolojileri, pos yenilikleri" />
         <link rel="canonical" href="https://poskomisyon.com/blog" />
       </Helmet>
 

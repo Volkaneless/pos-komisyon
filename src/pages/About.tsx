@@ -5,8 +5,12 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>Hakkımızda | POS Komisyon Karşılaştırma</title>
-        <meta name="description" content="POS komisyon karşılaştırma platformumuz hakkında bilgi edinin. İşletmeniz için en uygun POS çözümünü bulmanıza yardımcı oluyoruz." />
+        <title>POS Karşılaştırma Platformu Hakkında | POS Compare</title>
+        <meta 
+          name="description" 
+          content="POS karşılaştırma platformumuz ile işletmeniz için en uygun POS çözümünü bulun. Banka ve fintech POS cihazlarını karşılaştırın." 
+        />
+        <meta name="keywords" content="pos karşılaştırma, pos cihazı karşılaştırma, pos compare hakkında, pos danışmanlık, pos çözümleri" />
         <link rel="canonical" href="https://poskomisyon.com/about" />
       </Helmet>
       
