@@ -4,10 +4,10 @@ const POSKomisyonOranlari = () => {
   return (
     <>
       <Helmet>
-        <title>POS Komisyon Oranları 2024 | POS Komisyon</title>
+        <title>POS Komisyon Oranları ve Karşılaştırma 2024 | POS Compare</title>
         <meta 
           name="description" 
-          content="2024 yılı güncel POS komisyon oranları, banka ve ödeme kuruluşlarının sunduğu en uygun POS komisyon oranları karşılaştırması." 
+          content="2024 yılı güncel POS komisyon oranları, banka ve ödeme kuruluşlarının sunduğu komisyon oranları karşılaştırması." 
         />
       </Helmet>
 

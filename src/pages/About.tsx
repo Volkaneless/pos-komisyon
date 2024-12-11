@@ -5,7 +5,7 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>Hakkımızda | POS Komisyon Karşılaştırma </title>
+        <title>Hakkımızda | POS Komisyon Karşılaştırma</title>
         <meta name="description" content="POS komisyon karşılaştırma platformumuz hakkında bilgi edinin. İşletmeniz için en uygun POS çözümünü bulmanıza yardımcı oluyoruz." />
         <link rel="canonical" href="https://poskomisyon.com/about" />
       </Helmet>

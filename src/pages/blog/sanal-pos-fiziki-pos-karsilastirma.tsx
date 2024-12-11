@@ -4,7 +4,7 @@ const SanalPOSFizikiPOSKarsilastirma = () => {
   return (
     <>
       <Helmet>
-        <title>Sanal POS vs Fiziki POS Karşılaştırması | POS Komisyon</title>
+        <title>Sanal POS ve Fiziki POS Karşılaştırması 2024 | POS Compare</title>
         <meta 
           name="description" 
           content="Sanal POS ve fiziki POS sistemlerinin avantajları, dezavantajları ve maliyet karşılaştırması. Hangi POS sistemi sizin için daha uygun?" 

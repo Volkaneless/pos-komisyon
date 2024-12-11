@@ -4,7 +4,7 @@ const POSCihaziNasilAlinir = () => {
   return (
     <>
       <Helmet>
-        <title>POS Cihazı Nasıl Alınır? | POS Komisyon</title>
+        <title>POS Cihazı Başvuru ve Alım Rehberi 2024 | POS Compare</title>
         <meta 
           name="description" 
           content="POS cihazı alma rehberi: Başvuru şartları, gerekli belgeler ve dikkat edilmesi gerekenler hakkında detaylı bilgi." 
