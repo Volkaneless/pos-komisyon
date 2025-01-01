@@ -41,36 +41,53 @@ const CalculatorPage = () => {
         <Calculator />
 
         <article className="prose prose-lg max-w-4xl mx-auto mt-16 px-4">
-          <h2 className="text-2xl font-bold mb-6">POS Komisyon Oranları Hakkında Detaylı Bilgi</h2>
+          <h2 className="text-2xl font-bold mb-6">POS Komisyon Hesaplama: Formül, Excel Araçları ve Banka Oranları</h2>
           
           <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
-            <h3 className="text-xl font-semibold mb-4">2025 POS Komisyon Oranları Nasıl Hesaplanır?</h3>
             <p className="mb-4">
-              POS komisyon oranları hesaplanırken dikkat edilmesi gereken birçok faktör bulunmaktadır:
+              POS cihazları, işletmelerin ödeme süreçlerini hızlandıran önemli bir araçtır. Ancak, POS cihazı kullanımında komisyon oranlarını doğru hesaplamak, işletme maliyetlerini optimize etmek için kritik öneme sahiptir. Bu yazıda, POS komisyon hesaplama formülü, bankaların POS komisyon oranları ve en uygun seçenekleri nasıl bulacağınızı detaylı bir şekilde açıklıyoruz.
             </p>
-            <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li>İşlem tutarı ve taksit sayısı</li>
-              <li>Banka veya finans kuruluşunun belirlediği komisyon oranı</li>
-              <li>Sabit işlem ücretleri</li>
-              <li>Aylık/yıllık POS kullanım bedelleri</li>
-              <li>Sektöre özel komisyon indirimleri</li>
-            </ul>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Taksitli İşlemler</h3>
-              <p>
-                Taksitli işlemlerde komisyon oranları genellikle daha yüksektir. 
-                Taksit sayısı arttıkça komisyon oranı da artış gösterebilir.
-              </p>
+            <h3 className="text-xl font-semibold mb-4">POS Komisyon Hesaplama Formülü</h3>
+            <p className="mb-4">
+              POS komisyonları, işlem tutarınıza ve bankanın belirlediği oranlara göre hesaplanır. İşte temel formül:
+            </p>
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <p className="font-mono">POS Komisyonu = (İşlem Tutarı × Komisyon Oranı) + Sabit Ücret (Varsa)</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Peşin İşlemler</h3>
-              <p>
-                Peşin işlemlerde komisyon oranları daha düşüktür ve sabit ücret
-                uygulaması daha yaygındır.
-              </p>
+
+            <div className="bg-primary-light p-4 rounded-lg mb-6">
+              <h4 className="font-semibold mb-2">Örnek:</h4>
+              <ul className="list-none space-y-1">
+                <li>İşlem Tutarı: 1.000 TL</li>
+                <li>Komisyon Oranı: %2</li>
+                <li>Sabit Ücret: 1 TL</li>
+                <li>Hesaplama: (1.000 × 0.02) + 1 = 21 TL komisyon ödersiniz.</li>
+              </ul>
+            </div>
+
+            <h3 className="text-xl font-semibold mb-4">POS Komisyon Hesaplama için Excel Kullanımı</h3>
+            <p className="mb-4">Excel'de komisyon hesaplama oldukça kolaydır. İşte bir örnek tablo:</p>
+            
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-white border border-gray-200 mb-4">
+                <thead>
+                  <tr className="bg-gray-50">
+                    <th className="px-4 py-2 border">İşlem Tutarı</th>
+                    <th className="px-4 py-2 border">Komisyon Oranı (%)</th>
+                    <th className="px-4 py-2 border">Sabit Ücret</th>
+                    <th className="px-4 py-2 border">Toplam Komisyon</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="px-4 py-2 border">1.000</td>
+                    <td className="px-4 py-2 border">2</td>
+                    <td className="px-4 py-2 border">1</td>
+                    <td className="px-4 py-2 border font-mono">=A2*(B2/100)+C2</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
 
