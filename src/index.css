@@ -14,13 +14,19 @@
 }
 
 .button-primary {
-  @apply px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-hover transition-all duration-200 font-medium;
+  @apply px-4 md:px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-hover transition-all duration-200 font-medium;
 }
 
 .button-secondary {
-  @apply px-6 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-gray-200 transition-all duration-200 font-medium;
+  @apply px-4 md:px-6 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-gray-200 transition-all duration-200 font-medium;
 }
 
 .input-field {
   @apply px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200;
+}
+
+@media (max-width: 768px) {
+  .glass-card {
+    @apply mx-4;
+  }
 }
