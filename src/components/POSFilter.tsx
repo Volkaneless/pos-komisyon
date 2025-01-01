@@ -62,6 +62,15 @@ const POSFilter = ({ providers, onFilter }: FilterProps) => {
 
   return (
     <div className="bg-white rounded-lg shadow-sm mb-8 max-w-2xl mx-auto">
+      <div className="p-4 border-b">
+        <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+          En Uygun POS Cihazı Komisyon Oranları 2025
+        </h2>
+        <p className="text-gray-600 text-sm">
+          Bankaların ve fintech şirketlerinin güncel POS komisyon oranlarını karşılaştırın, 
+          işletmeniz için en uygun POS çözümünü kolayca bulun. Aşağıdaki filtrelerle size en uygun POS cihazını seçebilirsiniz.
+        </p>
+      </div>
       <div className="flex items-center gap-2 p-2">
         <button
           onClick={handleClear}
