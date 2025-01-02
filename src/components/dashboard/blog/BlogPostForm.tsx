@@ -16,6 +16,7 @@ export const BlogPostForm = ({ initialData, onSubmit, onCancel }: BlogPostFormPr
     excerpt: initialData?.excerpt || "",
     content: initialData?.content || "",
     date: initialData?.date || new Date().toISOString(),
+    category: initialData?.category || "general"
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -49,6 +50,20 @@ export const BlogPostForm = ({ initialData, onSubmit, onCancel }: BlogPostFormPr
           required
           rows={10}
         />
+      </div>
+      <div>
+        <label className="block mb-2">Kategori</label>
+        <select
+          value={formData.category}
+          onChange={(e) => setFormData({ ...formData, category: e.target.value as BlogPost['category']})}
+          className="w-full border rounded-md p-2"
+          required
+        >
+          <option value="general">Genel</option>
+          <option value="adsense">POS Cihazları</option>
+          <option value="social-media">Sanal POS</option>
+          <option value="ppc">Mobil POS</option>
+        </select>
       </div>
       <div className="flex gap-2">
         <Button type="submit">

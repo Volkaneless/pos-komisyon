@@ -85,7 +85,7 @@ export const posProviderRoutes: RouteObject[] = [
   { path: "/pos/esnekpos-pazaryeri", element: <EsnekPOSPazaryeri /> },
   { path: "/pos/esnekpos-sanal", element: <EsnekPOSSanal /> },
   { path: "/pos/paycell-sanal", element: <PaycellSanalPOS /> },
-  { path: "/pos/odeal-pos", element: <OdealPOS /> },
+  { path: "/pos/odeal-pos", element: <OddealPOS /> },
   { path: "/pos/qnbpay-pos", element: <QNBPayPOS /> },
   { path: "/pos/vallet-mobil", element: <ValletMobilPOS /> },
   { path: "/pos/vallet-sanal", element: <ValletSanalPOS /> },
