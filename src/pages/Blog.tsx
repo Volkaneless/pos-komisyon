@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/data/blogPosts";
-import type { BlogPost } from "@/types/blog";
 import { Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 type Category = "all" | "adsense" | "social-media" | "ppc";
 
@@ -25,6 +25,13 @@ const Blog = () => {
       default:
         return "Genel";
     }
+  };
+
+  const getPostUrl = (title: string) => {
+    return `/blog/${title
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '')}`;
   };
 
   return (
@@ -78,9 +85,10 @@ const Blog = () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPosts.map((post) => (
-            <article key={post.id} className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:translate-y-[-4px] animate-fade-in">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredPosts.map((post) => (
+          <article key={post.id} className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:translate-y-[-4px] animate-fade-in">
+            <Link to={getPostUrl(post.title)}>
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src={post.image} 
@@ -111,9 +119,9 @@ const Blog = () => {
                   Devamını Oku
                 </Button>
               </div>
-            </article>
-          ))}
-        </div>
+            </Link>
+          </article>
+        ))}
       </div>
     </>
   );
