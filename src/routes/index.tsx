@@ -44,6 +44,7 @@ import GarantiPOS from "@/pages/pos/GarantiPOS";
 import EnparaMobilPOS from "@/pages/pos/EnparaMobilPOS";
 import PaycellMobilPOS from "@/pages/pos/PaycellMobilPOS";
 import POSKomisyonOranlari2025 from "@/pages/blog/pos-komisyon-oranlari-2025";
+import BlogPostDetail from "@/pages/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler";
 
 // Main Routes
 export const mainRoutes: RouteObject[] = [
@@ -58,6 +59,7 @@ export const mainRoutes: RouteObject[] = [
 // Blog Routes
 export const blogRoutes: RouteObject[] = [
   { path: "/blog/pos-komisyon-oranlari-2025", element: <POSKomisyonOranlari2025 /> },
+  { path: "/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler", element: <BlogPostDetail /> },
 ];
 
 // POS Type Routes
