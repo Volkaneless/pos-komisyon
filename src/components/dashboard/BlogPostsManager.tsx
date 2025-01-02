@@ -21,7 +21,12 @@ const BlogPostsManager = () => {
         .order("date", { ascending: false });
       
       if (error) throw error;
-      return data as BlogPost[];
+      
+      // Transform the data to include the required category field
+      return (data || []).map(post => ({
+        ...post,
+        category: post.category || "general" // Provide a default category if none exists
+      })) as BlogPost[];
     },
   });
 
