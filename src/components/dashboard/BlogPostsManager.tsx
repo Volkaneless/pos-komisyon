@@ -26,7 +26,7 @@ const BlogPostsManager = () => {
       return (data || []).map(post => ({
         ...post,
         category: "general", // Set a default category since it's not in the database
-        image: post.image || "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" // Add a default image if none exists
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" // Add a default image
       })) as BlogPost[];
     },
   });
