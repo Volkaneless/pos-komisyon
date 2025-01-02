@@ -4,6 +4,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 1,
     title: "POS Cihazı Seçerken Dikkat Edilmesi Gerekenler",
+    slug: "pos-cihazi-secerken-dikkat-edilmesi-gerekenler",
     excerpt: "İşletmeniz için en uygun POS cihazını seçmek için önemli kriterler ve karşılaştırma rehberi.",
     content: "...",
     date: "2024-03-20",
@@ -13,6 +14,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 2,
     title: "2025 POS Komisyon Oranları",
+    slug: "pos-komisyon-oranlari-2025",
     excerpt: "2025 yılı güncel POS komisyon oranları karşılaştırması ve detaylı analiz.",
     content: "...",
     date: "2024-03-15",
@@ -22,6 +24,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 3,
     title: "Sanal POS vs Fiziki POS: Hangisi Daha Avantajlı?",
+    slug: "sanal-pos-vs-fiziki-pos-hangisi-daha-avantajli",
     excerpt: "Sanal POS ve fiziki POS sistemlerinin detaylı karşılaştırması ve işletmeniz için en uygun çözümü bulma rehberi.",
     content: "...",
     date: "2024-03-18",

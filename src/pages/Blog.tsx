@@ -27,13 +27,6 @@ const Blog = () => {
     }
   };
 
-  const getPostUrl = (title: string) => {
-    return `/blog/${title
-      .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[^a-z0-9-]/g, '')}`;
-  };
-
   return (
     <>
       <Helmet>
@@ -88,7 +81,7 @@ const Blog = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPosts.map((post) => (
             <article key={post.id} className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:translate-y-[-4px] animate-fade-in">
-              <Link to={getPostUrl(post.title)}>
+              <Link to={`/blog/${post.slug}`}>
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={post.image} 
