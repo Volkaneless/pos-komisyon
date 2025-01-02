@@ -4,6 +4,8 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   date: string;
+  category: "adsense" | "social-media" | "ppc" | "general";
+  image?: string;
   created_at?: string;
 }
 

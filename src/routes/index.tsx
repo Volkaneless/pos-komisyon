@@ -28,7 +28,7 @@ import IsbankAnindaPOS from "@/pages/pos/IsbankAnindaPOS";
 import EsnekPOSPazaryeri from "@/pages/pos/EsnekPOSPazaryeri";
 import EsnekPOSSanal from "@/pages/pos/EsnekPOSSanal";
 import PaycellSanalPOS from "@/pages/pos/PaycellSanalPOS";
-import OdealPOS from "@/pages/pos/OdealPOS";
+import OddealPOS from "@/pages/pos/OdealPOS";
 import QNBPayPOS from "@/pages/pos/QNBPayPOS";
 import ValletMobilPOS from "@/pages/pos/ValletMobilPOS";
 import ValletSanalPOS from "@/pages/pos/ValletSanalPOS";
@@ -43,6 +43,7 @@ import EsnekSanalPOS from "@/pages/pos/EsnekSanalPOS";
 import GarantiPOS from "@/pages/pos/GarantiPOS";
 import EnparaMobilPOS from "@/pages/pos/EnparaMobilPOS";
 import PaycellMobilPOS from "@/pages/pos/PaycellMobilPOS";
+import POSKomisyonOranlari2025 from "@/pages/blog/pos-komisyon-oranlari-2025";
 
 // Main Routes
 export const mainRoutes: RouteObject[] = [
@@ -52,6 +53,11 @@ export const mainRoutes: RouteObject[] = [
   { path: "/about", element: <About /> },
   { path: "/contact", element: <Contact /> },
   { path: "/dashboard", element: <Dashboard /> },
+];
+
+// Blog Routes
+export const blogRoutes: RouteObject[] = [
+  { path: "/blog/pos-komisyon-oranlari-2025", element: <POSKomisyonOranlari2025 /> },
 ];
 
 // POS Type Routes
@@ -99,6 +105,7 @@ export const posProviderRoutes: RouteObject[] = [
 // Combine all routes
 export const routes: RouteObject[] = [
   ...mainRoutes,
+  ...blogRoutes,
   ...posTypeRoutes,
   ...posProviderRoutes,
 ];
