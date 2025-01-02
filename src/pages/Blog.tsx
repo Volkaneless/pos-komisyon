@@ -85,43 +85,44 @@ const Blog = () => {
           </Button>
         </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredPosts.map((post) => (
-          <article key={post.id} className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:translate-y-[-4px] animate-fade-in">
-            <Link to={getPostUrl(post.title)}>
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={post.image} 
-                  alt={post.title}
-                  className="w-full h-full object-cover transition-transform hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="inline-block px-3 py-1 text-sm font-medium text-primary bg-primary-light rounded-full">
-                    {getCategoryLabel(post.category)}
-                  </span>
-                  <div className="flex items-center text-sm text-gray-500">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {new Date(post.date).toLocaleDateString('tr-TR')}
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredPosts.map((post) => (
+            <article key={post.id} className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:translate-y-[-4px] animate-fade-in">
+              <Link to={getPostUrl(post.title)}>
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform hover:scale-105"
+                  />
                 </div>
-                <h2 className="text-xl font-semibold mb-3 line-clamp-2 hover:text-primary transition-colors">
-                  {post.title}
-                </h2>
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <Button 
-                  variant="link" 
-                  className="p-0 h-auto font-medium text-primary hover:text-primary-hover"
-                >
-                  Devamını Oku
-                </Button>
-              </div>
-            </Link>
-          </article>
-        ))}
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="inline-block px-3 py-1 text-sm font-medium text-primary bg-primary-light rounded-full">
+                      {getCategoryLabel(post.category)}
+                    </span>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {new Date(post.date).toLocaleDateString('tr-TR')}
+                    </div>
+                  </div>
+                  <h2 className="text-xl font-semibold mb-3 line-clamp-2 hover:text-primary transition-colors">
+                    {post.title}
+                  </h2>
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <Button 
+                    variant="link" 
+                    className="p-0 h-auto font-medium text-primary hover:text-primary-hover"
+                  >
+                    Devamını Oku
+                  </Button>
+                </div>
+              </Link>
+            </article>
+          ))}
+        </div>
       </div>
     </>
   );
