@@ -33,7 +33,7 @@ const BlogPostsManager = () => {
         ...post,
         category: "general" as const,
         image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        slug: post.slug || generateSlug(post.title)
+        slug: generateSlug(post.title) // Always generate slug from title
       })) as BlogPost[];
     },
   });
