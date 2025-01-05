@@ -5,6 +5,7 @@ import POSHeader from "./POSHeader";
 import POSInfo from "./POSInfo";
 import POSTabs from "./POSTabs";
 import SimilarProviders from "./SimilarProviders";
+import LatestBlogPosts from "./LatestBlogPosts";
 import type { POSProvider } from "@/types/pos";
 
 interface POSDetailPageProps {
@@ -52,6 +53,7 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
 
         <POSTabs provider={provider} currentYear={currentYear} />
         <SimilarProviders currentProvider={provider} />
+        <LatestBlogPosts />
       </div>
     </>
   );
