@@ -9,4 +9,4 @@ export interface BlogPost {
   image?: string;
 }
 
-export type BlogPostInput = Omit<BlogPost, 'id'>;
+export type BlogPostInput = Omit<BlogPost, 'id' | 'slug'> & { slug?: string };

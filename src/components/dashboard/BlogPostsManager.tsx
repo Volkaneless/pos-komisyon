@@ -8,6 +8,13 @@ import { BlogPostForm } from "./blog/BlogPostForm";
 import { BlogPostList } from "./blog/BlogPostList";
 import type { BlogPost, BlogPostInput } from "@/types/blog";
 
+const generateSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+};
+
 const BlogPostsManager = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [currentPost, setCurrentPost] = useState<Partial<BlogPost>>({});
@@ -22,21 +29,23 @@ const BlogPostsManager = () => {
       
       if (error) throw error;
       
-      // Transform the data to include the required category field
       return (data || []).map(post => ({
         ...post,
-        category: "general", // Set a default category since it's not in the database
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" // Add a default image
+        category: "general" as const,
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        slug: post.slug || generateSlug(post.title)
       })) as BlogPost[];
     },
   });
 
   const handleSubmit = async (postData: BlogPostInput) => {
     try {
+      const slug = generateSlug(postData.title);
+      
       if (currentPost.id) {
         const { error } = await supabase
           .from("blog_posts")
-          .update(postData)
+          .update({ ...postData, slug })
           .eq("id", currentPost.id);
         
         if (error) throw error;
@@ -44,7 +53,7 @@ const BlogPostsManager = () => {
       } else {
         const { error } = await supabase
           .from("blog_posts")
-          .insert([postData]);
+          .insert([{ ...postData, slug }]);
         
         if (error) throw error;
         toast.success("Blog yazısı eklendi");
