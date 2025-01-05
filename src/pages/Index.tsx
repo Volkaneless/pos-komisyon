@@ -15,7 +15,7 @@ const Index = () => {
     day: 'numeric'
   });
 
-  const pageTitle = "POS Oranları: Banka POS Cihazı Komisyon Oranları 2025";
+  const pageTitle = "POS Komisyon Oranları 2025 - En Uygun POS Komisyon";
   const pageDescription = `${currentDate} tarihli güncel verilerle bankaların POS cihazı komisyon oranlarını karşılaştırın. En uygun POS komisyon oranları ve detaylı bilgiler.`;
 
   const handleFilter = (selectedProviders: string[], selectedTypes: string[]) => {
