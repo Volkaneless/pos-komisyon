@@ -22,7 +22,7 @@ const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features 
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-gray-100 rounded-lg overflow-hidden">
             <img 
-              src="/lovable-uploads/12b9f566-b156-421b-8f7d-cb5fe8fc500a.png" 
+              src="/lovable-uploads/898d9933-33ae-43fb-8bd2-fdef667c3cd8.png" 
               alt={name} 
               className="w-8 h-8 md:w-10 md:h-10 object-contain"
             />
