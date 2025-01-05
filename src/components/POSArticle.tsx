@@ -6,7 +6,7 @@ const POSArticle = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold text-center mb-8">En Uygun POS Komisyon Oranları - 2024</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">En Uygun POS Komisyon Oranları - 2025</h2>
       
       <div className="prose prose-lg mx-auto">
         <p className="mb-4">
@@ -18,7 +18,7 @@ const POSArticle = () => {
           POS (Point of Sale) cihazları, işletmelerin kartlı ödeme almasını sağlayan sistemlerdir. Ancak bu hizmet karşılığında, bankalar veya POS cihazı sağlayıcıları belirli bir komisyon oranı talep eder. Doğru POS sistemini seçmek, işletme maliyetlerini azaltmak açısından kritik bir öneme sahiptir.
         </p>
 
-        <h3 className="text-2xl font-semibold mt-8 mb-4">2024 Güncel POS Komisyon Oranları Tablosu</h3>
+        <h3 className="text-2xl font-semibold mt-8 mb-4">2025 Güncel POS Komisyon Oranları Tablosu</h3>
         <div className="overflow-x-auto mb-8">
           <table className="min-w-full border-collapse border border-gray-300">
             <thead>
@@ -89,7 +89,7 @@ const POSArticle = () => {
         {showFullContent && (
           <>
             <h3 className="text-2xl font-semibold mt-8 mb-4">En Uygun POS Komisyon Oranları Nasıl Seçilir?</h3>
-            <p className="mb-4">2024 yılında işletmenize uygun bir POS cihazı seçerken şu kriterleri göz önünde bulundurabilirsiniz:</p>
+            <p className="mb-4">2025 yılında işletmenize uygun bir POS cihazı seçerken şu kriterleri göz önünde bulundurabilirsiniz:</p>
             
             <h4 className="text-xl font-semibold mt-6 mb-3">İşletme Türünüze Uygun POS Türü Seçin</h4>
             <ul className="list-disc pl-6 mb-4">
@@ -109,7 +109,7 @@ const POSArticle = () => {
             <p className="mb-4">Örneğin, 10.000 TL'lik bir işlemde, CEPTETEB İşte POS cihazı için kesilecek komisyon şu şekilde hesaplanır:</p>
             <p className="font-semibold mb-4">10.000 TL x %0,99 = 99 TL</p>
 
-            <h3 className="text-2xl font-semibold mt-8 mb-4">En Uygun POS Komisyon Oranları 2024</h3>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">En Uygun POS Komisyon Oranları 2025</h3>
             <p className="mb-4">Aşağıda farklı POS sistemleri için öneriler yer almaktadır:</p>
             <ul className="list-disc pl-6 mb-4">
               <li>En Düşük Komisyon Oranı: Vallet Mobil POS (%0,29)</li>
@@ -120,7 +120,7 @@ const POSArticle = () => {
             <h3 className="text-2xl font-semibold mt-8 mb-4">Sonuç</h3>
             <p className="mb-4">
               Doğru POS cihazını seçmek, yalnızca maliyetleri düşürmekle kalmaz, aynı zamanda işletmenizin ödeme süreçlerini kolaylaştırır. 
-              2024 yılı için güncel POS komisyon oranlarını değerlendirerek işletmenize en uygun seçeneği bulabilirsiniz. 
+              2025 yılı için güncel POS komisyon oranlarını değerlendirerek işletmenize en uygun seçeneği bulabilirsiniz. 
               En düşük oranlara sahip cihazları karşılaştırmak ve detaylı bilgi almak için işletmenizin ihtiyaçlarını göz önünde bulundurmanız önemlidir.
             </p>
           </>
