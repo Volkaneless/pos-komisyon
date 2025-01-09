@@ -28,7 +28,7 @@ const SimilarProviders = ({ currentProvider }: SimilarProvidersProps) => {
           >
             <div className="flex items-center gap-4 mb-4">
               <img 
-                src={provider.logo} 
+                src="/lovable-uploads/bf5f206f-f598-4d99-8ac7-dbc75e52d8dc.png" 
                 alt={provider.name} 
                 className="w-12 h-12 object-contain"
               />
