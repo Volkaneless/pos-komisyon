@@ -10,11 +10,11 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   return (
     <div
       className={`
-        fixed inset-x-0 top-14 md:top-16 p-4 md:hidden
+        fixed inset-x-0 top-16 p-4 md:hidden
         bg-white/90 backdrop-blur-lg border-b border-gray-100
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-y-0' : '-translate-y-full'}
-        shadow-lg
+        shadow-lg z-40
       `}
     >
       <div className="flex flex-col space-y-3">

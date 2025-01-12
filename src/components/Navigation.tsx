@@ -11,27 +11,27 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-white/80 to-primary-light/50 backdrop-blur-lg border-b border-primary/10 shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-14 md:h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-2 group">
-              <span className="text-lg font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent group-hover:opacity-80 transition-all duration-300">
+              <span className="text-base sm:text-lg font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent group-hover:opacity-80 transition-all duration-300">
                 POS Compare
               </span>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center md:hidden">
+          <div className="flex md:hidden">
             <button
-              className="p-2 rounded-lg hover:bg-primary/10 transition-all duration-300"
+              className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:bg-primary/10 transition-colors"
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <X className="h-5 w-5 text-primary" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="h-5 w-5 text-primary" />
+                <Menu className="h-5 w-5" />
               )}
             </button>
           </div>
