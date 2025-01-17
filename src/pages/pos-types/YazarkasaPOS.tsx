@@ -23,14 +23,8 @@ const YazarkasaPOS = () => {
           description="Yazar kasa POS cihazlarını karşılaştırın, size en uygun ÖKC POS çözümünü bulun."
           type="Yazar Kasa (ÖKC) POS"
           Icon={Terminal}
-          whatIsContent="Yazar kasa POS cihazları, Ödeme Kaydedici Cihaz (ÖKC) özelliği ile birlikte kredi kartı ödeme alma imkanı sunan entegre cihazlardır. Bu cihazlar, yasal gereklilikleri karşılarken işletmelere tek bir cihazda hem fiş kesme hem de ödeme alma imkanı sağlar."
-          advantages={[
-            "Yasal gerekliliklere uygunluk",
-            "Tek cihazda entegre çözüm",
-            "Otomatik mali raporlama",
-            "Gelişmiş yönetim paneli",
-            "Güvenilir ödeme altyapısı"
-          ]}
+          whatIsContent=""
+          advantages={[]}
         />
 
         <div className="container mx-auto px-4">
