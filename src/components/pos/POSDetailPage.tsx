@@ -33,7 +33,7 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
   }
 
   const currentYear = new Date().getFullYear();
-  const pageTitle = `${provider.name} Komisyon Oranları & ${provider.name} Destek Hattı`;
+  const pageTitle = `${provider.name} Komisyon Oranları ${currentYear} - ${provider.name} POS`;
   const pageDescription = `${currentYear} ${provider.name} komisyon oranları: ${provider.type} için ${provider.commission_rate} komisyon oranı ve ${provider.monthly_fee} aylık ücret. Güncel ${provider.name} başvuru şartları, destek hattı ve detaylı bilgiler.`;
 
   console.log('Rendering POSDetailPage for provider:', provider);
@@ -46,6 +46,7 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
         <link rel="canonical" href={`https://poskomisyon.com/pos/${provider.id}`} />
       </Helmet>
       <div className="container mx-auto px-4 pt-24 pb-16">
+        <h1 className="text-3xl font-bold mb-8 text-gray-900">{pageTitle}</h1>
         <div className="glass-card rounded-2xl p-8 mb-12">
           <POSHeader provider={provider} />
           <POSInfo provider={provider} />
