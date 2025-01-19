@@ -33,7 +33,7 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
   }
 
   const currentYear = new Date().getFullYear();
-  const pageTitle = `${provider.name} POS Komisyon Oranları ${currentYear} - ${provider.name} POS`;
+  const pageTitle = `${provider.name} Komisyon Oranları ${currentYear} - ${provider.name} POS`;
   const pageDescription = `${currentYear} ${provider.name} komisyon oranları: ${provider.type} için ${provider.commission_rate} komisyon oranı ve ${provider.monthly_fee} aylık ücret. Güncel ${provider.name} başvuru şartları, destek hattı ve detaylı bilgiler.`;
 
   console.log('Rendering POSDetailPage for provider:', provider);
