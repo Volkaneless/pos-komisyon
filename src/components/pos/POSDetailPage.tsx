@@ -46,7 +46,10 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
         <link rel="canonical" href={`https://poskomisyon.com/pos/${provider.id}`} />
       </Helmet>
       <div className="container mx-auto px-4 pt-24 pb-16">
-        <h1 className="text-3xl font-bold mb-8 text-gray-900">{pageTitle}</h1>
+        <h1 className="text-3xl font-bold mb-4 text-gray-900">{pageTitle}</h1>
+        <p className="text-gray-600 mb-8 leading-relaxed">
+          {currentYear} {provider.name} POS komisyon oranları, işletmeler için avantajlı seçenekler sunuyor. {provider.name} POS cihazı, sanal POS ve hızlı başvuru imkanıyla işlemlerinizi güvenle gerçekleştirin. {provider.name} POS müşteri hizmetleri ve destek hattı ile her sorunuzda yanınızda.
+        </p>
         <div className="glass-card rounded-2xl p-8 mb-12">
           <POSHeader provider={provider} />
           <POSInfo provider={provider} />
