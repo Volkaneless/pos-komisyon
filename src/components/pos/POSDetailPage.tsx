@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import POSHeader from "./POSHeader";
 import POSInfo from "./POSInfo";
 import POSTabs from "./POSTabs";
+import POSProviderFAQ from "./POSProviderFAQ";
 import SimilarProviders from "./SimilarProviders";
 import LatestBlogPosts from "./LatestBlogPosts";
 import type { POSProvider } from "@/types/pos";
@@ -56,6 +57,7 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
         </div>
 
         <POSTabs provider={provider} currentYear={currentYear} />
+        <POSProviderFAQ provider={provider} />
         <SimilarProviders currentProvider={provider} />
         <LatestBlogPosts />
       </div>
