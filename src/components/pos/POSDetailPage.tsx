@@ -57,8 +57,8 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
         </div>
 
         <POSTabs provider={provider} currentYear={currentYear} />
-        <POSProviderFAQ provider={provider} />
         <SimilarProviders currentProvider={provider} />
+        <POSProviderFAQ provider={provider} />
         <LatestBlogPosts />
       </div>
     </>
