@@ -34,8 +34,8 @@ const POSTypePage = ({ title, description, type, Icon, whatIsContent, advantages
         </div>
 
         <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-center">Yazar Kasa POS Komisyon Oranları</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-8">
+          <h2 className="text-3xl font-bold mb-4 text-left">Yazar Kasa POS Komisyon Oranları</h2>
+          <p className="text-lg text-gray-600 max-w-3xl text-left mb-8">
             Bankaların ve fintech şirketlerinin güncel yazar kasa POS komisyon oranlarını karşılaştırın, 
             işletmeniz için en uygun yazar kasa POS çözümünü kolayca bulun. Aşağıdaki filtreleme seçenekleriyle 
             size en uygun yazar kasa POS cihazını seçebilirsiniz.
