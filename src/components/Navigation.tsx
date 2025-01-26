@@ -21,6 +21,18 @@ const Navigation = () => {
             </Link>
           </div>
 
+          {/* Desktop Navigation */}
+          <DesktopMenu />
+
+          <div className="hidden md:flex items-center">
+            <Link 
+              to="/calculator"
+              className="px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary-hover rounded-lg transition-all duration-300"
+            >
+              Hesaplayıcı
+            </Link>
+          </div>
+
           {/* Mobile Menu Button */}
           <div className="flex md:hidden">
             <button
@@ -36,20 +48,8 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* Desktop Navigation */}
-          <DesktopMenu />
-
           {/* Mobile Navigation */}
           <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-
-          <div className="hidden md:flex items-center">
-            <Link 
-              to="/calculator"
-              className="px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary-hover rounded-lg transition-all duration-300"
-            >
-              Hesaplayıcı
-            </Link>
-          </div>
         </div>
       </div>
     </nav>
