@@ -5,6 +5,9 @@ import Blog from "@/pages/Blog";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Dashboard from "@/pages/Dashboard";
+import POSKomisyonOranlari2025 from "@/pages/blog/pos-komisyon-oranlari-2025";
+import BlogPostDetail from "@/pages/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler";
+import POSCihaziNedir from "@/pages/blog/pos-cihazi-nedir-nasil-kullanilir";
 
 // POS Type Pages
 import YazarkasaPOS from "@/pages/pos-types/YazarkasaPOS";
@@ -43,8 +46,6 @@ import EsnekSanalPOS from "@/pages/pos/EsnekSanalPOS";
 import GarantiPOS from "@/pages/pos/GarantiPOS";
 import EnparaMobilPOS from "@/pages/pos/EnparaMobilPOS";
 import PaycellMobilPOS from "@/pages/pos/PaycellMobilPOS";
-import POSKomisyonOranlari2025 from "@/pages/blog/pos-komisyon-oranlari-2025";
-import BlogPostDetail from "@/pages/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler";
 
 // Main Routes
 export const mainRoutes: RouteObject[] = [
@@ -60,6 +61,7 @@ export const mainRoutes: RouteObject[] = [
 export const blogRoutes: RouteObject[] = [
   { path: "/blog/pos-komisyon-oranlari-2025", element: <POSKomisyonOranlari2025 /> },
   { path: "/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler", element: <BlogPostDetail /> },
+  { path: "/blog/pos-cihazi-nedir-nasil-kullanilir", element: <POSCihaziNedir /> },
 ];
 
 // POS Type Routes

@@ -2,6 +2,16 @@ import { BlogPost } from "@/types/blog";
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 4,
+    title: "POS Cihazı Nedir, Nasıl Kullanılır?",
+    slug: "pos-cihazi-nedir-nasil-kullanilir",
+    excerpt: "POS cihazları, ödeme işlemlerinin yanı sıra işletmelere pek çok avantaj sağlayan modern ödeme sistemleridir. Bu yazıda POS cihazlarının çalışma prensiplerini ve türlerini detaylıca inceliyoruz.",
+    content: "...",
+    date: "2024-03-21",
+    category: "adsense",
+    image: "/lovable-uploads/94b76f85-f46d-4697-9e85-37175b139351.png"
+  },
+  {
     id: 1,
     title: "POS Cihazı Seçerken Dikkat Edilmesi Gerekenler",
     slug: "pos-cihazi-secerken-dikkat-edilmesi-gerekenler",
