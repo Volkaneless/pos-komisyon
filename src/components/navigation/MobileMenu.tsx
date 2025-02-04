@@ -22,11 +22,11 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
       <div
         className={`
           fixed inset-x-0 top-16 md:hidden
-          bg-white/95 backdrop-blur-lg border-b border-gray-200
-          transform transition-transform duration-300 ease-in-out
+          bg-white/95 backdrop-blur-lg
+          transform transition-all duration-300 ease-in-out
           ${isOpen ? 'translate-y-0' : '-translate-y-full'}
           shadow-lg z-40 max-h-[calc(100vh-4rem)] overflow-y-auto
-          pb-6
+          border-t border-gray-200
         `}
       >
         <div className="px-4 py-6 space-y-6">
@@ -109,7 +109,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           <div className="mt-6 px-2">
             <Link 
               to="/calculator"
-              className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-primary hover:bg-primary-hover rounded-lg transition-colors"
+              className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors"
               onClick={onClose}
             >
               POS Komisyon Hesapla

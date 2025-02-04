@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import DesktopMenu from "./navigation/DesktopMenu";
@@ -6,14 +6,38 @@ import MobileMenu from "./navigation/MobileMenu";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm z-50">
+    <nav 
+      className={`
+        fixed top-0 left-0 right-0 z-50
+        transition-all duration-300 ease-in-out
+        ${isScrolled 
+          ? "bg-white/95 backdrop-blur-lg shadow-md" 
+          : "bg-white/80 backdrop-blur-sm"
+        }
+      `}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img src="/logo.svg" alt="POS Komisyon" className="h-8 w-auto" />
+              <img 
+                src="/logo.svg" 
+                alt="POS Komisyon" 
+                className="h-8 w-auto"
+              />
             </Link>
           </div>
 
@@ -22,7 +46,7 @@ const Navigation = () => {
             <DesktopMenu />
             <Link 
               to="/calculator"
-              className="px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary-hover rounded-lg transition-all duration-300"
+              className="px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary/90 rounded-lg transition-all duration-300"
             >
               Hesaplayıcı
             </Link>
@@ -45,11 +69,11 @@ const Navigation = () => {
               )}
             </button>
           </div>
-
-          {/* Mobile Navigation */}
-          <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         </div>
       </div>
+
+      {/* Mobile Navigation */}
+      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </nav>
   );
 };
