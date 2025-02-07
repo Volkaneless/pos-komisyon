@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet";
 
 const POSCihaziNasilAlinir = () => {
@@ -9,6 +10,8 @@ const POSCihaziNasilAlinir = () => {
           name="description" 
           content="POS cihazı alma rehberi: Başvuru şartları, gerekli belgeler ve dikkat edilmesi gerekenler hakkında detaylı bilgi." 
         />
+        <meta name="keywords" content="pos cihazı başvuru, pos cihazı alma, pos başvuru şartları, pos belgeler" />
+        <link rel="canonical" href="https://poskomisyon.com/blog/pos-cihazi-nasil-alinir" />
       </Helmet>
 
       <div className="container mx-auto px-4 pt-24 pb-16">
@@ -16,7 +19,7 @@ const POSCihaziNasilAlinir = () => {
           <h1 className="text-4xl font-bold mb-8">POS Cihazı Nasıl Alınır?</h1>
           
           <div className="text-sm text-gray-500 mb-8">
-            Yayın Tarihi: 1 Mart 2024
+            Güncelleme Tarihi: 1 Mart 2024
           </div>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">POS Cihazı Başvuru Şartları</h2>

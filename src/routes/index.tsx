@@ -9,6 +9,7 @@ import POSKomisyonOranlari2025 from "@/pages/blog/pos-komisyon-oranlari-2025";
 import POSKomisyonOranlari from "@/pages/blog/pos-komisyon-oranlari";
 import BlogPostDetail from "@/pages/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler";
 import POSCihaziNedir from "@/pages/blog/pos-cihazi-nedir-nasil-kullanilir";
+import POSCihaziNasilAlinir from "@/pages/blog/pos-cihazi-nasil-alinir";
 
 // POS Type Pages
 import YazarkasaPOS from "@/pages/pos-types/YazarkasaPOS";
@@ -64,6 +65,7 @@ export const blogRoutes: RouteObject[] = [
   { path: "/blog/pos-komisyon-oranlari", element: <POSKomisyonOranlari /> },
   { path: "/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler", element: <BlogPostDetail /> },
   { path: "/blog/pos-cihazi-nedir-nasil-kullanilir", element: <POSCihaziNedir /> },
+  { path: "/blog/pos-cihazi-nasil-alinir", element: <POSCihaziNasilAlinir /> },
 ];
 
 // POS Type Routes
