@@ -107,6 +107,84 @@ const MobilPOS = () => {
           </div>
         </div>
 
+        <div className="prose prose-lg max-w-4xl mx-auto mt-16">
+          <h2 className="text-3xl font-bold mb-6">Mobil POS Hakkında Detaylı Bilgi</h2>
+          
+          <h3 className="text-2xl font-semibold mb-4">Mobil POS Nedir?</h3>
+          <p className="text-gray-600 mb-6">
+            Mobil POS cihazları, işletmelerin hareket halindeyken ödeme almalarını sağlayan taşınabilir cihazlardır. 
+            Bu cihazlar, akıllı telefon veya tabletlerle entegre çalışarak kredi kartı ödemelerini güvenli bir şekilde işler.
+          </p>
+
+          <h3 className="text-2xl font-semibold mb-4">Komisyon Oranları</h3>
+          <div className="overflow-x-auto mb-8">
+            <table className="min-w-full border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="border border-gray-300 px-4 py-2">İşlem Tipi</th>
+                  <th className="border border-gray-300 px-4 py-2">Komisyon Oranı</th>
+                  <th className="border border-gray-300 px-4 py-2">Açıklama</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">Peşin</td>
+                  <td className="border border-gray-300 px-4 py-2">%0,89 - %1,99</td>
+                  <td className="border border-gray-300 px-4 py-2">Standart işlem komisyonu</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">3 Taksit</td>
+                  <td className="border border-gray-300 px-4 py-2">%1,99 - %2,99</td>
+                  <td className="border border-gray-300 px-4 py-2">Kısa vadeli taksit seçeneği</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">6 Taksit</td>
+                  <td className="border border-gray-300 px-4 py-2">%2,49 - %3,99</td>
+                  <td className="border border-gray-300 px-4 py-2">Orta vadeli taksit seçeneği</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">9 Taksit</td>
+                  <td className="border border-gray-300 px-4 py-2">%3,49 - %4,99</td>
+                  <td className="border border-gray-300 px-4 py-2">Uzun vadeli ödeme imkanı</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 className="text-2xl font-semibold mb-4">Kurulum ve Kullanım</h3>
+          <p className="text-gray-600 mb-6">
+            Mobil POS sistemlerinin kurulumu için izlemeniz gereken adımlar:
+          </p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>Gerekli belgelerin hazırlanması</li>
+            <li>Uygulama kurulumu ve aktivasyon</li>
+            <li>Banka hesabı entegrasyonu</li>
+            <li>Test işlemleri ve kullanım eğitimi</li>
+          </ul>
+
+          <h3 className="text-2xl font-semibold mb-4">Güvenlik Özellikleri</h3>
+          <p className="text-gray-600 mb-6">
+            Mobil POS sistemleri, en üst düzey güvenlik standartlarıyla korunmaktadır:
+          </p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>SSL şifreleme ve güvenli veri iletimi</li>
+            <li>PCI DSS uyumluluğu</li>
+            <li>Anlık işlem bildirimleri</li>
+            <li>Şüpheli işlem tespiti ve önleme</li>
+          </ul>
+
+          <h3 className="text-2xl font-semibold mb-4">Maliyet Optimizasyonu</h3>
+          <p className="text-gray-600 mb-6">
+            İşletmenizin maliyetlerini optimize etmek için öneriler:
+          </p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>İşlem hacmine göre komisyon oranı pazarlığı</li>
+            <li>Aylık sabit ücret yerine işlem bazlı ödeme</li>
+            <li>Kampanya dönemlerinde özel indirimler</li>
+            <li>Toplu işlem avantajları</li>
+          </ul>
+        </div>
+
         <FAQ />
         <LatestBlogPosts />
       </div>
