@@ -96,6 +96,85 @@ const CepPOS = () => {
           </div>
         </div>
 
+        <div className="prose prose-lg max-w-4xl mx-auto mt-16">
+          <h2 className="text-3xl font-bold mb-6">Cep POS Hakkında Detaylı Bilgi</h2>
+          
+          <h3 className="text-2xl font-semibold mb-4">Cep POS Nedir?</h3>
+          <p className="text-gray-600 mb-6">
+            Cep POS, akıllı telefonunuzu bir ödeme terminaline dönüştüren yenilikçi bir çözümdür. 
+            Herhangi bir ek donanım gerektirmeden, telefonunuz üzerinden güvenli bir şekilde kredi kartı ödemeleri alabilirsiniz.
+          </p>
+
+          <h3 className="text-2xl font-semibold mb-4">Komisyon Oranları</h3>
+          <div className="overflow-x-auto mb-8">
+            <table className="min-w-full border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="border border-gray-300 px-4 py-2">İşlem Tipi</th>
+                  <th className="border border-gray-300 px-4 py-2">Komisyon Oranı</th>
+                  <th className="border border-gray-300 px-4 py-2">Açıklama</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">Peşin</td>
+                  <td className="border border-gray-300 px-4 py-2">%0,79 - %1,49</td>
+                  <td className="border border-gray-300 px-4 py-2">Standart ödeme komisyonu</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">3 Taksit</td>
+                  <td className="border border-gray-300 px-4 py-2">%1,89 - %2,49</td>
+                  <td className="border border-gray-300 px-4 py-2">Kısa vadeli taksit seçeneği</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">6 Taksit</td>
+                  <td className="border border-gray-300 px-4 py-2">%2,29 - %3,49</td>
+                  <td className="border border-gray-300 px-4 py-2">Orta vadeli taksit seçeneği</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">9 Taksit</td>
+                  <td className="border border-gray-300 px-4 py-2">%3,29 - %4,49</td>
+                  <td className="border border-gray-300 px-4 py-2">Uzun vadeli ödeme imkanı</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 className="text-2xl font-semibold mb-4">Başvuru ve Kullanım</h3>
+          <p className="text-gray-600 mb-6">
+            Cep POS kullanımı için izlemeniz gereken adımlar:
+          </p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>Vergi levhası ve işletme belgeleri hazırlama</li>
+            <li>Cep POS uygulamasını indirme ve kurulum</li>
+            <li>Hesap doğrulama ve aktivasyon</li>
+            <li>Ödeme alma testleri</li>
+          </ul>
+
+          <h3 className="text-2xl font-semibold mb-4">Güvenlik ve Sertifikasyon</h3>
+          <p className="text-gray-600 mb-6">
+            Cep POS sistemleri, yüksek güvenlik standartlarına sahiptir:
+          </p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>End-to-end şifreleme</li>
+            <li>3D Secure desteği</li>
+            <li>Bankacılık düzenlemelerine uygunluk</li>
+            <li>Düzenli güvenlik güncellemeleri</li>
+          </ul>
+
+          <h3 className="text-2xl font-semibold mb-4">Avantajlar ve Özellikler</h3>
+          <p className="text-gray-600 mb-6">
+            Cep POS kullanmanın işletmenize sağlayacağı faydalar:
+          </p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>Sıfır donanım maliyeti</li>
+            <li>Düşük komisyon oranları</li>
+            <li>Anında para transferi</li>
+            <li>Detaylı satış raporları</li>
+            <li>Çoklu kullanıcı desteği</li>
+          </ul>
+        </div>
+
         <CepPOSFAQ />
         <LatestBlogPosts />
       </div>
