@@ -72,7 +72,9 @@ const SanalPOS = () => {
         <div className="mb-16">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Neden Sanal POS?</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">{description}</p>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              E-ticaret işletmeniz için en uygun sanal POS çözümünü sunuyoruz. Güvenli, hızlı ve ekonomik çözümlerle işletmenizin büyümesine katkı sağlıyoruz.
+            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
