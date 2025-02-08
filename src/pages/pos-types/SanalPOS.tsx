@@ -1,3 +1,4 @@
+
 import { Terminal, Cloud, MessageSquare, BookOpen, CreditCard, ShieldCheck, Globe } from "lucide-react";
 import { Helmet } from "react-helmet";
 import POSTypePage from "@/components/pos-types/POSTypePage";
@@ -71,9 +72,7 @@ const SanalPOS = () => {
         <div className="mb-16">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Neden Sanal POS?</h2>
-            <p className="text-gray-600">
-              E-ticaret işletmeniz için en uygun sanal POS çözümünü sunuyoruz. Güvenli, hızlı ve ekonomik.
-            </p>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">{description}</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -94,6 +93,63 @@ const SanalPOS = () => {
               <div className="text-gray-600">Komisyon Oranından Başlayan</div>
             </div>
           </div>
+        </div>
+
+        <div className="prose prose-lg max-w-4xl mx-auto mt-16">
+          <h2 className="text-3xl font-bold mb-6">Sanal POS Hakkında Detaylı Bilgi</h2>
+          
+          <h3 className="text-2xl font-semibold mb-4">Sanal POS Nedir?</h3>
+          <p className="text-gray-600 mb-6">
+            Sanal POS, internet üzerinden yapılan ödemeleri güvenli bir şekilde almanızı sağlayan modern bir ödeme sistemidir. 
+            E-ticaret siteleri, online rezervasyon sistemleri ve dijital hizmetler için vazgeçilmez bir çözümdür.
+          </p>
+
+          <h3 className="text-2xl font-semibold mb-4">Komisyon Oranları</h3>
+          <div className="overflow-x-auto mb-8">
+            <table className="min-w-full border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="border border-gray-300 px-4 py-2">İşlem Tipi</th>
+                  <th className="border border-gray-300 px-4 py-2">Komisyon Oranı</th>
+                  <th className="border border-gray-300 px-4 py-2">Açıklama</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">Tek Çekim</td>
+                  <td className="border border-gray-300 px-4 py-2">%0,59 - %2,70</td>
+                  <td className="border border-gray-300 px-4 py-2">En düşük komisyon oranlı seçenek</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">3 Taksit</td>
+                  <td className="border border-gray-300 px-4 py-2">%1,50 - %3,50</td>
+                  <td className="border border-gray-300 px-4 py-2">Orta vadeli taksit seçeneği</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">6 Taksit</td>
+                  <td className="border border-gray-300 px-4 py-2">%2,50 - %4,50</td>
+                  <td className="border border-gray-300 px-4 py-2">Yaygın tercih edilen taksit seçeneği</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 className="text-2xl font-semibold mb-4">Entegrasyon Süreci</h3>
+          <p className="text-gray-600 mb-6">
+            Sanal POS entegrasyonu genellikle şu adımları içerir:
+          </p>
+          <ul className="list-disc pl-6 mb-6">
+            <li>Başvuru ve gerekli belgelerin hazırlanması</li>
+            <li>Teknik entegrasyon ve test süreçleri</li>
+            <li>Güvenlik kontrollerinin tamamlanması</li>
+            <li>Canlı ortama geçiş</li>
+          </ul>
+
+          <h3 className="text-2xl font-semibold mb-4">Güvenlik Önlemleri</h3>
+          <p className="text-gray-600 mb-6">
+            Sanal POS sistemleri, SSL şifreleme, 3D Secure ve tokenizasyon gibi ileri düzey güvenlik önlemleri kullanır.
+            Bu sayede müşterilerinizin ödeme bilgileri güvende kalır.
+          </p>
         </div>
 
         <FAQ />
