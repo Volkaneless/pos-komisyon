@@ -49,6 +49,7 @@ import EsnekSanalPOS from "@/pages/pos/EsnekSanalPOS";
 import GarantiPOS from "@/pages/pos/GarantiPOS";
 import EnparaMobilPOS from "@/pages/pos/EnparaMobilPOS";
 import PaycellMobilPOS from "@/pages/pos/PaycellMobilPOS";
+import SipaySanalPOS from "@/pages/pos/SipaySanalPOS";
 
 // Main Routes
 export const mainRoutes: RouteObject[] = [
@@ -110,6 +111,7 @@ export const posProviderRoutes: RouteObject[] = [
   { path: "/pos/garanti-pos", element: <GarantiPOS /> },
   { path: "/pos/enpara-mobil", element: <EnparaMobilPOS /> },
   { path: "/pos/paycell-mobil", element: <PaycellMobilPOS /> },
+  { path: "/pos/sipay-sanal", element: <SipaySanalPOS /> },
 ];
 
 // Combine all routes

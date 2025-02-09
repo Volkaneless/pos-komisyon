@@ -1,5 +1,19 @@
 export const sanalPOSProviders = [
   {
+    id: "sipay-sanal",
+    name: "Sipay Sanal POS",
+    type: "Sanal POS",
+    logo: "/logos/sipay.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,89",
+    features: [
+      "E-ticaret uyumlu",
+      "Kolay entegrasyon",
+      "Güvenli altyapı",
+      "7/24 destek"
+    ]
+  },
+  {
     id: "vallet-sanal",
     name: "Vallet Sanal POS",
     type: "Sanal POS",
