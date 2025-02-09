@@ -54,6 +54,12 @@ import ElektraWebSanalPOS from "@/pages/pos/ElektraWebSanalPOS";
 import BrisaSanalPOS from "@/pages/pos/BrisaSanalPOS";
 import ParamSanalPOS from "@/pages/pos/ParamSanalPOS";
 import JamesonSanalPOS from "@/pages/pos/JamesonSanalPOS";
+import TEBPOS from "@/pages/pos/TEBPOS";
+import HalkbankPOS from "@/pages/pos/HalkbankPOS";
+import BekoPOS from "@/pages/pos/BekoPOS";
+import ZiraatPOS from "@/pages/pos/ZiraatPOS";
+import IngenicoPOS from "@/pages/pos/IngenicoPOS";
+import KuveytTurkPOS from "@/pages/pos/KuveytTurkPOS";
 
 // Main Routes
 export const mainRoutes: RouteObject[] = [
@@ -120,6 +126,12 @@ export const posProviderRoutes: RouteObject[] = [
   { path: "/pos/brisa-sanal", element: <BrisaSanalPOS /> },
   { path: "/pos/param-sanal", element: <ParamSanalPOS /> },
   { path: "/pos/jameson-sanal", element: <JamesonSanalPOS /> },
+  { path: "/pos/teb-pos", element: <TEBPOS /> },
+  { path: "/pos/halkbank-pos", element: <HalkbankPOS /> },
+  { path: "/pos/beko-pos", element: <BekoPOS /> },
+  { path: "/pos/ziraat-pos", element: <ZiraatPOS /> },
+  { path: "/pos/ingenico-pos", element: <IngenicoPOS /> },
+  { path: "/pos/kuveyt-turk-pos", element: <KuveytTurkPOS /> },
 ];
 
 // Combine all routes
