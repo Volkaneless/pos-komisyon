@@ -50,6 +50,10 @@ import GarantiPOS from "@/pages/pos/GarantiPOS";
 import EnparaMobilPOS from "@/pages/pos/EnparaMobilPOS";
 import PaycellMobilPOS from "@/pages/pos/PaycellMobilPOS";
 import SipaySanalPOS from "@/pages/pos/SipaySanalPOS";
+import ElektraWebSanalPOS from "@/pages/pos/ElektraWebSanalPOS";
+import BrisaSanalPOS from "@/pages/pos/BrisaSanalPOS";
+import ParamSanalPOS from "@/pages/pos/ParamSanalPOS";
+import JamesonSanalPOS from "@/pages/pos/JamesonSanalPOS";
 
 // Main Routes
 export const mainRoutes: RouteObject[] = [
@@ -112,6 +116,10 @@ export const posProviderRoutes: RouteObject[] = [
   { path: "/pos/enpara-mobil", element: <EnparaMobilPOS /> },
   { path: "/pos/paycell-mobil", element: <PaycellMobilPOS /> },
   { path: "/pos/sipay-sanal", element: <SipaySanalPOS /> },
+  { path: "/pos/elektraweb-sanal", element: <ElektraWebSanalPOS /> },
+  { path: "/pos/brisa-sanal", element: <BrisaSanalPOS /> },
+  { path: "/pos/param-sanal", element: <ParamSanalPOS /> },
+  { path: "/pos/jameson-sanal", element: <JamesonSanalPOS /> },
 ];
 
 // Combine all routes

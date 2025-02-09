@@ -152,5 +152,61 @@ export const sanalPOSProviders = [
       "Kolay entegrasyon",
       "7/24 destek"
     ]
+  },
+  {
+    id: "elektraweb-sanal",
+    name: "ElektraWeb POS",
+    type: "Sanal POS",
+    logo: "/logos/elektraweb.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,79",
+    features: [
+      "E-ticaret uyumlu",
+      "Kolay entegrasyon",
+      "Güvenli altyapı",
+      "7/24 destek"
+    ]
+  },
+  {
+    id: "brisa-sanal",
+    name: "Brisa Sanal POS",
+    type: "Sanal POS",
+    logo: "/logos/brisa.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,99",
+    features: [
+      "Online ödeme",
+      "Kolay entegrasyon",
+      "Güvenli altyapı",
+      "Teknik destek"
+    ]
+  },
+  {
+    id: "param-sanal",
+    name: "Param Sanal POS",
+    type: "Sanal POS",
+    logo: "/logos/param.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,89",
+    features: [
+      "E-ticaret uyumlu",
+      "Hızlı kurulum",
+      "Güvenli altyapı",
+      "7/24 destek"
+    ]
+  },
+  {
+    id: "jameson-sanal",
+    name: "Jameson Sanal POS",
+    type: "Sanal POS",
+    logo: "/logos/jameson.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,99",
+    features: [
+      "Online ödeme",
+      "Kolay entegrasyon",
+      "Güvenli altyapı",
+      "Teknik destek"
+    ]
   }
 ];
