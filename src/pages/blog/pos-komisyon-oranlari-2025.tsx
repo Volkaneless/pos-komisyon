@@ -9,6 +9,7 @@ const POSKomisyonOranlari2025 = () => {
           name="description" 
           content="2025 yılı güncel POS komisyon oranları karşılaştırması. Banka ve ödeme kuruluşlarının POS komisyon oranlarını inceleyin." 
         />
+        <link rel="canonical" href="https://poskomisyon.com/blog/pos-komisyon-oranlari-2025" />
       </Helmet>
 
       <div className="container mx-auto px-4 pt-24 pb-16">

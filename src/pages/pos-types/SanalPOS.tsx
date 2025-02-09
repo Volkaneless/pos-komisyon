@@ -1,4 +1,3 @@
-
 import { Terminal, Cloud, MessageSquare, BookOpen, CreditCard, ShieldCheck, Globe } from "lucide-react";
 import { Helmet } from "react-helmet";
 import POSTypePage from "@/components/pos-types/POSTypePage";
