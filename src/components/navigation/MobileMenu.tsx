@@ -31,6 +31,44 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           >
             Ana Sayfa
           </Link>
+          <div className="space-y-2">
+            <div className="px-4 text-sm font-medium text-gray-500">POS Türleri</div>
+            <Link 
+              to="/pos-types/yazarkasa"
+              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
+              onClick={onClose}
+            >
+              Yazar Kasa POS
+            </Link>
+            <Link 
+              to="/pos-types/sanal"
+              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
+              onClick={onClose}
+            >
+              Sanal POS
+            </Link>
+            <Link 
+              to="/pos-types/mobil"
+              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
+              onClick={onClose}
+            >
+              Mobil POS
+            </Link>
+            <Link 
+              to="/pos-types/cep"
+              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
+              onClick={onClose}
+            >
+              Cep POS
+            </Link>
+            <Link 
+              to="/pos-types/banka"
+              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
+              onClick={onClose}
+            >
+              Banka POS
+            </Link>
+          </div>
           <Link 
             to="/about"
             className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"

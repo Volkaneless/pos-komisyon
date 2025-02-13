@@ -1,3 +1,4 @@
+
 import { Link, useLocation } from "react-router-dom";
 import {
   NavigationMenu,
@@ -6,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Terminal, Smartphone, Cloud, CreditCard } from "lucide-react";
+import { Terminal, Smartphone, Cloud, CreditCard, BanknoteTr } from "lucide-react";
 
 const DesktopMenu = () => {
   const location = useLocation();
@@ -57,6 +58,16 @@ const DesktopMenu = () => {
                   <div>
                     <div className="font-medium">Cep POS</div>
                     <p className="text-sm text-gray-500">Akıllı telefon uygulamalı POS çözümleri</p>
+                  </div>
+                </Link>
+                <Link 
+                  to="/pos-types/banka"
+                  className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition-colors"
+                >
+                  <BanknoteTr className="w-4 h-4" />
+                  <div>
+                    <div className="font-medium">Banka POS</div>
+                    <p className="text-sm text-gray-500">Bankaların sunduğu POS çözümleri</p>
                   </div>
                 </Link>
               </div>
