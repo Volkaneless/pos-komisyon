@@ -17,6 +17,7 @@ import YazarkasaPOS from "@/pages/pos-types/YazarkasaPOS";
 import SanalPOS from "@/pages/pos-types/SanalPOS";
 import MobilPOS from "@/pages/pos-types/MobilPOS";
 import CepPOS from "@/pages/pos-types/CepPOS";
+import BankaPOS from "@/pages/pos-types/BankaPOS";
 
 // POS Provider Pages
 import EnparaPOS from "@/pages/pos/EnparaPOS";
@@ -87,6 +88,7 @@ export const posTypeRoutes: RouteObject[] = [
   { path: "/pos-types/sanal", element: <SanalPOS /> },
   { path: "/pos-types/mobil", element: <MobilPOS /> },
   { path: "/pos-types/cep", element: <CepPOS /> },
+  { path: "/pos-types/banka", element: <BankaPOS /> },
 ];
 
 // POS Provider Routes
