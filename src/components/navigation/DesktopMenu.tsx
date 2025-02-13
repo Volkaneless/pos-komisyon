@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Terminal, Smartphone, Cloud, CreditCard, BanknoteTr } from "lucide-react";
+import { Terminal, Smartphone, Cloud, CreditCard, Banknote } from "lucide-react";
 
 const DesktopMenu = () => {
   const location = useLocation();
@@ -64,7 +64,7 @@ const DesktopMenu = () => {
                   to="/pos-types/banka"
                   className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition-colors"
                 >
-                  <BanknoteTr className="w-4 h-4" />
+                  <Banknote className="w-4 h-4" />
                   <div>
                     <div className="font-medium">Banka POS</div>
                     <p className="text-sm text-gray-500">Bankaların sunduğu POS çözümleri</p>
