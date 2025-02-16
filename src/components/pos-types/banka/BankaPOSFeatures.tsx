@@ -5,67 +5,67 @@ const BankaPOSFeatures = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <Card className="p-6 hover:shadow-lg transition-shadow bg-white">
-        <h3 className="text-lg font-semibold mb-4 text-primary">Komisyon Oranları ve Hesaplama</h3>
+        <h3 className="text-lg font-semibold mb-4 text-primary">Taksit İmkanları</h3>
         <ul className="space-y-2 text-gray-600">
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Banka POS komisyon oranları sektöre göre belirlenir
+            12 aya varan taksit seçenekleri
           </li>
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Aylık ciro bazlı komisyon hesaplama
+            Sektöre özel taksit kampanyaları
           </li>
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Perakende sektörü komisyon oranları avantajı
+            Dönemsel özel taksit fırsatları
           </li>
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            E-ticaret özel komisyon hesaplaması
+            Peşin fiyatına taksit imkanı
           </li>
         </ul>
       </Card>
 
       <Card className="p-6 hover:shadow-lg transition-shadow bg-white">
-        <h3 className="text-lg font-semibold mb-4 text-primary">2025 POS Komisyon Avantajları</h3>
+        <h3 className="text-lg font-semibold mb-4 text-primary">Teknik Özellikler</h3>
         <ul className="space-y-2 text-gray-600">
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Düşük komisyon oranları ile rekabetçi fiyatlar
+            Temassız ödeme desteği
           </li>
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Sıfır komisyon kampanyaları
+            QR kod ile ödeme
           </li>
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Özel gün komisyon indirimleri
+            NFC teknolojisi
           </li>
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Sezonluk komisyon avantajları
+            Mobil uygulama entegrasyonu
           </li>
         </ul>
       </Card>
 
       <Card className="p-6 hover:shadow-lg transition-shadow bg-white">
-        <h3 className="text-lg font-semibold mb-4 text-primary">POS Komisyon Özellikleri</h3>
+        <h3 className="text-lg font-semibold mb-4 text-primary">Güvenlik Özellikleri</h3>
         <ul className="space-y-2 text-gray-600">
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Komisyon iade garantisi
+            EMV chip & PIN güvenliği
           </li>
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Anlık komisyon hesaplama
+            3D Secure desteği
           </li>
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Taksitli işlem komisyon oranları
+            SSL şifreleme
           </li>
           <li className="flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Sektörel komisyon karşılaştırması
+            Anlık dolandırıcılık kontrolü
           </li>
         </ul>
       </Card>
