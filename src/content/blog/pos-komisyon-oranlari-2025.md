@@ -1,3 +1,4 @@
+
 ---
 title: "2025 POS Komisyon Oranları"
 excerpt: "2025 yılı güncel POS komisyon oranları karşılaştırması ve detaylı analiz."
