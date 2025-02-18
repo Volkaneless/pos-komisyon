@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { bankPOSProviders } from "@/data/pos-types/providers/bankPOS";
 import { brandPOSProviders } from "@/data/pos-types/providers/brandPOS";
 import { finTechPOSProviders } from "@/data/pos-types/providers/finTechPOS";
+import { mobilPOSProviders } from "@/data/pos-types/mobilPOS";
+import { cepPOSProviders } from "@/data/pos-types/cepPOS";
+import { sanalPOSProviders } from "@/data/pos-types/sanalPOS";
 
 const SecondaryFooter = () => {
   return (
@@ -14,6 +17,17 @@ const SecondaryFooter = () => {
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Banka POS Çözümleri</h3>
             <ul className="space-y-2">
               {bankPOSProviders.map((provider) => (
+                <li key={provider.id}>
+                  <Link 
+                    to={`/pos/${provider.id}`}
+                    className="text-gray-600 hover:text-primary flex items-center group"
+                  >
+                    <ArrowRight className="h-4 w-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    <span>{provider.name}</span>
+                  </Link>
+                </li>
+              ))}
+              {mobilPOSProviders.map((provider) => (
                 <li key={provider.id}>
                   <Link 
                     to={`/pos/${provider.id}`}
@@ -41,6 +55,17 @@ const SecondaryFooter = () => {
                   </Link>
                 </li>
               ))}
+              {cepPOSProviders.map((provider) => (
+                <li key={provider.id}>
+                  <Link 
+                    to={`/pos/${provider.id}`}
+                    className="text-gray-600 hover:text-primary flex items-center group"
+                  >
+                    <ArrowRight className="h-4 w-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    <span>{provider.name}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -48,6 +73,17 @@ const SecondaryFooter = () => {
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Fintech POS Çözümleri</h3>
             <ul className="space-y-2">
               {finTechPOSProviders.map((provider) => (
+                <li key={provider.id}>
+                  <Link 
+                    to={`/pos/${provider.id}`}
+                    className="text-gray-600 hover:text-primary flex items-center group"
+                  >
+                    <ArrowRight className="h-4 w-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    <span>{provider.name}</span>
+                  </Link>
+                </li>
+              ))}
+              {sanalPOSProviders.map((provider) => (
                 <li key={provider.id}>
                   <Link 
                     to={`/pos/${provider.id}`}
