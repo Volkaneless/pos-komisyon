@@ -12,7 +12,7 @@ const BankaPOS = () => {
     <>
       <POSTypePage
         title="Banka POS Komisyon Oranları 2025"
-        description="2025 yılı güncel banka POS komisyon oranları, banka karşılaştırmaları ve özel kampanyalar. En uygun banka POS çözümünü bulun, avantajlı komisyon oranlarından yararlanın."
+        description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
         type="Banka POS"
         Icon={Banknote}
         whatIsContent="Banka POS'ları, bankaların işletmelere sunduğu güvenilir ödeme çözümleridir. Yüksek işlem hacmi ve çoklu ödeme seçenekleri sunar."
