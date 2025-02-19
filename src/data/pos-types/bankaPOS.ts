@@ -1,4 +1,3 @@
-
 import type { POSProvider } from "@/types/pos";
 
 export const bankaPOSProviders: POSProvider[] = [
@@ -90,6 +89,51 @@ export const bankaPOSProviders: POSProvider[] = [
       "E-ticaret çözümleri",
       "Çoklu para birimi",
       "Anlık bildirimler"
+    ]
+  },
+  {
+    id: "isbank-sanal-pos",
+    name: "İş Bankası Sanal POS",
+    type: "Banka POS",
+    logo: "/logos/isbank.webp",
+    monthly_fee: "149 TL / Ay",
+    commission_rate: "1,95",
+    features: [
+      "Maximum kart program desteği",
+      "E-ticaret entegrasyonu",
+      "3D Secure güvenliği",
+      "Mobil ödeme çözümleri",
+      "18 aya varan taksit imkanı"
+    ]
+  },
+  {
+    id: "vakifbank-sanal-pos",
+    name: "VakıfBank Sanal POS",
+    type: "Banka POS",
+    logo: "/logos/vakifbank.webp",
+    monthly_fee: "129 TL / Ay",
+    commission_rate: "1,85",
+    features: [
+      "World kart program desteği",
+      "Kolay entegrasyon API",
+      "7/24 teknik destek",
+      "Çoklu para birimi desteği",
+      "Otomatik ödeme sistemi"
+    ]
+  },
+  {
+    id: "denizbank-sanal-pos",
+    name: "Denizbank Sanal POS",
+    type: "Banka POS",
+    logo: "/logos/denizbank.webp",
+    monthly_fee: "139 TL / Ay",
+    commission_rate: "1,92",
+    features: [
+      "Bonus kart program desteği",
+      "E-ticaret entegrasyonu",
+      "Gelişmiş raporlama",
+      "Uluslararası kart kabulü",
+      "Dinamik kur çevrimi"
     ]
   }
 ];

@@ -61,6 +61,9 @@ import BekoPOS from "@/pages/pos/BekoPOS";
 import ZiraatPOS from "@/pages/pos/ZiraatPOS";
 import IngenicoPOS from "@/pages/pos/IngenicoPOS";
 import KuveytTurkPOS from "@/pages/pos/KuveytTurkPOS";
+import IsbankSanalPOS from "@/pages/pos/IsbankSanalPOS";
+import VakifbankSanalPOS from "@/pages/pos/VakifbankSanalPOS";
+import DenizbankSanalPOS from "@/pages/pos/DenizbankSanalPOS";
 
 // Main Routes
 export const mainRoutes: RouteObject[] = [
@@ -134,6 +137,9 @@ export const posProviderRoutes: RouteObject[] = [
   { path: "/pos/ziraat-pos", element: <ZiraatPOS /> },
   { path: "/pos/ingenico-pos", element: <IngenicoPOS /> },
   { path: "/pos/kuveyt-turk-pos", element: <KuveytTurkPOS /> },
+  { path: "/pos/isbank-sanal-pos", element: <IsbankSanalPOS /> },
+  { path: "/pos/vakifbank-sanal-pos", element: <VakifbankSanalPOS /> },
+  { path: "/pos/denizbank-sanal-pos", element: <DenizbankSanalPOS /> },
 ];
 
 // Combine all routes
