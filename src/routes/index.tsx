@@ -64,6 +64,9 @@ import KuveytTurkPOS from "@/pages/pos/KuveytTurkPOS";
 import IsbankSanalPOS from "@/pages/pos/IsbankSanalPOS";
 import VakifbankSanalPOS from "@/pages/pos/VakifbankSanalPOS";
 import DenizbankSanalPOS from "@/pages/pos/DenizbankSanalPOS";
+import SimpraSanalPOS from "@/pages/pos/SimpraSanalPOS";
+import IyzicoSanalPOS from "@/pages/pos/IyzicoSanalPOS";
+import ShopifySanalPOS from "@/pages/pos/ShopifySanalPOS";
 
 // Main Routes
 export const mainRoutes: RouteObject[] = [
@@ -140,6 +143,9 @@ export const posProviderRoutes: RouteObject[] = [
   { path: "/pos/isbank-sanal-pos", element: <IsbankSanalPOS /> },
   { path: "/pos/vakifbank-sanal-pos", element: <VakifbankSanalPOS /> },
   { path: "/pos/denizbank-sanal-pos", element: <DenizbankSanalPOS /> },
+  { path: "/pos/simpra-sanal", element: <SimpraSanalPOS /> },
+  { path: "/pos/iyzico-sanal", element: <IyzicoSanalPOS /> },
+  { path: "/pos/shopify-sanal", element: <ShopifySanalPOS /> },
 ];
 
 // Combine all routes

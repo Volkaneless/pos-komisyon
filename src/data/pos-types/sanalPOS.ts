@@ -208,5 +208,47 @@ export const sanalPOSProviders = [
       "Güvenli altyapı",
       "Teknik destek"
     ]
+  },
+  {
+    id: "simpra-sanal",
+    name: "Simpra POS",
+    type: "Sanal POS",
+    logo: "/logos/simpra.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,79",
+    features: [
+      "E-ticaret uyumlu",
+      "Kolay entegrasyon",
+      "Dinamik raporlama",
+      "7/24 destek"
+    ]
+  },
+  {
+    id: "iyzico-sanal",
+    name: "iyzico Sanal POS",
+    type: "Sanal POS",
+    logo: "/logos/iyzico.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,95",
+    features: [
+      "Kolay entegrasyon",
+      "Gelişmiş fraud koruması",
+      "Link ile ödeme",
+      "Teknik destek"
+    ]
+  },
+  {
+    id: "shopify-sanal",
+    name: "Shopify Sanal POS",
+    type: "Sanal POS",
+    logo: "/logos/shopify.webp",
+    monthly_fee: "0TL",
+    commission_rate: "2,09",
+    features: [
+      "E-ticaret entegrasyonu",
+      "Global ödeme desteği",
+      "Kolay kullanım",
+      "7/24 destek"
+    ]
   }
 ];
