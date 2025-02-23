@@ -86,7 +86,8 @@ const MobilPOS = () => {
             Bu cihazlar, akıllı telefon veya tabletlerle entegre çalışarak kredi kartı ödemelerini güvenli bir şekilde işler.
           </p>
 
-          <h3 className="text-2xl font-semibold mb-4">Komisyon Oranları</h3>
+          <h3 className="text-2xl font-semibold mb-4">Mobil POS Komisyon Oranları 2025 
+        </h3>
           <div className="overflow-x-auto mb-8">
             <table className="min-w-full border-collapse border border-gray-300">
               <thead>
@@ -121,7 +122,7 @@ const MobilPOS = () => {
             </table>
           </div>
 
-          <h3 className="text-2xl font-semibold mb-4">Kurulum ve Kullanım</h3>
+          <h3 className="text-2xl font-semibold mb-4">Mobil POS: Kurulum ve Kullanım</h3>
           <p className="text-gray-600 mb-6">
             Mobil POS sistemlerinin kurulumu için izlemeniz gereken adımlar:
           </p>
@@ -132,7 +133,7 @@ const MobilPOS = () => {
             <li>Test işlemleri ve kullanım eğitimi</li>
           </ul>
 
-          <h3 className="text-2xl font-semibold mb-4">Güvenlik Özellikleri</h3>
+          <h3 className="text-2xl font-semibold mb-4">Mobil POS: Güvenlik Özellikleri</h3>
           <p className="text-gray-600 mb-6">
             Mobil POS sistemleri, en üst düzey güvenlik standartlarıyla korunmaktadır:
           </p>
@@ -143,7 +144,7 @@ const MobilPOS = () => {
             <li>Şüpheli işlem tespiti ve önleme</li>
           </ul>
 
-          <h3 className="text-2xl font-semibold mb-4">Maliyet Optimizasyonu</h3>
+          <h3 className="text-2xl font-semibold mb-4">Mobil POS: Maliyet Optimizasyonu</h3>
           <p className="text-gray-600 mb-6">
             İşletmenizin maliyetlerini optimize etmek için öneriler:
           </p>
