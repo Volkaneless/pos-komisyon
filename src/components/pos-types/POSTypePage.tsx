@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet";
 import { posProviders } from "@/data/posProviders";
 import POSCard from "@/components/POSCard";
 import { LucideIcon } from "lucide-react";
-
 interface POSTypePageProps {
   title: string;
   description: string;
@@ -11,14 +10,16 @@ interface POSTypePageProps {
   whatIsContent: string;
   advantages: string[];
 }
-
-const POSTypePage = ({ title, description, type, Icon, whatIsContent, advantages }: POSTypePageProps) => {
-  const filteredProviders = posProviders.filter(
-    provider => provider.type === type
-  );
-
-  return (
-    <>
+const POSTypePage = ({
+  title,
+  description,
+  type,
+  Icon,
+  whatIsContent,
+  advantages
+}: POSTypePageProps) => {
+  const filteredProviders = posProviders.filter(provider => provider.type === type);
+  return <>
       <Helmet>
         <title>{title} | POS Compare</title>
         <meta name="description" content={description} />
@@ -51,7 +52,7 @@ const POSTypePage = ({ title, description, type, Icon, whatIsContent, advantages
             </ul>
           </div>
           <div className="bg-primary/5 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Önemli Bilgiler</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Önemli Bilgiler: Sanal POS Komisyon Oranları</h3>
             <p className="text-gray-700 mb-3">
               {type} çözümleri, işletmenizin yasal gerekliliklerini karşılarken modern ödeme çözümlerini de 
               tek bir platformda birleştirir. 2024 yılı itibariyle tüm işletmelerin güvenli ödeme sistemleri 
@@ -65,13 +66,9 @@ const POSTypePage = ({ title, description, type, Icon, whatIsContent, advantages
         </div>
 
         <div className="grid gap-8 mb-12">
-          {filteredProviders.map((provider) => (
-            <POSCard key={provider.id} {...provider} />
-          ))}
+          {filteredProviders.map(provider => <POSCard key={provider.id} {...provider} />)}
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default POSTypePage;
