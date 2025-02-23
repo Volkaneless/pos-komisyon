@@ -3,37 +3,16 @@ import { Smartphone } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import CepPOSFAQ from "@/components/FAQ/CepPOSFAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
-
 const CepPOS = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Cep POS Komisyon Oranları 2025 - Cep POS Nedir?</title>
-        <meta 
-          name="description" 
-          content="Cep POS uygulamaları ile akıllı telefonunuzu POS cihazına dönüştürün. 2025 komisyon oranları, başvuru şartları ve detaylı bilgiler." 
-        />
+        <meta name="description" content="Cep POS uygulamaları ile akıllı telefonunuzu POS cihazına dönüştürün. 2025 komisyon oranları, başvuru şartları ve detaylı bilgiler." />
         <meta name="keywords" content="cep pos, mobil pos uygulaması, telefon pos, android pos uygulaması, ios pos uygulaması, cep pos komisyon oranları 2025" />
         <link rel="canonical" href="https://poskomisyon.com/pos-types/cep" />
       </Helmet>
 
-      <POSTypePage
-        title="Cep POS Komisyon Oranları 2025 - Cep POS Nedir?"
-        description="En uygun cep POS uygulamalarını karşılaştırın, işletmeniz için en uygun cep POS çözümünü seçin."
-        type="Cep POS"
-        Icon={Smartphone}
-        whatIsContent="Cep POS uygulamaları, akıllı telefonları ödeme terminaline dönüştüren modern yazılım çözümleridir. Bu uygulamalar sayesinde, herhangi bir ek donanıma ihtiyaç duymadan akıllı telefonunuz üzerinden kredi kartı ödemesi alabilirsiniz. 2025 yılında artan dijitalleşme ile birlikte Cep POS sistemleri daha da yaygınlaşmaktadır."
-        advantages={[
-          "Ek donanım maliyeti yok",
-          "Hızlı kurulum ve kullanım",
-          "Düşük işlem maliyetleri",
-          "Mobil cihaz entegrasyonu",
-          "Anlık ödeme takibi",
-          "7/24 teknik destek",
-          "Taksit imkanı",
-          "Temassız ödeme desteği"
-        ]}
-      />
+      <POSTypePage title="Cep POS Komisyon Oranları 2025 - Cep POS Nedir?" description="En uygun cep POS uygulamalarını karşılaştırın, işletmeniz için en uygun cep POS çözümünü seçin." type="Cep POS" Icon={Smartphone} whatIsContent="Cep POS uygulamaları, akıllı telefonları ödeme terminaline dönüştüren modern yazılım çözümleridir. Bu uygulamalar sayesinde, herhangi bir ek donanıma ihtiyaç duymadan akıllı telefonunuz üzerinden kredi kartı ödemesi alabilirsiniz. 2025 yılında artan dijitalleşme ile birlikte Cep POS sistemleri daha da yaygınlaşmaktadır." advantages={["Ek donanım maliyeti yok", "Hızlı kurulum ve kullanım", "Düşük işlem maliyetleri", "Mobil cihaz entegrasyonu", "Anlık ödeme takibi", "7/24 teknik destek", "Taksit imkanı", "Temassız ödeme desteği"]} />
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -97,7 +76,7 @@ const CepPOS = () => {
         </div>
 
         <div className="prose prose-lg max-w-4xl mx-auto mt-16">
-          <h2 className="text-3xl font-bold mb-6">Cep POS Hakkında Detaylı Bilgi</h2>
+          <h2 className="text-3xl font-bold mb-6">Cep POS Komisyon Oranları 2025 - Cep POS Nedir?</h2>
           
           <h3 className="text-2xl font-semibold mb-4">Cep POS Nedir?</h3>
           <p className="text-gray-600 mb-6">
@@ -140,7 +119,7 @@ const CepPOS = () => {
             </table>
           </div>
 
-          <h3 className="text-2xl font-semibold mb-4">Başvuru ve Kullanım</h3>
+          <h3 className="text-2xl font-semibold mb-4">Cep POS: Başvuru ve Kullanım</h3>
           <p className="text-gray-600 mb-6">
             Cep POS kullanımı için izlemeniz gereken adımlar:
           </p>
@@ -151,7 +130,7 @@ const CepPOS = () => {
             <li>Ödeme alma testleri</li>
           </ul>
 
-          <h3 className="text-2xl font-semibold mb-4">Güvenlik ve Sertifikasyon</h3>
+          <h3 className="text-2xl font-semibold mb-4">Cep POS: Güvenlik ve Sertifikasyon</h3>
           <p className="text-gray-600 mb-6">
             Cep POS sistemleri, yüksek güvenlik standartlarına sahiptir:
           </p>
@@ -162,7 +141,7 @@ const CepPOS = () => {
             <li>Düzenli güvenlik güncellemeleri</li>
           </ul>
 
-          <h3 className="text-2xl font-semibold mb-4">Avantajlar ve Özellikler</h3>
+          <h3 className="text-2xl font-semibold mb-4">Cep POS: Avantajlar ve Özellikler</h3>
           <p className="text-gray-600 mb-6">
             Cep POS kullanmanın işletmenize sağlayacağı faydalar:
           </p>
@@ -178,8 +157,6 @@ const CepPOS = () => {
         <CepPOSFAQ />
         <LatestBlogPosts />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default CepPOS;
