@@ -52,7 +52,7 @@ const POSTypePage = ({
             </ul>
           </div>
           <div className="bg-primary/5 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Önemli Bilgiler: Sanal POS Komisyon Oranları</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Önemli Bilgiler: POS Komisyon Oranları</h3>
             <p className="text-gray-700 mb-3">
               {type} çözümleri, işletmenizin yasal gerekliliklerini karşılarken modern ödeme çözümlerini de 
               tek bir platformda birleştirir. 2024 yılı itibariyle tüm işletmelerin güvenli ödeme sistemleri 
