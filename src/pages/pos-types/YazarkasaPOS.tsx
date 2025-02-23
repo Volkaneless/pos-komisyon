@@ -3,32 +3,17 @@ import { Terminal, ShieldCheck, Receipt, CreditCard, Banknote, Clock, Shield, Za
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
-
 const YazarkasaPOS = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Yazar Kasa POS Cihazı | Yeni Nesil Yazarkasa POS 2025</title>
-        <meta 
-          name="description" 
-          content="Yazar kasa POS cihazları, ÖKC entegreli POS sistemleri ve komisyon oranları hakkında detaylı bilgi alın. 2025 yılı güncel fiyatlar ve özellikler." 
-        />
-        <meta 
-          name="keywords" 
-          content="yazar kasa pos, ökc pos, yeni nesil yazar kasa, entegre pos cihazı, yazarkasa pos fiyatları, 2025 pos cihazları" 
-        />
+        <meta name="description" content="Yazar kasa POS cihazları, ÖKC entegreli POS sistemleri ve komisyon oranları hakkında detaylı bilgi alın. 2025 yılı güncel fiyatlar ve özellikler." />
+        <meta name="keywords" content="yazar kasa pos, ökc pos, yeni nesil yazar kasa, entegre pos cihazı, yazarkasa pos fiyatları, 2025 pos cihazları" />
         <link rel="canonical" href="https://poskomisyon.com/pos-types/yazarkasa" />
       </Helmet>
       
       <div>
-        <POSTypePage
-          title="Yazar Kasa POS Cihazı | Yeni Nesil Yazarkasa POS 2025"
-          description="En son teknoloji yazar kasa POS cihazlarını karşılaştırın, size en uygun ÖKC POS çözümünü bulun."
-          type="Yazar Kasa (ÖKC) POS"
-          Icon={Terminal}
-          whatIsContent=""
-          advantages={[]}
-        />
+        <POSTypePage title="Yazar Kasa POS Cihazı | Yeni Nesil Yazarkasa POS 2025" description="En son teknoloji yazar kasa POS cihazlarını karşılaştırın, size en uygun ÖKC POS çözümünü bulun." type="Yazar Kasa (ÖKC) POS" Icon={Terminal} whatIsContent="" advantages={[]} />
 
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 py-12">
@@ -122,7 +107,7 @@ const YazarkasaPOS = () => {
           </div>
 
           <div className="prose prose-lg max-w-4xl mx-auto mt-16">
-            <h2 className="text-3xl font-bold mb-6">Yazar Kasa POS Hakkında Detaylı Bilgi</h2>
+            <h2 className="text-3xl font-bold mb-6">Yazar Kasa (ÖKC) POS Komisyon Oranları - 2025</h2>
             
             <h3 className="text-2xl font-semibold mb-4">Yazar Kasa POS Nedir?</h3>
             <p className="text-gray-600 mb-6">
@@ -198,8 +183,6 @@ const YazarkasaPOS = () => {
           <LatestBlogPosts />
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default YazarkasaPOS;
