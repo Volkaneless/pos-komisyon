@@ -2,49 +2,27 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle2, Phone, FileText, CreditCard, HeadphonesIcon, PhoneCall } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import type { POSProvider } from "@/types/pos";
-
 interface POSTabsProps {
   provider: POSProvider;
   currentYear: number;
 }
-
-const POSTabs = ({ provider, currentYear }: POSTabsProps) => {
-  return (
-    <Tabs defaultValue="explanation" className="w-full">
+const POSTabs = ({
+  provider,
+  currentYear
+}: POSTabsProps) => {
+  return <Tabs defaultValue="explanation" className="w-full">
       <TabsList className="w-full justify-start border-b rounded-none bg-transparent space-x-8">
-        <TabsTrigger 
-          value="explanation" 
-          className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
-          onClick={() => window.history.pushState(null, '', '#explanation')}
-        >
+        <TabsTrigger value="explanation" className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" onClick={() => window.history.pushState(null, '', '#explanation')}>
           Açıklama
         </TabsTrigger>
-        <TabsTrigger 
-          value="commissions" 
-          className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
-          onClick={() => window.history.pushState(null, '', '#commissions')}
-        >
-          Komisyon Oranları
-        </TabsTrigger>
-        <TabsTrigger 
-          value="features" 
-          className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
-          onClick={() => window.history.pushState(null, '', '#features')}
-        >
+        <TabsTrigger value="commissions" className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" onClick={() => window.history.pushState(null, '', '#commissions')}>POS Komisyon Oranları</TabsTrigger>
+        <TabsTrigger value="features" className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" onClick={() => window.history.pushState(null, '', '#features')}>
           Özellikler
         </TabsTrigger>
-        <TabsTrigger 
-          value="customer-service" 
-          className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
-          onClick={() => window.history.pushState(null, '', '#customer-service')}
-        >
+        <TabsTrigger value="customer-service" className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" onClick={() => window.history.pushState(null, '', '#customer-service')}>
           Müşteri Hizmetleri​ ve İletişim
         </TabsTrigger>
-        <TabsTrigger 
-          value="support" 
-          className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0"
-          onClick={() => window.history.pushState(null, '', '#support')}
-        >
+        <TabsTrigger value="support" className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" onClick={() => window.history.pushState(null, '', '#support')}>
           Destek Hattı
         </TabsTrigger>
       </TabsList>
@@ -71,7 +49,7 @@ const POSTabs = ({ provider, currentYear }: POSTabsProps) => {
       <TabsContent value="commissions" id="commissions" className="mt-12">
         <Card className="border-none shadow-none mb-12">
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold mb-4">Komisyon Oranları Detayları</h3>
+            <h3 className="text-xl font-semibold mb-4">POS Komisyon Oranları Detayları</h3>
             <div className="grid grid-cols-2 gap-6">
               <div className="p-4 border rounded-lg">
                 <h4 className="font-medium mb-2">Tek Çekim İşlemler</h4>
@@ -89,12 +67,10 @@ const POSTabs = ({ provider, currentYear }: POSTabsProps) => {
       <TabsContent value="features" id="features" className="mt-12">
         <Card className="border-none shadow-none mb-12">
           <div className="space-y-4">
-            {provider.features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-3">
+            {provider.features.map((feature, index) => <div key={index} className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary mt-1" />
                 <p className="text-gray-600">{feature}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </Card>
       </TabsContent>
@@ -151,8 +127,6 @@ const POSTabs = ({ provider, currentYear }: POSTabsProps) => {
           </div>
         </Card>
       </TabsContent>
-    </Tabs>
-  );
+    </Tabs>;
 };
-
 export default POSTabs;
