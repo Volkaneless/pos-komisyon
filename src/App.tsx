@@ -1,24 +1,41 @@
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Navigation from "./components/Navigation";
-import AppRoutes from "./routes";
 import Footer from "./components/Footer";
 import SecondaryFooter from "./components/SecondaryFooter";
-import { Toaster } from "./components/ui/toaster";
-import CookieBanner from "./components/CookieBanner";
+import { routes } from "./routes";
 
-function App() {
-  return (
-    <Router>
-      <Navigation />
-      <AppRoutes />
-      <SecondaryFooter />
-      <Footer />
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
       <Toaster />
-      <CookieBanner />
-    </Router>
-  );
-}
+      <Sonner />
+      <BrowserRouter>
+        <div className="flex flex-col min-h-screen">
+          <Navigation />
+          <main className="flex-grow">
+            <Routes>
+              {routes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={route.element}
+                />
+              ))}
+            </Routes>
+          </main>
+          <SecondaryFooter />
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;

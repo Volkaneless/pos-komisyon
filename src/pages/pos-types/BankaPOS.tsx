@@ -13,20 +13,16 @@ const BankaPOS = () => {
       <POSTypePage
         title="Banka POS Komisyon Oranları 2025"
         description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
-        content={
-          <div className="prose max-w-none">
-            <p>Banka POS'ları, bankaların işletmelere sunduğu güvenilir ödeme çözümleridir. Yüksek işlem hacmi ve çoklu ödeme seçenekleri sunar.</p>
-            
-            <h3>Banka POS Avantajları</h3>
-            <ul>
-              <li>Güvenilir banka altyapısı</li>
-              <li>7/24 teknik destek</li>
-              <li>Farklı kart ve taksit seçenekleri</li>
-              <li>Kapsamlı raporlama özellikleri</li>
-              <li>Geniş servis ağı</li>
-            </ul>
-          </div>
-        }
+        type="Banka POS"
+        Icon={Banknote}
+        whatIsContent="Banka POS'ları, bankaların işletmelere sunduğu güvenilir ödeme çözümleridir. Yüksek işlem hacmi ve çoklu ödeme seçenekleri sunar."
+        advantages={[
+          "Güvenilir banka altyapısı",
+          "7/24 teknik destek",
+          "Farklı kart ve taksit seçenekleri",
+          "Kapsamlı raporlama özellikleri",
+          "Geniş servis ağı"
+        ]}
       />
 
       <div className="container mx-auto px-4 py-8">

@@ -1,10 +1,8 @@
-
 import { Helmet } from "react-helmet";
 import { Smartphone } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import CepPOSFAQ from "@/components/FAQ/CepPOSFAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
-
 const CepPOS = () => {
   return <>
       <Helmet>
@@ -12,30 +10,9 @@ const CepPOS = () => {
         <meta name="description" content="Cep POS uygulamaları ile akıllı telefonunuzu POS cihazına dönüştürün. 2025 komisyon oranları, başvuru şartları ve detaylı bilgiler." />
         <meta name="keywords" content="cep pos, mobil pos uygulaması, telefon pos, android pos uygulaması, ios pos uygulaması, cep pos komisyon oranları 2025" />
         <link rel="canonical" href="https://poskomisyon.com/pos-types/cep" />
-        <link rel="alternate" href="https://poskomisyon.com/" />
       </Helmet>
 
-      <POSTypePage 
-        title="Cep POS Komisyon Oranları 2025 - Cep POS Nedir?" 
-        description="En uygun cep POS uygulamalarını karşılaştırın, işletmeniz için en uygun cep POS çözümünü seçin."
-        content={
-          <div className="prose max-w-none">
-            <p>Cep POS uygulamaları, akıllı telefonları ödeme terminaline dönüştüren modern yazılım çözümleridir. Bu uygulamalar sayesinde, herhangi bir ek donanıma ihtiyaç duymadan akıllı telefonunuz üzerinden kredi kartı ödemesi alabilirsiniz. 2025 yılında artan dijitalleşme ile birlikte Cep POS sistemleri daha da yaygınlaşmaktadır.</p>
-            
-            <h3>Cep POS Avantajları</h3>
-            <ul>
-              <li>Ek donanım maliyeti yok</li>
-              <li>Hızlı kurulum ve kullanım</li>
-              <li>Düşük işlem maliyetleri</li>
-              <li>Mobil cihaz entegrasyonu</li>
-              <li>Anlık ödeme takibi</li>
-              <li>7/24 teknik destek</li>
-              <li>Taksit imkanı</li>
-              <li>Temassız ödeme desteği</li>
-            </ul>
-          </div>
-        }
-      />
+      <POSTypePage title="Cep POS Komisyon Oranları 2025 - Cep POS Nedir?" description="En uygun cep POS uygulamalarını karşılaştırın, işletmeniz için en uygun cep POS çözümünü seçin." type="Cep POS" Icon={Smartphone} whatIsContent="Cep POS uygulamaları, akıllı telefonları ödeme terminaline dönüştüren modern yazılım çözümleridir. Bu uygulamalar sayesinde, herhangi bir ek donanıma ihtiyaç duymadan akıllı telefonunuz üzerinden kredi kartı ödemesi alabilirsiniz. 2025 yılında artan dijitalleşme ile birlikte Cep POS sistemleri daha da yaygınlaşmaktadır." advantages={["Ek donanım maliyeti yok", "Hızlı kurulum ve kullanım", "Düşük işlem maliyetleri", "Mobil cihaz entegrasyonu", "Anlık ödeme takibi", "7/24 teknik destek", "Taksit imkanı", "Temassız ödeme desteği"]} />
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -182,5 +159,4 @@ const CepPOS = () => {
       </div>
     </>;
 };
-
 export default CepPOS;

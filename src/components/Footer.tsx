@@ -45,7 +45,7 @@ const Footer = () => {
               <li><Link to="/blog/pos-komisyon-oranlari-2025" className="hover:text-white transition-colors">2025 POS Komisyon Oranları</Link></li>
               <li><Link to="/blog/pos-cihazi-nedir-nasil-kullanilir" className="hover:text-white transition-colors">POS Cihazı Nedir?</Link></li>
               <li><Link to="/blog/pos-cihazi-nasil-alinir" className="hover:text-white transition-colors">POS Cihazı Nasıl Alınır?</Link></li>
-              <li><Link to="/blog/sanal-pos-fiziki-pos-karsilastirma" className="hover:text-white transition-colors">Sanal vs Fiziki POS</Link></li>
+              <li><Link to="/blog/sanal-pos-vs-fiziki-pos-karsilastirma" className="hover:text-white transition-colors">Sanal vs Fiziki POS</Link></li>
             </ul>
           </div>
 
@@ -57,8 +57,6 @@ const Footer = () => {
               <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors">Hakkımızda</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">İletişim</Link></li>
-              <li><Link to="/gizlilik-politikasi" className="hover:text-white transition-colors">Gizlilik Politikası</Link></li>
-              <li><Link to="/cerez-politikasi" className="hover:text-white transition-colors">Çerez Politikası</Link></li>
             </ul>
           </div>
         </div>
@@ -70,8 +68,8 @@ const Footer = () => {
             </div>
             <div className="text-sm md:text-right">
               <ul className="flex flex-wrap gap-4 justify-start md:justify-end">
-                <li><Link to="/gizlilik-politikasi" className="hover:text-white transition-colors">Gizlilik Politikası</Link></li>
-                <li><Link to="/cerez-politikasi" className="hover:text-white transition-colors">Çerez Politikası</Link></li>
+                <li><Link to="/privacy" className="hover:text-white transition-colors">Gizlilik Politikası</Link></li>
+                <li><Link to="/terms" className="hover:text-white transition-colors">Kullanım Koşulları</Link></li>
                 <li><Link to="/contact" className="hover:text-white transition-colors">İletişim</Link></li>
               </ul>
             </div>
