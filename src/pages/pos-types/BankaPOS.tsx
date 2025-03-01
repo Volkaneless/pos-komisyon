@@ -6,14 +6,24 @@ import BankaPOSFeatures from "@/components/pos-types/banka/BankaPOSFeatures";
 import BankaPOSFAQ from "@/components/pos-types/banka/BankaPOSFAQ";
 import BankaPOSAgreements from "@/components/pos-types/banka/BankaPOSAgreements";
 import BankaPOSProviderCards from "@/components/pos-types/banka/BankaPOSProviderCards";
+import { Helmet } from "react-helmet";
 
 const BankaPOS = () => {
   return (
     <>
+      <Helmet>
+        <title>Banka POS Komisyon Oranları 2025 | POS Compare</title>
+        <meta 
+          name="description" 
+          content="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun." 
+        />
+        <meta name="keywords" content="banka pos, banka pos komisyon oranları, pos komisyon karşılaştırma, pos komisyon ücretleri" />
+      </Helmet>
+      
       <POSTypePage
         title="Banka POS Komisyon Oranları 2025"
         description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
-        type="Banka POS"
+        posType="Banka POS"
         Icon={Banknote}
         whatIsContent="Banka POS'ları, bankaların işletmelere sunduğu güvenilir ödeme çözümleridir. Yüksek işlem hacmi ve çoklu ödeme seçenekleri sunar."
         advantages={[

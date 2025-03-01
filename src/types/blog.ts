@@ -1,3 +1,4 @@
+
 export interface BlogPost {
   id: number;
   title: string;
@@ -7,6 +8,9 @@ export interface BlogPost {
   date: string;
   category: "adsense" | "social-media" | "ppc" | "general";
   image?: string;
+  url?: string; // URL özelliği
+  imageUrl?: string; // Resim URL'si
+  author?: string; // Yazar bilgisi
 }
 
 export type BlogPostInput = Omit<BlogPost, 'id' | 'slug'> & { slug?: string };
