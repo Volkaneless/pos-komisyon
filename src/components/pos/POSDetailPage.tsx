@@ -1,11 +1,12 @@
-import { Helmet } from "react-helmet";
+
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import POSHeader from "./POSHeader";
 import POSInfo from "./POSInfo";
 import POSTabs from "./POSTabs";
-import POSProviderFAQ from "./POSProviderFAQ";
 import SimilarProviders from "./SimilarProviders";
+import POSProviderFAQ from "./POSProviderFAQ";
 import LatestBlogPosts from "./LatestBlogPosts";
 import type { POSProvider } from "@/types/pos";
 
@@ -15,50 +16,48 @@ interface POSDetailPageProps {
 
 const POSDetailPage = ({ provider }: POSDetailPageProps) => {
   const location = useLocation();
+  const currentPath = location.pathname;
+  const currentYear = new Date().getFullYear();
 
+  // ScrollToHash effect on component mount
   useEffect(() => {
-    if (location.hash) {
-      const element = document.querySelector(location.hash);
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      window.scrollTo(0, 0);
     }
   }, [location]);
 
-  if (!provider) {
-    return (
-      <div className="container mx-auto px-4 pt-24">
-        <h1 className="text-2xl font-bold">POS sağlayıcı bulunamadı</h1>
-      </div>
-    );
-  }
-
-  const currentYear = new Date().getFullYear();
-  const pageTitle = `${provider.name} Komisyon Oranları ${currentYear}`;
-  const pageDescription = `${currentYear} ${provider.name} komisyon oranları: ${provider.type} için ${provider.commission_rate} komisyon oranı ve ${provider.monthly_fee} aylık ücret. Güncel ${provider.name} başvuru şartları, destek hattı ve detaylı bilgiler.`;
-
-  console.log('Rendering POSDetailPage for provider:', provider);
+  const pageTitle = `${provider.name} Komisyon Oranları (${currentYear}) - POS Detayları ve Başvuru`;
+  const pageDescription = `${provider.name} ${currentYear} güncel POS komisyon oranları: ${provider.commission_rate}. Başvuru, özellikler ve detaylar için tıklayın.`;
 
   return (
     <>
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={`https://poskomisyon.com/pos/${provider.id}`} />
+        <meta name="keywords" content={`${provider.name.toLowerCase()}, ${provider.name.toLowerCase()} pos komisyon oranları, ${provider.name.toLowerCase()} pos başvuru, ${provider.name.toLowerCase()} pos fiyatları, ${provider.name.toLowerCase()} komisyon oranı, ${provider.name.toLowerCase()} pos özellikleri`} />
+        <link rel="canonical" href={`https://poskomisyon.com${currentPath}`} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://poskomisyon.com${currentPath}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
       </Helmet>
-      <div className="container mx-auto px-4 pt-24 pb-16">
-        <h1 className="text-3xl font-bold mb-4 text-gray-900">{pageTitle}</h1>
-        <p className="text-gray-600 mb-8 leading-relaxed">
-          {currentYear} {provider.name} POS komisyon oranları, işletmeler için avantajlı seçenekler sunuyor. {provider.name} POS cihazı, sanal POS ve hızlı başvuru imkanıyla işlemlerinizi güvenle gerçekleştirin. {provider.name} POS müşteri hizmetleri ve destek hattı ile her sorunuzda yanınızda.
-        </p>
-        <div className="glass-card rounded-2xl p-8 mb-12">
-          <POSHeader provider={provider} />
-          <POSInfo provider={provider} />
-        </div>
 
+      <div className="container mx-auto px-4 pt-20 pb-12">
+        <POSHeader provider={provider} />
+        <POSInfo provider={provider} currentYear={currentYear} />
         <POSTabs provider={provider} currentYear={currentYear} />
-        <SimilarProviders currentProvider={provider} />
         <POSProviderFAQ provider={provider} />
+        <SimilarProviders currentProvider={provider} />
         <LatestBlogPosts />
       </div>
     </>
