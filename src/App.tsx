@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import SecondaryFooter from "./components/SecondaryFooter";
+import CookieConsent from "./components/CookieConsent";
 import { routes } from "./routes";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const AppContent = () => {
       </main>
       <SecondaryFooter />
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
