@@ -68,9 +68,6 @@ import SimpraSanalPOS from "@/pages/pos/SimpraSanalPOS";
 import IyzicoSanalPOS from "@/pages/pos/IyzicoSanalPOS";
 import ShopifySanalPOS from "@/pages/pos/ShopifySanalPOS";
 
-import GizlilikPolitikasi from "@/pages/GizlilikPolitikasi";
-import CerezPolitikasi from "@/pages/CerezPolitikasi";
-
 // Main Routes
 export const mainRoutes: RouteObject[] = [
   { path: "/", element: <Index /> },
@@ -157,12 +154,4 @@ export const routes: RouteObject[] = [
   ...blogRoutes,
   ...posTypeRoutes,
   ...posProviderRoutes,
-  {
-    path: "/gizlilik-politikasi",
-    element: <GizlilikPolitikasi />,
-  },
-  {
-    path: "/cerez-politikasi",
-    element: <CerezPolitikasi />,
-  },
 ];
