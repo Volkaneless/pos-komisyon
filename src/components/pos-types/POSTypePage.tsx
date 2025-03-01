@@ -1,3 +1,4 @@
+
 import { ReactNode } from "react";
 import { LucideIcon } from "lucide-react";
 import { Helmet } from "react-helmet";
@@ -9,8 +10,8 @@ export interface POSTypePageProps {
   Icon: LucideIcon;
   whatIsContent: string;
   advantages: string[];
-  providers?: ReactNode; // ReactNode tipinde providers ekledik
-  posType?: string; // posType opsiyonel olarak eklendi
+  providers?: ReactNode;
+  posType?: string;
 }
 
 const POSTypePage = ({

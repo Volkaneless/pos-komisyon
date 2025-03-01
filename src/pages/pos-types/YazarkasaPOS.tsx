@@ -3,6 +3,7 @@ import { Terminal, ShieldCheck, Receipt, CreditCard, Banknote, Clock, Shield, Za
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
+
 const YazarkasaPOS = () => {
   return <>
       <Helmet>
@@ -13,7 +14,14 @@ const YazarkasaPOS = () => {
       </Helmet>
       
       <div>
-        <POSTypePage title="Yazar Kasa POS Cihazı | Yeni Nesil Yazarkasa POS 2025" description="En son teknoloji yazar kasa POS cihazlarını karşılaştırın, size en uygun ÖKC POS çözümünü bulun." type="Yazar Kasa (ÖKC) POS" Icon={Terminal} whatIsContent="" advantages={[]} />
+        <POSTypePage 
+          title="Yazar Kasa POS Cihazı | Yeni Nesil Yazarkasa POS 2025" 
+          description="En son teknoloji yazar kasa POS cihazlarını karşılaştırın, size en uygun ÖKC POS çözümünü bulun." 
+          posType="Yazar Kasa (ÖKC) POS" 
+          Icon={Terminal} 
+          whatIsContent="" 
+          advantages={[]} 
+        />
 
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 py-12">

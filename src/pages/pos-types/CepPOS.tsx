@@ -3,6 +3,7 @@ import { Smartphone } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import CepPOSFAQ from "@/components/FAQ/CepPOSFAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
+
 const CepPOS = () => {
   return <>
       <Helmet>
@@ -12,7 +13,14 @@ const CepPOS = () => {
         <link rel="canonical" href="https://poskomisyon.com/pos-types/cep" />
       </Helmet>
 
-      <POSTypePage title="Cep POS Komisyon Oranları 2025 - Cep POS Nedir?" description="En uygun cep POS uygulamalarını karşılaştırın, işletmeniz için en uygun cep POS çözümünü seçin." type="Cep POS" Icon={Smartphone} whatIsContent="Cep POS uygulamaları, akıllı telefonları ödeme terminaline dönüştüren modern yazılım çözümleridir. Bu uygulamalar sayesinde, herhangi bir ek donanıma ihtiyaç duymadan akıllı telefonunuz üzerinden kredi kartı ödemesi alabilirsiniz. 2025 yılında artan dijitalleşme ile birlikte Cep POS sistemleri daha da yaygınlaşmaktadır." advantages={["Ek donanım maliyeti yok", "Hızlı kurulum ve kullanım", "Düşük işlem maliyetleri", "Mobil cihaz entegrasyonu", "Anlık ödeme takibi", "7/24 teknik destek", "Taksit imkanı", "Temassız ödeme desteği"]} />
+      <POSTypePage 
+        title="Cep POS Komisyon Oranları 2025 - Cep POS Nedir?" 
+        description="En uygun cep POS uygulamalarını karşılaştırın, işletmeniz için en uygun cep POS çözümünü seçin." 
+        posType="Cep POS" 
+        Icon={Smartphone} 
+        whatIsContent="Cep POS uygulamaları, akıllı telefonları ödeme terminaline dönüştüren modern yazılım çözümleridir. Bu uygulamalar sayesinde, herhangi bir ek donanıma ihtiyaç duymadan akıllı telefonunuz üzerinden kredi kartı ödemesi alabilirsiniz. 2025 yılında artan dijitalleşme ile birlikte Cep POS sistemleri daha da yaygınlaşmaktadır." 
+        advantages={["Ek donanım maliyeti yok", "Hızlı kurulum ve kullanım", "Düşük işlem maliyetleri", "Mobil cihaz entegrasyonu", "Anlık ödeme takibi", "7/24 teknik destek", "Taksit imkanı", "Temassız ödeme desteği"]} 
+      />
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
