@@ -4,7 +4,6 @@ import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
 import { sanalPOSProviders } from "@/data/pos-types/sanalPOS";
-
 const SanalPOS = () => {
   return <>
       <Helmet>
@@ -16,14 +15,7 @@ const SanalPOS = () => {
         <link rel="canonical" href="https://poskomisyon.com/pos-types/sanal" />
       </Helmet>
 
-      <POSTypePage 
-        title="Sanal POS Komisyon Oranları 2025 - En Uygun Sanal POS" 
-        description="E-ticaret ve online ödemeler için en uygun sanal POS çözümleri ve komisyon oranları" 
-        posType="Sanal POS" 
-        Icon={Cloud} 
-        whatIsContent="Sanal POS, internet üzerinden yapılan ödemeleri güvenli bir şekilde almanızı sağlayan modern bir ödeme sistemidir. E-ticaret siteleri, online rezervasyon sistemleri ve dijital hizmetler için vazgeçilmez bir çözümdür. Gelişmiş güvenlik özellikleri ve kolay entegrasyon seçenekleriyle işletmenizin online satışlarını güvenle yönetmenizi sağlar." 
-        advantages={["7/24 kesintisiz hizmet ve teknik destek", "Rekabetçi komisyon oranları", "Hızlı ve kolay entegrasyon", "SSL güvenlik sertifikası", "Geniş banka ve kart desteği", "Detaylı satış ve işlem raporlaması", "Mobil uyumlu altyapı", "Çoklu dil ve para birimi desteği"]} 
-      />
+      <POSTypePage title="Sanal POS Komisyon Oranları 2025 - En Uygun Sanal POS" description="E-ticaret ve online ödemeler için en uygun sanal POS çözümleri ve komisyon oranları" type="Sanal POS" Icon={Cloud} whatIsContent="Sanal POS, internet üzerinden yapılan ödemeleri güvenli bir şekilde almanızı sağlayan modern bir ödeme sistemidir. E-ticaret siteleri, online rezervasyon sistemleri ve dijital hizmetler için vazgeçilmez bir çözümdür. Gelişmiş güvenlik özellikleri ve kolay entegrasyon seçenekleriyle işletmenizin online satışlarını güvenle yönetmenizi sağlar." advantages={["7/24 kesintisiz hizmet ve teknik destek", "Rekabetçi komisyon oranları", "Hızlı ve kolay entegrasyon", "SSL güvenlik sertifikası", "Geniş banka ve kart desteği", "Detaylı satış ve işlem raporlaması", "Mobil uyumlu altyapı", "Çoklu dil ve para birimi desteği"]} />
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
