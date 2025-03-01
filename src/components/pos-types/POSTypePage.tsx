@@ -2,16 +2,17 @@
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import type { POSProvider } from "@/types/pos";
+import type { ReactNode } from "react";
 
 interface POSTypePageProps {
   title: string;
   description: string;
-  content: React.ReactNode;
-  providers?: POSProvider[];
-  faqs?: React.ReactNode;
-  features?: React.ReactNode;
-  agreements?: React.ReactNode;
-  children?: React.ReactNode;
+  content?: ReactNode;
+  providers?: ReactNode; // Changed from POSProvider[] to ReactNode
+  faqs?: ReactNode;
+  features?: ReactNode;
+  agreements?: ReactNode;
+  children?: ReactNode;
 }
 
 const POSTypePage = ({
@@ -33,6 +34,7 @@ const POSTypePage = ({
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={`https://poskomisyon.com${currentPath}`} />
+        <link rel="alternate" href="https://poskomisyon.com/" />
       </Helmet>
 
       <div className="container mx-auto px-4 pt-24 pb-12">
@@ -43,9 +45,11 @@ const POSTypePage = ({
           </p>
         </div>
 
-        <div className="mb-16">
-          {content}
-        </div>
+        {content && (
+          <div className="mb-16">
+            {content}
+          </div>
+        )}
 
         {providers && (
           <div className="mb-16">
