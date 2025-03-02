@@ -87,6 +87,17 @@ const DesktopMenu = () => {
       </NavigationMenu>
       
       <Link 
+        to="/shopier-komisyon" 
+        className={`text-sm transition-colors duration-200 ${
+          location.pathname === "/shopier-komisyon" 
+            ? "text-primary font-medium" 
+            : "text-gray-600 hover:text-gray-900"
+        }`}
+      >
+        Shopier Komisyon
+      </Link>
+      
+      <Link 
         to="/blog" 
         className={`text-sm transition-colors duration-200 ${
           location.pathname === "/blog" 
