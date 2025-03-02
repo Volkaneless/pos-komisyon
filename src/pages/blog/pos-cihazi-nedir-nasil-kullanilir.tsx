@@ -1,5 +1,7 @@
+
 import { Helmet } from "react-helmet";
 import { blogPosts } from "@/data/blogPosts";
+import CanonicalLink from "@/components/CanonicalLink";
 
 const POSCihaziNedir = () => {
   const post = blogPosts.find(post => post.slug === "pos-cihazi-nedir-nasil-kullanilir");
@@ -14,6 +16,7 @@ const POSCihaziNedir = () => {
         <title>{post.title} | POS Komisyon</title>
         <meta name="description" content={post.excerpt} />
       </Helmet>
+      <CanonicalLink path={`/blog/${post.slug}`} />
 
       <div className="container mx-auto px-4 py-12">
         <article className="prose prose-lg mx-auto">

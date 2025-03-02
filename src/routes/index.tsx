@@ -1,157 +1,160 @@
-import { RouteObject } from "react-router-dom";
-import Index from "@/pages/Index";
-import Calculator from "@/pages/Calculator";
-import Blog from "@/pages/Blog";
-import About from "@/pages/About";
-import Contact from "@/pages/Contact";
-import Dashboard from "@/pages/Dashboard";
-import POSKomisyonOranlari2025 from "@/pages/blog/pos-komisyon-oranlari-2025";
-import POSKomisyonOranlari from "@/pages/blog/pos-komisyon-oranlari";
-import BlogPostDetail from "@/pages/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler";
-import POSCihaziNedir from "@/pages/blog/pos-cihazi-nedir-nasil-kullanilir";
-import POSCihaziNasilAlinir from "@/pages/blog/pos-cihazi-nasil-alinir";
-import SanalPOSFizikiPOSKarsilastirma from "@/pages/blog/sanal-pos-fiziki-pos-karsilastirma";
 
-// POS Type Pages
-import YazarkasaPOS from "@/pages/pos-types/YazarkasaPOS";
-import SanalPOS from "@/pages/pos-types/SanalPOS";
-import MobilPOS from "@/pages/pos-types/MobilPOS";
-import CepPOS from "@/pages/pos-types/CepPOS";
-import BankaPOS from "@/pages/pos-types/BankaPOS";
+import { ReactNode } from "react";
+import Index from "../pages/Index";
+import About from "../pages/About";
+import Calculator from "../pages/Calculator";
+import Contact from "../pages/Contact";
+import Blog from "../pages/Blog";
+import Dashboard from "../pages/Dashboard";
+import POSDetail from "../pages/POSDetail";
 
-// POS Provider Pages
-import EnparaPOS from "@/pages/pos/EnparaPOS";
-import EsnekPOSAndroid from "@/pages/pos/EsnekPOSAndroid";
-import ToslaIsimPOS from "@/pages/pos/ToslaIsimPOS";
-import LogoIsbasiPOS from "@/pages/pos/LogoIsbasiPOS";
-import AkbankFizikiPOS from "@/pages/pos/AkbankFizikiPOS";
-import PayTRNeoPOS from "@/pages/pos/PayTRNeoPOS";
-import AkbankSanalPOS from "@/pages/pos/AkbankSanalPOS";
-import ToslaSanalPOS from "@/pages/pos/ToslaSanalPOS";
-import MokaSanalPOS from "@/pages/pos/MokaSanalPOS";
-import EsnekPOSCep from "@/pages/pos/EsnekPOSCep";
-import GarantiSanalPOS from "@/pages/pos/GarantiSanalPOS";
-import IsbankAnindaPOS from "@/pages/pos/IsbankAnindaPOS";
-import EsnekPOSPazaryeri from "@/pages/pos/EsnekPOSPazaryeri";
-import EsnekPOSSanal from "@/pages/pos/EsnekPOSSanal";
-import PaycellSanalPOS from "@/pages/pos/PaycellSanalPOS";
-import OddealPOS from "@/pages/pos/OdealPOS";
-import QNBPayPOS from "@/pages/pos/QNBPayPOS";
-import ValletMobilPOS from "@/pages/pos/ValletMobilPOS";
-import ValletSanalPOS from "@/pages/pos/ValletSanalPOS";
-import QNBPaySanalPOS from "@/pages/pos/QNBPaySanalPOS";
-import CeptebIstePOS from "@/pages/pos/CeptebIstePOS";
-import AkbankYazarkasaPOS from "@/pages/pos/AkbankYazarkasaPOS";
-import LogoIsbasiCepPOS from "@/pages/pos/LogoIsbasiCepPOS";
-import AkbankCebePOS from "@/pages/pos/AkbankCebePOS";
-import PayTRSanalPOS from "@/pages/pos/PayTRSanalPOS";
-import ToslaIsimSanalPOS from "@/pages/pos/ToslaIsimSanalPOS";
-import EsnekSanalPOS from "@/pages/pos/EsnekSanalPOS";
-import GarantiPOS from "@/pages/pos/GarantiPOS";
-import EnparaMobilPOS from "@/pages/pos/EnparaMobilPOS";
-import PaycellMobilPOS from "@/pages/pos/PaycellMobilPOS";
-import SipaySanalPOS from "@/pages/pos/SipaySanalPOS";
-import ElektraWebSanalPOS from "@/pages/pos/ElektraWebSanalPOS";
-import BrisaSanalPOS from "@/pages/pos/BrisaSanalPOS";
-import ParamSanalPOS from "@/pages/pos/ParamSanalPOS";
-import JamesonSanalPOS from "@/pages/pos/JamesonSanalPOS";
-import TEBPOS from "@/pages/pos/TEBPOS";
-import HalkbankPOS from "@/pages/pos/HalkbankPOS";
-import BekoPOS from "@/pages/pos/BekoPOS";
-import ZiraatPOS from "@/pages/pos/ZiraatPOS";
-import IngenicoPOS from "@/pages/pos/IngenicoPOS";
-import KuveytTurkPOS from "@/pages/pos/KuveytTurkPOS";
-import IsbankSanalPOS from "@/pages/pos/IsbankSanalPOS";
-import VakifbankSanalPOS from "@/pages/pos/VakifbankSanalPOS";
-import DenizbankSanalPOS from "@/pages/pos/DenizbankSanalPOS";
-import SimpraSanalPOS from "@/pages/pos/SimpraSanalPOS";
-import IyzicoSanalPOS from "@/pages/pos/IyzicoSanalPOS";
-import ShopifySanalPOS from "@/pages/pos/ShopifySanalPOS";
+// POS Types
+import BankaPOS from "../pages/pos-types/BankaPOS";
+import YazarkasaPOS from "../pages/pos-types/YazarkasaPOS";
+import SanalPOS from "../pages/pos-types/SanalPOS";
+import MobilPOS from "../pages/pos-types/MobilPOS";
+import CepPOS from "../pages/pos-types/CepPOS";
 
-// Main Routes
-export const mainRoutes: RouteObject[] = [
+// Blog Posts
+import POSKomisyonOranlari from "../pages/blog/pos-komisyon-oranlari";
+import POSCihaziNasil from "../pages/blog/pos-cihazi-nasil-alinir";
+import POSCihaziNedir from "../pages/blog/pos-cihazi-nedir-nasil-kullanilir";
+import POSDikkatEdilmesi from "../pages/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler";
+import SanalPOSFizikiPOS from "../pages/blog/sanal-pos-fiziki-pos-karsilastirma";
+import POSKomisyonOranlari2025 from "../pages/blog/pos-komisyon-oranlari-2025";
+
+// POS Detail Pages
+import AkbankFizikiPOS from "../pages/pos/AkbankFizikiPOS";
+import AkbankSanalPOS from "../pages/pos/AkbankSanalPOS";
+import AkbankYazarkasaPOS from "../pages/pos/AkbankYazarkasaPOS";
+import AkbankCebePOS from "../pages/pos/AkbankCebePOS";
+import BekoPOS from "../pages/pos/BekoPOS";
+import BrisaSanalPOS from "../pages/pos/BrisaSanalPOS";
+import CeptebIstePOS from "../pages/pos/CeptebIstePOS";
+import DenizbankSanalPOS from "../pages/pos/DenizbankSanalPOS";
+import ElektraWebSanalPOS from "../pages/pos/ElektraWebSanalPOS";
+import EnparaMobilPOS from "../pages/pos/EnparaMobilPOS";
+import EnparaPOS from "../pages/pos/EnparaPOS";
+import EsnekPOSAndroid from "../pages/pos/EsnekPOSAndroid";
+import EsnekPOSCep from "../pages/pos/EsnekPOSCep";
+import EsnekPOSPazaryeri from "../pages/pos/EsnekPOSPazaryeri";
+import EsnekPOSSanal from "../pages/pos/EsnekPOSSanal";
+import EsnekSanalPOS from "../pages/pos/EsnekSanalPOS";
+import GarantiPOS from "../pages/pos/GarantiPOS";
+import GarantiSanalPOS from "../pages/pos/GarantiSanalPOS";
+import HalkbankPOS from "../pages/pos/HalkbankPOS";
+import IngenicoPOS from "../pages/pos/IngenicoPOS";
+import IsbankAnindaPOS from "../pages/pos/IsbankAnindaPOS";
+import IsbankSanalPOS from "../pages/pos/IsbankSanalPOS";
+import IyzicoSanalPOS from "../pages/pos/IyzicoSanalPOS";
+import JamesonSanalPOS from "../pages/pos/JamesonSanalPOS";
+import KuveytTurkPOS from "../pages/pos/KuveytTurkPOS";
+import LogoIsbasiCepPOS from "../pages/pos/LogoIsbasiCepPOS";
+import LogoIsbasiPOS from "../pages/pos/LogoIsbasiPOS";
+import MokaSanalPOS from "../pages/pos/MokaSanalPOS";
+import OdealPOS from "../pages/pos/OdealPOS";
+import ParamSanalPOS from "../pages/pos/ParamSanalPOS";
+import PayTRNeoPOS from "../pages/pos/PayTRNeoPOS";
+import PayTRSanalPOS from "../pages/pos/PayTRSanalPOS";
+import PaycellMobilPOS from "../pages/pos/PaycellMobilPOS";
+import PaycellSanalPOS from "../pages/pos/PaycellSanalPOS";
+import QNBPayPOS from "../pages/pos/QNBPayPOS";
+import QNBPaySanalPOS from "../pages/pos/QNBPaySanalPOS";
+import ShopifySanalPOS from "../pages/pos/ShopifySanalPOS";
+import SimpraSanalPOS from "../pages/pos/SimpraSanalPOS";
+import SipaySanalPOS from "../pages/pos/SipaySanalPOS";
+import TEBPOS from "../pages/pos/TEBPOS";
+import ToslaIsimPOS from "../pages/pos/ToslaIsimPOS";
+import ToslaIsimSanalPOS from "../pages/pos/ToslaIsimSanalPOS";
+import ToslaSanalPOS from "../pages/pos/ToslaSanalPOS";
+import VakifbankSanalPOS from "../pages/pos/VakifbankSanalPOS";
+import ValletMobilPOS from "../pages/pos/ValletMobilPOS";
+import ValletSanalPOS from "../pages/pos/ValletSanalPOS";
+import ZiraatPOS from "../pages/pos/ZiraatPOS";
+
+// New GDPR Pages
+import GizlilikPolitikasi from "../pages/GizlilikPolitikasi";
+import CerezPolitikasi from "../pages/CerezPolitikasi";
+
+interface Route {
+  path: string;
+  element: ReactNode;
+}
+
+export const routes: Route[] = [
   { path: "/", element: <Index /> },
-  { path: "/calculator", element: <Calculator /> },
-  { path: "/blog", element: <Blog /> },
   { path: "/about", element: <About /> },
+  { path: "/calculator", element: <Calculator /> },
   { path: "/contact", element: <Contact /> },
+  { path: "/blog", element: <Blog /> },
   { path: "/dashboard", element: <Dashboard /> },
-];
+  { path: "/pos/:id", element: <POSDetail /> },
 
-// Blog Routes
-export const blogRoutes: RouteObject[] = [
-  { path: "/blog/pos-komisyon-oranlari-2025", element: <POSKomisyonOranlari2025 /> },
-  { path: "/blog/pos-komisyon-oranlari", element: <POSKomisyonOranlari /> },
-  { path: "/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler", element: <BlogPostDetail /> },
-  { path: "/blog/pos-cihazi-nedir-nasil-kullanilir", element: <POSCihaziNedir /> },
-  { path: "/blog/pos-cihazi-nasil-alinir", element: <POSCihaziNasilAlinir /> },
-  { path: "/blog/sanal-pos-vs-fiziki-pos-karsilastirma", element: <SanalPOSFizikiPOSKarsilastirma /> },
-];
-
-// POS Type Routes
-export const posTypeRoutes: RouteObject[] = [
+  // POS Types
+  { path: "/pos-types/banka", element: <BankaPOS /> },
   { path: "/pos-types/yazarkasa", element: <YazarkasaPOS /> },
   { path: "/pos-types/sanal", element: <SanalPOS /> },
   { path: "/pos-types/mobil", element: <MobilPOS /> },
   { path: "/pos-types/cep", element: <CepPOS /> },
-  { path: "/pos-types/banka", element: <BankaPOS /> },
-];
 
-// POS Provider Routes
-export const posProviderRoutes: RouteObject[] = [
-  { path: "/pos/enpara-pos", element: <EnparaPOS /> },
-  { path: "/pos/esnekpos-android", element: <EsnekPOSAndroid /> },
-  { path: "/pos/tosla-isim", element: <ToslaIsimPOS /> },
-  { path: "/pos/logo-isbasi", element: <LogoIsbasiPOS /> },
-  { path: "/pos/akbank-fiziki", element: <AkbankFizikiPOS /> },
-  { path: "/pos/paytr-neopos", element: <PayTRNeoPOS /> },
-  { path: "/pos/akbank-sanal", element: <AkbankSanalPOS /> },
-  { path: "/pos/tosla-sanal", element: <ToslaSanalPOS /> },
-  { path: "/pos/moka-sanal", element: <MokaSanalPOS /> },
-  { path: "/pos/esnekpos-cep", element: <EsnekPOSCep /> },
-  { path: "/pos/garanti-sanal", element: <GarantiSanalPOS /> },
-  { path: "/pos/isbank-aninda", element: <IsbankAnindaPOS /> },
-  { path: "/pos/esnekpos-pazaryeri", element: <EsnekPOSPazaryeri /> },
-  { path: "/pos/esnekpos-sanal", element: <EsnekPOSSanal /> },
-  { path: "/pos/paycell-sanal", element: <PaycellSanalPOS /> },
-  { path: "/pos/odeal-pos", element: <OddealPOS /> },
-  { path: "/pos/qnbpay-pos", element: <QNBPayPOS /> },
-  { path: "/pos/vallet-mobil", element: <ValletMobilPOS /> },
-  { path: "/pos/vallet-sanal", element: <ValletSanalPOS /> },
-  { path: "/pos/qnbpay-sanal", element: <QNBPaySanalPOS /> },
-  { path: "/pos/cepteb-iste", element: <CeptebIstePOS /> },
-  { path: "/pos/akbank-yazarkasa", element: <AkbankYazarkasaPOS /> },
-  { path: "/pos/logo-isbasi-cep", element: <LogoIsbasiCepPOS /> },
-  { path: "/pos/akbank-cebe", element: <AkbankCebePOS /> },
-  { path: "/pos/paytr-sanal", element: <PayTRSanalPOS /> },
-  { path: "/pos/tosla-isim-sanal", element: <ToslaIsimSanalPOS /> },
-  { path: "/pos/esnekpos", element: <EsnekSanalPOS /> },
-  { path: "/pos/garanti-pos", element: <GarantiPOS /> },
-  { path: "/pos/enpara-mobil", element: <EnparaMobilPOS /> },
-  { path: "/pos/paycell-mobil", element: <PaycellMobilPOS /> },
-  { path: "/pos/sipay-sanal", element: <SipaySanalPOS /> },
-  { path: "/pos/elektraweb-sanal", element: <ElektraWebSanalPOS /> },
-  { path: "/pos/brisa-sanal", element: <BrisaSanalPOS /> },
-  { path: "/pos/param-sanal", element: <ParamSanalPOS /> },
-  { path: "/pos/jameson-sanal", element: <JamesonSanalPOS /> },
-  { path: "/pos/teb-pos", element: <TEBPOS /> },
-  { path: "/pos/halkbank-pos", element: <HalkbankPOS /> },
+  // Blog Posts
+  { path: "/blog/pos-komisyon-oranlari", element: <POSKomisyonOranlari /> },
+  { path: "/blog/pos-cihazi-nasil-alinir", element: <POSCihaziNasil /> },
+  { path: "/blog/pos-cihazi-nedir-nasil-kullanilir", element: <POSCihaziNedir /> },
+  { path: "/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler", element: <POSDikkatEdilmesi /> },
+  { path: "/blog/sanal-pos-fiziki-pos-karsilastirma", element: <SanalPOSFizikiPOS /> },
+  { path: "/blog/pos-komisyon-oranlari-2025", element: <POSKomisyonOranlari2025 /> },
+
+  // GDPR Pages
+  { path: "/gizlilik-politikasi", element: <GizlilikPolitikasi /> },
+  { path: "/cerez-politikasi", element: <CerezPolitikasi /> },
+  
+  // ... individual POS provider routes
+  { path: "/pos/akbank-fiziki-pos", element: <AkbankFizikiPOS /> },
+  { path: "/pos/akbank-sanal-pos", element: <AkbankSanalPOS /> },
+  { path: "/pos/akbank-yazarkasa-pos", element: <AkbankYazarkasaPOS /> },
+  { path: "/pos/akbank-cebe-pos", element: <AkbankCebePOS /> },
   { path: "/pos/beko-pos", element: <BekoPOS /> },
-  { path: "/pos/ziraat-pos", element: <ZiraatPOS /> },
-  { path: "/pos/ingenico-pos", element: <IngenicoPOS /> },
-  { path: "/pos/kuveyt-turk-pos", element: <KuveytTurkPOS /> },
-  { path: "/pos/isbank-sanal-pos", element: <IsbankSanalPOS /> },
-  { path: "/pos/vakifbank-sanal-pos", element: <VakifbankSanalPOS /> },
+  { path: "/pos/brisa-sanal-pos", element: <BrisaSanalPOS /> },
+  { path: "/pos/cepteb-iste-pos", element: <CeptebIstePOS /> },
   { path: "/pos/denizbank-sanal-pos", element: <DenizbankSanalPOS /> },
-  { path: "/pos/simpra-sanal", element: <SimpraSanalPOS /> },
-  { path: "/pos/iyzico-sanal", element: <IyzicoSanalPOS /> },
-  { path: "/pos/shopify-sanal", element: <ShopifySanalPOS /> },
-];
-
-// Combine all routes
-export const routes: RouteObject[] = [
-  ...mainRoutes,
-  ...blogRoutes,
-  ...posTypeRoutes,
-  ...posProviderRoutes,
+  { path: "/pos/elektraweb-sanal-pos", element: <ElektraWebSanalPOS /> },
+  { path: "/pos/enpara-mobil-pos", element: <EnparaMobilPOS /> },
+  { path: "/pos/enpara-pos", element: <EnparaPOS /> },
+  { path: "/pos/esnek-pos-android", element: <EsnekPOSAndroid /> },
+  { path: "/pos/esnek-pos-cep", element: <EsnekPOSCep /> },
+  { path: "/pos/esnek-pos-pazaryeri", element: <EsnekPOSPazaryeri /> },
+  { path: "/pos/esnek-pos-sanal", element: <EsnekPOSSanal /> },
+  { path: "/pos/esnek-sanal-pos", element: <EsnekSanalPOS /> },
+  { path: "/pos/garanti-pos", element: <GarantiPOS /> },
+  { path: "/pos/garanti-sanal-pos", element: <GarantiSanalPOS /> },
+  { path: "/pos/halkbank-pos", element: <HalkbankPOS /> },
+  { path: "/pos/ingenico-pos", element: <IngenicoPOS /> },
+  { path: "/pos/isbank-aninda-pos", element: <IsbankAnindaPOS /> },
+  { path: "/pos/isbank-sanal-pos", element: <IsbankSanalPOS /> },
+  { path: "/pos/iyzico-sanal-pos", element: <IyzicoSanalPOS /> },
+  { path: "/pos/jameson-sanal-pos", element: <JamesonSanalPOS /> },
+  { path: "/pos/kuveyt-turk-pos", element: <KuveytTurkPOS /> },
+  { path: "/pos/logo-isbasi-cep-pos", element: <LogoIsbasiCepPOS /> },
+  { path: "/pos/logo-isbasi-pos", element: <LogoIsbasiPOS /> },
+  { path: "/pos/moka-sanal-pos", element: <MokaSanalPOS /> },
+  { path: "/pos/odeal-pos", element: <OdealPOS /> },
+  { path: "/pos/param-sanal-pos", element: <ParamSanalPOS /> },
+  { path: "/pos/paytr-neo-pos", element: <PayTRNeoPOS /> },
+  { path: "/pos/paytr-sanal-pos", element: <PayTRSanalPOS /> },
+  { path: "/pos/paycell-mobil-pos", element: <PaycellMobilPOS /> },
+  { path: "/pos/paycell-sanal-pos", element: <PaycellSanalPOS /> },
+  { path: "/pos/qnb-pay-pos", element: <QNBPayPOS /> },
+  { path: "/pos/qnb-pay-sanal-pos", element: <QNBPaySanalPOS /> },
+  { path: "/pos/shopify-sanal-pos", element: <ShopifySanalPOS /> },
+  { path: "/pos/simpra-sanal-pos", element: <SimpraSanalPOS /> },
+  { path: "/pos/sipay-sanal-pos", element: <SipaySanalPOS /> },
+  { path: "/pos/teb-pos", element: <TEBPOS /> },
+  { path: "/pos/tosla-isim-pos", element: <ToslaIsimPOS /> },
+  { path: "/pos/tosla-isim-sanal-pos", element: <ToslaIsimSanalPOS /> },
+  { path: "/pos/tosla-sanal-pos", element: <ToslaSanalPOS /> },
+  { path: "/pos/vakifbank-sanal-pos", element: <VakifbankSanalPOS /> },
+  { path: "/pos/vallet-mobil-pos", element: <ValletMobilPOS /> },
+  { path: "/pos/vallet-sanal-pos", element: <ValletSanalPOS /> },
+  { path: "/pos/ziraat-pos", element: <ZiraatPOS /> }
 ];

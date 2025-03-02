@@ -6,10 +6,13 @@ import BankaPOSFeatures from "@/components/pos-types/banka/BankaPOSFeatures";
 import BankaPOSFAQ from "@/components/pos-types/banka/BankaPOSFAQ";
 import BankaPOSAgreements from "@/components/pos-types/banka/BankaPOSAgreements";
 import BankaPOSProviderCards from "@/components/pos-types/banka/BankaPOSProviderCards";
+import CanonicalLink from "@/components/CanonicalLink";
 
 const BankaPOS = () => {
   return (
     <>
+      <CanonicalLink path="/pos-types/banka" />
+      
       <POSTypePage
         title="Banka POS Komisyon Oranları 2025"
         description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
