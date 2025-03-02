@@ -1,28 +1,59 @@
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle2, Phone, FileText, CreditCard, HeadphonesIcon, PhoneCall } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { getCanonicalUrl } from "@/lib/utils";
 import type { POSProvider } from "@/types/pos";
+
 interface POSTabsProps {
   provider: POSProvider;
   currentYear: number;
 }
+
 const POSTabs = ({
   provider,
   currentYear
 }: POSTabsProps) => {
+  // Create canonical URL for tab sections
+  const getTabCanonicalUrl = (tabId: string) => {
+    return getCanonicalUrl(`/pos/${provider.id}`, `#${tabId}`);
+  };
+
   return <Tabs defaultValue="explanation" className="w-full">
       <TabsList className="w-full justify-start border-b rounded-none bg-transparent space-x-8">
-        <TabsTrigger value="explanation" className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" onClick={() => window.history.pushState(null, '', '#explanation')}>
+        <TabsTrigger 
+          value="explanation" 
+          className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" 
+          onClick={() => window.history.pushState(null, '', getTabCanonicalUrl('explanation').split('https://poskomisyon.com')[1])}
+        >
           Açıklama
         </TabsTrigger>
-        <TabsTrigger value="commissions" className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" onClick={() => window.history.pushState(null, '', '#commissions')}>POS Komisyon Oranları</TabsTrigger>
-        <TabsTrigger value="features" className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" onClick={() => window.history.pushState(null, '', '#features')}>
+        <TabsTrigger 
+          value="commissions" 
+          className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" 
+          onClick={() => window.history.pushState(null, '', getTabCanonicalUrl('commissions').split('https://poskomisyon.com')[1])}
+        >
+          POS Komisyon Oranları
+        </TabsTrigger>
+        <TabsTrigger 
+          value="features" 
+          className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" 
+          onClick={() => window.history.pushState(null, '', getTabCanonicalUrl('features').split('https://poskomisyon.com')[1])}
+        >
           Özellikler
         </TabsTrigger>
-        <TabsTrigger value="customer-service" className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" onClick={() => window.history.pushState(null, '', '#customer-service')}>
+        <TabsTrigger 
+          value="customer-service" 
+          className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" 
+          onClick={() => window.history.pushState(null, '', getTabCanonicalUrl('customer-service').split('https://poskomisyon.com')[1])}
+        >
           Müşteri Hizmetleri​ ve İletişim
         </TabsTrigger>
-        <TabsTrigger value="support" className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" onClick={() => window.history.pushState(null, '', '#support')}>
+        <TabsTrigger 
+          value="support" 
+          className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" 
+          onClick={() => window.history.pushState(null, '', getTabCanonicalUrl('support').split('https://poskomisyon.com')[1])}
+        >
           Destek Hattı
         </TabsTrigger>
       </TabsList>
@@ -129,4 +160,5 @@ const POSTabs = ({
       </TabsContent>
     </Tabs>;
 };
+
 export default POSTabs;

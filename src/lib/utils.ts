@@ -23,13 +23,22 @@ export function formatDate(date: Date | string): string {
 
 /**
  * Generates a canonical URL with proper formatting
+ * @param path - The path to generate canonical URL for
+ * @param additionalPath - Optional subpath to add
+ * @returns Properly formatted canonical URL
  */
-export function getCanonicalUrl(path: string): string {
+export function getCanonicalUrl(path: string, additionalPath?: string): string {
   const baseUrl = "https://poskomisyon.com";
   // Ensure path starts with a slash and remove trailing slash if exists
   const formattedPath = path.startsWith('/') ? path : `/${path}`;
+  const formatted = formattedPath.endsWith('/') ? formattedPath.slice(0, -1) : formattedPath;
   
-  return `${baseUrl}${formattedPath !== "/" ? formattedPath : ""}`;
+  // Add additional path if provided
+  const fullPath = additionalPath 
+    ? `${formatted}/${additionalPath.startsWith('/') ? additionalPath.slice(1) : additionalPath}`
+    : formatted;
+    
+  return `${baseUrl}${fullPath !== "/" ? fullPath : ""}`;
 }
 
 /**

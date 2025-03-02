@@ -10,11 +10,12 @@ import SecondaryFooter from "./components/SecondaryFooter";
 import CookieConsent from "./components/CookieConsent";
 import { routes } from "./routes";
 import { useEffect } from "react";
-import { isBrowser } from "./lib/utils";
+import { isBrowser, getCanonicalUrl } from "./lib/utils";
+import { Helmet } from "react-helmet";
 
 const queryClient = new QueryClient();
 
-// Initialize Google Consent Mode
+// Initialize Google Consent Mode - extracted as a separate function for clarity
 const initGoogleConsent = () => {
   if (!isBrowser()) return;
   
@@ -49,6 +50,12 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <Helmet>
+          {/* Default SEO tags that will be overridden by page-specific ones */}
+          <title>POS Komisyon Oranları - En Uygun POS Seçenekleri</title>
+          <meta name="description" content="Türkiye'deki tüm banka ve fintech POS cihazlarının güncel komisyon oranları, özellikleri ve karşılaştırmaları." />
+          <link rel="canonical" href={getCanonicalUrl('/')} />
+        </Helmet>
         <Toaster />
         <Sonner />
         <BrowserRouter>

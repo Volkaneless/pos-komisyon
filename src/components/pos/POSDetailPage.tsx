@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -7,6 +8,7 @@ import POSTabs from "./POSTabs";
 import POSProviderFAQ from "./POSProviderFAQ";
 import SimilarProviders from "./SimilarProviders";
 import LatestBlogPosts from "./LatestBlogPosts";
+import { getCanonicalUrl } from "@/lib/utils";
 import type { POSProvider } from "@/types/pos";
 
 interface POSDetailPageProps {
@@ -44,7 +46,8 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={`https://poskomisyon.com/pos/${provider.id}`} />
+        <link rel="canonical" href={getCanonicalUrl(`/pos/${provider.id}`)} />
+        <link rel="alternate" href={getCanonicalUrl('/')} />
       </Helmet>
       <div className="container mx-auto px-4 pt-24 pb-16">
         <h1 className="text-3xl font-bold mb-4 text-gray-900">{pageTitle}</h1>

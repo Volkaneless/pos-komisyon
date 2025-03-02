@@ -1,6 +1,8 @@
+
 import { Link } from "react-router-dom";
 import { POSProvider } from "@/types/pos";
 import { posProviders } from "@/data/posProviders";
+import { getCanonicalUrl } from "@/lib/utils";
 
 interface SimilarProvidersProps {
   currentProvider: POSProvider;
@@ -25,6 +27,8 @@ const SimilarProviders = ({ currentProvider }: SimilarProvidersProps) => {
             key={provider.id}
             to={`/pos/${provider.id}`}
             className="block p-6 border rounded-lg hover:shadow-lg transition-shadow"
+            aria-label={`${provider.name} detayları`}
+            data-canonical-url={getCanonicalUrl(`/pos/${provider.id}`)}
           >
             <div className="flex items-center gap-4 mb-4">
               <img 
