@@ -1,6 +1,7 @@
 
 // Global type declarations
 interface Window {
+  dataLayer: any[];
   gtag?: (
     command: string,
     action: string,
@@ -9,3 +10,4 @@ interface Window {
     }
   ) => void;
 }
+
