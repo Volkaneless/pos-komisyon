@@ -1,5 +1,6 @@
 
 import { Helmet } from "react-helmet";
+import { getCanonicalUrl } from "@/lib/utils";
 
 interface CanonicalLinkProps {
   path: string;
@@ -7,14 +8,14 @@ interface CanonicalLinkProps {
 }
 
 const CanonicalLink = ({ path, includeHome = true }: CanonicalLinkProps) => {
-  const baseUrl = "https://poskomisyon.com";
-  const canonicalUrl = `${baseUrl}${path !== "/" ? path : ""}`;
+  const canonicalUrl = getCanonicalUrl(path);
+  const homeUrl = getCanonicalUrl("/");
 
   return (
     <Helmet>
       <link rel="canonical" href={canonicalUrl} />
       {includeHome && path !== "/" && (
-        <link rel="alternate" href={baseUrl} />
+        <link rel="alternate" href={homeUrl} />
       )}
     </Helmet>
   );

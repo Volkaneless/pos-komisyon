@@ -1,7 +1,10 @@
+
 import { Helmet } from "react-helmet";
 import { posProviders } from "@/data/posProviders";
 import POSCard from "@/components/POSCard";
 import { LucideIcon } from "lucide-react";
+import CanonicalLink from "@/components/CanonicalLink";
+
 interface POSTypePageProps {
   title: string;
   description: string;
@@ -10,6 +13,7 @@ interface POSTypePageProps {
   whatIsContent: string;
   advantages: string[];
 }
+
 const POSTypePage = ({
   title,
   description,
@@ -19,11 +23,15 @@ const POSTypePage = ({
   advantages
 }: POSTypePageProps) => {
   const filteredProviders = posProviders.filter(provider => provider.type === type);
-  return <>
+  const pagePath = `/pos-types/${type.toLowerCase().replace(/\s+/g, "-")}`;
+  
+  return (
+    <>
       <Helmet>
         <title>{title} | POS Compare</title>
         <meta name="description" content={description} />
       </Helmet>
+      <CanonicalLink path={pagePath} includeHome={true} />
 
       <div className="container mx-auto px-4 pt-24 pb-16">
         <div className="text-center mb-12">
@@ -69,6 +77,8 @@ const POSTypePage = ({
           {filteredProviders.map(provider => <POSCard key={provider.id} {...provider} />)}
         </div>
       </div>
-    </>;
+    </>
+  );
 };
+
 export default POSTypePage;

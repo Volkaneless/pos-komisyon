@@ -9,13 +9,24 @@ import Footer from "./components/Footer";
 import SecondaryFooter from "./components/SecondaryFooter";
 import CookieConsent from "./components/CookieConsent";
 import { routes } from "./routes";
+import { useEffect } from "react";
+import { isBrowser } from "./lib/utils";
+
+const queryClient = new QueryClient();
 
 // Initialize Google Consent Mode
 const initGoogleConsent = () => {
+  if (!isBrowser()) return;
+  
+  // Initialize dataLayer if it doesn't exist
   window.dataLayer = window.dataLayer || [];
+  
+  // Define gtag function
   function gtag(...args: any[]) {
     window.dataLayer.push(args);
   }
+  
+  // Set default consent parameters
   gtag('consent', 'default', {
     'analytics_storage': 'denied',
     'ad_storage': 'denied',
@@ -24,43 +35,44 @@ const initGoogleConsent = () => {
     'security_storage': 'granted',
     'wait_for_update': 500
   });
+  
+  // Additional settings
   gtag('set', 'ads_data_redaction', true);
   gtag('set', 'url_passthrough', true);
 };
 
-// Call the initialization function
-if (typeof window !== 'undefined') {
-  initGoogleConsent();
-}
+const App = () => {
+  useEffect(() => {
+    initGoogleConsent();
+  }, []);
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <div className="flex flex-col min-h-screen">
-          <Navigation />
-          <main className="flex-grow">
-            <Routes>
-              {routes.map((route) => (
-                <Route
-                  key={route.path}
-                  path={route.path}
-                  element={route.element}
-                />
-              ))}
-            </Routes>
-          </main>
-          <SecondaryFooter />
-          <Footer />
-          <CookieConsent />
-        </div>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <div className="flex flex-col min-h-screen">
+            <Navigation />
+            <main className="flex-grow">
+              <Routes>
+                {routes.map((route) => (
+                  <Route
+                    key={route.path}
+                    path={route.path}
+                    element={route.element}
+                  />
+                ))}
+              </Routes>
+            </main>
+            <SecondaryFooter />
+            <Footer />
+            <CookieConsent />
+          </div>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
