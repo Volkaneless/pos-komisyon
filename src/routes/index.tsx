@@ -7,6 +7,7 @@ import Contact from "../pages/Contact";
 import Blog from "../pages/Blog";
 import Dashboard from "../pages/Dashboard";
 import POSDetail from "../pages/POSDetail";
+import ShopierPage from "../pages/ShopierPage";
 
 // POS Types
 import BankaPOS from "../pages/pos-types/BankaPOS";
@@ -89,6 +90,7 @@ export const routes: Route[] = [
   { path: "/blog", element: <Blog /> },
   { path: "/dashboard", element: <Dashboard /> },
   { path: "/pos/:id", element: <POSDetail /> },
+  { path: "/shopier-komisyon", element: <ShopierPage /> },
 
   // POS Types
   { path: "/pos-types/banka", element: <BankaPOS /> },

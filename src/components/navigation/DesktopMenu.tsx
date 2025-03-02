@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Terminal, Smartphone, Cloud, CreditCard, Banknote } from "lucide-react";
+import { Terminal, Smartphone, Cloud, CreditCard, Banknote, ShoppingBag } from "lucide-react";
 
 const DesktopMenu = () => {
   const location = useLocation();
@@ -68,6 +68,16 @@ const DesktopMenu = () => {
                   <div>
                     <div className="font-medium">Banka POS</div>
                     <p className="text-sm text-gray-500">Bankaların sunduğu POS çözümleri</p>
+                  </div>
+                </Link>
+                <Link 
+                  to="/shopier-komisyon"
+                  className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition-colors"
+                >
+                  <ShoppingBag className="w-4 h-4" />
+                  <div>
+                    <div className="font-medium">Shopier</div>
+                    <p className="text-sm text-gray-500">Shopier komisyon oranları ve hesaplama</p>
                   </div>
                 </Link>
               </div>

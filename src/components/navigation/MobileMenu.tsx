@@ -68,6 +68,13 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             >
               Banka POS
             </Link>
+            <Link 
+              to="/shopier-komisyon"
+              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
+              onClick={onClose}
+            >
+              Shopier Komisyon
+            </Link>
           </div>
           <Link 
             to="/about"
