@@ -1,4 +1,3 @@
-
 import { ReactNode } from "react";
 import Index from "../pages/Index";
 import About from "../pages/About";
@@ -8,6 +7,7 @@ import Blog from "../pages/Blog";
 import Dashboard from "../pages/Dashboard";
 import POSDetail from "../pages/POSDetail";
 import ShopierPage from "../pages/ShopierPage";
+import TrendyolCalculator from "../pages/TrendyolCalculator";
 
 // POS Types
 import BankaPOS from "../pages/pos-types/BankaPOS";
@@ -23,6 +23,10 @@ import POSCihaziNedir from "../pages/blog/pos-cihazi-nedir-nasil-kullanilir";
 import POSDikkatEdilmesi from "../pages/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler";
 import SanalPOSFizikiPOS from "../pages/blog/sanal-pos-fiziki-pos-karsilastirma";
 import POSKomisyonOranlari2025 from "../pages/blog/pos-komisyon-oranlari-2025";
+
+// GDPR Pages
+import GizlilikPolitikasi from "../pages/GizlilikPolitikasi";
+import CerezPolitikasi from "../pages/CerezPolitikasi";
 
 // POS Detail Pages
 import AkbankFizikiPOS from "../pages/pos/AkbankFizikiPOS";
@@ -73,10 +77,6 @@ import ValletMobilPOS from "../pages/pos/ValletMobilPOS";
 import ValletSanalPOS from "../pages/pos/ValletSanalPOS";
 import ZiraatPOS from "../pages/pos/ZiraatPOS";
 
-// New GDPR Pages
-import GizlilikPolitikasi from "../pages/GizlilikPolitikasi";
-import CerezPolitikasi from "../pages/CerezPolitikasi";
-
 interface Route {
   path: string;
   element: ReactNode;
@@ -91,6 +91,7 @@ export const routes: Route[] = [
   { path: "/dashboard", element: <Dashboard /> },
   { path: "/pos/:id", element: <POSDetail /> },
   { path: "/shopier-komisyon", element: <ShopierPage /> },
+  { path: "/trendyol-komisyon", element: <TrendyolCalculator /> },
 
   // POS Types
   { path: "/pos-types/banka", element: <BankaPOS /> },
@@ -111,7 +112,7 @@ export const routes: Route[] = [
   { path: "/gizlilik-politikasi", element: <GizlilikPolitikasi /> },
   { path: "/cerez-politikasi", element: <CerezPolitikasi /> },
   
-  // ... individual POS provider routes
+  // individual POS provider routes
   { path: "/pos/akbank-fiziki-pos", element: <AkbankFizikiPOS /> },
   { path: "/pos/akbank-sanal-pos", element: <AkbankSanalPOS /> },
   { path: "/pos/akbank-yazarkasa-pos", element: <AkbankYazarkasaPOS /> },

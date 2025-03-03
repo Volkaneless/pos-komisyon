@@ -22,6 +22,35 @@ export function formatDate(date: Date | string): string {
 }
 
 /**
+ * Formats a number as currency
+ * @param amount - The amount to format
+ * @param currency - The currency code (defaults to TRY)
+ * @returns Formatted currency string
+ */
+export function formatCurrency(amount: number, currency: string = 'TRY'): string {
+  return new Intl.NumberFormat('tr-TR', {
+    style: 'currency',
+    currency: currency,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(amount);
+}
+
+/**
+ * Formats a number as percentage
+ * @param value - The value to format as percentage
+ * @param decimals - Number of decimal places
+ * @returns Formatted percentage string
+ */
+export function formatPercentage(value: number, decimals: number = 2): string {
+  return new Intl.NumberFormat('tr-TR', {
+    style: 'percent',
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  }).format(value / 100);
+}
+
+/**
  * Generates a canonical URL with proper formatting
  * @param path - The path to generate canonical URL for
  * @param additionalPath - Optional subpath to add
