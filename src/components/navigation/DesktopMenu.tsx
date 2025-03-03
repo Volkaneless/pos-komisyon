@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Terminal, Smartphone, Cloud, CreditCard, Banknote, ShoppingBag } from "lucide-react";
+import { Terminal, Smartphone, Cloud, CreditCard, Banknote, ShoppingBag, ShoppingCart } from "lucide-react";
 
 const DesktopMenu = () => {
   const location = useLocation();
@@ -80,6 +80,16 @@ const DesktopMenu = () => {
                     <p className="text-sm text-gray-500">Shopier komisyon oranları ve hesaplama</p>
                   </div>
                 </Link>
+                <Link 
+                  to="/trendyol-komisyon"
+                  className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition-colors"
+                >
+                  <ShoppingCart className="w-4 h-4" />
+                  <div>
+                    <div className="font-medium">Trendyol</div>
+                    <p className="text-sm text-gray-500">Trendyol komisyon oranları ve hesaplama</p>
+                  </div>
+                </Link>
               </div>
             </NavigationMenuContent>
           </NavigationMenuItem>
@@ -95,6 +105,17 @@ const DesktopMenu = () => {
         }`}
       >
         Shopier Komisyon
+      </Link>
+      
+      <Link 
+        to="/trendyol-komisyon" 
+        className={`text-sm transition-colors duration-200 ${
+          location.pathname === "/trendyol-komisyon" 
+            ? "text-primary font-medium" 
+            : "text-gray-600 hover:text-gray-900"
+        }`}
+      >
+        Trendyol Komisyon
       </Link>
       
       <Link 
