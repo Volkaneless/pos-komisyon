@@ -1,3 +1,4 @@
+
 import { ReactNode } from "react";
 import Index from "../pages/Index";
 import About from "../pages/About";
@@ -8,6 +9,7 @@ import Dashboard from "../pages/Dashboard";
 import POSDetail from "../pages/POSDetail";
 import ShopierPage from "../pages/ShopierPage";
 import TrendyolCalculator from "../pages/TrendyolCalculator";
+import DolapCalculator from "../pages/DolapCalculator";
 
 // POS Types
 import BankaPOS from "../pages/pos-types/BankaPOS";
@@ -92,6 +94,7 @@ export const routes: Route[] = [
   { path: "/pos/:id", element: <POSDetail /> },
   { path: "/shopier-komisyon", element: <ShopierPage /> },
   { path: "/trendyol-komisyon", element: <TrendyolCalculator /> },
+  { path: "/dolap-komisyon", element: <DolapCalculator /> },
 
   // POS Types
   { path: "/pos-types/banka", element: <BankaPOS /> },

@@ -87,6 +87,14 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           </Link>
           
           <Link 
+            to="/dolap-komisyon"
+            className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"
+            onClick={onClose}
+          >
+            Dolap Komisyon
+          </Link>
+          
+          <Link 
             to="/blog"
             className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"
             onClick={onClose}
