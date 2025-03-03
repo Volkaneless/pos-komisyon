@@ -1,7 +1,8 @@
 
-import { useState } from "react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -10,122 +11,87 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   return (
-    <div
-      className={`fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out ${
-        isOpen ? "translate-x-0" : "translate-x-full"
-      }`}
-    >
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
-      <div className="absolute right-0 h-full w-64 bg-white shadow-xl">
-        <div className="flex h-16 items-center justify-between px-4 border-b">
-          <span className="text-lg font-medium">Menü</span>
-          <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full">
-            <X className="h-6 w-6" />
-          </button>
-        </div>
-        <nav className="p-4 space-y-4">
-          <Link 
-            to="/" 
-            className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"
-            onClick={onClose}
-          >
+    <Sheet open={isOpen} onOpenChange={onClose}>
+      <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+        <SheetHeader>
+          <SheetTitle className="text-left">Menü</SheetTitle>
+        </SheetHeader>
+        <Separator className="my-4" />
+        <div className="flex flex-col space-y-3 mt-4">
+          <Link to="/" onClick={onClose} className="text-base font-medium hover:text-primary">
             Ana Sayfa
           </Link>
-          <div className="space-y-2">
-            <div className="px-4 text-sm font-medium text-gray-500">POS Türleri</div>
-            <Link 
-              to="/pos-types/yazarkasa"
-              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
-              onClick={onClose}
-            >
-              Yazar Kasa POS
-            </Link>
-            <Link 
-              to="/pos-types/sanal"
-              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
-              onClick={onClose}
-            >
-              Sanal POS
-            </Link>
-            <Link 
-              to="/pos-types/mobil"
-              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
-              onClick={onClose}
-            >
-              Mobil POS
-            </Link>
-            <Link 
-              to="/pos-types/cep"
-              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
-              onClick={onClose}
-            >
-              Cep POS
-            </Link>
-            <Link 
-              to="/pos-types/banka"
-              className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors pl-6"
-              onClick={onClose}
-            >
-              Banka POS
-            </Link>
-          </div>
           
-          <Link 
-            to="/shopier-komisyon"
-            className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"
-            onClick={onClose}
-          >
-            Shopier Komisyon
-          </Link>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1" className="border-none">
+              <AccordionTrigger className="py-1 text-base font-medium hover:text-primary">
+                Komisyon Hesaplayıcılar
+              </AccordionTrigger>
+              <AccordionContent className="pl-4 space-y-3">
+                <Link to="/calculator" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  POS Komisyon Hesaplayıcı
+                </Link>
+                <Link to="/trendyol-komisyon" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Trendyol Komisyon Hesaplayıcı
+                </Link>
+                <Link to="/dolap-komisyon" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Dolap Komisyon Hesaplayıcı
+                </Link>
+                <Link to="/hepsiburada-komisyon" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Hepsiburada Komisyon Hesaplayıcı
+                </Link>
+                <Link to="/shopier-komisyon" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Shopier Komisyon Hesaplayıcı
+                </Link>
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-2" className="border-none">
+              <AccordionTrigger className="py-1 text-base font-medium hover:text-primary">
+                POS Türleri
+              </AccordionTrigger>
+              <AccordionContent className="pl-4 space-y-3">
+                <Link to="/pos-types/banka" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Banka POS
+                </Link>
+                <Link to="/pos-types/yazarkasa" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Yazarkasa POS
+                </Link>
+                <Link to="/pos-types/sanal" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Sanal POS
+                </Link>
+                <Link to="/pos-types/mobil" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Mobil POS
+                </Link>
+                <Link to="/pos-types/cep" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Cep POS
+                </Link>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
           
-          <Link 
-            to="/trendyol-komisyon"
-            className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"
-            onClick={onClose}
-          >
-            Trendyol Komisyon
-          </Link>
-          
-          <Link 
-            to="/dolap-komisyon"
-            className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"
-            onClick={onClose}
-          >
-            Dolap Komisyon
-          </Link>
-          
-          <Link 
-            to="/blog"
-            className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"
-            onClick={onClose}
-          >
+          <Link to="/blog" onClick={onClose} className="text-base font-medium hover:text-primary">
             Blog
           </Link>
-          
-          <Link 
-            to="/about"
-            className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"
-            onClick={onClose}
-          >
-            Hakkımızda
+          <Link to="/about" onClick={onClose} className="text-base font-medium hover:text-primary">
+            Hakkında
           </Link>
-          <Link 
-            to="/contact"
-            className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"
-            onClick={onClose}
-          >
+          <Link to="/contact" onClick={onClose} className="text-base font-medium hover:text-primary">
             İletişim
           </Link>
-          <Link 
-            to="/calculator"
-            className="block px-4 py-2 text-gray-600 hover:text-primary transition-colors"
-            onClick={onClose}
-          >
-            Hesaplayıcı
-          </Link>
-        </nav>
-      </div>
-    </div>
+          
+          <div className="pt-4">
+            <Link
+              to="/calculator"
+              onClick={onClose}
+              className="block text-center w-full py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              Hesaplayıcı
+            </Link>
+          </div>
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 };
 

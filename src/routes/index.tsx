@@ -10,6 +10,7 @@ import POSDetail from "../pages/POSDetail";
 import ShopierPage from "../pages/ShopierPage";
 import TrendyolCalculator from "../pages/TrendyolCalculator";
 import DolapCalculator from "../pages/DolapCalculator";
+import HepsiburadaCalculator from "../pages/HepsiburadaCalculator";
 
 // POS Types
 import BankaPOS from "../pages/pos-types/BankaPOS";
@@ -95,6 +96,7 @@ export const routes: Route[] = [
   { path: "/shopier-komisyon", element: <ShopierPage /> },
   { path: "/trendyol-komisyon", element: <TrendyolCalculator /> },
   { path: "/dolap-komisyon", element: <DolapCalculator /> },
+  { path: "/hepsiburada-komisyon", element: <HepsiburadaCalculator /> },
 
   // POS Types
   { path: "/pos-types/banka", element: <BankaPOS /> },

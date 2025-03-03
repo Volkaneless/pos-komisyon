@@ -1,89 +1,72 @@
 
 import { Link } from "react-router-dom";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 
 const DesktopMenu = () => {
   return (
-    <NavigationMenu className="hidden lg:flex">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link to="/" className="px-4 py-2 text-gray-700 hover:text-primary transition-colors">
-            Ana Sayfa
+    <div className="hidden md:flex space-x-8">
+      <Link to="/" className="text-sm font-medium text-gray-700 hover:text-primary">
+        Ana Sayfa
+      </Link>
+      <div className="relative group">
+        <button className="text-sm font-medium text-gray-700 hover:text-primary flex items-center">
+          Komisyon Hesaplayıcılar
+          <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <Link to="/calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            POS Komisyon Hesaplayıcı
           </Link>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent hover:bg-transparent hover:text-primary data-[state=open]:bg-transparent data-[state=open]:text-primary">POS Türleri</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div className="grid grid-cols-2 gap-3 p-4 w-[400px]">
-              <Link to="/pos-types/yazarkasa" className="block p-3 space-y-1 rounded-md hover:bg-gray-100 transition-colors">
-                <div className="font-medium">Yazar Kasa POS</div>
-                <div className="text-sm text-gray-500">Tek cihazda hem yazarkasa hem POS özelliği</div>
-              </Link>
-              <Link to="/pos-types/sanal" className="block p-3 space-y-1 rounded-md hover:bg-gray-100 transition-colors">
-                <div className="font-medium">Sanal POS</div>
-                <div className="text-sm text-gray-500">Online ödemeler için entegre çözümler</div>
-              </Link>
-              <Link to="/pos-types/mobil" className="block p-3 space-y-1 rounded-md hover:bg-gray-100 transition-colors">
-                <div className="font-medium">Mobil POS</div>
-                <div className="text-sm text-gray-500">Taşınabilir ve kablosuz ödeme cihazları</div>
-              </Link>
-              <Link to="/pos-types/cep" className="block p-3 space-y-1 rounded-md hover:bg-gray-100 transition-colors">
-                <div className="font-medium">Cep POS</div>
-                <div className="text-sm text-gray-500">Akıllı telefonları ödeme terminaline dönüştürür</div>
-              </Link>
-              <Link to="/pos-types/banka" className="block p-3 space-y-1 rounded-md hover:bg-gray-100 transition-colors">
-                <div className="font-medium">Banka POS</div>
-                <div className="text-sm text-gray-500">Bankaların sunduğu klasik POS çözümleri</div>
-              </Link>
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <Link to="/shopier-komisyon" className="px-4 py-2 text-gray-700 hover:text-primary transition-colors">
-            Shopier Komisyon
+          <Link to="/trendyol-komisyon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Trendyol Komisyon Hesaplayıcı
           </Link>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <Link to="/trendyol-komisyon" className="px-4 py-2 text-gray-700 hover:text-primary transition-colors">
-            Trendyol Komisyon
+          <Link to="/dolap-komisyon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Dolap Komisyon Hesaplayıcı
           </Link>
-        </NavigationMenuItem>
-        
-        <NavigationMenuItem>
-          <Link to="/dolap-komisyon" className="px-4 py-2 text-gray-700 hover:text-primary transition-colors">
-            Dolap Komisyon
+          <Link to="/hepsiburada-komisyon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Hepsiburada Komisyon Hesaplayıcı
           </Link>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <Link to="/blog" className="px-4 py-2 text-gray-700 hover:text-primary transition-colors">
-            Blog
+          <Link to="/shopier-komisyon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Shopier Komisyon Hesaplayıcı
           </Link>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <Link to="/about" className="px-4 py-2 text-gray-700 hover:text-primary transition-colors">
-            Hakkımızda
+        </div>
+      </div>
+      <div className="relative group">
+        <button className="text-sm font-medium text-gray-700 hover:text-primary flex items-center">
+          POS Türleri
+          <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <Link to="/pos-types/banka" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Banka POS
           </Link>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <Link to="/contact" className="px-4 py-2 text-gray-700 hover:text-primary transition-colors">
-            İletişim
+          <Link to="/pos-types/yazarkasa" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Yazarkasa POS
           </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+          <Link to="/pos-types/sanal" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Sanal POS
+          </Link>
+          <Link to="/pos-types/mobil" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Mobil POS
+          </Link>
+          <Link to="/pos-types/cep" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Cep POS
+          </Link>
+        </div>
+      </div>
+      <Link to="/blog" className="text-sm font-medium text-gray-700 hover:text-primary">
+        Blog
+      </Link>
+      <Link to="/about" className="text-sm font-medium text-gray-700 hover:text-primary">
+        Hakkında
+      </Link>
+      <Link to="/contact" className="text-sm font-medium text-gray-700 hover:text-primary">
+        İletişim
+      </Link>
+    </div>
   );
 };
 
