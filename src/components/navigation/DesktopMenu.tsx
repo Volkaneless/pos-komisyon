@@ -61,6 +61,9 @@ const DesktopMenu = () => {
           <Link to="/pos-types/cep" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
             Cep POS
           </Link>
+          <Link to="/pos-types/borsa" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Borsa Aracı Kurum
+          </Link>
         </div>
       </div>
       <Link to="/blog" className="text-sm font-medium text-gray-700 hover:text-primary">

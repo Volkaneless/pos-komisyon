@@ -72,6 +72,9 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <Link to="/pos-types/cep" onClick={onClose} className="block text-sm font-medium hover:text-primary">
                   Cep POS
                 </Link>
+                <Link to="/pos-types/borsa" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Borsa Aracı Kurum
+                </Link>
               </AccordionContent>
             </AccordionItem>
           </Accordion>

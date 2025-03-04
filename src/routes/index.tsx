@@ -20,6 +20,7 @@ import YazarkasaPOS from "../pages/pos-types/YazarkasaPOS";
 import SanalPOS from "../pages/pos-types/SanalPOS";
 import MobilPOS from "../pages/pos-types/MobilPOS";
 import CepPOS from "../pages/pos-types/CepPOS";
+import BorsaAraciKurum from "../pages/pos-types/BorsaAraciKurum";
 
 // Blog Posts
 import POSKomisyonOranlari from "../pages/blog/pos-komisyon-oranlari";
@@ -108,6 +109,7 @@ export const routes: Route[] = [
   { path: "/pos-types/sanal", element: <SanalPOS /> },
   { path: "/pos-types/mobil", element: <MobilPOS /> },
   { path: "/pos-types/cep", element: <CepPOS /> },
+  { path: "/pos-types/borsa", element: <BorsaAraciKurum /> },
 
   // Blog Posts
   { path: "/blog/pos-komisyon-oranlari", element: <POSKomisyonOranlari /> },
