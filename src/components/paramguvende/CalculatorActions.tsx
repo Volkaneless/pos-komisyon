@@ -1,10 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Trash2, Calculator } from "lucide-react";
-import { useHepsiburada } from "./HepsiburadaContext";
+import { useParamGuvende } from "./ParamGuvendeContext";
 
 const CalculatorActions = () => {
-  const { handleCalculate, handleClear } = useHepsiburada();
+  const { handleCalculate, handleClear } = useParamGuvende();
 
   return (
     <div className="grid grid-cols-2 gap-4">
