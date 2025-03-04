@@ -27,6 +27,9 @@ const DesktopMenu = () => {
           <Link to="/hepsiburada-komisyon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
             Hepsiburada Komisyon Hesaplayıcı
           </Link>
+          <Link to="/param-guvende-komisyon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Param Güvende Komisyon Hesaplayıcı
+          </Link>
           <Link to="/shopier-komisyon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
             Shopier Komisyon Hesaplayıcı
           </Link>
