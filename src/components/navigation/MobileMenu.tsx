@@ -43,6 +43,9 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <Link to="/param-guvende-komisyon" onClick={onClose} className="block text-sm font-medium hover:text-primary">
                   Param Güvende Komisyon Hesaplayıcı
                 </Link>
+                <Link to="/n11-komisyon" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  n11 Komisyon Hesaplayıcı
+                </Link>
                 <Link to="/shopier-komisyon" onClick={onClose} className="block text-sm font-medium hover:text-primary">
                   Shopier Komisyon Hesaplayıcı
                 </Link>
