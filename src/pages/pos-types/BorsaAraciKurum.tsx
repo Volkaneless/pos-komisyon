@@ -1,34 +1,34 @@
 
 import { TrendingUp } from "lucide-react";
-import POSTypePage from "@/components/pos-types/POSTypePage";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import BorsaAraciKurumFeatures from "@/components/pos-types/borsa/BorsaAraciKurumFeatures";
 import BorsaAraciKurumFAQ from "@/components/pos-types/borsa/BorsaAraciKurumFAQ";
 import BorsaAraciKurumAgreements from "@/components/pos-types/borsa/BorsaAraciKurumAgreements";
 import BorsaAraciKurumProviderCards from "@/components/pos-types/borsa/BorsaAraciKurumProviderCards";
 import CanonicalLink from "@/components/CanonicalLink";
+import { Helmet } from "react-helmet";
 
 const BorsaAraciKurum = () => {
   return (
     <>
+      <Helmet>
+        <title>Borsa Aracı Kurum Komisyon Oranları | Poskomisyon.com</title>
+        <meta name="description" content="Borsa aracı kurumlarının güncel komisyon oranlarını karşılaştırın, yatırımlarınız için en uygun aracı kurumu kolayca bulun." />
+      </Helmet>
+      
       <CanonicalLink path="/pos-types/borsa" />
       
-      <POSTypePage
-        title="Borsa Aracı Kurum Komisyon Oranları"
-        description="Borsa aracı kurumlarının güncel komisyon oranlarını karşılaştırın, yatırımlarınız için en uygun aracı kurumu kolayca bulun."
-        type="Borsa Aracı Kurum"
-        Icon={TrendingUp}
-        whatIsContent="Borsa aracı kurumları, yatırımcıların hisse senedi, tahvil, bono ve diğer finansal enstrümanlara yatırım yapabilmesi için aracılık hizmeti sunan kurumlardır."
-        advantages={[
-          "Düşük komisyon oranları",
-          "Hızlı işlem gerçekleştirme",
-          "Piyasa analiz araçları",
-          "Uzman yatırım danışmanlığı",
-          "Mobil uygulama desteği"
-        ]}
-      />
+      <div className="container mx-auto px-4 pt-24 pb-16">
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <TrendingUp className="w-16 h-16 text-primary" />
+          </div>
+          <h1 className="text-4xl font-bold mb-4">Borsa Aracı Kurum Komisyon Oranları</h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Borsa aracı kurumlarının güncel komisyon oranlarını karşılaştırın, yatırımlarınız için en uygun aracı kurumu kolayca bulun.
+          </p>
+        </div>
 
-      <div className="container mx-auto px-4 py-8">
         <div className="bg-primary/5 p-6 rounded-lg mb-8">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Borsa Aracı Kurumları Hakkında</h2>
           <p className="text-gray-700 mb-3">

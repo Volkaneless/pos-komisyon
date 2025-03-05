@@ -50,7 +50,7 @@ const BorsaAraciKurumProviderCards = () => {
           
           {otherBrokers.length > 0 && (
             <div>
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">Diğer Aracı Kurumlar</h2>
+              <h2 className="text-2xl font-bold mb-6 text-gray-800">Bağımsız Aracı Kurumlar</h2>
               <div className="space-y-6 mb-12">
                 {otherBrokers.slice(0, viewAll ? otherBrokers.length : 5).map((provider) => (
                   <BrokerCard key={provider.id} provider={provider} />
@@ -81,7 +81,7 @@ const BorsaAraciKurumProviderCards = () => {
         
         <TabsContent value="other" className="mt-6">
           <div>
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">Diğer Aracı Kurumlar</h2>
+            <h2 className="text-2xl font-bold mb-6 text-gray-800">Bağımsız Aracı Kurumlar</h2>
             <div className="space-y-6 mb-12">
               {otherBrokers.map((provider) => (
                 <BrokerCard key={provider.id} provider={provider} />
