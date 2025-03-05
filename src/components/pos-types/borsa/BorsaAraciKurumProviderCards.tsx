@@ -1,10 +1,15 @@
 
-import { Check } from "lucide-react";
-import { borsaAraciKurumProviders } from "@/data/pos-types/borsaAraciKurum";
+import { Check, Info } from "lucide-react";
+import { 
+  borsaAraciKurumProviders 
+} from "@/data/pos-types/borsaAraciKurum";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { Info } from "lucide-react";
+import { 
+  HoverCard, 
+  HoverCardContent, 
+  HoverCardTrigger 
+} from "@/components/ui/hover-card";
 
 const BorsaAraciKurumProviderCards = () => {
   // Separate digital brokers from bank brokers
