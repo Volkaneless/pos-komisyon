@@ -29,6 +29,20 @@ const BorsaAraciKurum = () => {
       />
 
       <div className="container mx-auto px-4 py-8">
+        <div className="bg-primary/5 p-6 rounded-lg mb-8">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Borsa Aracı Kurumları Hakkında</h2>
+          <p className="text-gray-700 mb-3">
+            Borsa aracı kurumları, yatırımcıların sermaye piyasalarına erişimini sağlayan finansal kuruluşlardır. 
+            Bu kurumlar, hisse senedi, tahvil, VİOP ve diğer yatırım araçlarında alım-satım işlemlerinin yürütülmesinde 
+            aracılık yapar ve yatırımcılara finansal danışmanlık hizmetleri sunar.
+          </p>
+          <p className="text-gray-700">
+            Türkiye'de faaliyet gösteren aracı kurumlar arasında banka iştiraki olan kurumlar, bağımsız kurumlar 
+            ve son yıllarda yaygınlaşan dijital aracı kurumlar bulunmaktadır. Her birinin komisyon oranları, 
+            sundukları hizmetler ve kullanıcı deneyimleri farklılık gösterebilir.
+          </p>
+        </div>
+
         <Tabs defaultValue="features" className="mb-12">
           <TabsList className="w-full justify-start space-x-4 border-b rounded-none">
             <TabsTrigger value="features">Özellikler</TabsTrigger>
@@ -49,6 +63,7 @@ const BorsaAraciKurum = () => {
           </TabsContent>
         </Tabs>
 
+        <h2 className="text-3xl font-bold mb-8 text-center">Türkiye'nin Önde Gelen Aracı Kurumları</h2>
         <BorsaAraciKurumProviderCards />
       </div>
     </>

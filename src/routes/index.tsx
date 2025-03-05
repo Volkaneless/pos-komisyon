@@ -83,6 +83,12 @@ import ValletMobilPOS from "../pages/pos/ValletMobilPOS";
 import ValletSanalPOS from "../pages/pos/ValletSanalPOS";
 import ZiraatPOS from "../pages/pos/ZiraatPOS";
 
+// Broker Detail Pages
+import BrokerDetail from "../pages/pos/BrokerDetail";
+import MidasBroker from "../pages/pos/MidasBroker";
+import MatriksBroker from "../pages/pos/MatriksBroker";
+import IsYatirimBroker from "../pages/pos/IsYatirimBroker";
+
 interface Route {
   path: string;
   element: ReactNode;
@@ -170,5 +176,11 @@ export const routes: Route[] = [
   { path: "/pos/vakifbank-sanal-pos", element: <VakifbankSanalPOS /> },
   { path: "/pos/vallet-mobil-pos", element: <ValletMobilPOS /> },
   { path: "/pos/vallet-sanal-pos", element: <ValletSanalPOS /> },
-  { path: "/pos/ziraat-pos", element: <ZiraatPOS /> }
+  { path: "/pos/ziraat-pos", element: <ZiraatPOS /> },
+
+  // Broker Detail Pages
+  { path: "/pos/broker/:id", element: <BrokerDetail /> },
+  { path: "/pos/midas", element: <MidasBroker /> },
+  { path: "/pos/matriks", element: <MatriksBroker /> },
+  { path: "/pos/is-yatirim", element: <IsYatirimBroker /> }
 ];
