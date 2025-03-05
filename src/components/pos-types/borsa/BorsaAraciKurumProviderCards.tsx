@@ -4,6 +4,7 @@ import {
 } from "@/data/pos-types/borsaAraciKurum";
 import DigitalBrokersList from "./DigitalBrokersList";
 import BankBrokersList from "./BankBrokersList";
+import BrokerCard from "./BrokerCard";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
