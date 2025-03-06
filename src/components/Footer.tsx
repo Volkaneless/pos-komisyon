@@ -38,6 +38,7 @@ const Footer = () => {
               <li><Link to="/pos-types/cep" className="hover:text-white transition-colors">Cep POS</Link></li>
               <li><Link to="/shopier-komisyon" className="hover:text-white transition-colors">Shopier Komisyon</Link></li>
               <li><Link to="/trendyol-komisyon" className="hover:text-white transition-colors">Trendyol Komisyon</Link></li>
+              <li><Link to="/amazon-komisyon" className="hover:text-white transition-colors">Amazon Komisyon</Link></li>
             </ul>
           </div>
           
@@ -57,6 +58,7 @@ const Footer = () => {
               <li><Link to="/" className="hover:text-white transition-colors">Ana Sayfa</Link></li>
               <li><Link to="/calculator" className="hover:text-white transition-colors">Komisyon Hesaplayıcı</Link></li>
               <li><Link to="/trendyol-komisyon" className="hover:text-white transition-colors">Trendyol Komisyon</Link></li>
+              <li><Link to="/kripto-borsalari" className="hover:text-white transition-colors">Kripto Borsaları</Link></li>
               <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors">Hakkımızda</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">İletişim</Link></li>

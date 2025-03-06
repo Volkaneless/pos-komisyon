@@ -49,6 +49,9 @@ const SecondaryFooter = () => {
                 <Link to="/n11-komisyon" className="text-gray-600 hover:text-primary">n11 Komisyon Hesaplayıcı</Link>
               </li>
               <li>
+                <Link to="/amazon-komisyon" className="text-gray-600 hover:text-primary">Amazon Komisyon Hesaplayıcı</Link>
+              </li>
+              <li>
                 <Link to="/shopier-komisyon" className="text-gray-600 hover:text-primary">Shopier Komisyon Hesaplayıcı</Link>
               </li>
             </ul>
