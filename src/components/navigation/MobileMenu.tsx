@@ -46,6 +46,9 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <Link to="/n11-komisyon" onClick={onClose} className="block text-sm font-medium hover:text-primary">
                   n11 Komisyon Hesaplayıcı
                 </Link>
+                <Link to="/amazon-komisyon" onClick={onClose} className="block text-sm font-medium hover:text-primary">
+                  Amazon Komisyon Hesaplayıcı
+                </Link>
                 <Link to="/shopier-komisyon" onClick={onClose} className="block text-sm font-medium hover:text-primary">
                   Shopier Komisyon Hesaplayıcı
                 </Link>
@@ -79,12 +82,18 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             </AccordionItem>
           </Accordion>
           
+          <Link to="/kripto-borsalari" onClick={onClose} className="text-base font-medium hover:text-primary">
+            Kripto Borsaları
+          </Link>
+          
           <Link to="/blog" onClick={onClose} className="text-base font-medium hover:text-primary">
             Blog
           </Link>
+          
           <Link to="/about" onClick={onClose} className="text-base font-medium hover:text-primary">
             Hakkında
           </Link>
+          
           <Link to="/contact" onClick={onClose} className="text-base font-medium hover:text-primary">
             İletişim
           </Link>

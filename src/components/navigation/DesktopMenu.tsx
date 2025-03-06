@@ -7,6 +7,7 @@ const DesktopMenu = () => {
       <Link to="/" className="text-sm font-medium text-gray-700 hover:text-primary">
         Ana Sayfa
       </Link>
+      
       <div className="relative group">
         <button className="text-sm font-medium text-gray-700 hover:text-primary flex items-center">
           Komisyon Hesaplayıcılar
@@ -33,11 +34,15 @@ const DesktopMenu = () => {
           <Link to="/n11-komisyon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
             n11 Komisyon Hesaplayıcı
           </Link>
+          <Link to="/amazon-komisyon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Amazon Komisyon Hesaplayıcı
+          </Link>
           <Link to="/shopier-komisyon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
             Shopier Komisyon Hesaplayıcı
           </Link>
         </div>
       </div>
+      
       <div className="relative group">
         <button className="text-sm font-medium text-gray-700 hover:text-primary flex items-center">
           POS Türleri
@@ -66,12 +71,19 @@ const DesktopMenu = () => {
           </Link>
         </div>
       </div>
+      
+      <Link to="/kripto-borsalari" className="text-sm font-medium text-gray-700 hover:text-primary">
+        Kripto Borsaları
+      </Link>
+      
       <Link to="/blog" className="text-sm font-medium text-gray-700 hover:text-primary">
         Blog
       </Link>
+      
       <Link to="/about" className="text-sm font-medium text-gray-700 hover:text-primary">
         Hakkında
       </Link>
+      
       <Link to="/contact" className="text-sm font-medium text-gray-700 hover:text-primary">
         İletişim
       </Link>

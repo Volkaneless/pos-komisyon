@@ -1,3 +1,4 @@
+
 import { ReactNode } from "react";
 import Index from "../pages/Index";
 import About from "../pages/About";
@@ -13,6 +14,8 @@ import HepsiburadaCalculator from "../pages/HepsiburadaCalculator";
 import ParamGuvendeCalculator from "../pages/ParamGuvendeCalculator";
 import N11Calculator from "../pages/N11Calculator";
 import AmazonCalculator from "../pages/AmazonCalculator";
+import CryptoExchanges from "../pages/CryptoExchanges";
+import CryptoExchangeDetail from "../pages/CryptoExchangeDetail";
 
 // POS Types
 import BankaPOS from "../pages/pos-types/BankaPOS";
@@ -109,6 +112,8 @@ export const routes: Route[] = [
   { path: "/param-guvende-komisyon", element: <ParamGuvendeCalculator /> },
   { path: "/n11-komisyon", element: <N11Calculator /> },
   { path: "/amazon-komisyon", element: <AmazonCalculator /> },
+  { path: "/kripto-borsalari", element: <CryptoExchanges /> },
+  { path: "/kripto-borsalari/:id", element: <CryptoExchangeDetail /> },
 
   // POS Types
   { path: "/pos-types/banka", element: <BankaPOS /> },
