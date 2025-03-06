@@ -1,4 +1,3 @@
-
 import { ReactNode } from "react";
 import Index from "../pages/Index";
 import About from "../pages/About";
@@ -13,6 +12,7 @@ import DolapCalculator from "../pages/DolapCalculator";
 import HepsiburadaCalculator from "../pages/HepsiburadaCalculator";
 import ParamGuvendeCalculator from "../pages/ParamGuvendeCalculator";
 import N11Calculator from "../pages/N11Calculator";
+import AmazonCalculator from "../pages/AmazonCalculator";
 
 // POS Types
 import BankaPOS from "../pages/pos-types/BankaPOS";
@@ -108,6 +108,7 @@ export const routes: Route[] = [
   { path: "/hepsiburada-komisyon", element: <HepsiburadaCalculator /> },
   { path: "/param-guvende-komisyon", element: <ParamGuvendeCalculator /> },
   { path: "/n11-komisyon", element: <N11Calculator /> },
+  { path: "/amazon-komisyon", element: <AmazonCalculator /> },
 
   // POS Types
   { path: "/pos-types/banka", element: <BankaPOS /> },
