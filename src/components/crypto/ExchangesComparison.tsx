@@ -1,5 +1,5 @@
 
-import { cryptoExchanges, turkishExchanges, internationalExchanges } from "@/data/cryptoExchanges";
+import { cryptoExchanges, turkishExchanges, internationalExchanges } from "@/data/crypto";
 import ExchangeCard from "./ExchangeCard";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";

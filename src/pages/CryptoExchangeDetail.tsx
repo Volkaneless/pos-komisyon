@@ -1,7 +1,6 @@
-
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { cryptoExchanges } from "@/data/cryptoExchanges";
+import { cryptoExchanges, findExchangeById } from "@/data/crypto";
 import { 
   Coins, 
   Calendar, 
@@ -23,7 +22,7 @@ import { Button } from "@/components/ui/button";
 
 const CryptoExchangeDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const exchange = cryptoExchanges.find(e => e.id === id);
+  const exchange = findExchangeById(id || '');
   const currentYear = new Date().getFullYear();
   
   if (!exchange) {
@@ -205,7 +204,7 @@ const CryptoExchangeDetail = () => {
                   ))}
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-green-800">{exchange.founded} yılından beri faaliyet gösteriyor</span>
+                    <span>{exchange.founded} yılından beri faaliyet gösteriyor</span>
                   </li>
                   {exchange.has_turkish_lira && (
                     <li className="flex items-start gap-2">
