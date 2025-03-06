@@ -35,7 +35,7 @@ const CryptoExchangeDetail = () => {
     );
   }
   
-  const pageTitle = `${exchange.name} Komisyon Oranları ve İnceleme ${currentYear}`;
+  const pageTitle = `${exchange.name} Komisyon Oranları ${currentYear}`;
   const pageDescription = `${exchange.name} kripto para borsası komisyon oranları, özellikleri ve detaylı incelemesi. Maker ücreti: ${exchange.maker_fee}, Taker ücreti: ${exchange.taker_fee}.`;
   
   return (
