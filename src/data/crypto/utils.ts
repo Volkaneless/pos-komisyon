@@ -1,5 +1,7 @@
 
 import type { CryptoExchange } from '@/types/crypto';
+import { turkishExchanges } from './turkishExchanges';
+import { internationalExchanges } from './internationalExchanges';
 
 /**
  * Find an exchange by its ID
@@ -11,8 +13,7 @@ export function findExchangeById(
   id: string,
   exchanges?: CryptoExchange[]
 ): CryptoExchange | undefined {
-  const allExchanges = exchanges || 
-    [...require('./turkishExchanges').turkishExchanges, ...require('./internationalExchanges').internationalExchanges];
+  const allExchanges = exchanges || [...turkishExchanges, ...internationalExchanges];
   
   return allExchanges.find(exchange => exchange.id === id);
 }
@@ -27,8 +28,7 @@ export function getExchangesByFeature(
   feature: string,
   exchanges?: CryptoExchange[]
 ): CryptoExchange[] {
-  const allExchanges = exchanges || 
-    [...require('./turkishExchanges').turkishExchanges, ...require('./internationalExchanges').internationalExchanges];
+  const allExchanges = exchanges || [...turkishExchanges, ...internationalExchanges];
   
   return allExchanges.filter(exchange => 
     exchange.features.some(f => f.toLowerCase().includes(feature.toLowerCase()))
