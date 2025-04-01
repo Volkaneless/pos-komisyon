@@ -13,8 +13,17 @@ const CookieConsent = () => {
     if (!hasConsent) {
       setIsVisible(true);
     } else {
-      // If consent exists, enable Google analytics/ads based on saved preferences
-      updateGoogleConsent(JSON.parse(hasConsent));
+      try {
+        // Safely parse the stored consent value
+        const consentData = JSON.parse(hasConsent);
+        // If consent exists, enable Google analytics/ads based on saved preferences
+        updateGoogleConsent(consentData);
+      } catch (error) {
+        // If there's an invalid value in localStorage, remove it and show consent again
+        console.error("Invalid cookie consent data found:", error);
+        localStorage.removeItem("cookieConsent");
+        setIsVisible(true);
+      }
     }
   }, []);
 
