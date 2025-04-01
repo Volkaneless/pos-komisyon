@@ -2,7 +2,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle2, Phone, FileText, CreditCard, HeadphonesIcon, PhoneCall } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { getCanonicalUrl } from "@/lib/utils";
+import { getCanonicalUrlWithFragment } from "@/lib/utils";
 import type { POSProvider } from "@/types/pos";
 
 interface POSTabsProps {
@@ -16,7 +16,7 @@ const POSTabs = ({
 }: POSTabsProps) => {
   // Create canonical URL for tab sections
   const getTabCanonicalUrl = (tabId: string) => {
-    return getCanonicalUrl(`/pos/${provider.id}`, `#${tabId}`);
+    return getCanonicalUrlWithFragment(`/pos/${provider.id}`, `#${tabId}`);
   };
 
   return <Tabs defaultValue="explanation" className="w-full">
