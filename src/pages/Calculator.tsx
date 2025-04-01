@@ -1,9 +1,13 @@
+
 import { Helmet } from "react-helmet";
 import Calculator from "../components/Calculator";
+import CanonicalLink from "@/components/CanonicalLink";
 
 const CalculatorPage = () => {
   return (
     <>
+      <CanonicalLink path="/calculator" />
+      
       <Helmet>
         <title>POS Komisyon Oranları Hesaplama Programı - 2025</title>
         <meta
@@ -14,7 +18,6 @@ const CalculatorPage = () => {
           name="keywords" 
           content="pos komisyon hesaplama 2025, pos komisyon oranları, pos komisyon hesaplama programı, pos maliyet hesaplama, pos taksit komisyon hesaplama" 
         />
-        <link rel="canonical" href="https://poskomisyon.com/calculator" />
         <meta property="og:title" content="POS Komisyon Oranları Hesaplama Programı - 2025" />
         <meta property="og:description" content="2025 yılı güncel POS komisyon oranları hesaplama aracı. Banka POS cihazları için komisyon tutarlarını kolayca hesaplayın." />
         <meta property="og:url" content="https://poskomisyon.com/calculator" />

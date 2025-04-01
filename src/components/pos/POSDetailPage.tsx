@@ -1,14 +1,13 @@
 
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import POSHeader from "./POSHeader";
 import POSInfo from "./POSInfo";
 import POSTabs from "./POSTabs";
 import POSProviderFAQ from "./POSProviderFAQ";
-import SimilarProviders from "./SimilarProviders";
 import LatestBlogPosts from "./LatestBlogPosts";
-import { getCanonicalUrl } from "@/lib/utils";
+import SimilarProviders from "./SimilarProviders";
+import CanonicalLink from "@/components/CanonicalLink";
 import type { POSProvider } from "@/types/pos";
 
 interface POSDetailPageProps {
@@ -16,53 +15,79 @@ interface POSDetailPageProps {
 }
 
 const POSDetailPage = ({ provider }: POSDetailPageProps) => {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.hash) {
-      const element = document.querySelector(location.hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [location]);
-
-  if (!provider) {
-    return (
-      <div className="container mx-auto px-4 pt-24">
-        <h1 className="text-2xl font-bold">POS sağlayıcı bulunamadı</h1>
-      </div>
-    );
-  }
-
   const currentYear = new Date().getFullYear();
-  const pageTitle = `${provider.name} Komisyon Oranları ${currentYear}`;
-  const pageDescription = `${currentYear} ${provider.name} komisyon oranları: ${provider.type} için ${provider.commission_rate} komisyon oranı ve ${provider.monthly_fee} aylık ücret. Güncel ${provider.name} başvuru şartları, destek hattı ve detaylı bilgiler.`;
-
-  console.log('Rendering POSDetailPage for provider:', provider);
-
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  // Set isLoaded to true after component mounts
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+  
+  if (!provider) {
+    return <div className="container mx-auto py-24 px-4">Provider not found</div>;
+  }
+  
+  const pageTitle = `${provider.name} POS ${currentYear} Komisyon Oranları | POS Compare`;
+  
   return (
     <>
+      {/* Use CanonicalLink for this specific provider page */}
+      <CanonicalLink path={`/pos/${provider.id}`} />
+      
       <Helmet>
         <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={getCanonicalUrl(`/pos/${provider.id}`)} />
-        <link rel="alternate" href={getCanonicalUrl('/')} />
+        <meta
+          name="description"
+          content={`${currentYear} ${provider.name} POS komisyon oranları ve özellikleri. ${provider.name} POS cihazı hakkında bilgi alın ve hemen başvurun.`}
+        />
       </Helmet>
-      <div className="container mx-auto px-4 pt-24 pb-16">
-        <h1 className="text-3xl font-bold mb-4 text-gray-900">{pageTitle}</h1>
-        <p className="text-gray-600 mb-8 leading-relaxed">
-          {currentYear} {provider.name} POS komisyon oranları, işletmeler için avantajlı seçenekler sunuyor. {provider.name} POS cihazı, sanal POS ve hızlı başvuru imkanıyla işlemlerinizi güvenle gerçekleştirin. {provider.name} POS müşteri hizmetleri ve destek hattı ile her sorunuzda yanınızda.
-        </p>
-        <div className="glass-card rounded-2xl p-8 mb-12">
-          <POSHeader provider={provider} />
-          <POSInfo provider={provider} />
+      
+      <div className="container mx-auto px-4 py-12">
+        <POSHeader provider={provider} />
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
+          <div className="lg:col-span-2">
+            <POSInfo provider={provider} />
+            <div className="mt-12">
+              <POSTabs provider={provider} currentYear={currentYear} />
+            </div>
+            
+            <div className="mt-16">
+              <h2 className="text-2xl font-semibold mb-6">Sıkça Sorulan Sorular</h2>
+              <POSProviderFAQ provider={provider} />
+            </div>
+          </div>
+          
+          <div className="space-y-12">
+            <div className="glass-card p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-4">Başvuru Bilgileri</h3>
+              <div className="space-y-4">
+                <p className="text-gray-700">
+                  {provider.name} POS çözümü hakkında detaylı bilgi almak ve 
+                  başvuru yapmak için aşağıdaki iletişim kanallarını kullanabilirsiniz:
+                </p>
+                <div className="space-y-2">
+                  <p><strong>Müşteri Hizmetleri:</strong> 0850 XXX XX XX</p>
+                  <p><strong>E-posta:</strong> info@{provider.id}.com.tr</p>
+                  <p><strong>Web:</strong> www.{provider.id}.com.tr</p>
+                </div>
+                <div className="mt-6">
+                  <button className="button-primary w-full">Hemen Başvur</button>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Benzer POS Çözümleri</h3>
+              <SimilarProviders currentProviderId={provider.id} providerType={provider.type} />
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold mb-4">İlgili Blog Yazıları</h3>
+              <LatestBlogPosts category={provider.type === "Sanal POS" ? "social-media" : "adsense"} />
+            </div>
+          </div>
         </div>
-
-        <POSTabs provider={provider} currentYear={currentYear} />
-        <SimilarProviders currentProvider={provider} />
-        <POSProviderFAQ provider={provider} />
-        <LatestBlogPosts />
       </div>
     </>
   );

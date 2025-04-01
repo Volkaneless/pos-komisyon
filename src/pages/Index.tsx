@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -6,6 +7,7 @@ import POSFilter from "../components/POSFilter";
 import FAQ from "../components/FAQ";
 import POSArticle from "../components/POSArticle";
 import { posProviders } from "../data/posProviders";
+import CanonicalLink from "@/components/CanonicalLink";
 
 const Index = () => {
   const [filteredProviders, setFilteredProviders] = useState(posProviders);
@@ -36,11 +38,13 @@ const Index = () => {
 
   return (
     <>
+      {/* Use CanonicalLink component for homepage */}
+      <CanonicalLink path="/" />
+      
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <meta name="keywords" content="pos komisyon oranları 2025, banka pos cihazı, pos komisyon hesaplama, pos karşılaştırma, en uygun pos" />
-        <link rel="canonical" href="https://poskomisyon.com" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />

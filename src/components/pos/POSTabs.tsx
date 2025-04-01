@@ -19,40 +19,47 @@ const POSTabs = ({
     return getCanonicalUrlWithFragment(`/pos/${provider.id}`, `#${tabId}`);
   };
 
+  // Modify function to only update fragment in URL, not the full path
+  const updateUrlFragment = (fragmentId: string) => {
+    if (typeof window !== 'undefined') {
+      window.history.replaceState(null, '', `#${fragmentId}`);
+    }
+  };
+
   return <Tabs defaultValue="explanation" className="w-full">
       <TabsList className="w-full justify-start border-b rounded-none bg-transparent space-x-8">
         <TabsTrigger 
           value="explanation" 
           className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" 
-          onClick={() => window.history.pushState(null, '', getTabCanonicalUrl('explanation').split('https://poskomisyon.com')[1])}
+          onClick={() => updateUrlFragment('explanation')}
         >
           Açıklama
         </TabsTrigger>
         <TabsTrigger 
           value="commissions" 
           className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" 
-          onClick={() => window.history.pushState(null, '', getTabCanonicalUrl('commissions').split('https://poskomisyon.com')[1])}
+          onClick={() => updateUrlFragment('commissions')}
         >
           POS Komisyon Oranları
         </TabsTrigger>
         <TabsTrigger 
           value="features" 
           className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" 
-          onClick={() => window.history.pushState(null, '', getTabCanonicalUrl('features').split('https://poskomisyon.com')[1])}
+          onClick={() => updateUrlFragment('features')}
         >
           Özellikler
         </TabsTrigger>
         <TabsTrigger 
           value="customer-service" 
           className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" 
-          onClick={() => window.history.pushState(null, '', getTabCanonicalUrl('customer-service').split('https://poskomisyon.com')[1])}
+          onClick={() => updateUrlFragment('customer-service')}
         >
           Müşteri Hizmetleri​ ve İletişim
         </TabsTrigger>
         <TabsTrigger 
           value="support" 
           className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-transparent rounded-none px-0" 
-          onClick={() => window.history.pushState(null, '', getTabCanonicalUrl('support').split('https://poskomisyon.com')[1])}
+          onClick={() => updateUrlFragment('support')}
         >
           Destek Hattı
         </TabsTrigger>
