@@ -1,24 +1,22 @@
-
 import { Helmet } from "react-helmet";
 import { Coins } from "lucide-react";
 import CryptoFeatures from "@/components/crypto/CryptoFeatures";
 import ExchangesComparison from "@/components/crypto/ExchangesComparison";
 import CryptoFAQ from "@/components/crypto/CryptoFAQ";
 import ImportantInfo from "@/components/crypto/ImportantInfo";
-import CanonicalLink from "@/components/CanonicalLink";
 import { getCanonicalUrl } from "@/lib/utils";
 
 const CryptoExchanges = () => {
   const currentYear = new Date().getFullYear();
+  const pageTitle = `En İyi ve Güvenilir Kripto Borsaları ${currentYear} | Karşılaştırma`;
   
   return (
     <>
       <Helmet>
-        <title>{`En İyi ve Güvenilir Kripto Borsaları ${currentYear} | Karşılaştırma`}</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={`${currentYear} yılı en güvenilir kripto para borsaları karşılaştırması. Binance, Coinbase, Paribu gibi kripto borsalarının komisyon oranları ve özellikleri.`} />
         <link rel="canonical" href={getCanonicalUrl('/kripto-borsalari')} />
       </Helmet>
-      <CanonicalLink path="/kripto-borsalari" />
       
       <div className="container mx-auto px-4 pt-24 pb-16">
         <div className="text-center mb-12">

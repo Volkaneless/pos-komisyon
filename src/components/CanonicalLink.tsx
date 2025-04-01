@@ -7,7 +7,7 @@ interface CanonicalLinkProps {
   includeHome?: boolean;
 }
 
-const CanonicalLink = ({ path, includeHome = true }: CanonicalLinkProps) => {
+const CanonicalLink = ({ path, includeHome = false }: CanonicalLinkProps) => {
   const canonicalUrl = getCanonicalUrl(path);
   const homeUrl = getCanonicalUrl("/");
 

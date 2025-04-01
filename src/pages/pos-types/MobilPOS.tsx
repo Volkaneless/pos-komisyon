@@ -1,8 +1,11 @@
+
 import { Helmet } from "react-helmet";
 import { Smartphone, CreditCard, ShieldCheck, Globe } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
+import { getCanonicalUrl } from "@/lib/utils";
+
 const MobilPOS = () => {
   return <>
       <Helmet>
@@ -11,10 +14,17 @@ const MobilPOS = () => {
         <meta name="keywords" content="mobil pos komisyon oranları 2025, mobil pos başvuru, mobil ödeme sistemleri, taşınabilir pos cihazları" />
         <meta property="og:title" content="Mobil POS Komisyon Oranları 2025 - Mobil POS Ücretleri" />
         <meta property="og:description" content="2025 yılı güncel mobil POS komisyon oranları ve karşılaştırma araçları. İşletmeniz için en uygun mobil POS çözümünü bulun." />
-        <link rel="canonical" href="https://poskomisyon.com/pos-types/mobil" />
+        <link rel="canonical" href={getCanonicalUrl('/pos-types/mobil')} />
       </Helmet>
 
-      <POSTypePage title="Mobil POS Komisyon Oranları 2025 - Mobil POS Ücretleri" description="Mobil ve taşınabilir POS çözümleri için en uygun komisyon oranları ve karşılaştırmalar" type="Mobil (Taşınabilir) POS" Icon={Smartphone} whatIsContent="Mobil POS cihazları, işletmelerin hareket halindeyken ödeme almalarını sağlayan taşınabilir cihazlardır. Bu cihazlar, kablosuz internet veya mobil veri bağlantısı üzerinden çalışır ve kredi kartı ödemelerini güvenli bir şekilde işler." advantages={["Hareket halindeyken ödeme alma imkanı", "Kolay taşınabilirlik", "Düşük maliyetli çözüm", "Hızlı kurulum ve kullanım", "Tüm kredi kartlarıyla uyumluluk", "7/24 teknik destek", "Detaylı satış raporlaması", "Güvenli işlem altyapısı"]} />
+      <POSTypePage 
+        title="Mobil POS Komisyon Oranları 2025 - Mobil POS Ücretleri" 
+        description="Mobil ve taşınabilir POS çözümleri için en uygun komisyon oranları ve karşılaştırmalar" 
+        type="Mobil (Taşınabilir) POS" 
+        Icon={Smartphone} 
+        whatIsContent="Mobil POS cihazları, işletmelerin hareket halindeyken ödeme almalarını sağlayan taşınabilir cihazlardır. Bu cihazlar, kablosuz internet veya mobil veri bağlantısı üzerinden çalışır ve kredi kartı ödemelerini güvenli bir şekilde işler." 
+        advantages={["Hareket halindeyken ödeme alma imkanı", "Kolay taşınabilirlik", "Düşük maliyetli çözüm", "Hızlı kurulum ve kullanım", "Tüm kredi kartlarıyla uyumluluk", "7/24 teknik destek", "Detaylı satış raporlaması", "Güvenli işlem altyapısı"]} 
+      />
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -161,4 +171,5 @@ const MobilPOS = () => {
       </div>
     </>;
 };
+
 export default MobilPOS;
