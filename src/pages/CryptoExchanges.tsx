@@ -14,7 +14,7 @@ const CryptoExchanges = () => {
   return (
     <>
       <Helmet>
-        <title>En İyi ve Güvenilir Kripto Borsaları {currentYear} | Karşılaştırma</title>
+        <title>{`En İyi ve Güvenilir Kripto Borsaları ${currentYear} | Karşılaştırma`}</title>
         <meta name="description" content={`${currentYear} yılı en güvenilir kripto para borsaları karşılaştırması. Binance, Coinbase, Paribu gibi kripto borsalarının komisyon oranları ve özellikleri.`} />
         <link rel="canonical" href={getCanonicalUrl('/kripto-borsalari')} />
       </Helmet>
