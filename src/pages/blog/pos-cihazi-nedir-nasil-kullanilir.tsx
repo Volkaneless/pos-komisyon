@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { blogPosts } from "@/data/blogPosts";
 import CanonicalLink from "@/components/CanonicalLink";
@@ -16,6 +15,7 @@ const POSCihaziNedir = () => {
         <title>{post.title} | POS Komisyon</title>
         <meta name="description" content={post.excerpt} />
       </Helmet>
+      
       <CanonicalLink path={`/blog/${post.slug}`} />
 
       <div className="container mx-auto px-4 py-12">
@@ -43,8 +43,6 @@ const POSCihaziNedir = () => {
               <li>Satış raporlaması ve analizi</li>
               <li>Müşteri bilgi yönetimi</li>
             </ul>
-
-            {/* ... Diğer içerik bölümleri benzer şekilde yapılandırılabilir */}
           </div>
         </article>
       </div>

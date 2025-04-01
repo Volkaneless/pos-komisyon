@@ -1,10 +1,11 @@
+
 import { Helmet } from "react-helmet";
 import { Coins } from "lucide-react";
 import CryptoFeatures from "@/components/crypto/CryptoFeatures";
 import ExchangesComparison from "@/components/crypto/ExchangesComparison";
 import CryptoFAQ from "@/components/crypto/CryptoFAQ";
 import ImportantInfo from "@/components/crypto/ImportantInfo";
-import { getCanonicalUrl } from "@/lib/utils";
+import CanonicalLink from "@/components/CanonicalLink";
 
 const CryptoExchanges = () => {
   const currentYear = new Date().getFullYear();
@@ -15,8 +16,10 @@ const CryptoExchanges = () => {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={`${currentYear} yılı en güvenilir kripto para borsaları karşılaştırması. Binance, Coinbase, Paribu gibi kripto borsalarının komisyon oranları ve özellikleri.`} />
-        <link rel="canonical" href={getCanonicalUrl('/kripto-borsalari')} />
       </Helmet>
+      
+      {/* Doğru yol ile kanonik link ekliyoruz */}
+      <CanonicalLink path="/kripto-borsalari" />
       
       <div className="container mx-auto px-4 pt-24 pb-16">
         <div className="text-center mb-12">

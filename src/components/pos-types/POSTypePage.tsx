@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { posProviders } from "@/data/posProviders";
 import POSCard from "@/components/POSCard";
 import { LucideIcon } from "lucide-react";
-import { getCanonicalUrl } from "@/lib/utils";
+import CanonicalLink from "@/components/CanonicalLink";
 
 interface POSTypePageProps {
   title: string;
@@ -24,15 +24,16 @@ const POSTypePage = ({
 }: POSTypePageProps) => {
   const filteredProviders = posProviders.filter(provider => provider.type === type);
   const pagePath = `/pos-types/${type.toLowerCase().replace(/\s+/g, "-")}`;
-  const canonicalUrl = getCanonicalUrl(pagePath);
   
   return (
     <>
       <Helmet>
         <title>{title} | POS Compare</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
+      
+      {/* Sayfa için doğru kanonik bağlantıyı ekle */}
+      <CanonicalLink path={pagePath} />
 
       <div className="container mx-auto px-4 pt-24 pb-16">
         <div className="text-center mb-12">
