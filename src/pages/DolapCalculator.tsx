@@ -1,31 +1,18 @@
-
 import { Helmet } from "react-helmet";
 import DolapCalculator from "@/components/dolap/DolapCalculator";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 import { getCanonicalUrl } from "@/lib/utils";
 
 const DolapCalculatorPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Dolap Komisyon Hesaplama & Oranları</title>
-        <meta
-          name="description"
-          content="Dolap satıcıları ve alıcıları için güncel komisyon oranları hesaplama aracı. Dolap'ta satış ve alış yaparken ödeyeceğiniz komisyon tutarlarını hesaplayın."
-        />
-        <meta 
-          name="keywords" 
-          content="dolap komisyon hesaplama, dolap komisyon oranları, dolap hizmet bedeli, dolap satıcı komisyonu, dolap alıcı komisyonu" 
-        />
-        <link rel="canonical" href={getCanonicalUrl("/dolap-komisyon")} />
-        <meta property="og:title" content="Dolap Komisyon Hesaplama & Oranları" />
-        <meta property="og:description" content="Dolap satıcıları ve alıcıları için güncel komisyon oranları hesaplama aracı." />
-        <meta property="og:url" content={getCanonicalUrl("/dolap-komisyon")} />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Dolap Komisyon Hesaplama & Oranları" />
-        <meta name="twitter:description" content="Dolap satıcıları ve alıcıları için güncel komisyon oranları hesaplama aracı." />
-      </Helmet>
+      <MetaTags 
+        title="Dolap Komisyon Hesaplama & Oranları"
+        description="Dolap satıcıları ve alıcıları için güncel komisyon oranları hesaplama aracı. Dolap'ta satış ve alış yaparken ödeyeceğiniz komisyon tutarlarını hesaplayın."
+        keywords="dolap komisyon hesaplama, dolap komisyon oranları, dolap hizmet bedeli, dolap satıcı komisyonu, dolap alıcı komisyonu"
+        canonicalPath="/dolap-komisyon"
+        priority={20}
+      />
 
       <div className="container mx-auto px-4 pt-24 pb-12 min-h-screen">
         <div className="text-center mb-12 max-w-3xl mx-auto">

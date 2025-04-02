@@ -1,7 +1,6 @@
 
 import { Info } from "lucide-react";
 import type { POSProvider } from "@/types/pos";
-import CanonicalLink from "@/components/CanonicalLink";
 
 interface POSInfoProps {
   provider: POSProvider;
@@ -9,9 +8,8 @@ interface POSInfoProps {
 
 const POSInfo = ({ provider }: POSInfoProps) => {
   return (
-    <>
-      <CanonicalLink path={`/pos/${provider.id}`} includeHome={true} />
-      <div className="grid grid-cols-3 gap-8">
+    <div className="grid grid-cols-3 gap-8">
+      <div>
         <p className="text-gray-500 mb-2">POS Türü</p>
         <p className="font-medium text-lg">{provider.type}</p>
       </div>
@@ -26,7 +24,7 @@ const POSInfo = ({ provider }: POSInfoProps) => {
         </div>
         <p className="font-medium text-lg">{provider.commission_rate}</p>
       </div>
-    </>
+    </div>
   );
 };
 

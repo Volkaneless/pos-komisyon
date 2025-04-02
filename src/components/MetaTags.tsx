@@ -20,11 +20,12 @@ const MetaTags = ({
   const canonicalUrl = canonicalPath ? `${domain}${canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`}` : undefined;
   
   return (
-    <Helmet prioritizeSeoTags={true} priorityMethods={{ property: () => priority }}>
+    <Helmet>
       {title && <title>{title}</title>}
       {description && <meta name="description" content={description} />}
       {keywords && <meta name="keywords" content={keywords} />}
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      {/* Priority is handled via component ordering in React, not via a Helmet prop */}
     </Helmet>
   );
 };

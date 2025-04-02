@@ -1,13 +1,12 @@
 
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import POSHeader from "./POSHeader";
 import POSInfo from "./POSInfo";
 import POSTabs from "./POSTabs";
 import POSProviderFAQ from "./POSProviderFAQ";
 import LatestBlogPosts from "./LatestBlogPosts";
 import SimilarProviders from "./SimilarProviders";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 import type { POSProvider } from "@/types/pos";
 
 interface POSDetailPageProps {
@@ -31,16 +30,12 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
   
   return (
     <>
-      {/* Use CanonicalLink for this specific provider page */}
-      <CanonicalLink path={`/pos/${provider.id}`} />
-      
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta
-          name="description"
-          content={`${currentYear} ${provider.name} POS komisyon oranları ve özellikleri. ${provider.name} POS cihazı hakkında bilgi alın ve hemen başvurun.`}
-        />
-      </Helmet>
+      <MetaTags
+        title={pageTitle}
+        description={`${currentYear} ${provider.name} POS komisyon oranları ve özellikleri. ${provider.name} POS cihazı hakkında bilgi alın ve hemen başvurun.`}
+        canonicalPath={`/pos/${provider.id}`}
+        priority={20}
+      />
       
       <div className="container mx-auto px-4 py-12">
         <POSHeader provider={provider} />

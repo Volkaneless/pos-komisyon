@@ -1,34 +1,18 @@
-
-import { Helmet } from "react-helmet";
 import AmazonCalculator from "@/components/amazon/AmazonCalculator";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 import { getCanonicalUrl } from "@/lib/utils";
 
 const AmazonCalculatorPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Amazon Komisyon Hesaplama & Oranları</title>
-        <meta
-          name="description"
-          content="Amazon satıcıları için güncel komisyon oranları hesaplama aracı. Kategori bazlı Amazon komisyonlarını hesaplayın, FBA ücretlerini dahil edin ve kar marjı analizi yapın."
-        />
-        <meta 
-          name="keywords" 
-          content="amazon komisyon hesaplama, amazon komisyon oranları, amazon fba hesaplama, amazon satıcı hesap makinesi, amazon türkiye komisyonları" 
-        />
-        <link rel="canonical" href={getCanonicalUrl("/amazon-komisyon")} />
-        <meta property="og:title" content="Amazon Komisyon Hesaplama & Oranları" />
-        <meta property="og:description" content="Amazon satıcıları için güncel komisyon oranları hesaplama aracı." />
-        <meta property="og:url" content={getCanonicalUrl("/amazon-komisyon")} />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Amazon Komisyon Hesaplama & Oranları" />
-        <meta name="twitter:description" content="Amazon satıcıları için güncel komisyon oranları hesaplama aracı." />
-      </Helmet>
+      <MetaTags
+        title="Amazon Komisyon Hesaplama & Oranları"
+        description="Amazon satıcıları için güncel komisyon oranları hesaplama aracı. Kategori bazlı Amazon komisyonlarını hesaplayın, FBA ücretlerini dahil edin ve kar marjı analizi yapın."
+        keywords="amazon komisyon hesaplama, amazon komisyon oranları, amazon fba hesaplama, amazon satıcı hesap makinesi, amazon türkiye komisyonları"
+        canonicalPath="/amazon-komisyon"
+        priority={20}
+      />
       
-      <CanonicalLink path="/amazon-komisyon" />
-
       <div className="container mx-auto px-4 pt-24 pb-12 min-h-screen">
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
