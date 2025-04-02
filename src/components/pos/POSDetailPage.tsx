@@ -20,7 +20,7 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
   
   // Set isLoaded to true after component mounts
   useEffect(() => {
-    setIsLoaded(true);
+    setIsLoaded(true;
   }, []);
   
   if (!provider) {
@@ -79,7 +79,7 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
             
             <div>
               <h3 className="text-xl font-semibold mb-4">Benzer POS Çözümleri</h3>
-              <SimilarProviders currentProviderId={provider.id} providerType={provider.type} />
+              <SimilarProviders currentProvider={provider} />
             </div>
             
             <div>

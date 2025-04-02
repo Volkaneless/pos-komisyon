@@ -17,7 +17,7 @@ const CanonicalLink = ({ path, includeHome = false }: CanonicalLinkProps) => {
   
   // Avoid duplicating canonical URLs
   return (
-    <Helmet prioritizeSeoTags>
+    <Helmet>
       {/* Kanonik URL'yi doğru şekilde ayarlıyoruz */}
       <link rel="canonical" href={canonicalUrl} />
       

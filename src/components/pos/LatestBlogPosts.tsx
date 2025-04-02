@@ -1,9 +1,19 @@
+
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
 import { Calendar } from "lucide-react";
 
-const LatestBlogPosts = () => {
-  const latestPosts = blogPosts.slice(0, 3);
+interface LatestBlogPostsProps {
+  category?: string;
+}
+
+const LatestBlogPosts = ({ category }: LatestBlogPostsProps) => {
+  // Filter posts by category if provided
+  const filteredPosts = category 
+    ? blogPosts.filter(post => post.category === category)
+    : blogPosts;
+
+  const latestPosts = filteredPosts.slice(0, 3);
 
   const getCategoryLabel = (category: string) => {
     switch(category) {
