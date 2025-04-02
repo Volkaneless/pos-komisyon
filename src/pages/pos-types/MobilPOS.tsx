@@ -4,7 +4,7 @@ import { Smartphone, CreditCard, ShieldCheck, Globe } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
-import { getCanonicalUrl } from "@/lib/utils";
+import CanonicalLink from "@/components/CanonicalLink";
 
 const MobilPOS = () => {
   return <>
@@ -14,8 +14,10 @@ const MobilPOS = () => {
         <meta name="keywords" content="mobil pos komisyon oranları 2025, mobil pos başvuru, mobil ödeme sistemleri, taşınabilir pos cihazları" />
         <meta property="og:title" content="Mobil POS Komisyon Oranları 2025 - Mobil POS Ücretleri" />
         <meta property="og:description" content="2025 yılı güncel mobil POS komisyon oranları ve karşılaştırma araçları. İşletmeniz için en uygun mobil POS çözümünü bulun." />
-        <link rel="canonical" href={getCanonicalUrl('/pos-types/mobil')} />
       </Helmet>
+
+      {/* Add correct canonical link */}
+      <CanonicalLink path="/pos-types/mobil" />
 
       <POSTypePage 
         title="Mobil POS Komisyon Oranları 2025 - Mobil POS Ücretleri" 

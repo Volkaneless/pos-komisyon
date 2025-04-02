@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import { posProviders } from "@/data/posProviders";
 import POSCard from "@/components/POSCard";
 import { LucideIcon } from "lucide-react";
-import CanonicalLink from "@/components/CanonicalLink";
 
 interface POSTypePageProps {
   title: string;
@@ -23,7 +22,6 @@ const POSTypePage = ({
   advantages
 }: POSTypePageProps) => {
   const filteredProviders = posProviders.filter(provider => provider.type === type);
-  const pagePath = `/pos-types/${type.toLowerCase().replace(/\s+/g, "-")}`;
   
   return (
     <>
@@ -32,8 +30,7 @@ const POSTypePage = ({
         <meta name="description" content={description} />
       </Helmet>
       
-      {/* Sayfa için doğru kanonik bağlantıyı ekle */}
-      <CanonicalLink path={pagePath} />
+      {/* Removed canonical link from here since we'll add it in parent components */}
 
       <div className="container mx-auto px-4 pt-24 pb-16">
         <div className="text-center mb-12">

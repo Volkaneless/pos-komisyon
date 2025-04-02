@@ -17,7 +17,7 @@ const BankaPOS = () => {
         <meta name="description" content="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun." />
       </Helmet>
       
-      {/* Doğru yol ile kanonik link ekliyoruz */}
+      {/* Use correct path with CanonicalLink component */}
       <CanonicalLink path="/pos-types/banka" />
       
       <POSTypePage
