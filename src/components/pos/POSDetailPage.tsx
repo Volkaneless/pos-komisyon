@@ -20,7 +20,7 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
   
   // Set isLoaded to true after component mounts
   useEffect(() => {
-    setIsLoaded(true;
+    setIsLoaded(true);
   }, []);
   
   if (!provider) {
