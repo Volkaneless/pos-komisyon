@@ -1,5 +1,4 @@
 
-import { Helmet } from "react-helmet";
 import { posProviders } from "@/data/posProviders";
 import POSCard from "@/components/POSCard";
 import { LucideIcon } from "lucide-react";
@@ -25,13 +24,6 @@ const POSTypePage = ({
   
   return (
     <>
-      <Helmet>
-        <title>{title} | POS Compare</title>
-        <meta name="description" content={description} />
-      </Helmet>
-      
-      {/* Removed canonical link from here since we'll add it in parent components */}
-
       <div className="container mx-auto px-4 pt-24 pb-16">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">

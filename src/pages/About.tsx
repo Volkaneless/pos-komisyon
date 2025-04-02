@@ -1,21 +1,16 @@
-
 import { Info } from "lucide-react";
-import { Helmet } from "react-helmet";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 
 const About = () => {
   return (
     <>
-      <CanonicalLink path="/about" />
-      
-      <Helmet>
-        <title>POS Karşılaştırma Platformu Hakkında | POS Compare</title>
-        <meta 
-          name="description" 
-          content="POS karşılaştırma platformumuz ile işletmeniz için en uygun POS çözümünü bulun. Banka ve fintech POS cihazlarını karşılaştırın." 
-        />
-        <meta name="keywords" content="pos karşılaştırma, pos cihazı karşılaştırma, pos compare hakkında, pos danışmanlık, pos çözümleri" />
-      </Helmet>
+      <MetaTags
+        title="POS Karşılaştırma Platformu Hakkında | POS Compare"
+        description="POS karşılaştırma platformumuz ile işletmeniz için en uygun POS çözümünü bulun. Banka ve fintech POS cihazlarını karşılaştırın."
+        keywords="pos karşılaştırma, pos cihazı karşılaştırma, pos compare hakkında, pos danışmanlık, pos çözümleri"
+        canonicalPath="/about"
+        priority={20}
+      />
       
       <div className="container mx-auto px-4 pt-24 pb-12">
         <div className="text-center mb-12">

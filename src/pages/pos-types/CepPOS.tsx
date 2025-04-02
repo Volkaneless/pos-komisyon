@@ -1,21 +1,18 @@
-
-import { Helmet } from "react-helmet";
 import { Smartphone } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import CepPOSFAQ from "@/components/FAQ/CepPOSFAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 
 const CepPOS = () => {
   return <>
-      <Helmet>
-        <title>Cep POS Komisyon Oranları 2025 - Cep POS Nedir?</title>
-        <meta name="description" content="Cep POS uygulamaları ile akıllı telefonunuzu POS cihazına dönüştürün. 2025 komisyon oranları, başvuru şartları ve detaylı bilgiler." />
-        <meta name="keywords" content="cep pos, mobil pos uygulaması, telefon pos, android pos uygulaması, ios pos uygulaması, cep pos komisyon oranları 2025" />
-      </Helmet>
-
-      {/* Add correct canonical link */}
-      <CanonicalLink path="/pos-types/cep" />
+      <MetaTags
+        title="Cep POS Komisyon Oranları 2025 - Cep POS Nedir?"
+        description="Cep POS uygulamaları ile akıllı telefonunuzu POS cihazına dönüştürün. 2025 komisyon oranları, başvuru şartları ve detaylı bilgiler."
+        keywords="cep pos, mobil pos uygulaması, telefon pos, android pos uygulaması, ios pos uygulaması, cep pos komisyon oranları 2025"
+        canonicalPath="/pos-types/cep"
+        priority={20}
+      />
 
       <POSTypePage 
         title="Cep POS Komisyon Oranları 2025 - Cep POS Nedir?" 

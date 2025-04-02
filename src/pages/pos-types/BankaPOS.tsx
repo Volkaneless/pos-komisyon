@@ -1,24 +1,23 @@
 
 import { Banknote } from "lucide-react";
-import { Helmet } from "react-helmet";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import BankaPOSFeatures from "@/components/pos-types/banka/BankaPOSFeatures";
 import BankaPOSFAQ from "@/components/pos-types/banka/BankaPOSFAQ";
 import BankaPOSAgreements from "@/components/pos-types/banka/BankaPOSAgreements";
 import BankaPOSProviderCards from "@/components/pos-types/banka/BankaPOSProviderCards";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 
 const BankaPOS = () => {
   return (
     <>
-      <Helmet>
-        <title>Banka POS Komisyon Oranları 2025 | POS Compare</title>
-        <meta name="description" content="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun." />
-      </Helmet>
-      
-      {/* Use correct path with CanonicalLink component */}
-      <CanonicalLink path="/pos-types/banka" />
+      <MetaTags
+        title="Banka POS Komisyon Oranları 2025 | POS Compare"
+        description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
+        keywords="banka pos, fiziksel pos, banka pos komisyon oranları 2025, pos karşılaştırma, pos cihazı ücretleri"
+        canonicalPath="/pos-types/banka"
+        priority={20}
+      />
       
       <POSTypePage
         title="Banka POS Komisyon Oranları 2025"

@@ -1,11 +1,9 @@
-
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
-import { Helmet } from "react-helmet";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,12 +17,12 @@ const Contact = () => {
 
   return (
     <>
-      <CanonicalLink path="/contact" />
-      
-      <Helmet>
-        <title>İletişim | POS Komisyon - Bize Ulaşın</title>
-        <meta name="description" content="POS komisyon oranları ve POS cihazları hakkında sorularınız için bizimle iletişime geçin. Size en kısa sürede yardımcı olalım." />
-      </Helmet>
+      <MetaTags
+        title="İletişim | POS Komisyon - Bize Ulaşın"
+        description="POS komisyon oranları ve POS cihazları hakkında sorularınız için bizimle iletişime geçin. Size en kısa sürede yardımcı olalım."
+        canonicalPath="/contact"
+        priority={20}
+      />
 
       <div className="container mx-auto px-4 pt-24 pb-12">
         <div className="text-center mb-12">

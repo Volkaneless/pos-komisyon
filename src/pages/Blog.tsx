@@ -1,11 +1,9 @@
-
 import { useState } from "react";
-import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/data/blogPosts";
 import { Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 
 type Category = "all" | "adsense" | "social-media" | "ppc";
 
@@ -31,16 +29,13 @@ const Blog = () => {
 
   return (
     <>
-      <CanonicalLink path="/blog" />
-      
-      <Helmet>
-        <title>POS Sistemleri Blog | Güncel POS ve Ödeme Sistemleri Haberleri</title>
-        <meta 
-          name="description" 
-          content="POS sistemleri, komisyon oranları ve ödeme teknolojileri hakkında güncel bilgiler, haberler ve detaylı incelemeler." 
-        />
-        <meta name="keywords" content="pos blog, pos haberleri, pos sistemleri, pos teknolojileri, pos komisyon oranları" />
-      </Helmet>
+      <MetaTags
+        title="POS Sistemleri Blog | Güncel POS ve Ödeme Sistemleri Haberleri"
+        description="POS sistemleri, komisyon oranları ve ödeme teknolojileri hakkında güncel bilgiler, haberler ve detaylı incelemeler."
+        keywords="pos blog, pos haberleri, pos sistemleri, pos teknolojileri, pos komisyon oranları"
+        canonicalPath="/blog"
+        priority={20}
+      />
 
       <div className="container mx-auto px-4 pt-24 pb-16">
         <div className="text-center mb-12">

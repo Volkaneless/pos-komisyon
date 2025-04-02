@@ -1,31 +1,17 @@
-
 import { Helmet } from "react-helmet";
 import Calculator from "../components/Calculator";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 
 const CalculatorPage = () => {
   return (
     <>
-      <CanonicalLink path="/calculator" />
-      
-      <Helmet>
-        <title>POS Komisyon Oranları Hesaplama Programı - 2025</title>
-        <meta
-          name="description"
-          content="2025 yılı güncel POS komisyon oranları hesaplama aracı. Banka POS cihazları için komisyon tutarlarını kolayca hesaplayın. Taksit seçenekleri ve detaylı maliyet analizi."
-        />
-        <meta 
-          name="keywords" 
-          content="pos komisyon hesaplama 2025, pos komisyon oranları, pos komisyon hesaplama programı, pos maliyet hesaplama, pos taksit komisyon hesaplama" 
-        />
-        <meta property="og:title" content="POS Komisyon Oranları Hesaplama Programı - 2025" />
-        <meta property="og:description" content="2025 yılı güncel POS komisyon oranları hesaplama aracı. Banka POS cihazları için komisyon tutarlarını kolayca hesaplayın." />
-        <meta property="og:url" content="https://poskomisyon.com/calculator" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="POS Komisyon Oranları Hesaplama Programı - 2025" />
-        <meta name="twitter:description" content="2025 yılı güncel POS komisyon oranları hesaplama aracı. Detaylı maliyet analizi." />
-      </Helmet>
+      <MetaTags
+        title="POS Komisyon Oranları Hesaplama Programı - 2025"
+        description="2025 yılı güncel POS komisyon oranları hesaplama aracı. Banka POS cihazları için komisyon tutarlarını kolayca hesaplayın. Taksit seçenekleri ve detaylı maliyet analizi."
+        keywords="pos komisyon hesaplama 2025, pos komisyon oranları, pos komisyon hesaplama programı, pos maliyet hesaplama, pos taksit komisyon hesaplama"
+        canonicalPath="/calculator"
+        priority={20}
+      />
 
       <div className="container mx-auto px-4 pt-24 pb-12 min-h-screen">
         <div className="text-center mb-12 max-w-3xl mx-auto">

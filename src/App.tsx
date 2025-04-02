@@ -11,7 +11,7 @@ import CookieConsent from "./components/CookieConsent";
 import { routes } from "./routes";
 import { useEffect } from "react";
 import { isBrowser } from "./lib/utils";
-import { Helmet } from "react-helmet";
+import MetaTags from "./components/MetaTags";
 
 const queryClient = new QueryClient();
 
@@ -50,12 +50,12 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Helmet>
-          {/* Default SEO tags that will be overridden by page-specific ones */}
-          <title>POS Komisyon Oranları - En Uygun POS Seçenekleri</title>
-          <meta name="description" content="Türkiye'deki tüm banka ve fintech POS cihazlarının güncel komisyon oranları, özellikleri ve karşılaştırmaları." />
-          {/* Removed default canonical link to prevent conflicts */}
-        </Helmet>
+        {/* Default meta tags with low priority that will be overridden by page-specific ones */}
+        <MetaTags 
+          title="POS Komisyon Oranları - En Uygun POS Seçenekleri"
+          description="Türkiye'deki tüm banka ve fintech POS cihazlarının güncel komisyon oranları, özellikleri ve karşılaştırmaları."
+          priority={1}
+        />
         <Toaster />
         <Sonner />
         <BrowserRouter>
