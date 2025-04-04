@@ -17,9 +17,14 @@ const SimilarProviders = ({ currentProvider }: SimilarProvidersProps) => {
 
   if (similarProviders.length === 0) return null;
 
+  // Fallback image for when provider logo is not available
+  const getLogoSrc = (provider: POSProvider) => {
+    return provider.logo || "/lovable-uploads/bf5f206f-f598-4d99-8ac7-dbc75e52d8dc.png";
+  };
+
   return (
-    <section className="mt-12">
-      <h2 className="text-2xl font-semibold mb-6">Benzer POS Sağlayıcıları</h2>
+    <div className="mt-6">
+      <h3 className="text-xl font-semibold mb-4">Benzer POS Sağlayıcıları</h3>
       <div className="grid md:grid-cols-3 gap-6">
         {similarProviders.map((provider) => (
           <Link
@@ -30,7 +35,7 @@ const SimilarProviders = ({ currentProvider }: SimilarProvidersProps) => {
           >
             <div className="flex items-center gap-4 mb-4">
               <img 
-                src="/lovable-uploads/bf5f206f-f598-4d99-8ac7-dbc75e52d8dc.png" 
+                src={getLogoSrc(provider)} 
                 alt={provider.name} 
                 className="w-12 h-12 object-contain"
               />
@@ -43,7 +48,7 @@ const SimilarProviders = ({ currentProvider }: SimilarProvidersProps) => {
           </Link>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

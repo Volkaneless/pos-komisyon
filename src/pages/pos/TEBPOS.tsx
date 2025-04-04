@@ -1,6 +1,6 @@
 
-import { Helmet } from "react-helmet";
 import POSDetailPage from "@/components/pos/POSDetailPage";
+import MetaTags from "@/components/MetaTags";
 import { yazarkasaPOSProviders } from "@/data/pos-types/yazarkasaPOS";
 
 const TEBPOS = () => {
@@ -12,14 +12,12 @@ const TEBPOS = () => {
 
   return (
     <>
-      <Helmet>
-        <title>TEB POS Komisyon Oranları 2025 | POS Compare</title>
-        <meta 
-          name="description" 
-          content="2025 TEB POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun TEB POS çözümünü keşfedin." 
-        />
-        <link rel="canonical" href="https://poskomisyon.com/pos/teb-pos" />
-      </Helmet>
+      <MetaTags
+        title={`TEB POS Komisyon Oranları ${new Date().getFullYear()} | POS Compare`}
+        description={`${new Date().getFullYear()} TEB POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun TEB POS çözümünü keşfedin.`}
+        canonicalPath="/pos/teb-pos"
+        priority={20}
+      />
       <POSDetailPage provider={provider} />
     </>
   );

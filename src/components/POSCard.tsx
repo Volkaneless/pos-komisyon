@@ -1,3 +1,4 @@
+
 import { Check, CreditCard } from "lucide-react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { Info } from "lucide-react";
@@ -14,8 +15,6 @@ interface POSCardProps {
 }
 
 const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features }: POSCardProps) => {
-  console.log('Rendering POSCard with logo:', logo);
-  
   return (
     <div className="glass-card rounded-2xl p-4 md:p-8 animate-fade-in">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8 mb-6 md:mb-8">

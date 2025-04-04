@@ -1,6 +1,6 @@
 
-import { Helmet } from "react-helmet";
 import POSDetailPage from "@/components/pos/POSDetailPage";
+import MetaTags from "@/components/MetaTags";
 import { yazarkasaPOSProviders } from "@/data/pos-types/yazarkasaPOS";
 
 const HalkbankPOS = () => {
@@ -12,14 +12,12 @@ const HalkbankPOS = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Halkbank POS Komisyon Oranları 2025 | POS Compare</title>
-        <meta 
-          name="description" 
-          content="2025 Halkbank POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun Halkbank POS çözümünü keşfedin." 
-        />
-        <link rel="canonical" href="https://poskomisyon.com/pos/halkbank-pos" />
-      </Helmet>
+      <MetaTags
+        title={`Halkbank POS Komisyon Oranları ${new Date().getFullYear()} | POS Compare`}
+        description={`${new Date().getFullYear()} Halkbank POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun Halkbank POS çözümünü keşfedin.`}
+        canonicalPath="/pos/halkbank-pos"
+        priority={20}
+      />
       <POSDetailPage provider={provider} />
     </>
   );
