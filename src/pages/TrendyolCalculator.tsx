@@ -1,32 +1,17 @@
-
-import { Helmet } from "react-helmet";
 import TrendyolCalculator from "@/components/trendyol/TrendyolCalculator";
-import CanonicalLink from "@/components/CanonicalLink";
-import { getCanonicalUrl } from "@/lib/utils";
+import MetaTags from "@/components/MetaTags";
 
 const TrendyolCalculatorPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Trendyol Komisyon Hesaplama Oranları & Hesaplama</title>
-        <meta
-          name="description"
-          content="Trendyol satıcıları için güncel komisyon oranları hesaplama aracı. Kategori bazlı Trendyol komisyonlarını hesaplayın, kar marjı analizi yapın ve satış stratejinizi belirleyin."
-        />
-        <meta 
-          name="keywords" 
-          content="trendyol komisyon hesaplama, trendyol komisyon oranları, trendyol kar hesaplama, trendyol satıcı hesap makinesi, e-ticaret komisyon hesaplama" 
-        />
-        <link rel="canonical" href={getCanonicalUrl("/trendyol-komisyon")} />
-        <meta property="og:title" content="Trendyol Komisyon Hesaplama Oranları & Hesaplama" />
-        <meta property="og:description" content="Trendyol satıcıları için güncel komisyon oranları hesaplama aracı." />
-        <meta property="og:url" content={getCanonicalUrl("/trendyol-komisyon")} />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Trendyol Komisyon Hesaplama Oranları & Hesaplama" />
-        <meta name="twitter:description" content="Trendyol satıcıları için güncel komisyon oranları hesaplama aracı." />
-      </Helmet>
-
+      <MetaTags
+        title="Trendyol Komisyon Hesaplama & Oranları"
+        description="Trendyol satıcıları için güncel komisyon oranları hesaplama aracı. Kategori bazlı Trendyol komisyonlarını hesaplayın ve kar marjı analizi yapın."
+        keywords="trendyol komisyon hesaplama, trendyol komisyon oranları, trendyol satıcı hesap makinesi, trendyol türkiye komisyonları"
+        canonicalPath="/trendyol-komisyon"
+        priority={20}
+      />
+      
       <div className="container mx-auto px-4 pt-24 pb-12 min-h-screen">
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
@@ -36,7 +21,7 @@ const TrendyolCalculatorPage = () => {
             Trendyol'da satış yaparken kategori bazlı komisyon oranlarını hesaplayın
           </p>
           <p className="text-sm md:text-base text-gray-500">
-            Ürün maliyeti, satış fiyatı ve kargo ücretlerini girerek net kar ve kar marjınızı hesaplayın.
+            Ürün maliyeti, satış fiyatı ve kargo ücretlerini hesaba katarak net kar ve kar marjınızı öğrenin.
           </p>
         </div>
 
@@ -133,7 +118,7 @@ const TrendyolCalculatorPage = () => {
                 <h4 className="font-semibold">Trendyol'da en düşük ve en yüksek komisyon oranları nedir?</h4>
                 <p>
                   Trendyol'da komisyon oranları genellikle %8 ile %20 arasında değişmektedir. En düşük 
-                  komisyon oranı süpermarket kategorisinde, en yüksek komisyon oranı ise kozmetik kategorisinde uygulanır.
+                  komisyon oranı süpermarket kategorisinde, en yüksek komisyon oranısı ise kozmetik kategorisinde uygulanır.
                 </p>
               </div>
               <div>

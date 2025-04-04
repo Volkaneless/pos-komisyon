@@ -1,13 +1,11 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import POSCard from "../components/POSCard";
 import POSFilter from "../components/POSFilter";
 import FAQ from "../components/FAQ";
 import POSArticle from "../components/POSArticle";
 import { posProviders } from "../data/posProviders";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 
 const Index = () => {
   const [filteredProviders, setFilteredProviders] = useState(posProviders);
@@ -38,21 +36,14 @@ const Index = () => {
 
   return (
     <>
-      {/* Use CanonicalLink component for homepage */}
-      <CanonicalLink path="/" />
-      
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content="pos komisyon oranları 2025, banka pos cihazı, pos komisyon hesaplama, pos karşılaştırma, en uygun pos" />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://poskomisyon.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-      </Helmet>
+      {/* Homepage meta tags with high priority and canonical URL */}
+      <MetaTags
+        title={pageTitle}
+        description={pageDescription}
+        keywords="pos komisyon oranları 2025, banka pos cihazı, pos komisyon hesaplama, pos karşılaştırma, en uygun pos"
+        canonicalPath="/"
+        priority={50}
+      />
 
       <div className="min-h-screen">
         <div className="container mx-auto px-4 pt-24 pb-12">

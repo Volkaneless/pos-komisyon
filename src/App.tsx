@@ -50,10 +50,10 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        {/* Default meta tags with low priority that will be overridden by page-specific ones */}
+        {/* Default meta tags with lowest priority that will be overridden by page-specific ones */}
         <MetaTags 
-          title="POS Komisyon Oranları - En Uygun POS Seçenekleri"
-          description="Türkiye'deki tüm banka ve fintech POS cihazlarının güncel komisyon oranları, özellikleri ve karşılaştırmaları."
+          title="POS Komisyon - En Uygun POS Seçenekleri"
+          description="POS cihazı komisyon oranları karşılaştırması ve hesaplaması"
           priority={1}
         />
         <Toaster />
