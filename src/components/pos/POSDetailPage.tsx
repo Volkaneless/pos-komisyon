@@ -82,7 +82,10 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
               </div>
               
               <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
-                <h3 className="text-xl font-semibold mb-4">İlgili Blog Yazıları</h3>
+                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-primary" />
+                  İlgili Blog Yazıları
+                </h3>
                 <LatestBlogPosts category={provider.type === "Sanal POS" ? "social-media" : "adsense"} />
               </div>
             </div>
