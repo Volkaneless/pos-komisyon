@@ -27,13 +27,13 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
     return <div className="container mx-auto py-24 px-4">Provider not found</div>;
   }
   
-  const pageTitle = `${provider.name} ${currentYear} Komisyon Oranları | POS Komisyon`;
+  const pageTitle = `${provider.name} Komisyon Oranları ${currentYear} | POS Komisyon`;
   
   return (
     <>
       <MetaTags
         title={pageTitle}
-        description={`${currentYear} ${provider.name} komisyon oranları ve özellikleri. ${provider.name} POS cihazı hakkında bilgi alın ve hemen başvurun.`}
+        description={`${currentYear} ${provider.name} komisyon oranları. ${provider.name} Yazarkasa, Sanal POS destek hattı ve komisyon oranları  hakkında bilgi alın ve hemen başvurun.`}
         canonicalPath={`/pos/${provider.id}`}
         priority={20}
       />
