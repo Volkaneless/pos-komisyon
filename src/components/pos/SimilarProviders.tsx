@@ -23,31 +23,33 @@ const SimilarProviders = ({ currentProvider }: SimilarProvidersProps) => {
   };
 
   return (
-    <div className="mt-6">
-      <h3 className="text-xl font-semibold mb-4">Benzer POS Sağlayıcıları</h3>
-      <div className="grid md:grid-cols-3 gap-6">
-        {similarProviders.map((provider) => (
-          <Link
-            key={provider.id}
-            to={`/pos/${provider.id}`}
-            className="block p-6 border rounded-lg hover:shadow-lg transition-shadow"
-            aria-label={`${provider.name} detayları`}
-          >
-            <div className="flex items-center gap-4 mb-4">
+    <div className="space-y-4">
+      {similarProviders.map((provider) => (
+        <Link
+          key={provider.id}
+          to={`/pos/${provider.id}`}
+          className="block p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-primary-light transition-all duration-300 bg-white"
+          aria-label={`${provider.name} detayları`}
+        >
+          <div className="flex items-center gap-4">
+            <div className="bg-gray-50 p-2 rounded-md">
               <img 
                 src={getLogoSrc(provider)} 
                 alt={provider.name} 
-                className="w-12 h-12 object-contain"
+                className="w-10 h-10 object-contain"
               />
-              <h3 className="font-medium">{provider.name}</h3>
             </div>
-            <div className="space-y-2 text-gray-600">
-              <p>POS Türü: {provider.type}</p>
-              <p>Komisyon: {provider.commission_rate}</p>
+            <div>
+              <h3 className="font-medium text-gray-900">{provider.name}</h3>
+              <div className="flex flex-wrap text-sm text-gray-600 mt-1 gap-x-3">
+                <span>{provider.type}</span>
+                <span>•</span>
+                <span>{provider.commission_rate}</span>
+              </div>
             </div>
-          </Link>
-        ))}
-      </div>
+          </div>
+        </Link>
+      ))}
     </div>
   );
 };

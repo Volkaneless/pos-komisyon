@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -28,11 +29,24 @@ export default {
           DEFAULT: "#9b87f5",
           hover: "#8b74f2",
           light: "#e5deff",
+          lighter: "#f5f2ff",
         },
         secondary: {
           DEFAULT: "#f3f4f6",
           foreground: "#4b5563",
         },
+        card: {
+          DEFAULT: "white",
+          foreground: "#1f2937",
+        },
+      },
+      borderRadius: {
+        xl: "1rem",
+        "2xl": "1.5rem",
+      },
+      boxShadow: {
+        "card": "0 2px 8px rgba(0, 0, 0, 0.05)",
+        "card-hover": "0 4px 12px rgba(0, 0, 0, 0.08)",
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
