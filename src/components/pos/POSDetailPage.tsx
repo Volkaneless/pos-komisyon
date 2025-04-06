@@ -7,6 +7,7 @@ import POSProviderFAQ from "./POSProviderFAQ";
 import LatestBlogPosts from "./LatestBlogPosts";
 import SimilarProviders from "./SimilarProviders";
 import MetaTags from "@/components/MetaTags";
+import { BookOpen } from "lucide-react";
 import type { POSProvider } from "@/types/pos";
 
 interface POSDetailPageProps {
