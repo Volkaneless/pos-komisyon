@@ -1,28 +1,13 @@
-
 import { Cloud, CreditCard, ShieldCheck, Globe } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
 import MetaTags from "@/components/MetaTags";
-
 const SanalPOS = () => {
   return <>
-      <MetaTags
-        title="Sanal POS Komisyon Oranları 2025 - En Uygun Sanal POS"
-        description="2025 yılı güncel sanal POS komisyon oranları, karşılaştırma ve hesaplama araçları. E-ticaret işletmeniz için en uygun sanal POS çözümünü bulun."
-        keywords="sanal pos komisyon oranları 2025, sanal pos başvuru, e-ticaret pos, online ödeme sistemleri"
-        canonicalPath="/pos-types/sanal"
-        priority={20}
-      />
+      <MetaTags title="Sanal POS Komisyon Oranları 2025 - En Uygun Sanal POS" description="2025 yılı güncel sanal POS komisyon oranları, karşılaştırma ve hesaplama araçları. E-ticaret işletmeniz için en uygun sanal POS çözümünü bulun." keywords="sanal pos komisyon oranları 2025, sanal pos başvuru, e-ticaret pos, online ödeme sistemleri" canonicalPath="/pos-types/sanal" priority={20} />
 
-      <POSTypePage 
-        title="Sanal POS Komisyon Oranları 2025 - En Uygun Sanal POS" 
-        description="E-ticaret ve online ödemeler için en uygun sanal POS çözümleri ve komisyon oranları" 
-        type="Sanal POS" 
-        Icon={Cloud} 
-        whatIsContent="Sanal POS, internet üzerinden yapılan ödemeleri güvenli bir şekilde almanızı sağlayan modern bir ödeme sistemidir. E-ticaret siteleri, online rezervasyon sistemleri ve dijital hizmetler için vazgeçilmez bir çözümdür. Gelişmiş güvenlik özellikleri ve kolay entegrasyon seçenekleriyle işletmenizin online satışlarını güvenle yönetmenizi sağlar." 
-        advantages={["7/24 kesintisiz hizmet ve teknik destek", "Rekabetçi komisyon oranları", "Hızlı ve kolay entegrasyon", "SSL güvenlik sertifikası", "Geniş banka ve kart desteği", "Detaylı satış ve işlem raporlaması", "Mobil uyumlu altyapı", "Çoklu dil ve para birimi desteği"]} 
-      />
+      <POSTypePage title="Sanal POS Komisyon Oranları 2025 - En Uygun Sanal POS" description="E-ticaret ve online ödemeler için en uygun sanal POS çözümleri ve komisyon oranları" type="Sanal POS" Icon={Cloud} whatIsContent="Sanal POS, internet üzerinden yapılan ödemeleri güvenli bir şekilde almanızı sağlayan modern bir ödeme sistemidir. E-ticaret siteleri, online rezervasyon sistemleri ve dijital hizmetler için vazgeçilmez bir çözümdür. Gelişmiş güvenlik özellikleri ve kolay entegrasyon seçenekleriyle işletmenizin online satışlarını güvenle yönetmenizi sağlar." advantages={["7/24 kesintisiz hizmet ve teknik destek", "Rekabetçi komisyon oranları", "Hızlı ve kolay entegrasyon", "SSL güvenlik sertifikası", "Geniş banka ve kart desteği", "Detaylı satış ve işlem raporlaması", "Mobil uyumlu altyapı", "Çoklu dil ve para birimi desteği"]} />
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -94,7 +79,8 @@ const SanalPOS = () => {
             E-ticaret siteleri, online rezervasyon sistemleri ve dijital hizmetler için vazgeçilmez bir çözümdür.
           </p>
 
-          <h3 className="text-2xl font-semibold mb-4">Komisyon Oranları</h3>
+          <h3 className="text-2xl font-semibold mb-4">Sanal POS Komisyon Oranları - 2025
+        </h3>
           <div className="overflow-x-auto mb-8">
             <table className="min-w-full border-collapse border border-gray-300">
               <thead>
