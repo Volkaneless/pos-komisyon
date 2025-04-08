@@ -1,11 +1,9 @@
-
 import { Helmet } from "react-helmet";
 import { Terminal, ShieldCheck, Receipt, CreditCard, Banknote, Clock, Shield, Zap, ChartBar, DollarSign, Users, Award, ShoppingCart } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
 import CanonicalLink from "@/components/CanonicalLink";
-
 const YazarkasaPOS = () => {
   return <>
       <Helmet>
@@ -120,7 +118,8 @@ const YazarkasaPOS = () => {
               Özellikle perakende sektöründe yaygın olarak kullanılan bu cihazlar, yasal gereklilikleri karşılarken modern ödeme çözümlerini de sunar.
             </p>
 
-            <h3 className="text-2xl font-semibold mb-4">Komisyon Oranları</h3>
+            <h3 className="text-2xl font-semibold mb-4">Yazar Kasa POS Komisyon Oranları - 2025
+          </h3>
             <div className="overflow-x-auto mb-8">
               <table className="min-w-full border-collapse border border-gray-300">
                 <thead>
