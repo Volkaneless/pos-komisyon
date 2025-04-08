@@ -4,25 +4,17 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import MetaTags from "@/components/MetaTags";
-
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted");
     toast({
       title: "Mesajınız alındı",
-      description: "En kısa sürede size geri dönüş yapacağız.",
+      description: "En kısa sürede size geri dönüş yapacağız."
     });
   };
-
-  return (
-    <>
-      <MetaTags
-        title="İletişim | POS Komisyon - Bize Ulaşın"
-        description="POS komisyon oranları ve POS cihazları hakkında sorularınız için bizimle iletişime geçin. Size en kısa sürede yardımcı olalım."
-        canonicalPath="/contact"
-        priority={20}
-      />
+  return <>
+      <MetaTags title="İletişim | POS Komisyon - Bize Ulaşın" description="POS komisyon oranları ve POS cihazları hakkında sorularınız için bizimle iletişime geçin. Size en kısa sürede yardımcı olalım." canonicalPath="/contact" priority={20} />
 
       <div className="container mx-auto px-4 pt-24 pb-12">
         <div className="text-center mb-12">
@@ -58,7 +50,7 @@ const Contact = () => {
                 <Mail className="w-6 h-6 text-primary mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg mb-2">E-posta</h3>
-                  <p className="text-gray-600">info@poskomisyon.com</p>
+                  <p className="text-gray-600">volkaneles0@gmail.com</p>
                 </div>
               </div>
 
@@ -75,16 +67,9 @@ const Contact = () => {
             </div>
 
             <div className="glass-card p-8 rounded-xl">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.1461981207147!2d29.0196383!3d41.1115863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab5c7b4b09f3b%3A0x5f3b5b0f5fb6f84f!2sMaslak%2C%20B%C3%BCy%C3%BCkdere%20Cd.%2C%2034485%20Sar%C4%B1yer%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1647523697854!5m2!1str!2str"
-                width="100%"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-lg"
-              ></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.1461981207147!2d29.0196383!3d41.1115863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab5c7b4b09f3b%3A0x5f3b5b0f5fb6f84f!2sMaslak%2C%20B%C3%BCy%C3%BCkdere%20Cd.%2C%2034485%20Sar%C4%B1yer%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1647523697854!5m2!1str!2str" width="100%" height="300" style={{
+              border: 0
+            }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-lg"></iframe>
             </div>
           </div>
 
@@ -93,41 +78,22 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="name">Ad Soyad</Label>
-                <Input
-                  id="name"
-                  type="text"
-                  placeholder="Adınız ve soyadınız"
-                  required
-                />
+                <Input id="name" type="text" placeholder="Adınız ve soyadınız" required />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="email">E-posta</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="E-posta adresiniz"
-                  required
-                />
+                <Input id="email" type="email" placeholder="E-posta adresiniz" required />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="phone">Telefon</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="Telefon numaranız"
-                />
+                <Input id="phone" type="tel" placeholder="Telefon numaranız" />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="message">Mesajınız</Label>
-                <Textarea
-                  id="message"
-                  placeholder="Mesajınızı buraya yazın..."
-                  className="min-h-[150px]"
-                  required
-                />
+                <Textarea id="message" placeholder="Mesajınızı buraya yazın..." className="min-h-[150px]" required />
               </div>
 
               <button type="submit" className="button-primary w-full">
@@ -137,8 +103,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default Contact;
