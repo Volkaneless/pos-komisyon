@@ -1,7 +1,7 @@
 
-import { Helmet } from "react-helmet";
 import POSDetailPage from "@/components/pos/POSDetailPage";
 import { sanalPOSProviders } from "@/data/pos-types/sanalPOS";
+import MetaTags from "@/components/MetaTags";
 
 const JamesonSanalPOS = () => {
   const provider = sanalPOSProviders.find(p => p.id === "jameson-sanal");
@@ -12,14 +12,12 @@ const JamesonSanalPOS = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Jameson Sanal POS Komisyon Oranları 2025 | POS Compare</title>
-        <meta 
-          name="description" 
-          content="2025 Jameson Sanal POS komisyon oranları, özellikleri ve detaylı karşılaştırma. E-ticaret siteniz için en uygun Jameson Sanal POS çözümünü keşfedin." 
-        />
-        <link rel="canonical" href="https://poskomisyon.com/pos/jameson-sanal" />
-      </Helmet>
+      <MetaTags
+        title="Jameson Sanal POS Komisyon Oranları 2025 | POS Compare"
+        description="2025 Jameson Sanal POS komisyon oranları, özellikleri ve detaylı karşılaştırma. E-ticaret siteniz için en uygun Jameson Sanal POS çözümünü keşfedin."
+        canonicalPath="/pos/jameson-sanal"
+        priority={20}
+      />
       <POSDetailPage provider={provider} />
     </>
   );

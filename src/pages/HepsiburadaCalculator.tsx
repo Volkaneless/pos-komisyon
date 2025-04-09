@@ -1,19 +1,15 @@
-
-import { Helmet } from "react-helmet";
 import HepsiburadaCalculator from "@/components/hepsiburada/HepsiburadaCalculator";
-import CanonicalLink from "@/components/CanonicalLink";
+import MetaTags from "@/components/MetaTags";
 
 const HepsiburadaCalculatorPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Hepsiburada Komisyon Hesaplama & Oranları | POS Komisyon</title>
-        <meta 
-          name="description" 
-          content="Hepsiburada'da satış yaparken ödeyeceğiniz komisyon ücretlerini hesaplayın. Kategori bazlı komisyon oranları ve kargo ücretleri ile net karınızı öğrenin."
-        />
-      </Helmet>
-      <CanonicalLink path="/hepsiburada-komisyon" />
+      <MetaTags
+        title="Hepsiburada Komisyon Hesaplama & Oranları | POS Komisyon"
+        description="Hepsiburada'da satış yaparken ödeyeceğiniz komisyon ücretlerini hesaplayın. Kategori bazlı komisyon oranları ve kargo ücretleri ile net karınızı öğrenin."
+        canonicalPath="/hepsiburada-komisyon"
+        priority={20}
+      />
       
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <div className="mb-10 text-center">

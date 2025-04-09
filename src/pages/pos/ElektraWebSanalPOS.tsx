@@ -1,7 +1,7 @@
 
-import { Helmet } from "react-helmet";
 import POSDetailPage from "@/components/pos/POSDetailPage";
 import { sanalPOSProviders } from "@/data/pos-types/sanalPOS";
+import MetaTags from "@/components/MetaTags";
 
 const ElektraWebSanalPOS = () => {
   const provider = sanalPOSProviders.find(p => p.id === "elektraweb-sanal");
@@ -12,14 +12,12 @@ const ElektraWebSanalPOS = () => {
 
   return (
     <>
-      <Helmet>
-        <title>ElektraWeb Sanal POS Komisyon Oranları 2025 | POS Compare</title>
-        <meta 
-          name="description" 
-          content="2025 ElektraWeb Sanal POS komisyon oranları, özellikleri ve detaylı karşılaştırma. E-ticaret siteniz için en uygun ElektraWeb Sanal POS çözümünü keşfedin." 
-        />
-        <link rel="canonical" href="https://poskomisyon.com/pos/elektraweb-sanal" />
-      </Helmet>
+      <MetaTags
+        title="ElektraWeb Sanal POS Komisyon Oranları 2025 | POS Compare"
+        description="2025 ElektraWeb Sanal POS komisyon oranları, özellikleri ve detaylı karşılaştırma. E-ticaret siteniz için en uygun ElektraWeb Sanal POS çözümünü keşfedin."
+        canonicalPath="/pos/elektraweb-sanal"
+        priority={20}
+      />
       <POSDetailPage provider={provider} />
     </>
   );

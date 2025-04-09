@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { HelmetProvider } from 'react-helmet-async';
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import SecondaryFooter from "./components/SecondaryFooter";
@@ -48,37 +49,39 @@ const App = () => {
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        {/* Default meta tags with lowest priority that will be overridden by page-specific ones */}
-        <MetaTags 
-          title="POS Komisyon - En Uygun POS Seçenekleri"
-          description="POS cihazı komisyon oranları karşılaştırması ve hesaplaması"
-          priority={1}
-        />
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <div className="flex flex-col min-h-screen">
-            <Navigation />
-            <main className="flex-grow">
-              <Routes>
-                {routes.map((route) => (
-                  <Route
-                    key={route.path}
-                    path={route.path}
-                    element={route.element}
-                  />
-                ))}
-              </Routes>
-            </main>
-            <SecondaryFooter />
-            <Footer />
-            <CookieConsent />
-          </div>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          {/* Default meta tags with lowest priority that will be overridden by page-specific ones */}
+          <MetaTags 
+            title="POS Komisyon - En Uygun POS Seçenekleri"
+            description="POS cihazı komisyon oranları karşılaştırması ve hesaplaması"
+            priority={1}
+          />
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <div className="flex flex-col min-h-screen">
+              <Navigation />
+              <main className="flex-grow">
+                <Routes>
+                  {routes.map((route) => (
+                    <Route
+                      key={route.path}
+                      path={route.path}
+                      element={route.element}
+                    />
+                  ))}
+                </Routes>
+              </main>
+              <SecondaryFooter />
+              <Footer />
+              <CookieConsent />
+            </div>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 };
 

@@ -1,7 +1,7 @@
 
-import { Helmet } from "react-helmet";
 import POSDetailPage from "@/components/pos/POSDetailPage";
 import { yazarkasaPOSProviders } from "@/data/pos-types/yazarkasaPOS";
+import MetaTags from "@/components/MetaTags";
 
 const IngenicoPOS = () => {
   const provider = yazarkasaPOSProviders.find(p => p.id === "ingenico-pos");
@@ -12,14 +12,12 @@ const IngenicoPOS = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Ingenico POS Komisyon Oranları 2025 | POS Compare</title>
-        <meta 
-          name="description" 
-          content="2025 Ingenico POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun Ingenico POS çözümünü keşfedin." 
-        />
-        <link rel="canonical" href="https://poskomisyon.com/pos/ingenico-pos" />
-      </Helmet>
+      <MetaTags
+        title="Ingenico POS Komisyon Oranları 2025 | POS Compare"
+        description="2025 Ingenico POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun Ingenico POS çözümünü keşfedin."
+        canonicalPath="/pos/ingenico-pos"
+        priority={20}
+      />
       <POSDetailPage provider={provider} />
     </>
   );

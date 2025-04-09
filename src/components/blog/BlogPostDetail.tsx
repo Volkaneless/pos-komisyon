@@ -1,5 +1,4 @@
-import { Helmet } from "react-helmet";
-import { Calendar, User } from "lucide-react";
+
 import ReactMarkdown from 'react-markdown';
 import {
   Breadcrumb,
@@ -8,7 +7,9 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Calendar, User } from "lucide-react";
 import type { BlogPostData } from "@/utils/markdown";
+import MetaTags from "@/components/MetaTags";
 
 interface BlogPostDetailProps {
   post: BlogPostData;
@@ -17,14 +18,26 @@ interface BlogPostDetailProps {
 export const BlogPostDetail = ({ post }: BlogPostDetailProps) => {
   return (
     <>
-      <Helmet>
-        <title>{post.title} | POS Komisyon</title>
-        <meta 
-          name="description" 
-          content={post.excerpt}
-        />
-        <link rel="canonical" href={`https://poskomisyon.com/blog/${post.slug}`} />
-      </Helmet>
+      <MetaTags
+        title={`${post.title} | POS Komisyon`}
+        description={post.excerpt}
+        canonicalPath={`/blog/${post.slug}`}
+        ogImage={post.image}
+        ogType="article"
+        priority={30}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "description": post.excerpt,
+          "image": post.image,
+          "datePublished": post.date,
+          "author": {
+            "@type": "Organization",
+            "name": "POS Komisyon"
+          }
+        }}
+      />
 
       <div className="container mx-auto px-4 pt-24 pb-16">
         <Breadcrumb className="mb-8">
