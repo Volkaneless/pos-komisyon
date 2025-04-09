@@ -28,7 +28,7 @@ const MetaTags = ({
   const defaultOgImage = `${domain}/images/og-image.jpg`;
   
   return (
-    <Helmet prioritizeSeoTags>
+    <Helmet>
       {title && <title>{siteTitle}</title>}
       {title && <meta property="og:title" content={siteTitle} />}
       {title && <meta name="twitter:title" content={siteTitle} />}
