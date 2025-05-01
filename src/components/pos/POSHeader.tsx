@@ -13,7 +13,7 @@ const POSHeader = ({ provider }: POSHeaderProps) => {
   // Generate dynamic description text based on provider name
   const getProviderDescription = (providerName: string) => {
     const currentYear = new Date().getFullYear();
-    return `${providerName} POS komisyon oranları ${currentYear}, ${provider.type.toLowerCase()} komisyon oranları ve kampanyaları hakkında bilgi edinin. ${providerName} POS komisyon hesaplama ve kesinti oranlarını öğrenin. ${providerName} POS ve sanal POS başvurusu için detaylar burada!`;
+    return `${providerName} komisyon oranları ${currentYear}, ${provider.type.toLowerCase()} komisyon oranları ve kampanyaları hakkında bilgi edinin. ${providerName} komisyon hesaplama ve kesinti oranlarını öğrenin. ${providerName} POS ve sanal POS başvurusu için detaylar burada!`;
   };
   
   return (
@@ -23,7 +23,7 @@ const POSHeader = ({ provider }: POSHeaderProps) => {
           <img src={logoSrc} alt={`${provider.name} logo`} className="w-16 h-16 object-contain" />
         </div>
         <div>
-          <h1 className="font-semibold text-2xl md:text-3xl">{provider.name} POS Komisyon Oranları</h1>
+          <h1 className="font-semibold text-2xl md:text-3xl">{provider.name} Komisyon Oranları</h1>
           <p className="text-gray-500 mt-1">{getProviderDescription(provider.name)}</p>
         </div>
       </div>
