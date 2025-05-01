@@ -1,25 +1,12 @@
-
 import { Helmet } from "react-helmet";
-import { 
-  Calculator, 
-  Receipt, 
-  CreditCard, 
-  PiggyBank, 
-  HelpCircle, 
-  ShieldCheck 
-} from "lucide-react";
+import { Calculator, Receipt, CreditCard, PiggyBank, HelpCircle, ShieldCheck } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import CanonicalLink from "@/components/CanonicalLink";
-
 const ShopierPage = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Shopier Komisyon Oranları | Shopier Komisyon Hesaplama</title>
-        <meta 
-          name="description" 
-          content="Shopier komisyon oranları ve ücretleri hakkında güncel bilgiler. Shopier komisyonunuzu hesaplayın, banka ve sanal POS komisyonlarıyla karşılaştırın."
-        />
+        <meta name="description" content="Shopier komisyon oranları ve ücretleri hakkında güncel bilgiler. Shopier komisyonunuzu hesaplayın, banka ve sanal POS komisyonlarıyla karşılaştırın." />
       </Helmet>
       <CanonicalLink path="/shopier-komisyon" includeHome={true} />
 
@@ -47,10 +34,7 @@ const ShopierPage = () => {
                 göre değişiklik gösterebilir.
               </p>
               <div className="mt-6">
-                <a 
-                  href="#calculator" 
-                  className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                >
+                <a href="#calculator" className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
                   Komisyon Hesapla
                 </a>
               </div>
@@ -69,7 +53,7 @@ const ShopierPage = () => {
 
         {/* Commission Rates */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-6">Shopier Komisyon Oranları (2024)</h2>
+          <h2 className="text-3xl font-bold mb-6">Shopier Komisyon Oranları (2025)</h2>
           
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <Card className="p-6 border-l-4 border-l-primary">
@@ -130,10 +114,7 @@ const ShopierPage = () => {
             <div className="text-center py-10">
               <Calculator size={48} className="mx-auto text-primary mb-4" />
               <p className="text-lg font-medium">Detaylı hesaplama yapmak için:</p>
-              <a 
-                href="/calculator" 
-                className="inline-block mt-4 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-              >
+              <a href="/calculator" className="inline-block mt-4 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
                 Komisyon Hesaplayıcıya Git
               </a>
             </div>
@@ -281,8 +262,6 @@ const ShopierPage = () => {
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default ShopierPage;
