@@ -10,6 +10,12 @@ const POSHeader = ({ provider }: POSHeaderProps) => {
   // Fallback image if provider.logo is not available or valid
   const logoSrc = provider.logo || "/logo.svg";
   
+  // Generate dynamic description text based on provider name
+  const getProviderDescription = (providerName: string) => {
+    const currentYear = new Date().getFullYear();
+    return `${providerName} POS komisyon oranları ${currentYear}, ${provider.type.toLowerCase()} komisyon oranları ve kampanyaları hakkında bilgi edinin. ${providerName} POS komisyon hesaplama ve kesinti oranlarını öğrenin. ${providerName} POS ve sanal POS başvurusu için detaylar burada!`;
+  };
+  
   return (
     <div className="bg-white rounded-xl shadow-sm p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
@@ -18,7 +24,7 @@ const POSHeader = ({ provider }: POSHeaderProps) => {
         </div>
         <div>
           <h1 className="font-semibold text-2xl md:text-3xl">{provider.name} POS Komisyon Oranları</h1>
-          <p className="text-gray-500 mt-1">{provider.type}</p>
+          <p className="text-gray-500 mt-1">{getProviderDescription(provider.name)}</p>
         </div>
       </div>
       <Button 
