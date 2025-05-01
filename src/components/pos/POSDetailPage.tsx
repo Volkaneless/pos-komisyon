@@ -17,8 +17,9 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
   const currentYear = new Date().getFullYear();
   const [isLoaded, setIsLoaded] = useState(false);
   
-  // Set isLoaded to true after component mounts
+  // Scroll to top when the component mounts
   useEffect(() => {
+    window.scrollTo(0, 0);
     setIsLoaded(true);
   }, []);
   
