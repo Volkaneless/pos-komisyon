@@ -13,10 +13,20 @@ const ZiraatPOS = () => {
   return (
     <>
       <MetaTags
-        title="Ziraat POS Komisyon Oranları 2025 | POS Compare"
-        description="2025 Ziraat POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun Ziraat POS çözümünü keşfedin."
+        title={`Ziraat POS Komisyon Oranları ${new Date().getFullYear()} | POS Komisyon`}
+        description={`${new Date().getFullYear()} Ziraat POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun Ziraat POS çözümünü keşfedin.`}
         canonicalPath="/pos/ziraat-pos"
         priority={20}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Ziraat POS",
+          "description": `Ziraat POS komisyon oranları ve detaylı bilgiler. ${new Date().getFullYear()} güncel bilgileri.`,
+          "brand": {
+            "@type": "Brand",
+            "name": "Ziraat Bankası"
+          }
+        }}
       />
       <POSDetailPage provider={provider} />
     </>
