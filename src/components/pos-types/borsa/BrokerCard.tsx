@@ -40,7 +40,7 @@ const BrokerCard = ({ provider }: BrokerCardProps) => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 border-b border-gray-100 pb-6">
           <div>
-            <p className="text-sm text-gray-500 mb-1">POS Türü</p>
+            <p className="text-sm text-gray-500 mb-1">Kurum Türü</p>
             <p>{provider.type}</p>
           </div>
           <div>

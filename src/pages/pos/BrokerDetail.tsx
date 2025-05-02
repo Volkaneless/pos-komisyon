@@ -16,11 +16,16 @@ import {
 
 const BrokerDetail = () => {
   const { id } = useParams();
-  const broker = borsaAraciKurumProviders.find(b => b.id === id);
+  // Extract broker ID from path if not provided in params
+  const pathId = window.location.pathname.split('/').pop();
+  const brokerId = id || pathId;
+  
+  // Find the broker in our data
+  const broker = borsaAraciKurumProviders.find(b => b.id === brokerId);
   
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [brokerId]);
 
   if (!broker) {
     return (
@@ -59,7 +64,7 @@ const BrokerDetail = () => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <p className="text-gray-500 mb-2">Kurum Türü</p>
               <p className="font-medium text-lg">{broker.type}</p>

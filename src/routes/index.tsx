@@ -1,3 +1,4 @@
+
 import { ReactNode } from "react";
 import Index from "../pages/Index";
 import About from "../pages/About";
@@ -88,9 +89,6 @@ import ZiraatPOS from "../pages/pos/ZiraatPOS";
 
 // Broker Detail Pages
 import BrokerDetail from "../pages/pos/BrokerDetail";
-import MidasBroker from "../pages/pos/MidasBroker";
-import MatriksBroker from "../pages/pos/MatriksBroker";
-import IsYatirimBroker from "../pages/pos/IsYatirimBroker";
 
 interface Route {
   path: string;
@@ -187,7 +185,24 @@ export const routes: Route[] = [
 
   // Broker Detail Pages
   { path: "/pos/broker/:id", element: <BrokerDetail /> },
-  { path: "/pos/midas", element: <MidasBroker /> },
-  { path: "/pos/matriks", element: <MatriksBroker /> },
-  { path: "/pos/is-yatirim", element: <IsYatirimBroker /> }
+  { path: "/pos/midas", element: <BrokerDetail /> },
+  { path: "/pos/matriks", element: <BrokerDetail /> },
+  { path: "/pos/is-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/qnb-finansinvest", element: <BrokerDetail /> },
+  { path: "/pos/deniz-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/ak-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/seker-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/garanti-bbva-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/ziraat-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/vakif-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/halk-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/yapi-kredi-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/meksa-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/anadolu-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/burgan-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/integral-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/global-yatirim", element: <BrokerDetail /> },
+  { path: "/pos/piapiri", element: <BrokerDetail /> },
+  { path: "/pos/forinvest", element: <BrokerDetail /> },
+  { path: "/pos/slayz", element: <BrokerDetail /> }
 ];
