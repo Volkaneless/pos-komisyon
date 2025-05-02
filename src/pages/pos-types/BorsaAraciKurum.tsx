@@ -35,7 +35,23 @@ const BorsaAraciKurum = () => {
           </p>
         </div>
 
-        <Tabs defaultValue="overview" className="w-full mb-12">
+        <div className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Borsa Aracı Kurumları Hakkında</h2>
+          <p className="text-gray-600 mb-4">
+            Borsa aracı kurumları, yatırımcıların hisse senedi, tahvil, bono ve diğer finansal enstrümanlar ile işlem yapabilmesini sağlayan finansal kuruluşlardır. Bu kurumlar Sermaye Piyasası Kurulu (SPK) tarafından yetkilendirilir ve denetlenir.
+          </p>
+          <p className="text-gray-600 mb-4">
+            Aracı kurumlar, yatırımcılar ile finansal piyasalar arasında köprü görevi görerek, alım-satım emirlerinin iletilmesi, portföy yönetimi, yatırım danışmanlığı ve araştırma raporları gibi hizmetler sunarlar.
+          </p>
+          <p className="text-gray-600">
+            Bu sayfada, Türkiye'deki önde gelen aracı kurumların komisyon oranlarını, hizmetlerini ve özelliklerini karşılaştırabilirsiniz. Doğru aracı kurumu seçmek, yatırım stratejinize ve bütçenize uygun maliyetlerle işlem yapmanızı sağlar.
+          </p>
+        </div>
+
+        <h2 className="text-3xl font-bold mb-8 text-center">Türkiye'nin Önde Gelen Aracı Kurumları</h2>
+        <BorsaAraciKurumProviderCards />
+
+        <Tabs defaultValue="overview" className="w-full mb-12 mt-12">
           <TabsList className="w-full justify-start border-b rounded-none bg-transparent space-x-8">
             <TabsTrigger 
               value="overview" 
@@ -65,7 +81,7 @@ const BorsaAraciKurum = () => {
 
           <TabsContent value="overview" className="mt-8">
             <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">Borsa Aracı Kurumları Hakkında</h2>
+              <h2 className="text-2xl font-semibold mb-4">Borsa Aracı Kurumları Hakkında Detaylı Bilgi</h2>
               <p className="text-gray-600 mb-4">
                 Borsa aracı kurumları, yatırımcıların hisse senedi, tahvil, bono ve diğer finansal enstrümanlar ile işlem yapabilmesini sağlayan finansal kuruluşlardır. Bu kurumlar Sermaye Piyasası Kurulu (SPK) tarafından yetkilendirilir ve denetlenir.
               </p>
@@ -90,9 +106,6 @@ const BorsaAraciKurum = () => {
             <BorsaAraciKurumAgreements />
           </TabsContent>
         </Tabs>
-
-        <h2 className="text-3xl font-bold mb-8 text-center">Türkiye'nin Önde Gelen Aracı Kurumları</h2>
-        <BorsaAraciKurumProviderCards />
       </div>
     </>
   );
