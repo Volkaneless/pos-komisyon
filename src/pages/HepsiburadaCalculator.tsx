@@ -1,18 +1,11 @@
 import HepsiburadaCalculator from "@/components/hepsiburada/HepsiburadaCalculator";
 import MetaTags from "@/components/MetaTags";
-
 const HepsiburadaCalculatorPage = () => {
-  return (
-    <>
-      <MetaTags
-        title="Hepsiburada Komisyon Hesaplama & Oranları | POS Komisyon"
-        description="Hepsiburada'da satış yaparken ödeyeceğiniz komisyon ücretlerini hesaplayın. Kategori bazlı komisyon oranları ve kargo ücretleri ile net karınızı öğrenin."
-        canonicalPath="/hepsiburada-komisyon"
-        priority={20}
-      />
+  return <>
+      <MetaTags title="Hepsiburada Komisyon Hesaplama & Oranları | POS Komisyon" description="Hepsiburada'da satış yaparken ödeyeceğiniz komisyon ücretlerini hesaplayın. Kategori bazlı komisyon oranları ve kargo ücretleri ile net karınızı öğrenin." canonicalPath="/hepsiburada-komisyon" priority={20} />
       
       <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <div className="mb-10 text-center">
+        <div className="mb-10 text-center py-[40px]">
           <h1 className="text-3xl font-bold mb-3">Hepsiburada Komisyon Hesaplama & Oranları</h1>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Hepsiburada'da satış yaparken ödeyeceğiniz komisyon ücretlerini, KDV tutarlarını ve kargo bedellerini hesaplayarak, 
@@ -85,8 +78,6 @@ const HepsiburadaCalculatorPage = () => {
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default HepsiburadaCalculatorPage;
