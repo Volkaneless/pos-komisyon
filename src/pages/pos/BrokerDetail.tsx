@@ -1,7 +1,6 @@
 
 import { useParams } from "react-router-dom";
 import { borsaAraciKurumProviders } from "@/data/pos-types/borsaAraciKurum";
-import { Helmet } from "react-helmet";
 import { useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
@@ -772,12 +771,12 @@ const BrokerDetail = () => {
                   
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                     <span className="font-medium">Emir İletim Hızı</span>
-                    <span>< 100ms</span>
+                    <span>{"< 100ms"}</span>
                   </div>
                   
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                     <span className="font-medium">Veri Akış Gecikmesi</span>
-                    <span>Gerçek Zamanlı (< 1s)</span>
+                    <span>{"Gerçek Zamanlı (< 1s)"}</span>
                   </div>
                 </div>
                 
