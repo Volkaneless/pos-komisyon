@@ -1,4 +1,7 @@
+
 import { CreditCard, ShieldCheck, Globe, Coins, TrendingUp, LockKeyhole } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+
 const CryptoFeatures = () => {
   const features = [{
     icon: <ShieldCheck className="w-10 h-10 text-primary" />,
@@ -25,6 +28,24 @@ const CryptoFeatures = () => {
     title: "Regülasyon",
     description: "Yasal düzenlemelere uygun faaliyet gösteren borsalar, varlıklarınızın güvende olmasını sağlar."
   }];
-  return;
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((feature, index) => (
+        <Card key={index} className="border-gray-100 hover:shadow-md transition-all duration-300">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="bg-primary-lighter p-3 rounded-full">
+                {feature.icon}
+              </div>
+              <h3 className="text-lg font-semibold">{feature.title}</h3>
+            </div>
+            <p className="text-gray-600">{feature.description}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  );
 };
+
 export default CryptoFeatures;
