@@ -92,7 +92,9 @@ const BrokerDetail = () => {
                   <img src={broker.logo} alt={broker.name} className="w-16 h-16 object-contain" />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold mb-2 text-gray-900">{broker.name}</h1>
+                  <h1 className="text-3xl font-bold mb-2 text-gray-900">
+                    {broker.id === "midas" ? "Midas Komisyon Hesaplama & Oranları 2025" : broker.name}
+                  </h1>
                   <div className="flex items-center text-gray-700">
                     <span className="text-sm">{broker.type}</span>
                     <span className="mx-2">•</span>
