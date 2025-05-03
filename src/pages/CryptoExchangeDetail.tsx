@@ -1,5 +1,6 @@
+
 import { useParams } from "react-router-dom";
-import { allExchanges } from "@/data/crypto/index";
+import { cryptoExchanges } from "@/data/crypto/index";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -24,7 +25,7 @@ import {
 
 const CryptoExchangeDetail = () => {
   const { id } = useParams();
-  const exchange = allExchanges.find(e => e.id === id);
+  const exchange = cryptoExchanges.find(e => e.id === id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
