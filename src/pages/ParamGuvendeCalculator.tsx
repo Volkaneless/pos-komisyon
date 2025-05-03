@@ -1,28 +1,19 @@
-
 import { Helmet } from "react-helmet";
 import ParamGuvendeCalculator from "@/components/paramguvende/ParamGuvendeCalculator";
 import CanonicalLink from "@/components/CanonicalLink";
 import { getCanonicalUrl } from "@/lib/utils";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
-
 const ParamGuvendeCalculatorPage = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Sahibinden Param Güvende Komisyon Hesaplama & Oranları</title>
-        <meta 
-          name="description" 
-          content="Sahibinden.com Param Güvende sisteminde ödenecek komisyon ve işlem bedellerini hesaplayın. Bireysel ve kurumsal satıcılar için güncel oranlar ve hesaplama aracı."
-        />
-        <meta 
-          name="keywords" 
-          content="param güvende komisyon, sahibinden param güvende, param güvende işlem bedeli, sahibinden komisyon hesaplama" 
-        />
+        <meta name="description" content="Sahibinden.com Param Güvende sisteminde ödenecek komisyon ve işlem bedellerini hesaplayın. Bireysel ve kurumsal satıcılar için güncel oranlar ve hesaplama aracı." />
+        <meta name="keywords" content="param güvende komisyon, sahibinden param güvende, param güvende işlem bedeli, sahibinden komisyon hesaplama" />
       </Helmet>
       <CanonicalLink path="/param-guvende-komisyon" />
       
       <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <div className="mb-10 text-center">
+        <div className="mb-10 text-center mx-px py-[62px] px-0">
           <h1 className="text-3xl font-bold mb-3">Sahibinden Param Güvende Komisyon Hesaplama & Oranları</h1>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Sahibinden.com Param Güvende sistemini kullanırken ödeyeceğiniz komisyon ve işlem bedellerini hesaplayın. 
@@ -254,8 +245,6 @@ const ParamGuvendeCalculatorPage = () => {
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default ParamGuvendeCalculatorPage;
