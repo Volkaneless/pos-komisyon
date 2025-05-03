@@ -23,7 +23,21 @@ export const turkishExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: true
+    has_turkish_lira: true,
+    
+    // Adding new required properties
+    trading_fee: "0.1%",
+    withdrawal_fee: "Değişken",
+    is_turkish: true,
+    country: "Türkiye",
+    year_founded: "2019",
+    deposit_methods: "Havale/EFT, Kredi Kartı",
+    withdrawal_methods: "Havale/EFT",
+    description: "Binance TR, dünyanın en büyük kripto para borsası Binance'in Türkiye'deki resmi platformudur.",
+    website: "www.binance.com/tr",
+    availability: "7/24",
+    customer_support: "Türkçe Canlı Destek",
+    social_media: "@BinanceTR"
   },
   {
     id: "midas-kripto",
@@ -42,7 +56,21 @@ export const turkishExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: true
+    has_turkish_lira: true,
+    
+    // Adding new required properties
+    trading_fee: "0.20%",
+    withdrawal_fee: "Minimum tutar + ağ ücreti",
+    is_turkish: true,
+    country: "Türkiye",
+    year_founded: "2021",
+    deposit_methods: "Havale/EFT, Kredi Kartı",
+    withdrawal_methods: "Havale/EFT",
+    description: "Midas Kripto, kullanıcı dostu arayüzü ile Türk yatırımcılara hizmet veren yerli bir kripto para borsasıdır.",
+    website: "www.midaskripto.com",
+    availability: "7/24",
+    customer_support: "Türkçe E-posta ve Canlı Destek",
+    social_media: "@MidasKripto"
   },
   {
     id: "bitlo",
@@ -61,7 +89,21 @@ export const turkishExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: true
+    has_turkish_lira: true,
+    
+    // Adding new required properties
+    trading_fee: "0.20%",
+    withdrawal_fee: "Coin bazında değişken",
+    is_turkish: true,
+    country: "Türkiye",
+    year_founded: "2018",
+    deposit_methods: "Havale/EFT, Kredi Kartı, FAST",
+    withdrawal_methods: "Havale/EFT, FAST",
+    description: "Bitlo, Türk kullanıcılar için optimize edilmiş arayüzü ve Türkçe desteğiyle bilinen yerli bir kripto para platformudur.",
+    website: "www.bitlo.com",
+    availability: "7/24",
+    customer_support: "Türkçe Telefon ve Canlı Destek",
+    social_media: "@Bitlocom"
   },
   {
     id: "paribu",
@@ -80,7 +122,21 @@ export const turkishExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: false,
     bank_transfer: true,
-    has_turkish_lira: true
+    has_turkish_lira: true,
+    
+    // Adding new required properties
+    trading_fee: "0.15%",
+    withdrawal_fee: "Sabit ücret",
+    is_turkish: true,
+    country: "Türkiye",
+    year_founded: "2017",
+    deposit_methods: "Havale/EFT",
+    withdrawal_methods: "Havale/EFT",
+    description: "Paribu, Türkiye'nin en popüler kripto para borsalarından biridir ve kolay kullanımı ile bilinir.",
+    website: "www.paribu.com",
+    availability: "7/24",
+    customer_support: "Türkçe E-posta ve Destek Merkezi",
+    social_media: "@paribucom"
   },
   {
     id: "btcturk",
@@ -99,6 +155,20 @@ export const turkishExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: true
+    has_turkish_lira: true,
+    
+    // Adding new required properties
+    trading_fee: "0.20%",
+    withdrawal_fee: "Değişken ücretlendirme",
+    is_turkish: true,
+    country: "Türkiye",
+    year_founded: "2013",
+    deposit_methods: "Havale/EFT, Kredi Kartı, ATM",
+    withdrawal_methods: "Havale/EFT",
+    description: "BtcTürk, Türkiye'nin ilk Bitcoin alım satım platformu olarak 2013 yılında kurulmuştur.",
+    website: "www.btcturk.com",
+    availability: "7/24",
+    customer_support: "Türkçe Canlı Destek ve Telefon",
+    social_media: "@btcturkpro"
   }
 ];
