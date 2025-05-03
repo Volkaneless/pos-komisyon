@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { borsaAraciKurumProviders } from "@/data/pos-types/borsaAraciKurum";
 import { useEffect } from "react";
@@ -52,7 +51,7 @@ const BrokerDetail = () => {
   }
 
   const currentYear = new Date().getFullYear();
-  const pageTitle = `${broker.name} Komisyon Oranları ${currentYear}`;
+  const pageTitle = `${broker.name} Komisyon Hesaplama & Oranları ${currentYear}`;
   const pageDescription = `${currentYear} ${broker.name} komisyon oranları: ${broker.type} için ${broker.commission_rate} komisyon oranı. Güncel ${broker.name} başvuru şartları ve detaylı bilgiler.`;
 
   // Custom structured data for SEO
@@ -92,7 +91,7 @@ const BrokerDetail = () => {
                   <img src={broker.logo} alt={broker.name} className="w-16 h-16 object-contain" />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold mb-2 text-gray-900">{broker.name}</h1>
+                  <h1 className="text-3xl font-bold mb-2 text-gray-900">{broker.name} Komisyon Hesaplama & Oranları {currentYear}</h1>
                   <div className="flex items-center text-gray-700">
                     <span className="text-sm">{broker.type}</span>
                     <span className="mx-2">•</span>
