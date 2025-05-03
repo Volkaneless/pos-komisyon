@@ -23,21 +23,7 @@ export const internationalExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: false,
-    
-    // Adding new required properties
-    trading_fee: "0.1%",
-    withdrawal_fee: "Coin bazında değişken",
-    is_turkish: false,
-    country: "Cayman Adaları",
-    year_founded: "2017",
-    deposit_methods: "Banka Transferi, Kredi Kartı, P2P",
-    withdrawal_methods: "Banka Transferi, P2P",
-    description: "Binance, dünyanın en büyük kripto para borsası olup, geniş ürün yelpazesi ve düşük ücretleri ile bilinir.",
-    website: "www.binance.com",
-    availability: "Global",
-    customer_support: "Çoklu Dil Desteği",
-    social_media: "@binance"
+    has_turkish_lira: false
   },
   {
     id: "okx",
@@ -56,21 +42,7 @@ export const internationalExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: false,
-    
-    // Adding new required properties
-    trading_fee: "0.09%",
-    withdrawal_fee: "Minimum tutar + ağ ücreti",
-    is_turkish: false,
-    country: "Seyşeller",
-    year_founded: "2017",
-    deposit_methods: "Banka Transferi, Kredi Kartı, P2P",
-    withdrawal_methods: "Banka Transferi, P2P",
-    description: "OKX, geniş ürün yelpazesi ve gelişmiş trading araçları sunan global bir kripto para borsasıdır.",
-    website: "www.okx.com",
-    availability: "Global",
-    customer_support: "İngilizce ve Çince",
-    social_media: "@okx"
+    has_turkish_lira: false
   },
   {
     id: "bybit",
@@ -89,21 +61,7 @@ export const internationalExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: false,
-    
-    // Adding new required properties
-    trading_fee: "0.1%",
-    withdrawal_fee: "Coin bazında değişken",
-    is_turkish: false,
-    country: "Dubai",
-    year_founded: "2018",
-    deposit_methods: "Banka Transferi, Kredi Kartı",
-    withdrawal_methods: "Banka Transferi",
-    description: "Bybit, özellikle türev işlemler konusunda uzmanlaşmış ve kullanıcı dostu arayüzü ile bilinen bir kripto para borsasıdır.",
-    website: "www.bybit.com",
-    availability: "Global",
-    customer_support: "Çoklu Dil Desteği",
-    social_media: "@Bybit_Official"
+    has_turkish_lira: false
   },
   {
     id: "gate-io",
@@ -122,21 +80,7 @@ export const internationalExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: false,
-    
-    // Adding new required properties
-    trading_fee: "0.2%",
-    withdrawal_fee: "Coin bazında sabit ücret",
-    is_turkish: false,
-    country: "Cayman Adaları",
-    year_founded: "2013",
-    deposit_methods: "Banka Transferi, Kredi Kartı",
-    withdrawal_methods: "Banka Transferi",
-    description: "Gate.io, geniş kripto para listesi ve yenilikçi tokenler sunmasıyla bilinen global bir kripto para borsasıdır.",
-    website: "www.gate.io",
-    availability: "Global",
-    customer_support: "İngilizce E-posta Desteği",
-    social_media: "@gate_io"
+    has_turkish_lira: false
   },
   {
     id: "coinbase",
@@ -155,21 +99,7 @@ export const internationalExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: false,
-    
-    // Adding new required properties
-    trading_fee: "0.5%",
-    withdrawal_fee: "Network ücretleri",
-    is_turkish: false,
-    country: "ABD",
-    year_founded: "2012",
-    deposit_methods: "ACH, Wire Transfer, Kredi Kartı",
-    withdrawal_methods: "ACH, Wire Transfer",
-    description: "Coinbase, ABD merkezli halka açık bir kripto para borsası olup, güvenlik ve uyumluluk özellikleriyle öne çıkar.",
-    website: "www.coinbase.com",
-    availability: "50+ ülke",
-    customer_support: "İngilizce Destek",
-    social_media: "@coinbase"
+    has_turkish_lira: false
   },
   {
     id: "kucoin",
@@ -188,21 +118,7 @@ export const internationalExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: false,
-    
-    // Adding new required properties
-    trading_fee: "0.1%",
-    withdrawal_fee: "Coin bazında değişken",
-    is_turkish: false,
-    country: "Seyşeller",
-    year_founded: "2017",
-    deposit_methods: "Banka Transferi, Kredi Kartı, P2P",
-    withdrawal_methods: "Banka Transferi, P2P",
-    description: "Kucoin, 'Halkın Borsası' sloganıyla bilinen ve çok sayıda altcoin sunan global bir kripto para borsasıdır.",
-    website: "www.kucoin.com",
-    availability: "Global",
-    customer_support: "Çoklu Dil Desteği",
-    social_media: "@kucoincom"
+    has_turkish_lira: false
   },
   {
     id: "kraken",
@@ -221,21 +137,7 @@ export const internationalExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: false,
-    
-    // Adding new required properties
-    trading_fee: "0.21%",
-    withdrawal_fee: "Network bazlı ücretlendirme",
-    is_turkish: false,
-    country: "ABD",
-    year_founded: "2011",
-    deposit_methods: "SWIFT, SEPA, Fedwire",
-    withdrawal_methods: "SWIFT, SEPA, Fedwire",
-    description: "Kraken, güvenlik odaklı yaklaşımı ve kurumsal hizmetleriyle tanınan köklü bir kripto para borsasıdır.",
-    website: "www.kraken.com",
-    availability: "190+ ülke",
-    customer_support: "Çoklu Dil Desteği",
-    social_media: "@krakenfx"
+    has_turkish_lira: false
   },
   {
     id: "mexc",
@@ -254,20 +156,6 @@ export const internationalExchanges: CryptoExchange[] = [
     mobile_app: true,
     credit_card: true,
     bank_transfer: true,
-    has_turkish_lira: false,
-    
-    // Adding new required properties
-    trading_fee: "0.2%",
-    withdrawal_fee: "Sabit ücretlendirme",
-    is_turkish: false,
-    country: "Singapur",
-    year_founded: "2018",
-    deposit_methods: "Banka Transferi, Kredi Kartı, P2P",
-    withdrawal_methods: "Banka Transferi, P2P",
-    description: "MEXC, çok sayıda yeni altcoin listelemesi ve düşük işlem ücretleriyle bilinen global bir kripto para borsasıdır.",
-    website: "www.mexc.com",
-    availability: "Global",
-    customer_support: "İngilizce ve Çince",
-    social_media: "@MEXC_Global"
+    has_turkish_lira: false
   }
 ];

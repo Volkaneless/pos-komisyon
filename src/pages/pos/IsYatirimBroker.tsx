@@ -30,7 +30,7 @@ const IsYatirimBroker = () => {
   }
 
   const currentYear = new Date().getFullYear();
-  const pageTitle = `${broker.name} Komisyon Hesaplama & Oranları ${currentYear}`;
+  const pageTitle = `${broker.name} Komisyon Oranları ${currentYear}`;
   const pageDescription = `${currentYear} ${broker.name} komisyon oranları: ${broker.type} için ${broker.commission_rate} komisyon oranı. Güncel ${broker.name} başvuru şartları ve detaylı bilgiler.`;
 
   return (
@@ -41,7 +41,7 @@ const IsYatirimBroker = () => {
       </Helmet>
       
       <div className="container mx-auto px-4 pt-24 pb-16">
-        <h1 className="text-3xl font-bold mb-4 text-gray-900">{broker.name} Komisyon Hesaplama & Oranları {currentYear}</h1>
+        <h1 className="text-3xl font-bold mb-4 text-gray-900">{pageTitle}</h1>
         <p className="text-gray-600 mb-8 leading-relaxed">
           {currentYear} İş Yatırım komisyon oranları ve yatırım hizmetleri, profesyonel bir borsa deneyimi sunuyor. Türkiye'nin lider aracı kurumlarından biri olan İş Yatırım ile piyasalara güvenle erişin.
         </p>
