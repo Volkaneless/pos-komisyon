@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import DesktopMenu from "./navigation/DesktopMenu";
 import MobileMenu from "./navigation/MobileMenu";
 
@@ -9,7 +9,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Scroll etkisi için
+  // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -23,7 +23,7 @@ const Navigation = () => {
     <>
       {/* Desktop Navigation */}
       <nav className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 shadow-md backdrop-blur-lg" : "bg-white/90 backdrop-blur-sm"
+        isScrolled ? "bg-white/95 shadow-md backdrop-blur-lg py-2" : "bg-white/90 backdrop-blur-sm py-3"
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
@@ -50,10 +50,10 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       <nav className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 shadow-md backdrop-blur-lg" : "bg-white/90 backdrop-blur-sm"
+        isScrolled ? "bg-white/95 shadow-md backdrop-blur-lg py-1.5" : "bg-white/90 backdrop-blur-sm py-2"
       }`}>
-        <div className="flex items-center justify-between h-16 px-4">
-          <Link to="/" className="flex items-center">
+        <div className="flex items-center justify-between px-4">
+          <Link to="/" className="flex items-center py-2">
             <img src="/logo.svg" alt="POS Komisyon" className="h-8 w-auto" />
           </Link>
           
