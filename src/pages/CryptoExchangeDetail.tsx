@@ -43,7 +43,11 @@ import CryptoFeatures from "@/components/crypto/CryptoFeatures";
 const CryptoExchangeDetail = () => {
   const { id } = useParams<{ id: string }>();
   const exchange = findExchangeById(id || '');
-  const currentYear = new Date().getFullYear();
+  const currentDate = new Date();
+  const currentDay = currentDate.getDate();
+  const currentMonth = currentDate.toLocaleString('tr-TR', { month: 'long' });
+  const currentYear = currentDate.getFullYear();
+  const formattedDate = `${currentDay} ${currentMonth} ${currentYear}`;
   
   if (!exchange) {
     return (
@@ -54,8 +58,27 @@ const CryptoExchangeDetail = () => {
     );
   }
   
-  const pageTitle = `${exchange.name} Komisyon Oranları ${currentYear}`;
-  const pageDescription = `${exchange.name} kripto para borsası komisyon oranları, özellikleri ve detaylı incelemesi. Maker ücreti: ${exchange.maker_fee}, Taker ücreti: ${exchange.taker_fee}.`;
+  // Create SEO description text based on exchange name
+  const getSeoText = (exchangeName: string) => {
+    const seoTexts: {[key: string]: string} = {
+      "bitlo": `${exchangeName} komisyon hesaplama ${formattedDate} itibarıyla nasıl yapılır? ${currentYear} ${exchangeName} komisyon oranları ne kadar? ${exchangeName} USDT transfer ücreti ve ${exchangeName} üyelik ücreti hakkında en güncel bilgiler burada`,
+      "binance": `${exchangeName} komisyon oranları ${formattedDate} itibarıyla ne kadar? ${currentYear} ${exchangeName} maker ve taker ücretleri nasıl hesaplanır? ${exchangeName} para yatırma ve çekme masrafları hakkında en güncel bilgiler burada`,
+      "btcturk": `${exchangeName} komisyon hesaplama ${formattedDate} güncel bilgileri. ${currentYear} ${exchangeName} alım satım, yatırma ve çekme komisyonları ne kadar? ${exchangeName} Pro avantajları ve BTC transfer ücretleri hakkında detaylı rehber`,
+      "paribu": `${formattedDate} itibarıyla ${exchangeName} komisyon oranları ve hesaplama detayları. ${currentYear} ${exchangeName} kripto alım-satım ücretleri, EFT masrafları ve transfer komisyonları hakkında en güncel bilgiler`,
+      "mexc": `${exchangeName} ${currentYear} komisyon oranları nedir? ${formattedDate} güncellemesiyle ${exchangeName} spot ve vadeli işlem ücretleri, kripto para transfer maliyetleri ve MX token avantajları burada`,
+      "kucoin": `${exchangeName} ${formattedDate} komisyon oranları ve indirim fırsatları. ${currentYear} güncel ${exchangeName} trading ücretleri, KCS token avantajları ve yurtdışı kripto borsası komisyon hesaplama kılavuzu`,
+      "coinbase": `${exchangeName} ${currentYear} komisyon oranları ${formattedDate} itibarıyla güncellenmiştir. ${exchangeName} Pro ve standart hesap ücretleri, işlem maliyetleri ve en avantajlı kripto alım satım stratejileri`,
+      "gate": `${exchangeName}.io ${formattedDate} komisyon oranları ve hesaplama yöntemi. ${currentYear} ${exchangeName} alım satım ücretleri, GT token indirimleri ve uluslararası transfer maliyetleri hakkında bilgi alın`,
+      "bybit": `${exchangeName} ${currentYear} güncel komisyon oranları - ${formattedDate} itibarıyla ${exchangeName} spot ve vadeli işlem ücretleri ne kadar? ${exchangeName} para yatırma, çekme ve transfer masrafları hakkında kapsamlı rehber`,
+      "okx": `${exchangeName} komisyon hesaplama ${formattedDate} güncel bilgileri. ${currentYear} ${exchangeName} trader seviyelerine göre komisyon indirimleri, OKB token avantajları ve transfer ücretleri detaylı analizi`,
+      "default": `${exchangeName} komisyon hesaplama ${formattedDate} itibarıyla nasıl yapılır? ${currentYear} ${exchangeName} komisyon oranları ne kadar? Transfer ücretleri ve üyelik avantajları hakkında güncel bilgiler burada`
+    };
+
+    return seoTexts[exchange.id.toLowerCase()] || seoTexts["default"];
+  };
+
+  const pageTitle = `${exchange.name} Komisyon Oranları & Hesaplama ${currentYear}`;
+  const pageDescription = getSeoText(exchange.name);
   
   // Structured data for SEO
   const structuredData = {
@@ -92,14 +115,9 @@ const CryptoExchangeDetail = () => {
                   <img src={exchange.logo} alt={exchange.name} className="w-16 h-16 object-contain" />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold mb-2 text-gray-900">{exchange.name}</h1>
-                  <div className="flex items-center text-gray-700">
-                    <span className="text-sm">Kripto Para Borsası</span>
-                    <span className="mx-2">•</span>
-                    <span className="flex items-center text-sm">
-                      <Calendar className="w-3.5 h-3.5 mr-1" />
-                      {exchange.founded} yılından beri
-                    </span>
+                  <h1 className="text-3xl font-bold mb-2 text-gray-900">{pageTitle}</h1>
+                  <div className="flex flex-wrap items-center text-gray-700">
+                    <p className="text-sm mr-4">{getSeoText(exchange.name)}</p>
                   </div>
                 </div>
               </div>

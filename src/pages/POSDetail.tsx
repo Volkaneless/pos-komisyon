@@ -7,7 +7,8 @@ import MetaTags from "@/components/MetaTags";
 const POSDetail = () => {
   const { id } = useParams();
   const provider = posProviders.find(p => p.id === id);
-  const currentYear = new Date().getFullYear();
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
 
   if (!provider) {
     return <div className="container mx-auto px-4 pt-24">POS bulunamadı</div>;
