@@ -23,7 +23,7 @@ const MetaTags = ({
   structuredData
 }: MetaTagsProps) => {
   const domain = "https://poskomisyon.com";
-  const siteTitle = title ? `${title}` : "POS Komisyon - En Uygun POS Seçenekleri";
+  const siteTitle = title ? `${title} | Poskomisyon.com` : "POS Komisyon - En Uygun POS Seçenekleri";
   const canonicalUrl = canonicalPath ? `${domain}${canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`}` : undefined;
   const defaultOgImage = `${domain}/images/og-image.jpg`;
   

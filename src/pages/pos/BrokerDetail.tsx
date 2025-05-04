@@ -52,8 +52,45 @@ const BrokerDetail = () => {
   }
 
   const currentYear = new Date().getFullYear();
-  const pageTitle = `${broker.name} Komisyon Oranları ${currentYear}`;
+  const currentDate = new Date();
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth() + 1;
+  const formattedDate = `${day} ${getMonthName(month)} ${currentYear}`;
+  
+  const pageTitle = `${broker.name} Komisyon Hesaplama & Oranları ${currentYear}`;
   const pageDescription = `${currentYear} ${broker.name} komisyon oranları: ${broker.type} için ${broker.commission_rate} komisyon oranı. Güncel ${broker.name} başvuru şartları ve detaylı bilgiler.`;
+  
+  // Custom SEO text for each broker
+  const getSeoText = (brokerId: string) => {
+    const commonText = `${formattedDate} itibarıyla Borsa İstanbul komisyon politikası. Yurtdışı ve kripto komisyon oranları, hesaplama yöntemleri ve VİOP ücretleri hakkında bilgi edinin.`;
+    
+    switch(brokerId) {
+      case "midas":
+        return `Midas komisyon alıyor mu? ${commonText} Midas EFT ücreti ve saklama masrafları nelerdir? Midas güvenilir mi? Detaylı komisyon bilgileri burada!`;
+      case "is-yatirim":
+        return `İş Yatırım komisyon oranları nedir? ${commonText} İş Yatırım EFT ücreti ve saklama masrafları nelerdir? İş Bankası yatırım hesabı avantajları nelerdir? Detaylı bilgiler burada!`;
+      case "gedik-yatirim":
+        return `Gedik Yatırım komisyon oranları nasıl? ${commonText} Gedik Yatırım EFT ücreti ve hesap işletim masrafları neler? Gedik Trader ile avantajlı işlem imkanları burada!`;
+      case "garanti-yatirim":
+        return `Garanti BBVA Yatırım komisyon oranları nasıl? ${commonText} Garanti yatırım hesabı açmak ve hesap bakım ücreti hakkında tüm bilgiler! E-Trader avantajları neler?`;
+      case "akbank-yatirim":
+        return `Ak Yatırım komisyon oranları nedir? ${commonText} Akbank yatırım hesabı açma şartları ve komisyon avantajları nelerdir? TradingGEN özellikleri burada!`;
+      case "qnb-finansyatirim":
+        return `QNB Finansyatırım komisyon oranları nasıl? ${commonText} QNB Finansyatırım'da hesap açmak ve yatırım yapmak için gereken bilgiler ve avantajlı komisyon oranları burada!`;
+      case "yapi-kredi-yatirim":
+        return `Yapı Kredi Yatırım komisyon oranları nedir? ${commonText} Yapı Kredi yatırım hesabı açma koşulları ve komisyon avantajları neler? Detaylı bilgiler burada!`;
+      case "vakif-yatirim":
+        return `Vakıf Yatırım komisyon oranları nedir? ${commonText} Vakıf Yatırım hesap işletim ücreti ve işlem masrafları hakkında bilmeniz gereken her şey burada!`;
+      case "deniz-yatirim":
+        return `Deniz Yatırım komisyon oranları nasıl? ${commonText} DenizTrader avantajları ve Deniz Yatırım'da hesap açma koşulları ile ilgili detaylı bilgiler bu sayfada!`;
+      case "ziraat-yatirim":
+        return `Ziraat Yatırım komisyon oranları nedir? ${commonText} Ziraat Yatırım'da hesap açmak ve işlem yapmak için bilmeniz gereken tüm detaylar burada!`;
+      case "matriks":
+        return `Matriks veri terminali ücretleri ve özellikleri neler? Borsada işlem yaparken kullanacağınız en iyi analiz aracı hangisi? Matriks paket fiyatları ve detayları burada!`;
+      default:
+        return `${broker.name} komisyon oranları nedir? ${commonText} ${broker.name} hesap açma koşulları ve avantajları hakkında bilmeniz gereken her şey burada!`;
+    }
+  };
 
   // Custom structured data for SEO
   const structuredData = {
@@ -93,7 +130,7 @@ const BrokerDetail = () => {
                 </div>
                 <div>
                   <h1 className="text-3xl font-bold mb-2 text-gray-900">
-                    {broker.id === "midas" ? "Midas Komisyon Hesaplama & Oranları 2025" : broker.name}
+                    {broker.name} Komisyon Hesaplama & Oranları {currentYear}
                   </h1>
                   <div className="flex items-center text-gray-700">
                     <span className="text-sm">{broker.type}</span>
@@ -113,6 +150,13 @@ const BrokerDetail = () => {
                   Detaylı Bilgi Al
                 </Button>
               </div>
+            </div>
+            
+            {/* SEO Text Section */}
+            <div className="mt-6">
+              <p className="text-gray-700 text-sm leading-relaxed">
+                {getSeoText(broker.id)}
+              </p>
             </div>
           </div>
         </div>
@@ -826,6 +870,15 @@ const BrokerDetail = () => {
     </>
   );
 };
+
+// Helper function to get Turkish month name
+function getMonthName(month: number): string {
+  const monthNames = [
+    "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", 
+    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
+  ];
+  return monthNames[month - 1];
+}
 
 // Helper function to generate descriptions for features
 function getFeatureDescription(feature: string): string {

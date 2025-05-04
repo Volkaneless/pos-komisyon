@@ -7,6 +7,7 @@ import MetaTags from "@/components/MetaTags";
 const POSDetail = () => {
   const { id } = useParams();
   const provider = posProviders.find(p => p.id === id);
+  const currentYear = new Date().getFullYear();
 
   if (!provider) {
     return <div className="container mx-auto px-4 pt-24">POS bulunamadı</div>;
@@ -15,8 +16,8 @@ const POSDetail = () => {
   return (
     <>
       <MetaTags
-        title={`${provider.name} POS ${new Date().getFullYear()} Komisyon Oranları | POS Compare`}
-        description={`${new Date().getFullYear()} ${provider.name} POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun ${provider.name} POS çözümünü keşfedin.`}
+        title={`${provider.name} POS ${currentYear} Komisyon Oranları`}
+        description={`${currentYear} ${provider.name} POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun ${provider.name} POS çözümünü keşfedin.`}
         canonicalPath={`/pos/${provider.id}`}
         priority={20}
       />
