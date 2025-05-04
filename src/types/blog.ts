@@ -9,3 +9,12 @@ export interface BlogPost {
   category: string;
   image?: string;
 }
+
+export interface BlogPostInput {
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  category: string;
+  image?: string;
+}
