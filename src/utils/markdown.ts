@@ -1,5 +1,4 @@
-import fs from 'fs';
-import path from 'path';
+
 import matter from 'gray-matter';
 
 export interface BlogPostMeta {
@@ -15,36 +14,44 @@ export interface BlogPostData extends BlogPostMeta {
   slug: string;
 }
 
-const postsDirectory = path.join(process.cwd(), 'src/content/blog');
+// We'll import blog content directly from the data file instead of reading from filesystem
+import { blogPosts } from "@/data/blogPosts";
 
 export function getPostBySlug(slug: string): BlogPostData | null {
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.md`);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
-
+    // Find the blog post in our data array
+    const post = blogPosts.find(post => post.slug === slug);
+    
+    if (!post) {
+      return null;
+    }
+    
     return {
-      ...(data as BlogPostMeta),
-      content,
-      slug,
+      title: post.title,
+      excerpt: post.excerpt,
+      date: post.date,
+      category: post.category,
+      image: post.image,
+      content: post.content,
+      slug: post.slug
     };
   } catch (error) {
-    console.error(`Error reading post ${slug}:`, error);
+    console.error(`Error getting post ${slug}:`, error);
     return null;
   }
 }
 
 export function getAllPosts(): BlogPostData[] {
-  const slugs = fs.readdirSync(postsDirectory);
-  const posts = slugs
-    .filter(slug => slug.endsWith('.md'))
-    .map(slug => {
-      const realSlug = slug.replace(/\.md$/, '');
-      const post = getPostBySlug(realSlug);
-      return post;
-    })
-    .filter((post): post is BlogPostData => post !== null)
+  // Return all blog posts sorted by date
+  return blogPosts
+    .map(post => ({
+      title: post.title,
+      excerpt: post.excerpt,
+      date: post.date,
+      category: post.category,
+      image: post.image,
+      content: post.content,
+      slug: post.slug
+    }))
     .sort((a, b) => (new Date(b.date).getTime() - new Date(a.date).getTime()));
-
-  return posts;
 }
