@@ -9,12 +9,23 @@ Allow: /blog/
 Allow: /about
 Allow: /contact
 Allow: /calculator
+Allow: /kripto-borsalari/
+Allow: /emlakci-komisyon
+Allow: /shopier-komisyon
+Allow: /trendyol-komisyon
+Allow: /dolap-komisyon
+Allow: /hepsiburada-komisyon
+Allow: /param-guvende-komisyon
+Allow: /n11-komisyon
+Allow: /amazon-komisyon
 
 # Important sections to index
 Allow: /blog/pos-cihazi-nedir-nasil-kullanilir
 Allow: /blog/pos-cihazi-nasil-alinir
 Allow: /blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler
 Allow: /blog/pos-komisyon-oranlari-2025
+Allow: /blog/sanal-pos-fiziki-pos-karsilastirma
+Allow: /blog/pos-komisyon-oranlari
 
 # Sitemap location
 Sitemap: https://poskomisyon.com/sitemap.xml
