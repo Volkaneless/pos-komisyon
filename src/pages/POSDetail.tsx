@@ -17,8 +17,8 @@ const POSDetail = () => {
   return (
     <>
       <MetaTags
-        title={`${provider.name} POS ${currentYear} Komisyon Oranları`}
-        description={`${currentYear} ${provider.name} POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun ${provider.name} POS çözümünü keşfedin.`}
+        title={`${provider.name} Komisyon Oranları ${currentYear}`}
+        description={`${currentYear} ${provider.name} komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun ${provider.name} çözümünü keşfedin.`}
         canonicalPath={`/pos/${provider.id}`}
         priority={20}
       />
