@@ -44,6 +44,7 @@ import AkbankSanalPOS from "../pages/pos/AkbankSanalPOS";
 import AkbankYazarkasaPOS from "../pages/pos/AkbankYazarkasaPOS";
 import AkbankCebePOS from "../pages/pos/AkbankCebePOS";
 import BekoPOS from "../pages/pos/BekoPOS";
+import Beko300TRPOS from "../pages/pos/Beko300TRPOS";
 import BrisaSanalPOS from "../pages/pos/BrisaSanalPOS";
 import CeptebIstePOS from "../pages/pos/CeptebIstePOS";
 import DenizbankSanalPOS from "../pages/pos/DenizbankSanalPOS";
@@ -58,6 +59,7 @@ import EsnekSanalPOS from "../pages/pos/EsnekSanalPOS";
 import GarantiPOS from "../pages/pos/GarantiPOS";
 import GarantiSanalPOS from "../pages/pos/GarantiSanalPOS";
 import HalkbankPOS from "../pages/pos/HalkbankPOS";
+import HuginPOS from "../pages/pos/HuginPOS";
 import IngenicoPOS from "../pages/pos/IngenicoPOS";
 import IsbankAnindaPOS from "../pages/pos/IsbankAnindaPOS";
 import IsbankSanalPOS from "../pages/pos/IsbankSanalPOS";
@@ -67,12 +69,14 @@ import KuveytTurkPOS from "../pages/pos/KuveytTurkPOS";
 import LogoIsbasiCepPOS from "../pages/pos/LogoIsbasiCepPOS";
 import LogoIsbasiPOS from "../pages/pos/LogoIsbasiPOS";
 import MokaSanalPOS from "../pages/pos/MokaSanalPOS";
+import Move5000FPOS from "../pages/pos/Move5000FPOS";
 import OdealPOS from "../pages/pos/OdealPOS";
 import ParamSanalPOS from "../pages/pos/ParamSanalPOS";
 import PayTRNeoPOS from "../pages/pos/PayTRNeoPOS";
 import PayTRSanalPOS from "../pages/pos/PayTRSanalPOS";
 import PaycellMobilPOS from "../pages/pos/PaycellMobilPOS";
 import PaycellSanalPOS from "../pages/pos/PaycellSanalPOS";
+import PaygoPOS from "../pages/pos/PaygoPOS";
 import QNBPayPOS from "../pages/pos/QNBPayPOS";
 import QNBPaySanalPOS from "../pages/pos/QNBPaySanalPOS";
 import ShopifySanalPOS from "../pages/pos/ShopifySanalPOS";
@@ -140,6 +144,7 @@ export const routes: Route[] = [
   { path: "/pos/akbank-yazarkasa-pos", element: <AkbankYazarkasaPOS /> },
   { path: "/pos/akbank-cebe-pos", element: <AkbankCebePOS /> },
   { path: "/pos/beko-pos", element: <BekoPOS /> },
+  { path: "/pos/beko-300-tr-pos", element: <Beko300TRPOS /> },
   { path: "/pos/brisa-sanal-pos", element: <BrisaSanalPOS /> },
   { path: "/pos/cepteb-iste-pos", element: <CeptebIstePOS /> },
   { path: "/pos/denizbank-sanal-pos", element: <DenizbankSanalPOS /> },
@@ -154,6 +159,7 @@ export const routes: Route[] = [
   { path: "/pos/garanti-pos", element: <GarantiPOS /> },
   { path: "/pos/garanti-sanal-pos", element: <GarantiSanalPOS /> },
   { path: "/pos/halkbank-pos", element: <HalkbankPOS /> },
+  { path: "/pos/hugin-pos", element: <HuginPOS /> },
   { path: "/pos/ingenico-pos", element: <IngenicoPOS /> },
   { path: "/pos/isbank-aninda-pos", element: <IsbankAnindaPOS /> },
   { path: "/pos/isbank-sanal-pos", element: <IsbankSanalPOS /> },
@@ -163,8 +169,10 @@ export const routes: Route[] = [
   { path: "/pos/logo-isbasi-cep-pos", element: <LogoIsbasiCepPOS /> },
   { path: "/pos/logo-isbasi-pos", element: <LogoIsbasiPOS /> },
   { path: "/pos/moka-sanal-pos", element: <MokaSanalPOS /> },
+  { path: "/pos/move-5000f-pos", element: <Move5000FPOS /> },
   { path: "/pos/odeal-pos", element: <OdealPOS /> },
   { path: "/pos/param-sanal-pos", element: <ParamSanalPOS /> },
+  { path: "/pos/paygo-pos", element: <PaygoPOS /> },
   { path: "/pos/paytr-neo-pos", element: <PayTRNeoPOS /> },
   { path: "/pos/paytr-sanal-pos", element: <PayTRSanalPOS /> },
   { path: "/pos/paycell-mobil-pos", element: <PaycellMobilPOS /> },
