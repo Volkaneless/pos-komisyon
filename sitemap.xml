@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Home page -->
@@ -232,6 +233,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://poskomisyon.com/pos/beko-300-tr-pos</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://poskomisyon.com/pos/brisa-sanal-pos</loc>
     <lastmod>2025-05-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -316,6 +323,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://poskomisyon.com/pos/hugin-pos</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://poskomisyon.com/pos/ingenico-pos</loc>
     <lastmod>2025-05-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -370,6 +383,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://poskomisyon.com/pos/move-5000f-pos</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://poskomisyon.com/pos/odeal-pos</loc>
     <lastmod>2025-05-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -377,6 +396,12 @@
   </url>
   <url>
     <loc>https://poskomisyon.com/pos/param-sanal-pos</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://poskomisyon.com/pos/paygo-pos</loc>
     <lastmod>2025-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
