@@ -13,7 +13,7 @@ const ParamSanalPOS = () => {
   return (
     <>
       <MetaTags
-        title={`Param Sanal POS Komisyon Oranları ${new Date().getFullYear()} | POS Komisyon`}
+        title={`Param Sanal POS Komisyon Oranları ${new Date().getFullYear()}`}
         description={`${new Date().getFullYear()} Param Sanal POS komisyon oranları, özellikleri ve detaylı karşılaştırma. E-ticaret siteniz için en uygun Param Sanal POS çözümünü keşfedin.`}
         canonicalPath="/pos/param-sanal"
         priority={20}

@@ -13,7 +13,7 @@ const BrisaSanalPOS = () => {
   return (
     <>
       <MetaTags
-        title="Brisa Sanal POS Komisyon Oranları 2025 | POS Compare"
+        title="Brisa Sanal POS Komisyon Oranları 2025"
         description="2025 Brisa Sanal POS komisyon oranları, özellikleri ve detaylı karşılaştırma. E-ticaret siteniz için en uygun Brisa Sanal POS çözümünü keşfedin."
         canonicalPath="/pos/brisa-sanal"
         priority={20}

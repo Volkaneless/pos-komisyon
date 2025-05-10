@@ -13,7 +13,7 @@ const SipaySanalPOS = () => {
   return (
     <>
       <MetaTags
-        title={`Sipay Sanal POS Komisyon Oranları ${new Date().getFullYear()} | POS Komisyon`}
+        title={`Sipay Sanal POS Komisyon Oranları ${new Date().getFullYear()}`}
         description={`${new Date().getFullYear()} Sipay Sanal POS komisyon oranları, özellikleri ve detaylı karşılaştırma. E-ticaret siteniz için en uygun Sipay Sanal POS çözümünü keşfedin.`}
         canonicalPath="/pos/sipay-sanal"
         priority={20}

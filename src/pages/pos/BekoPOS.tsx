@@ -13,7 +13,7 @@ const BekoPOS = () => {
   return (
     <>
       <MetaTags
-        title={`Beko Yazar Kasa POS Komisyon Oranları ${new Date().getFullYear()} | POS Komisyon`}
+        title={`Beko Yazar Kasa POS Komisyon Oranları ${new Date().getFullYear()}`}
         description={`${new Date().getFullYear()} Beko Yazar Kasa POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun Beko POS çözümünü keşfedin.`}
         canonicalPath="/pos/beko-pos"
         priority={20}

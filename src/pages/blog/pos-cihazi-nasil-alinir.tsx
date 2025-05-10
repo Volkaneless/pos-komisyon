@@ -3,6 +3,7 @@ import { getPostBySlug } from "@/utils/markdown";
 import { BlogPostDetail } from "@/components/blog/BlogPostDetail";
 import { useEffect, useState } from "react";
 import type { BlogPostData } from "@/utils/markdown";
+import MetaTags from "@/components/MetaTags";
 
 const POSCihaziNasilAlinir = () => {
   const [post, setPost] = useState<BlogPostData | null>(null);
@@ -22,7 +23,17 @@ const POSCihaziNasilAlinir = () => {
     );
   }
 
-  return <BlogPostDetail post={post} />;
+  return (
+    <>
+      <MetaTags
+        title={post.title}
+        description={post.excerpt}
+        canonicalPath={`/blog/${post.slug}`}
+        priority={20}
+      />
+      <BlogPostDetail post={post} />
+    </>
+  );
 };
 
 export default POSCihaziNasilAlinir;

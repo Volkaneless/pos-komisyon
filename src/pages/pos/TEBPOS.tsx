@@ -13,7 +13,7 @@ const TEBPOS = () => {
   return (
     <>
       <MetaTags
-        title={`TEB POS Komisyon Oranları ${new Date().getFullYear()} | POS Compare`}
+        title={`TEB POS Komisyon Oranları ${new Date().getFullYear()}`}
         description={`${new Date().getFullYear()} TEB POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun TEB POS çözümünü keşfedin.`}
         canonicalPath="/pos/teb-pos"
         priority={20}

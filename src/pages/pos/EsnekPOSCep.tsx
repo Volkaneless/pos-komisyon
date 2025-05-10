@@ -9,7 +9,7 @@ const EsnekPOSCep = () => {
   return (
     <>
       <MetaTags
-        title={`${provider.name} Komisyon Oranları 2025 | POS Compare`}
+        title={`${provider.name} Komisyon Oranları 2025`}
         description={`${provider.name} güncel komisyon oranları, özellikleri ve başvuru şartları. En uygun POS çözümünü kolayca bulun.`}
         keywords={`${provider.name.toLowerCase()}, ${provider.type.toLowerCase()}, komisyon oranları, pos karşılaştırma`}
         canonicalPath={`/pos/${provider.id}`}

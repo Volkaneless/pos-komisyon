@@ -13,7 +13,7 @@ const ZiraatPOS = () => {
   return (
     <>
       <MetaTags
-        title={`Ziraat POS Komisyon Oranları ${new Date().getFullYear()} | POS Komisyon`}
+        title={`Ziraat POS Komisyon Oranları ${new Date().getFullYear()}`}
         description={`${new Date().getFullYear()} Ziraat POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun Ziraat POS çözümünü keşfedin.`}
         canonicalPath="/pos/ziraat-pos"
         priority={20}

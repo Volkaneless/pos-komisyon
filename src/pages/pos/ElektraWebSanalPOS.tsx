@@ -13,7 +13,7 @@ const ElektraWebSanalPOS = () => {
   return (
     <>
       <MetaTags
-        title="ElektraWeb Sanal POS Komisyon Oranları 2025 | POS Compare"
+        title="ElektraWeb Sanal POS Komisyon Oranları 2025"
         description="2025 ElektraWeb Sanal POS komisyon oranları, özellikleri ve detaylı karşılaştırma. E-ticaret siteniz için en uygun ElektraWeb Sanal POS çözümünü keşfedin."
         canonicalPath="/pos/elektraweb-sanal"
         priority={20}

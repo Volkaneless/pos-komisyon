@@ -1,11 +1,11 @@
-import { Helmet } from "react-helmet";
+
 import MetaTags from "@/components/MetaTags";
 
 const CerezPolitikasi = () => {
   return (
     <>
       <MetaTags
-        title="Çerez Politikası | POS Komisyon"
+        title="Çerez Politikası"
         description="POS Komisyon çerez politikası. Web sitemizde kullanılan çerezler ve bunların nasıl yönetileceği hakkında bilgi alın."
         canonicalPath="/cerez-politikasi"
         priority={20}
