@@ -1,3 +1,4 @@
+
 export const sanalPOSProviders = [
   {
     id: "sipay-sanal",
@@ -249,6 +250,62 @@ export const sanalPOSProviders = [
       "Global ödeme desteği",
       "Kolay kullanım",
       "7/24 destek"
+    ]
+  },
+  {
+    id: "virtual-sanal",
+    name: "Virtual POS",
+    type: "Sanal POS",
+    logo: "/logos/virtual.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,89",
+    features: [
+      "E-ticaret uyumlu",
+      "Hızlı entegrasyon",
+      "Güvenli altyapı",
+      "7/24 teknik destek"
+    ]
+  },
+  {
+    id: "continental-sanal",
+    name: "Continental POS",
+    type: "Sanal POS",
+    logo: "/logos/continental.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,79",
+    features: [
+      "Global ödeme çözümleri",
+      "Çoklu dil desteği",
+      "Kolay entegrasyon",
+      "Teknik destek"
+    ]
+  },
+  {
+    id: "inpos-m530-sanal",
+    name: "inPOS m530",
+    type: "Sanal POS",
+    logo: "/logos/inpos.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,95",
+    features: [
+      "Modern arayüz",
+      "Hızlı işlem",
+      "E-ticaret uyumlu",
+      "Teknik destek"
+    ]
+  },
+  {
+    id: "parampos-sanal",
+    name: "ParamPOS",
+    type: "Sanal POS",
+    logo: "/logos/parampos.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,85",
+    features: [
+      "Entegre raporlama",
+      "Kolay kullanım",
+      "Hızlı kurulum",
+      "7/24 destek hattı"
     ]
   }
 ];

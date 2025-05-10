@@ -91,6 +91,12 @@ import ValletMobilPOS from "../pages/pos/ValletMobilPOS";
 import ValletSanalPOS from "../pages/pos/ValletSanalPOS";
 import ZiraatPOS from "../pages/pos/ZiraatPOS";
 
+// New Sanal POS providers
+import VirtualPOS from "../pages/pos/VirtualPOS";
+import ContinentalPOS from "../pages/pos/ContinentalPOS";
+import InPOSM530 from "../pages/pos/InPOSM530";
+import ParamPOSSanal from "../pages/pos/ParamPOSSanal";
+
 // Broker Detail Pages
 import BrokerDetail from "../pages/pos/BrokerDetail";
 
@@ -190,6 +196,12 @@ export const routes: Route[] = [
   { path: "/pos/vallet-mobil-pos", element: <ValletMobilPOS /> },
   { path: "/pos/vallet-sanal-pos", element: <ValletSanalPOS /> },
   { path: "/pos/ziraat-pos", element: <ZiraatPOS /> },
+  
+  // New Sanal POS routes
+  { path: "/pos/virtual-sanal", element: <VirtualPOS /> },
+  { path: "/pos/continental-sanal", element: <ContinentalPOS /> },
+  { path: "/pos/inpos-m530-sanal", element: <InPOSM530 /> },
+  { path: "/pos/parampos-sanal", element: <ParamPOSSanal /> },
 
   // Broker Detail Pages
   { path: "/pos/broker/:id", element: <BrokerDetail /> },

@@ -509,6 +509,32 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- New Sanal POS pages -->
+  <url>
+    <loc>https://poskomisyon.com/pos/virtual-sanal</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://poskomisyon.com/pos/continental-sanal</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://poskomisyon.com/pos/inpos-m530-sanal</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://poskomisyon.com/pos/parampos-sanal</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Broker Pages -->
   <url>
     <loc>https://poskomisyon.com/pos/broker/:id</loc>
