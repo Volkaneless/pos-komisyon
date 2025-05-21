@@ -1,4 +1,3 @@
-
 import { Cloud, CreditCard, ShieldCheck, Globe, Clock, LineChart, Smartphone, AlertTriangle } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
@@ -7,55 +6,41 @@ import MetaTags from "@/components/MetaTags";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
 const SanalPOS = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Sanal POS nedir?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sanal POS, internet üzerinden yapılan ödemeleri güvenli bir şekilde almanızı sağlayan modern bir ödeme sistemidir. E-ticaret siteleri, online rezervasyon sistemleri ve dijital hizmetler için vazgeçilmez bir çözümdür."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Sanal POS komisyon oranları ne kadardır?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sanal POS komisyon oranları işlem tipine göre değişir. Tek çekim işlemlerde %0,59 - %2,70 arasında, 3 taksitli işlemlerde %1,50 - %3,50 arasında, 6 taksitli işlemlerde ise %2,50 - %4,50 arasında ücretlendirme yapılmaktadır."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Sanal POS entegrasyonu ne kadar sürer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sanal POS entegrasyonu genellikle başvuru ve gerekli belgelerin hazırlanması, teknik entegrasyon ve test süreçleri, güvenlik kontrollerinin tamamlanması ve canlı ortama geçiş adımlarını içerir. Bu süreç seçilen sağlayıcıya bağlı olarak 1-7 iş günü arasında tamamlanabilir."
-        }
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Sanal POS nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sanal POS, internet üzerinden yapılan ödemeleri güvenli bir şekilde almanızı sağlayan modern bir ödeme sistemidir. E-ticaret siteleri, online rezervasyon sistemleri ve dijital hizmetler için vazgeçilmez bir çözümdür."
       }
-    ]
+    }, {
+      "@type": "Question",
+      "name": "Sanal POS komisyon oranları ne kadardır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sanal POS komisyon oranları işlem tipine göre değişir. Tek çekim işlemlerde %0,59 - %2,70 arasında, 3 taksitli işlemlerde %1,50 - %3,50 arasında, 6 taksitli işlemlerde ise %2,50 - %4,50 arasında ücretlendirme yapılmaktadır."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Sanal POS entegrasyonu ne kadar sürer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sanal POS entegrasyonu genellikle başvuru ve gerekli belgelerin hazırlanması, teknik entegrasyon ve test süreçleri, güvenlik kontrollerinin tamamlanması ve canlı ortama geçiş adımlarını içerir. Bu süreç seçilen sağlayıcıya bağlı olarak 1-7 iş günü arasında tamamlanabilir."
+      }
+    }]
   };
-  
-  return (
-    <>
-      <MetaTags 
-        title="Sanal POS Komisyon Oranları 2025 - En Uygun Sanal POS" 
-        description="2025 yılı güncel sanal POS komisyon oranları, karşılaştırma ve hesaplama araçları. E-ticaret işletmeniz için en uygun sanal POS çözümünü bulun." 
-        keywords="sanal pos komisyon oranları 2025, sanal pos başvuru, e-ticaret pos, online ödeme sistemleri, sanal pos entegrasyonu, e-ticaret ödeme çözümleri" 
-        canonicalPath="/pos-types/sanal" 
-        priority={20}
-        structuredData={structuredData}
-      />
+  return <>
+      <MetaTags title="Sanal POS Komisyon Oranları 2025 - En Uygun Sanal POS" description="2025 yılı güncel sanal POS komisyon oranları, karşılaştırma ve hesaplama araçları. E-ticaret işletmeniz için en uygun sanal POS çözümünü bulun." keywords="sanal pos komisyon oranları 2025, sanal pos başvuru, e-ticaret pos, online ödeme sistemleri, sanal pos entegrasyonu, e-ticaret ödeme çözümleri" canonicalPath="/pos-types/sanal" priority={20} structuredData={structuredData} />
 
       <section className="bg-gradient-to-b from-primary-50 to-white pt-28 pb-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="order-2 md:order-1">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-gray-900">
+          <div className="">
+            <div className="">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-gray-900 text-center">
                 Sanal POS Komisyon Oranları <span className="text-primary">2025</span>
               </h1>
               <p className="text-xl mb-8 text-gray-700">
@@ -79,25 +64,13 @@ const SanalPOS = () => {
               </div>
             </div>
             <div className="order-1 md:order-2 flex justify-center">
-              <img 
-                src="/lovable-uploads/1582e9fb-1b29-4608-a202-4923d8e8721b.png" 
-                alt="Sanal POS Çözümleri" 
-                className="max-w-full h-auto rounded-lg shadow-xl" 
-                width="500"
-                height="350"
-              />
+              
             </div>
           </div>
         </div>
       </section>
 
-      <POSTypePage 
-        title="Sanal POS Komisyon Oranları 2025" 
-        description="E-ticaret ve online ödemeler için en uygun sanal POS çözümleri ve komisyon oranları" 
-        type="Sanal POS" 
-        Icon={Cloud} 
-        whatIsContent={
-          <div className="prose prose-lg max-w-none mb-8">
+      <POSTypePage title="Sanal POS Komisyon Oranları 2025" description="E-ticaret ve online ödemeler için en uygun sanal POS çözümleri ve komisyon oranları" type="Sanal POS" Icon={Cloud} whatIsContent={<div className="prose prose-lg max-w-none mb-8">
             <h2 className="text-3xl font-bold mb-6" id="what-is">Sanal POS Nedir?</h2>
             <p>
               Sanal POS, internet üzerinden yapılan ödemeleri güvenli bir şekilde almanızı sağlayan modern bir ödeme sistemidir. 
@@ -109,19 +82,7 @@ const SanalPOS = () => {
               Bu sayede dünyanın her yerinden 7/24 ödeme kabul edebilir, işlemlerinizi anında görüntüleyebilir 
               ve müşterilerinize güvenli bir alışveriş deneyimi sunabilirsiniz.
             </p>
-          </div>
-        } 
-        advantages={[
-          "7/24 kesintisiz hizmet ve teknik destek", 
-          "Rekabetçi komisyon oranları", 
-          "Hızlı ve kolay entegrasyon", 
-          "SSL güvenlik sertifikası", 
-          "Geniş banka ve kart desteği", 
-          "Detaylı satış ve işlem raporlaması", 
-          "Mobil uyumlu altyapı", 
-          "Çoklu dil ve para birimi desteği"
-        ]} 
-      />
+          </div>} advantages={["7/24 kesintisiz hizmet ve teknik destek", "Rekabetçi komisyon oranları", "Hızlı ve kolay entegrasyon", "SSL güvenlik sertifikası", "Geniş banka ve kart desteği", "Detaylı satış ve işlem raporlaması", "Mobil uyumlu altyapı", "Çoklu dil ve para birimi desteği"]} />
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -481,11 +442,7 @@ const SanalPOS = () => {
               </Link>
             </div>
             <div className="md:w-1/2">
-              <img 
-                src="/lovable-uploads/1d959b09-78d0-4578-a645-d0efb2a0908b.png" 
-                alt="Komisyon Hesaplama" 
-                className="w-full h-auto rounded-lg shadow-md" 
-              />
+              <img src="/lovable-uploads/1d959b09-78d0-4578-a645-d0efb2a0908b.png" alt="Komisyon Hesaplama" className="w-full h-auto rounded-lg shadow-md" />
             </div>
           </div>
         </div>
@@ -493,8 +450,6 @@ const SanalPOS = () => {
         <FAQ />
         <LatestBlogPosts />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default SanalPOS;
