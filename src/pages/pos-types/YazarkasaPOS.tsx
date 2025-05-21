@@ -10,44 +10,42 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { yazarkasaPOSProviders } from "@/data/pos-types/yazarkasaPOS";
 import { Link } from "react-router-dom";
+import MetaTags from "@/components/MetaTags";
 
 const YazarkasaPOS = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <>
-      <Helmet>
-        <title>Yazar Kasa POS Cihazı Komisyon Oranları | ÖKC POS Fiyatları {currentYear}</title>
-        <meta name="description" content={`Yazar kasa POS cihazları, ÖKC entegreli POS sistemleri ve komisyon oranları hakkında detaylı bilgi alın. ${currentYear} yılı güncel fiyatlar ve özellikler.`} />
-        <meta name="keywords" content={`yazar kasa pos, ökc pos, yeni nesil yazar kasa, entegre pos cihazı, yazarkasa pos fiyatları, ${currentYear} pos cihazları, yazarkasa komisyon oranları`} />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": `Yazar Kasa POS Cihazları ve Komisyon Oranları ${currentYear}`,
-            "description": `Yazar kasa POS cihazları, ÖKC entegreli POS sistemleri ve komisyon oranları hakkında detaylı bilgi. ${currentYear} yılı güncel fiyatlar ve özellikler.`,
-            "publisher": {
-              "@type": "Organization",
-              "name": "POS Komisyon"
-            },
-            "mainEntity": {
-              "@type": "ItemList",
-              "itemListElement": yazarkasaPOSProviders.map((provider, index) => ({
-                "@type": "ListItem",
-                "position": index + 1,
-                "item": {
-                  "@type": "Product",
-                  "name": provider.name,
-                  "description": `${provider.name} yazar kasa POS komisyon oranları ve özellikleri.`
-                }
-              }))
-            }
-          })}
-        </script>
-      </Helmet>
-      
-      {/* Add correct canonical link for yazarkasa page */}
-      <CanonicalLink path="/pos-types/yazarkasa" />
+      <MetaTags
+        title={`Yazar Kasa POS Cihazı Komisyon Oranları | ÖKC POS Fiyatları ${currentYear}`}
+        description={`Yazar kasa POS cihazları, ÖKC entegreli POS sistemleri ve komisyon oranları hakkında detaylı bilgi alın. ${currentYear} yılı güncel fiyatlar ve özellikler.`}
+        keywords={`yazar kasa pos, ökc pos, yeni nesil yazar kasa, entegre pos cihazı, yazarkasa pos fiyatları, ${currentYear} pos cihazları, yazarkasa komisyon oranları`}
+        canonicalPath="/pos-types/yazarkasa"
+        priority={20}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": `Yazar Kasa POS Cihazları ve Komisyon Oranları ${currentYear}`,
+          "description": `Yazar kasa POS cihazları, ÖKC entegreli POS sistemleri ve komisyon oranları hakkında detaylı bilgi. ${currentYear} yılı güncel fiyatlar ve özellikler.`,
+          "publisher": {
+            "@type": "Organization",
+            "name": "POS Komisyon"
+          },
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": yazarkasaPOSProviders.map((provider, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Product",
+                "name": provider.name,
+                "description": `${provider.name} yazar kasa POS komisyon oranları ve özellikleri.`
+              }
+            }))
+          }
+        }}
+      />
       
       <div>
         <POSTypePage 
@@ -429,3 +427,4 @@ const YazarkasaPOS = () => {
 };
 
 export default YazarkasaPOS;
+

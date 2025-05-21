@@ -42,4 +42,3 @@ Allow: /blog/pos-komisyon-oranlari
 
 # Sitemap location
 Sitemap: https://poskomisyon.com/sitemap.xml
-
