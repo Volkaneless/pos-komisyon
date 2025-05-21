@@ -26,13 +26,10 @@ const POSTypePage = ({
       </div>
 
       <div className="mb-12">
-        {whatIsContent && <div className="bg-white p-8 rounded-xl shadow-md mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-center">Yazarkasa POS Nedir?</h2>
-            <p className="text-gray-700">{whatIsContent}</p>
-          </div>}
+        {whatIsContent}
         
         {advantages && advantages.length > 0 && <div className="space-y-4 text-left mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-center">Yazarkasa POS Veren Bankalar</h2>
+            
             
           </div>}
       </div>
