@@ -46,7 +46,7 @@ const SanalPOS = () => {
               <p className="text-xl mb-8 text-gray-700">
                 E-ticaret ve online ödemeler için en uygun sanal POS çözümleri ve güncel komisyon oranlarını karşılaştırın.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="">
                 <Link to="/calculator">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
                     Komisyon Hesaplama
@@ -60,7 +60,7 @@ const SanalPOS = () => {
               </div>
               <div className="mt-8 flex items-center text-gray-600 text-sm">
                 <ShieldCheck className="h-4 w-4 mr-2 text-green-600" />
-                <span>2025 yılı güncel komisyon oranları ile</span>
+                <span className="text-center">2025 yılı güncel komisyon oranları ile</span>
               </div>
             </div>
             <div className="order-1 md:order-2 flex justify-center">
