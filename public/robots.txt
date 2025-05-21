@@ -19,6 +19,19 @@ Allow: /param-guvende-komisyon
 Allow: /n11-komisyon
 Allow: /amazon-komisyon
 
+# Specific priority for YazarKasa POS pages
+Allow: /pos-types/yazarkasa
+Allow: /pos/beko-pos
+Allow: /pos/hugin-pos
+Allow: /pos/ziraat-pos
+Allow: /pos/ingenico-pos
+Allow: /pos/paygo-pos
+Allow: /pos/move-5000f-pos
+Allow: /pos/beko-300-tr-pos
+Allow: /pos/halkbank-pos
+Allow: /pos/teb-pos
+Allow: /pos/kuveyt-turk-pos
+
 # Important sections to index
 Allow: /blog/pos-cihazi-nedir-nasil-kullanilir
 Allow: /blog/pos-cihazi-nasil-alinir
@@ -29,3 +42,4 @@ Allow: /blog/pos-komisyon-oranlari
 
 # Sitemap location
 Sitemap: https://poskomisyon.com/sitemap.xml
+
