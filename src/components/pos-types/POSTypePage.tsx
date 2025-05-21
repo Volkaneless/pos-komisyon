@@ -21,15 +21,13 @@ const POSTypePage = ({
   return <>
       <div className="container mx-auto px-4 pt-24 pb-16">
         <div className="text-center mb-12">
-          <div className="flex justify-center mb-4">
-            <Icon className="w-16 h-16 text-primary" />
-          </div>
+          
           <h1 className="text-4xl font-bold mb-4">{title}</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">{description}</p>
         </div>
 
         <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-center">{type} Komisyon Oranları</h2>
+          
           
           <div className="space-y-4 text-left mb-8">
             
