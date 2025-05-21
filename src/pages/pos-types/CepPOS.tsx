@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { Smartphone, CreditCard, ShieldCheck, Globe, WifiHigh, TrendingUp, Phone, Settings, Coins, FileCheck, BarChart, Share2 } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
@@ -10,67 +9,52 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
 const CepPOS = () => {
   const currentYear = new Date().getFullYear();
-
   return <>
-      <MetaTags 
-        title={`Cep POS Komisyon Oranları ${currentYear} - En Uygun Cep POS Fiyatları`}
-        description={`${currentYear} yılı güncel cep POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun cep POS çözümünü bulun.`}
-        keywords="cep pos, mobil pos uygulaması, telefon pos cihazı, android pos uygulaması, ios pos uygulaması, cep pos komisyon oranları, cep pos başvuru, cep pos nedir"
-        canonicalPath="/pos-types/cep"
-        priority={20}
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": `Cep POS Komisyon Oranları ${currentYear}`,
-          "description": `${currentYear} yılı güncel cep POS komisyon oranları ve karşılaştırma araçları.`,
-          "url": "https://poskomisyon.com/pos-types/cep",
-          "mainEntity": {
-            "@type": "ItemList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Logo İşbaşı Cep POS",
-                "url": "https://poskomisyon.com/pos/logo-isbasi-cep"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Akbank Cebe POS",
-                "url": "https://poskomisyon.com/pos/akbank-cebe"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Vallet Mobil POS",
-                "url": "https://poskomisyon.com/pos/vallet-mobil"
-              },
-              {
-                "@type": "ListItem",
-                "position": 4,
-                "name": "PayTR NeoPOS+",
-                "url": "https://poskomisyon.com/pos/paytr-neopos"
-              },
-              {
-                "@type": "ListItem",
-                "position": 5,
-                "name": "EsnekPOS Cep POS",
-                "url": "https://poskomisyon.com/pos/esnekpos-cep"
-              }
-            ]
-          },
-          "offers": {
-            "@type": "AggregateOffer",
-            "lowPrice": "0",
-            "highPrice": "2.99",
-            "priceCurrency": "TRY",
-            "offerCount": "5"
-          }
-        }}
-      />
+      <MetaTags title={`Cep POS Komisyon Oranları ${currentYear} - En Uygun Cep POS Fiyatları`} description={`${currentYear} yılı güncel cep POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun cep POS çözümünü bulun.`} keywords="cep pos, mobil pos uygulaması, telefon pos cihazı, android pos uygulaması, ios pos uygulaması, cep pos komisyon oranları, cep pos başvuru, cep pos nedir" canonicalPath="/pos-types/cep" priority={20} structuredData={{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": `Cep POS Komisyon Oranları ${currentYear}`,
+      "description": `${currentYear} yılı güncel cep POS komisyon oranları ve karşılaştırma araçları.`,
+      "url": "https://poskomisyon.com/pos-types/cep",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Logo İşbaşı Cep POS",
+          "url": "https://poskomisyon.com/pos/logo-isbasi-cep"
+        }, {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Akbank Cebe POS",
+          "url": "https://poskomisyon.com/pos/akbank-cebe"
+        }, {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Vallet Mobil POS",
+          "url": "https://poskomisyon.com/pos/vallet-mobil"
+        }, {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "PayTR NeoPOS+",
+          "url": "https://poskomisyon.com/pos/paytr-neopos"
+        }, {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "EsnekPOS Cep POS",
+          "url": "https://poskomisyon.com/pos/esnekpos-cep"
+        }]
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "0",
+        "highPrice": "2.99",
+        "priceCurrency": "TRY",
+        "offerCount": "5"
+      }
+    }} />
       
       <div className="relative bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="container mx-auto px-4 pt-28 pb-16">
@@ -99,56 +83,10 @@ const CepPOS = () => {
         <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
       </div>
 
-      <POSTypePage 
-        title={`Cep POS Komisyon Oranları ${currentYear}`} 
-        description="En uygun cep POS uygulamalarını karşılaştırın, işletmeniz için en uygun cep POS çözümünü seçin." 
-        type="Cep POS" 
-        Icon={Smartphone} 
-        whatIsContent="Cep POS uygulamaları, akıllı telefonları ödeme terminaline dönüştüren modern yazılım çözümleridir. Bu uygulamalar sayesinde, herhangi bir ek donanıma ihtiyaç duymadan akıllı telefonunuz üzerinden kredi kartı ödemesi alabilirsiniz. ${currentYear} yılında artan dijitalleşme ile birlikte Cep POS sistemleri daha da yaygınlaşmaktadır." 
-        advantages={[
-          "Ek donanım maliyeti yok", 
-          "Hızlı kurulum ve kullanım", 
-          "Düşük işlem maliyetleri", 
-          "Mobil cihaz entegrasyonu", 
-          "Anlık ödeme takibi", 
-          "7/24 teknik destek", 
-          "Taksit imkanı", 
-          "Temassız ödeme desteği"
-        ]} 
-      />
+      <POSTypePage title={`Cep POS Komisyon Oranları ${currentYear}`} description="En uygun cep POS uygulamalarını karşılaştırın, işletmeniz için en uygun cep POS çözümünü seçin." type="Cep POS" Icon={Smartphone} whatIsContent="Cep POS uygulamaları, akıllı telefonları ödeme terminaline dönüştüren modern yazılım çözümleridir. Bu uygulamalar sayesinde, herhangi bir ek donanıma ihtiyaç duymadan akıllı telefonunuz üzerinden kredi kartı ödemesi alabilirsiniz. ${currentYear} yılında artan dijitalleşme ile birlikte Cep POS sistemleri daha da yaygınlaşmaktadır." advantages={["Ek donanım maliyeti yok", "Hızlı kurulum ve kullanım", "Düşük işlem maliyetleri", "Mobil cihaz entegrasyonu", "Anlık ödeme takibi", "7/24 teknik destek", "Taksit imkanı", "Temassız ödeme desteği"]} />
 
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-            <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
-              <Phone className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Kolay Kullanım</h3>
-            <p className="text-gray-600">
-              Basit arayüz ve hızlı kurulum ile dakikalar içinde ödeme almaya başlayın.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-            <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
-              <ShieldCheck className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Güvenli Altyapı</h3>
-            <p className="text-gray-600">
-              SSL şifreleme ve PCI DSS uyumlu güvenlik standartları ile güvenli ödeme.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-            <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
-              <Coins className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Uygun Komisyon</h3>
-            <p className="text-gray-600">
-              Rekabetçi komisyon oranları ve ek maliyet olmadan kullanım imkanı.
-            </p>
-          </div>
-        </div>
+        
 
         <div className="mb-16">
           <div className="max-w-4xl mx-auto text-center mb-12">
@@ -158,24 +96,7 @@ const CepPOS = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
-              <div className="text-gray-600">Aktif Kullanıcı</div>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
-              <div className="text-4xl font-bold text-primary mb-2">%99.9</div>
-              <div className="text-gray-600">Uptime Garantisi</div>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
-              <div className="text-4xl font-bold text-primary mb-2">10+</div>
-              <div className="text-gray-600">Banka Desteği</div>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
-              <div className="text-4xl font-bold text-primary mb-2">%0.79</div>
-              <div className="text-gray-600">Komisyon Oranından Başlayan</div>
-            </div>
-          </div>
+          
         </div>
 
         <Tabs defaultValue="overview" className="w-full max-w-4xl mx-auto mb-16">
@@ -631,7 +552,7 @@ const CepPOS = () => {
 
         <div className="bg-gray-50 p-8 rounded-xl my-16">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-6 text-center">Sıkça Sorulan Sorular</h3>
+            
             <CepPOSFAQ />
           </div>
         </div>
