@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { Smartphone, CreditCard, ShieldCheck, Globe, WifiHigh, TrendingUp } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
@@ -9,48 +8,35 @@ import MetaTags from "@/components/MetaTags";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-
 const MobilPOS = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <>
-      <MetaTags
-        title={`Mobil POS Komisyon Oranları ${currentYear} - En Uygun Mobil POS Ücretleri`}
-        description={`${currentYear} yılı güncel mobil POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun mobil POS çözümünü bulun.`}
-        keywords="mobil pos komisyon oranları, mobil pos başvuru, mobil ödeme sistemleri, taşınabilir pos cihazları, mobil pos çözümleri, enpara mobil pos, paycell mobil pos"
-        canonicalPath="/pos-types/mobil"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": `Mobil POS Komisyon Oranları ${currentYear}`,
-          "description": `${currentYear} yılı güncel mobil POS komisyon oranları ve karşılaştırma araçları.`,
-          "url": "https://poskomisyon.com/pos-types/mobil",
-          "mainEntity": {
-            "@type": "ItemList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Enpara Mobil POS",
-                "url": "https://poskomisyon.com/pos/enpara-mobil-pos"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Paycell Mobil POS",
-                "url": "https://poskomisyon.com/pos/paycell-mobil-pos"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Vallet Mobil POS",
-                "url": "https://poskomisyon.com/pos/vallet-mobil-pos"
-              }
-            ]
-          }
-        }}
-      />
+  return <>
+      <MetaTags title={`Mobil POS Komisyon Oranları ${currentYear} - En Uygun Mobil POS Ücretleri`} description={`${currentYear} yılı güncel mobil POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun mobil POS çözümünü bulun.`} keywords="mobil pos komisyon oranları, mobil pos başvuru, mobil ödeme sistemleri, taşınabilir pos cihazları, mobil pos çözümleri, enpara mobil pos, paycell mobil pos" canonicalPath="/pos-types/mobil" structuredData={{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": `Mobil POS Komisyon Oranları ${currentYear}`,
+      "description": `${currentYear} yılı güncel mobil POS komisyon oranları ve karşılaştırma araçları.`,
+      "url": "https://poskomisyon.com/pos-types/mobil",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Enpara Mobil POS",
+          "url": "https://poskomisyon.com/pos/enpara-mobil-pos"
+        }, {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Paycell Mobil POS",
+          "url": "https://poskomisyon.com/pos/paycell-mobil-pos"
+        }, {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Vallet Mobil POS",
+          "url": "https://poskomisyon.com/pos/vallet-mobil-pos"
+        }]
+      }
+    }} />
 
       <div className="relative bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="container mx-auto px-4 pt-28 pb-16">
@@ -79,75 +65,12 @@ const MobilPOS = () => {
         <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
       </div>
 
-      <POSTypePage 
-        title={`Mobil POS Komisyon Oranları ${currentYear}`} 
-        description="Mobil ve taşınabilir POS çözümleri için en uygun komisyon oranları ve karşılaştırmalar" 
-        type="Mobil (Taşınabilir) POS" 
-        Icon={Smartphone} 
-        whatIsContent="Mobil POS cihazları, işletmelerin hareket halindeyken ödeme almalarını sağlayan taşınabilir cihazlardır. Bu cihazlar, kablosuz internet veya mobil veri bağlantısı üzerinden çalışır ve kredi kartı ödemelerini güvenli bir şekilde işler." 
-        advantages={["Hareket halindeyken ödeme alma imkanı", "Kolay taşınabilirlik", "Düşük maliyetli çözüm", "Hızlı kurulum ve kullanım", "Tüm kredi kartlarıyla uyumluluk", "7/24 teknik destek", "Detaylı satış raporlaması", "Güvenli işlem altyapısı"]} 
-      />
+      <POSTypePage title={`Mobil POS Komisyon Oranları ${currentYear}`} description="Mobil ve taşınabilir POS çözümleri için en uygun komisyon oranları ve karşılaştırmalar" type="Mobil (Taşınabilir) POS" Icon={Smartphone} whatIsContent="Mobil POS cihazları, işletmelerin hareket halindeyken ödeme almalarını sağlayan taşınabilir cihazlardır. Bu cihazlar, kablosuz internet veya mobil veri bağlantısı üzerinden çalışır ve kredi kartı ödemelerini güvenli bir şekilde işler." advantages={["Hareket halindeyken ödeme alma imkanı", "Kolay taşınabilirlik", "Düşük maliyetli çözüm", "Hızlı kurulum ve kullanım", "Tüm kredi kartlarıyla uyumluluk", "7/24 teknik destek", "Detaylı satış raporlaması", "Güvenli işlem altyapısı"]} />
 
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-            <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
-              <CreditCard className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Kolay Kullanım</h3>
-            <p className="text-gray-600">
-              Basit arayüz ve hızlı işlem yapabilme özelliği ile kullanıcı dostu deneyim.
-            </p>
-          </div>
+        
 
-          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-            <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
-              <ShieldCheck className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Güvenli Altyapı</h3>
-            <p className="text-gray-600">
-              SSL şifreleme ve güvenlik standartlarına uygun mobil ödeme altyapısı.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-            <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
-              <WifiHigh className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Her Yerde Kullanım</h3>
-            <p className="text-gray-600">
-              İnternet bağlantısı olan her yerde kesintisiz ödeme alma imkanı.
-            </p>
-          </div>
-        </div>
-
-        <div className="mb-16">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Neden Mobil POS Kullanmalıyım?</h2>
-            <p className="text-gray-600">
-              İşletmeniz için en uygun mobil POS çözümünü sunuyoruz. Güvenli, hızlı ve ekonomik.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <Card className="p-6 hover:shadow-md transition-shadow">
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
-              <div className="text-gray-600">Aktif Mobil POS Kullanıcısı</div>
-            </Card>
-            <Card className="p-6 hover:shadow-md transition-shadow">
-              <div className="text-4xl font-bold text-primary mb-2">%99.9</div>
-              <div className="text-gray-600">Kesintisiz Hizmet</div>
-            </Card>
-            <Card className="p-6 hover:shadow-md transition-shadow">
-              <div className="text-4xl font-bold text-primary mb-2">10+</div>
-              <div className="text-gray-600">Mobil POS Seçeneği</div>
-            </Card>
-            <Card className="p-6 hover:shadow-md transition-shadow">
-              <div className="text-4xl font-bold text-primary mb-2">%1.99</div>
-              <div className="text-gray-600">Komisyon Oranından Başlayan</div>
-            </Card>
-          </div>
-        </div>
+        
 
         <div className="prose prose-lg max-w-4xl mx-auto mt-16">
           <h2 className="text-3xl font-bold mb-6 text-center">Mobil POS Komisyon Oranları {currentYear}</h2>
@@ -328,7 +251,7 @@ const MobilPOS = () => {
         </div>
 
         <div className="bg-gray-50 p-8 rounded-xl my-16">
-          <h3 className="text-2xl font-semibold mb-6 text-center">Sıkça Sorulan Sorular</h3>
+          
           <FAQ />
         </div>
         
@@ -352,8 +275,6 @@ const MobilPOS = () => {
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default MobilPOS;
