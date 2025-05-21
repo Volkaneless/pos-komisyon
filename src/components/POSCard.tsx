@@ -1,8 +1,8 @@
 
-import { Check, CreditCard } from "lucide-react";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
-import { Info } from "lucide-react";
+import { Check, Info } from "lucide-react";
 import { Link } from "react-router-dom";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
+import { Button } from "./ui/button";
 
 interface POSCardProps {
   id: string;
@@ -16,43 +16,38 @@ interface POSCardProps {
 
 const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features }: POSCardProps) => {
   return (
-    <div className="glass-card rounded-2xl p-4 md:p-8 animate-fade-in">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8 mb-6 md:mb-8">
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-gray-100 rounded-lg overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-sm p-6 mb-6">
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
             <img 
-              src="/lovable-uploads/12b9f566-b156-421b-8f7d-cb5fe8fc500a.png" 
-              alt={name} 
-              className="w-8 h-8 md:w-10 md:h-10 object-contain"
+              src={logo} 
+              alt={`${name} Logo`} 
+              className="w-8 h-8 object-contain"
             />
           </div>
-          <h3 className="font-semibold text-lg md:text-xl">{name}</h3>
+          <h3 className="font-semibold text-lg">{name}</h3>
         </div>
-        <div className="flex gap-2 md:gap-3">
-          <button className="flex-1 md:flex-none button-primary text-sm md:text-base">
-            Hemen Başvur
-          </button>
-          <Link 
-            to={`/pos/${id}`}
-            className="flex-1 md:flex-none border border-primary text-primary hover:bg-primary-light px-4 md:px-8 py-2 rounded-lg transition-all duration-200 text-sm md:text-base text-center"
-          >
-            İncele
+        <div className="flex gap-2">
+          <Button className="bg-primary text-white hover:bg-primary/90">Hemen Başvur</Button>
+          <Link to={`/pos/${id}`}>
+            <Button variant="outline">İncele</Button>
           </Link>
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-6 md:mb-8">
+      <div className="grid grid-cols-3 gap-6 mb-6 border-b pb-6">
         <div>
-          <p className="text-gray-500 text-sm mb-1 md:mb-2">POS Türü</p>
-          <p className="font-medium text-base md:text-lg">{type}</p>
+          <p className="text-gray-500 text-sm mb-1">POS Türü</p>
+          <p className="font-medium">{type}</p>
         </div>
         <div>
-          <p className="text-gray-500 text-sm mb-1 md:mb-2">Aidat Ödemesi</p>
-          <p className="font-medium text-base md:text-lg">{monthly_fee}</p>
+          <p className="text-gray-500 text-sm mb-1">Aidat Ödemesi</p>
+          <p className="font-medium">{monthly_fee}</p>
         </div>
         <div>
-          <div className="flex items-center gap-2">
-            <p className="text-gray-500 text-sm mb-1 md:mb-2">Komisyon Oranı</p>
+          <div className="flex items-center gap-1">
+            <p className="text-gray-500 text-sm mb-1">Komisyon Oranı</p>
             <HoverCard>
               <HoverCardTrigger>
                 <Info className="w-4 h-4 text-gray-400" />
@@ -62,19 +57,17 @@ const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features 
               </HoverCardContent>
             </HoverCard>
           </div>
-          <p className="font-medium text-base md:text-lg">{commission_rate}</p>
+          <p className="font-medium">{commission_rate}</p>
         </div>
       </div>
       
-      <div className="border-t pt-4 md:pt-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
-          {features.map((feature, index) => (
-            <div key={index} className="flex items-start gap-2 text-gray-600 text-sm md:text-base">
-              <Check size={20} className="text-primary mt-1 flex-shrink-0" />
-              <span>{feature}</span>
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-2 gap-3">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-center gap-2">
+            <Check className="h-4 w-4 text-primary flex-shrink-0" />
+            <span className="text-sm text-gray-600">{feature}</span>
+          </div>
+        ))}
       </div>
     </div>
   );

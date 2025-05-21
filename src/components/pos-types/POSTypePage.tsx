@@ -60,7 +60,7 @@ const POSTypePage = ({
 
       <div className="mb-12">
         <h2 className="text-2xl font-bold mb-6">Popüler {type} Çözümleri</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div>
           {filteredProviders.slice(0, 6).map(provider => (
             <POSCard key={provider.id} {...provider} />
           ))}
@@ -68,7 +68,7 @@ const POSTypePage = ({
       </div>
       
       {filteredProviders.length > 6 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="mb-12">
           {filteredProviders.slice(6).map(provider => (
             <POSCard key={provider.id} {...provider} />
           ))}
