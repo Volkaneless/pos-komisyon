@@ -32,6 +32,18 @@ Allow: /pos/halkbank-pos
 Allow: /pos/teb-pos
 Allow: /pos/kuveyt-turk-pos
 
+# Specific priority for Sanal POS pages
+Allow: /pos-types/sanal
+Allow: /pos/iyzico-sanal-pos
+Allow: /pos/paytr-sanal
+Allow: /pos/param-sanal
+Allow: /pos/shopify-sanal
+Allow: /pos/vallet-sanal
+Allow: /pos/paycell-sanal
+Allow: /pos/moka-sanal
+Allow: /pos/tosla-sanal
+Allow: /pos/esnekpos-sanal
+
 # Important sections to index
 Allow: /blog/pos-cihazi-nedir-nasil-kullanilir
 Allow: /blog/pos-cihazi-nasil-alinir
@@ -39,6 +51,7 @@ Allow: /blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler
 Allow: /blog/pos-komisyon-oranlari-2025
 Allow: /blog/sanal-pos-fiziki-pos-karsilastirma
 Allow: /blog/pos-komisyon-oranlari
+Allow: /blog/sanal-pos-vs-fiziki-pos-hangisi-daha-avantajli
 
 # Sitemap location
 Sitemap: https://poskomisyon.com/sitemap.xml
