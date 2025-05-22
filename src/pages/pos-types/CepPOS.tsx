@@ -1,7 +1,17 @@
-import { Smartphone } from "lucide-react";
+
+import { Smartphone, ShieldCheck, WifiHigh, TrendingUp, Globe, Share2 } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ/CepPOSFAQ";
 import MetaTags from "@/components/MetaTags";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent
+} from "@/components/ui/accordion";
+import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
 
 const CepPOS = () => {
   const currentYear = new Date().getFullYear();
