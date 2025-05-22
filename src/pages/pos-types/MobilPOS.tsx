@@ -8,64 +8,62 @@ import MetaTags from "@/components/MetaTags";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+
 const MobilPOS = () => {
   const currentYear = new Date().getFullYear();
-  return <>
-      <MetaTags title={`Mobil POS Komisyon Oranları ${currentYear} - En Uygun Mobil POS Ücretleri`} description={`${currentYear} yılı güncel mobil POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun mobil POS çözümünü bulun.`} keywords="mobil pos komisyon oranları, mobil pos başvuru, mobil ödeme sistemleri, taşınabilir pos cihazları, mobil pos çözümleri, enpara mobil pos, paycell mobil pos" canonicalPath="/pos-types/mobil" structuredData={{
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": `Mobil POS Komisyon Oranları ${currentYear}`,
-      "description": `${currentYear} yılı güncel mobil POS komisyon oranları ve karşılaştırma araçları.`,
-      "url": "https://poskomisyon.com/pos-types/mobil",
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Enpara Mobil POS",
-          "url": "https://poskomisyon.com/pos/enpara-mobil-pos"
-        }, {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Paycell Mobil POS",
-          "url": "https://poskomisyon.com/pos/paycell-mobil-pos"
-        }, {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Vallet Mobil POS",
-          "url": "https://poskomisyon.com/pos/vallet-mobil-pos"
-        }]
-      }
-    }} />
+  
+  return (
+    <>
+      <MetaTags 
+        title={`Mobil POS Komisyon Oranları ${currentYear} - En Uygun Mobil POS Ücretleri`} 
+        description={`${currentYear} yılı güncel mobil POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun mobil POS çözümünü bulun.`} 
+        keywords="mobil pos komisyon oranları, mobil pos başvuru, mobil ödeme sistemleri, taşınabilir pos cihazları, mobil pos çözümleri, enpara mobil pos, paycell mobil pos" 
+        canonicalPath="/pos-types/mobil" 
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": `Mobil POS Komisyon Oranları ${currentYear}`,
+          "description": `${currentYear} yılı güncel mobil POS komisyon oranları ve karşılaştırma araçları.`,
+          "url": "https://poskomisyon.com/pos-types/mobil",
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Enpara Mobil POS",
+              "url": "https://poskomisyon.com/pos/enpara-mobil-pos"
+            }, {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Paycell Mobil POS",
+              "url": "https://poskomisyon.com/pos/paycell-mobil-pos"
+            }, {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Vallet Mobil POS",
+              "url": "https://poskomisyon.com/pos/vallet-mobil-pos"
+            }]
+          }
+        }} 
+      />
 
-      <div className="relative bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="container mx-auto px-4 pt-28 pb-16">
-          <div className="text-center mb-12 max-w-3xl mx-auto">
-            <div className="flex justify-center mb-4">
-              <Smartphone className="w-16 h-16 text-primary" />
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-              Mobil POS Komisyon Oranları {currentYear}
-            </h1>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              İşletmeniz için en uygun mobil ve taşınabilir POS çözümleri, komisyon oranları ve detaylı karşılaştırmalar
-            </p>
-            
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Mobil POS Karşılaştır
-              </Button>
-              <Button size="lg" variant="outline">
-                Komisyon Hesapla
-              </Button>
-            </div>
-          </div>
-        </div>
-        
-        <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
-      </div>
-
-      <POSTypePage title={`Mobil POS Komisyon Oranları ${currentYear}`} description="Mobil ve taşınabilir POS çözümleri için en uygun komisyon oranları ve karşılaştırmalar" type="Mobil (Taşınabilir) POS" Icon={Smartphone} whatIsContent="Mobil POS cihazları, işletmelerin hareket halindeyken ödeme almalarını sağlayan taşınabilir cihazlardır. Bu cihazlar, kablosuz internet veya mobil veri bağlantısı üzerinden çalışır ve kredi kartı ödemelerini güvenli bir şekilde işler." advantages={["Hareket halindeyken ödeme alma imkanı", "Kolay taşınabilirlik", "Düşük maliyetli çözüm", "Hızlı kurulum ve kullanım", "Tüm kredi kartlarıyla uyumluluk", "7/24 teknik destek", "Detaylı satış raporlaması", "Güvenli işlem altyapısı"]} />
+      <POSTypePage 
+        title="Mobil POS Komisyon Oranları"
+        description="Mobil ve taşınabilir POS çözümleri için en uygun komisyon oranları ve karşılaştırmalar" 
+        type="Mobil (Taşınabilir) POS" 
+        Icon={Smartphone} 
+        whatIsContent="Mobil POS cihazları, işletmelerin hareket halindeyken ödeme almalarını sağlayan taşınabilir cihazlardır. Bu cihazlar, kablosuz internet veya mobil veri bağlantısı üzerinden çalışır ve kredi kartı ödemelerini güvenli bir şekilde işler." 
+        advantages={[
+          "Hareket halindeyken ödeme alma imkanı", 
+          "Kolay taşınabilirlik", 
+          "Düşük maliyetli çözüm", 
+          "Hızlı kurulum ve kullanım", 
+          "Tüm kredi kartlarıyla uyumluluk", 
+          "7/24 teknik destek", 
+          "Detaylı satış raporlaması", 
+          "Güvenli işlem altyapısı"
+        ]} 
+      />
 
       <div className="container mx-auto px-4 py-16">
         
