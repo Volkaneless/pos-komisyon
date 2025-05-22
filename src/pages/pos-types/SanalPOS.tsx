@@ -36,16 +36,7 @@ const SanalPOS = () => {
   return <>
       <MetaTags title="Sanal POS Komisyon Oranları 2025 - En Uygun Sanal POS" description="2025 yılı güncel sanal POS komisyon oranları, karşılaştırma ve hesaplama araçları. E-ticaret işletmeniz için en uygun sanal POS çözümünü bulun." keywords="sanal pos komisyon oranları 2025, sanal pos başvuru, e-ticaret pos, online ödeme sistemleri, sanal pos entegrasyonu, e-ticaret ödeme çözümleri" canonicalPath="/pos-types/sanal" priority={20} structuredData={structuredData} />
 
-      <section className="bg-gradient-to-b from-primary-50 to-white pt-28 pb-16 px-4 py-[3px]">
-        <div className="container mx-auto max-w-6xl">
-          <div className="">
-            
-            <div className="order-1 md:order-2 flex justify-center">
-              
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <POSTypePage title="Sanal POS Komisyon Oranları 2025" description="E-ticaret ve online ödemeler için en uygun sanal POS çözümleri ve komisyon oranları" type="Sanal POS" Icon={Cloud} whatIsContent={<div className="prose prose-lg max-w-none mb-8">
             <h2 className="text-3xl font-bold mb-6" id="what-is">Sanal POS Nedir?</h2>
