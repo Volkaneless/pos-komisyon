@@ -9,11 +9,10 @@ import BankaPOSProviderCards from "@/components/pos-types/banka/BankaPOSProvider
 import MetaTags from "@/components/MetaTags";
 
 const BankaPOS = () => {
-  const currentYear = new Date().getFullYear();
   return (
     <>
       <MetaTags
-        title={`Banka POS Komisyon Oranları ${currentYear} | POS Compare`}
+        title="Banka POS Komisyon Oranları 2025 | POS Compare"
         description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
         keywords="banka pos, fiziksel pos, banka pos komisyon oranları 2025, pos karşılaştırma, pos cihazı ücretleri"
         canonicalPath="/pos-types/banka"
@@ -21,7 +20,7 @@ const BankaPOS = () => {
       />
       
       <POSTypePage
-        title="Banka POS Komisyon Oranları"
+        title="Banka POS Komisyon Oranları 2025"
         description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
         type="Banka POS"
         Icon={Banknote}
