@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet";
 import { Smartphone, CreditCard, ShieldCheck, Globe, WifiHigh, TrendingUp } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
@@ -273,6 +274,7 @@ const MobilPOS = () => {
           </div>
         </div>
       </div>
-    </>;
+    </>
+  );
 };
 export default MobilPOS;
