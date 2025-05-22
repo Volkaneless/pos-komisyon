@@ -20,8 +20,8 @@ const POSTypePage = ({
 }: POSTypePageProps) => {
   const filteredProviders = posProviders.filter(provider => provider.type === type);
   return <div className="container mx-auto px-4 py-12">
-      <div className="text-center mb-12">
-        <Icon className="w-16 h-16 mx-auto text-primary mb-6" />
+      <div className="text-center mb-12 px-0 mx-0 my-[45px] py-[19px]">
+        
         <h1 className="text-4xl font-bold mb-4">{title}</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">{description}</p>
       </div>
