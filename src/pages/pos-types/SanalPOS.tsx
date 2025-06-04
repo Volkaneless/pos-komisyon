@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { sanalPOSProviders } from "@/data/pos-types/sanalPOS";
 import POSCard from "@/components/POSCard";
 import FAQ from "@/components/FAQ";
@@ -146,7 +146,7 @@ const SanalPOS = () => {
   };
 
   // Apply filters whenever any filter changes
-  useState(() => {
+  useEffect(() => {
     applyFilters();
   }, [selectedProviders, selectedTypes, selectedCommissionRange, selectedMonthlyFee, searchTerm, sortBy]);
 
@@ -485,7 +485,7 @@ const FilterContent = ({
               <Checkbox
                 id={`provider-${provider}`}
                 checked={selectedProviders.includes(provider)}
-                onCheckedChange={() => onProviderChange(provider)}
+                onCheckedChange={(checked) => checked && onProviderChange(provider)}
               />
               <label
                 htmlFor={`provider-${provider}`}
@@ -510,7 +510,7 @@ const FilterContent = ({
               <Checkbox
                 id={`type-${type}`}
                 checked={selectedTypes.includes(type)}
-                onCheckedChange={() => onTypeChange(type)}
+                onCheckedChange={(checked) => checked && onTypeChange(type)}
               />
               <label
                 htmlFor={`type-${type}`}
