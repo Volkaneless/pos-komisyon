@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { sanalPOSProviders } from "@/data/pos-types/sanalPOS";
 import POSCard from "@/components/POSCard";
@@ -228,26 +227,182 @@ const SanalPOS = () => {
                   <SheetHeader>
                     <SheetTitle>Filtrele</SheetTitle>
                   </SheetHeader>
-                  <FilterContent 
-                    uniqueProviders={uniqueProviders}
-                    uniqueTypes={uniqueTypes}
-                    selectedProviders={selectedProviders}
-                    selectedTypes={selectedTypes}
-                    selectedCommissionRange={selectedCommissionRange}
-                    selectedMonthlyFee={selectedMonthlyFee}
-                    searchTerm={searchTerm}
-                    sortBy={sortBy}
-                    onProviderChange={handleProviderChange}
-                    onTypeChange={handleTypeChange}
-                    onCommissionRangeChange={setSelectedCommissionRange}
-                    onMonthlyFeeChange={setSelectedMonthlyFee}
-                    onSearchChange={setSearchTerm}
-                    onSortChange={setSortBy}
-                    onClearFilters={clearFilters}
-                    hasActiveFilters={hasActiveFilters}
-                    commissionRanges={commissionRanges}
-                    monthlyFeeOptions={monthlyFeeOptions}
-                  />
+                  <ScrollArea className="h-[calc(100vh-300px)]">
+                    <div className="space-y-6">
+                      {/* Search */}
+                      <div>
+                        <h3 className="font-medium text-gray-900 mb-3">Arama</h3>
+                        <div className="relative">
+                          <Search className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
+                          <Input
+                            placeholder="POS adı veya türü ara..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="pl-10"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Sort */}
+                      <div>
+                        <h3 className="font-medium text-gray-900 mb-3">Sıralama</h3>
+                        <Select value={sortBy} onValueChange={setSortBy}>
+                          <SelectTrigger>
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="name">İsme Göre</SelectItem>
+                            <SelectItem value="commission">Komisyon Oranına Göre</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      {/* Active Filters */}
+                      {hasActiveFilters && (
+                        <div>
+                          <h3 className="font-medium text-gray-900 mb-3">Aktif Filtreler</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {selectedProviders.map(provider => (
+                              <span key={provider} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                                {provider}
+                                <button
+                                  onClick={() => handleProviderChange(provider)}
+                                  className="hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
+                                >
+                                  <X className="w-3 h-3" />
+                                </button>
+                              </span>
+                            ))}
+                            {selectedTypes.map(type => (
+                              <span key={type} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                                {type}
+                                <button
+                                  onClick={() => handleTypeChange(type)}
+                                  className="hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
+                                >
+                                  <X className="w-3 h-3" />
+                                </button>
+                              </span>
+                            ))}
+                            {selectedCommissionRange && (
+                              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                                Komisyon: {commissionRanges.find(r => r.value === selectedCommissionRange)?.label}
+                                <button
+                                  onClick={() => setSelectedCommissionRange("")}
+                                  className="hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
+                                >
+                                  <X className="w-3 h-3" />
+                                </button>
+                              </span>
+                            )}
+                            {selectedMonthlyFee && (
+                              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                                Aidat: {monthlyFeeOptions.find(f => f.value === selectedMonthlyFee)?.label}
+                                <button
+                                  onClick={() => setSelectedMonthlyFee("")}
+                                  className="hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
+                                >
+                                  <X className="w-3 h-3" />
+                                </button>
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Commission Range Filter */}
+                      <div>
+                        <h3 className="font-medium text-gray-900 mb-3">Komisyon Oranı</h3>
+                        <Select value={selectedCommissionRange} onValueChange={setSelectedCommissionRange}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Komisyon aralığı seçin" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {commissionRanges.map(range => (
+                              <SelectItem key={range.value} value={range.value}>
+                                {range.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      {/* Monthly Fee Filter */}
+                      <div>
+                        <h3 className="font-medium text-gray-900 mb-3">Aylık Aidat</h3>
+                        <Select value={selectedMonthlyFee} onValueChange={setSelectedMonthlyFee}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Aidat aralığı seçin" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {monthlyFeeOptions.map(option => (
+                              <SelectItem key={option.value} value={option.value}>
+                                {option.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      {/* Provider Filters */}
+                      <div>
+                        <h3 className="font-medium text-gray-900 mb-3">Kurum</h3>
+                        <div className="space-y-3">
+                          {Object.entries(uniqueProviders).map(([provider, count]) => (
+                            <div key={provider} className="flex items-center space-x-3">
+                              <Checkbox
+                                id={`provider-${provider}`}
+                                checked={selectedProviders.includes(provider)}
+                                onCheckedChange={(checked) => {
+                                  if (checked === true) {
+                                    handleProviderChange(provider);
+                                  }
+                                }}
+                              />
+                              <label
+                                htmlFor={`provider-${provider}`}
+                                className="text-sm text-gray-700 cursor-pointer flex-1"
+                              >
+                                {provider}
+                              </label>
+                              <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                                {count}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Type Filters */}
+                      <div>
+                        <h3 className="font-medium text-gray-900 mb-3">POS Türü</h3>
+                        <div className="space-y-3">
+                          {Object.entries(uniqueTypes).map(([type, count]) => (
+                            <div key={type} className="flex items-center space-x-3">
+                              <Checkbox
+                                id={`type-${type}`}
+                                checked={selectedTypes.includes(type)}
+                                onCheckedChange={(checked) => {
+                                  if (checked === true) {
+                                    handleTypeChange(type);
+                                  }
+                                }}
+                              />
+                              <label
+                                htmlFor={`type-${type}`}
+                                className="text-sm text-gray-700 cursor-pointer flex-1"
+                              >
+                                {type}
+                              </label>
+                              <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                                {count}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </ScrollArea>
                 </SheetContent>
               </Sheet>
             </div>
