@@ -1,11 +1,10 @@
-
 interface SanalPOSHeaderProps {
   filteredCount: number;
 }
-
-const SanalPOSHeader = ({ filteredCount }: SanalPOSHeaderProps) => (
-  <div className="bg-white border-b sticky top-0 z-40">
-    <div className="container mx-auto px-4 py-6">
+const SanalPOSHeader = ({
+  filteredCount
+}: SanalPOSHeaderProps) => <div className="bg-white border-b sticky top-0 z-40">
+    <div className="container mx-auto px-0 py-[183px] my-[134px]">
       <div className="max-w-4xl">
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
           Sanal POS Başvurusu - 2025 Komisyon Oranları
@@ -23,7 +22,5 @@ const SanalPOSHeader = ({ filteredCount }: SanalPOSHeaderProps) => (
         </div>
       </div>
     </div>
-  </div>
-);
-
+  </div>;
 export default SanalPOSHeader;
