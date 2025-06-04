@@ -7,14 +7,20 @@ import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
 import MetaTags from "@/components/MetaTags";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Filter, X } from "lucide-react";
+import { Filter, X, Search, ChevronDown } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const SanalPOS = () => {
   const [filteredProviders, setFilteredProviders] = useState(sanalPOSProviders);
   const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [selectedCommissionRange, setSelectedCommissionRange] = useState<string>("");
+  const [selectedMonthlyFee, setSelectedMonthlyFee] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState<string>("name");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   // Extract unique provider names (first word) and count
@@ -30,18 +36,85 @@ const SanalPOS = () => {
     return acc;
   }, {} as Record<string, number>);
 
-  const handleFilter = () => {
+  // Commission range options
+  const commissionRanges = [
+    { label: "0% - 1%", value: "0-1", min: 0, max: 1 },
+    { label: "1% - 2%", value: "1-2", min: 1, max: 2 },
+    { label: "2% - 3%", value: "2-3", min: 2, max: 3 },
+    { label: "3%+", value: "3+", min: 3, max: 100 }
+  ];
+
+  // Monthly fee options
+  const monthlyFeeOptions = [
+    { label: "Ücretsiz", value: "free" },
+    { label: "1-50 TL", value: "1-50" },
+    { label: "50-100 TL", value: "50-100" },
+    { label: "100 TL+", value: "100+" }
+  ];
+
+  const applyFilters = () => {
     let filtered = sanalPOSProviders;
     
+    // Search filter
+    if (searchTerm) {
+      filtered = filtered.filter(provider => 
+        provider.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        provider.type.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
+    // Provider filter
     if (selectedProviders.length > 0) {
       filtered = filtered.filter(provider => 
         selectedProviders.some(p => provider.name.toLowerCase().includes(p.toLowerCase()))
       );
     }
     
+    // Type filter
     if (selectedTypes.length > 0) {
       filtered = filtered.filter(provider => selectedTypes.includes(provider.type));
     }
+
+    // Commission range filter
+    if (selectedCommissionRange) {
+      const range = commissionRanges.find(r => r.value === selectedCommissionRange);
+      if (range) {
+        filtered = filtered.filter(provider => {
+          const commission = parseFloat(provider.commission_rate.replace('%', ''));
+          return commission >= range.min && commission <= range.max;
+        });
+      }
+    }
+
+    // Monthly fee filter
+    if (selectedMonthlyFee) {
+      filtered = filtered.filter(provider => {
+        const fee = provider.monthly_fee.toLowerCase();
+        switch (selectedMonthlyFee) {
+          case "free":
+            return fee.includes("ücretsiz") || fee.includes("0");
+          case "1-50":
+            return !fee.includes("ücretsiz") && !fee.includes("0");
+          case "50-100":
+            return !fee.includes("ücretsiz") && !fee.includes("0");
+          case "100+":
+            return !fee.includes("ücretsiz") && !fee.includes("0");
+          default:
+            return true;
+        }
+      });
+    }
+
+    // Sort
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case "commission":
+          return parseFloat(a.commission_rate.replace('%', '')) - parseFloat(b.commission_rate.replace('%', ''));
+        case "name":
+        default:
+          return a.name.localeCompare(b.name);
+      }
+    });
     
     setFilteredProviders(filtered);
   };
@@ -52,21 +125,6 @@ const SanalPOS = () => {
       : [...selectedProviders, provider];
     
     setSelectedProviders(newSelected);
-    
-    // Apply filter immediately
-    let filtered = sanalPOSProviders;
-    
-    if (newSelected.length > 0) {
-      filtered = filtered.filter(p => 
-        newSelected.some(sp => p.name.toLowerCase().includes(sp.toLowerCase()))
-      );
-    }
-    
-    if (selectedTypes.length > 0) {
-      filtered = filtered.filter(p => selectedTypes.includes(p.type));
-    }
-    
-    setFilteredProviders(filtered);
   };
 
   const handleTypeChange = (type: string) => {
@@ -75,30 +133,25 @@ const SanalPOS = () => {
       : [...selectedTypes, type];
     
     setSelectedTypes(newSelected);
-    
-    // Apply filter immediately
-    let filtered = sanalPOSProviders;
-    
-    if (selectedProviders.length > 0) {
-      filtered = filtered.filter(p => 
-        selectedProviders.some(sp => p.name.toLowerCase().includes(sp.toLowerCase()))
-      );
-    }
-    
-    if (newSelected.length > 0) {
-      filtered = filtered.filter(p => newSelected.includes(p.type));
-    }
-    
-    setFilteredProviders(filtered);
   };
 
   const clearFilters = () => {
     setSelectedProviders([]);
     setSelectedTypes([]);
+    setSelectedCommissionRange("");
+    setSelectedMonthlyFee("");
+    setSearchTerm("");
+    setSortBy("name");
     setFilteredProviders(sanalPOSProviders);
   };
 
-  const hasActiveFilters = selectedProviders.length > 0 || selectedTypes.length > 0;
+  // Apply filters whenever any filter changes
+  useState(() => {
+    applyFilters();
+  }, [selectedProviders, selectedTypes, selectedCommissionRange, selectedMonthlyFee, searchTerm, sortBy]);
+
+  const hasActiveFilters = selectedProviders.length > 0 || selectedTypes.length > 0 || 
+    selectedCommissionRange || selectedMonthlyFee || searchTerm;
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -132,16 +185,15 @@ const SanalPOS = () => {
       />
 
       <div className="min-h-screen bg-gray-50">
-        {/* SEO Optimized Header */}
-        <div className="bg-white border-b">
-          <div className="container mx-auto px-4 py-8">
+        {/* Fixed Header */}
+        <div className="bg-white border-b sticky top-0 z-40">
+          <div className="container mx-auto px-4 py-6">
             <div className="max-w-4xl">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
                 Sanal POS Başvurusu - 2025 Komisyon Oranları
               </h1>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                E-ticaret siteniz için en uygun sanal POS çözümünü bulun. Güncel komisyon oranlarını karşılaştırın, 
-                avantajları inceleyin ve hemen başvurun. 2025 yılının en güncel sanal POS seçenekleri burada.
+              <p className="text-base text-gray-600 mb-4 leading-relaxed">
+                E-ticaret siteniz için en uygun sanal POS çözümünü bulun. Güncel komisyon oranlarını karşılaştırın ve hemen başvurun.
               </p>
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">
@@ -167,7 +219,7 @@ const SanalPOS = () => {
                     Filtrele
                     {hasActiveFilters && (
                       <span className="ml-2 bg-primary text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
-                        {selectedProviders.length + selectedTypes.length}
+                        {[selectedProviders.length, selectedTypes.length, selectedCommissionRange ? 1 : 0, selectedMonthlyFee ? 1 : 0, searchTerm ? 1 : 0].reduce((a, b) => a + b, 0)}
                       </span>
                     )}
                   </Button>
@@ -181,10 +233,20 @@ const SanalPOS = () => {
                     uniqueTypes={uniqueTypes}
                     selectedProviders={selectedProviders}
                     selectedTypes={selectedTypes}
+                    selectedCommissionRange={selectedCommissionRange}
+                    selectedMonthlyFee={selectedMonthlyFee}
+                    searchTerm={searchTerm}
+                    sortBy={sortBy}
                     onProviderChange={handleProviderChange}
                     onTypeChange={handleTypeChange}
+                    onCommissionRangeChange={setSelectedCommissionRange}
+                    onMonthlyFeeChange={setSelectedMonthlyFee}
+                    onSearchChange={setSearchTerm}
+                    onSortChange={setSortBy}
                     onClearFilters={clearFilters}
                     hasActiveFilters={hasActiveFilters}
+                    commissionRanges={commissionRanges}
+                    monthlyFeeOptions={monthlyFeeOptions}
                   />
                 </SheetContent>
               </Sheet>
@@ -192,7 +254,7 @@ const SanalPOS = () => {
 
             {/* Desktop Sidebar */}
             <div className="hidden lg:block w-80 flex-shrink-0">
-              <div className="bg-white rounded-lg shadow-sm border p-6 sticky top-8">
+              <div className="bg-white rounded-lg shadow-sm border p-6 sticky top-24">
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-xl font-semibold text-gray-900">Filtreler</h2>
                   {hasActiveFilters && (
@@ -207,10 +269,20 @@ const SanalPOS = () => {
                   uniqueTypes={uniqueTypes}
                   selectedProviders={selectedProviders}
                   selectedTypes={selectedTypes}
+                  selectedCommissionRange={selectedCommissionRange}
+                  selectedMonthlyFee={selectedMonthlyFee}
+                  searchTerm={searchTerm}
+                  sortBy={sortBy}
                   onProviderChange={handleProviderChange}
                   onTypeChange={handleTypeChange}
+                  onCommissionRangeChange={setSelectedCommissionRange}
+                  onMonthlyFeeChange={setSelectedMonthlyFee}
+                  onSearchChange={setSearchTerm}
+                  onSortChange={setSortBy}
                   onClearFilters={clearFilters}
                   hasActiveFilters={hasActiveFilters}
+                  commissionRanges={commissionRanges}
+                  monthlyFeeOptions={monthlyFeeOptions}
                 />
               </div>
             </div>
@@ -247,28 +319,76 @@ const SanalPOS = () => {
   );
 };
 
-// Filter Content Component
+// Enhanced Filter Content Component
 const FilterContent = ({ 
   uniqueProviders, 
   uniqueTypes, 
   selectedProviders, 
   selectedTypes, 
+  selectedCommissionRange,
+  selectedMonthlyFee,
+  searchTerm,
+  sortBy,
   onProviderChange, 
   onTypeChange, 
+  onCommissionRangeChange,
+  onMonthlyFeeChange,
+  onSearchChange,
+  onSortChange,
   onClearFilters, 
-  hasActiveFilters 
+  hasActiveFilters,
+  commissionRanges,
+  monthlyFeeOptions 
 }: {
   uniqueProviders: Record<string, number>;
   uniqueTypes: Record<string, number>;
   selectedProviders: string[];
   selectedTypes: string[];
+  selectedCommissionRange: string;
+  selectedMonthlyFee: string;
+  searchTerm: string;
+  sortBy: string;
   onProviderChange: (provider: string) => void;
   onTypeChange: (type: string) => void;
+  onCommissionRangeChange: (range: string) => void;
+  onMonthlyFeeChange: (fee: string) => void;
+  onSearchChange: (search: string) => void;
+  onSortChange: (sort: string) => void;
   onClearFilters: () => void;
   hasActiveFilters: boolean;
+  commissionRanges: Array<{label: string; value: string; min: number; max: number}>;
+  monthlyFeeOptions: Array<{label: string; value: string}>;
 }) => (
-  <ScrollArea className="h-[calc(100vh-200px)]">
+  <ScrollArea className="h-[calc(100vh-300px)]">
     <div className="space-y-6">
+      {/* Search */}
+      <div>
+        <h3 className="font-medium text-gray-900 mb-3">Arama</h3>
+        <div className="relative">
+          <Search className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
+          <Input
+            placeholder="POS adı veya türü ara..."
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
+            className="pl-10"
+          />
+        </div>
+      </div>
+
+      {/* Sort */}
+      <div>
+        <h3 className="font-medium text-gray-900 mb-3">Sıralama</h3>
+        <Select value={sortBy} onValueChange={onSortChange}>
+          <SelectTrigger>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="name">İsme Göre</SelectItem>
+            <SelectItem value="commission">Komisyon Oranına Göre</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
       {/* Active Filters */}
       {hasActiveFilters && (
         <div>
@@ -296,9 +416,65 @@ const FilterContent = ({
                 </button>
               </span>
             ))}
+            {selectedCommissionRange && (
+              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                Komisyon: {commissionRanges.find(r => r.value === selectedCommissionRange)?.label}
+                <button
+                  onClick={() => onCommissionRangeChange("")}
+                  className="hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              </span>
+            )}
+            {selectedMonthlyFee && (
+              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                Aidat: {monthlyFeeOptions.find(f => f.value === selectedMonthlyFee)?.label}
+                <button
+                  onClick={() => onMonthlyFeeChange("")}
+                  className="hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              </span>
+            )}
           </div>
         </div>
       )}
+
+      {/* Commission Range Filter */}
+      <div>
+        <h3 className="font-medium text-gray-900 mb-3">Komisyon Oranı</h3>
+        <Select value={selectedCommissionRange} onValueChange={onCommissionRangeChange}>
+          <SelectTrigger>
+            <SelectValue placeholder="Komisyon aralığı seçin" />
+          </SelectTrigger>
+          <SelectContent>
+            {commissionRanges.map(range => (
+              <SelectItem key={range.value} value={range.value}>
+                {range.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Monthly Fee Filter */}
+      <div>
+        <h3 className="font-medium text-gray-900 mb-3">Aylık Aidat</h3>
+        <Select value={selectedMonthlyFee} onValueChange={onMonthlyFeeChange}>
+          <SelectTrigger>
+            <SelectValue placeholder="Aidat aralığı seçin" />
+          </SelectTrigger>
+          <SelectContent>
+            {monthlyFeeOptions.map(option => (
+              <SelectItem key={option.value} value={option.value}>
+                {option.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
 
       {/* Provider Filters */}
       <div>
