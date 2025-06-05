@@ -416,11 +416,8 @@ const FilterContent = ({
                   id={`provider-${provider}`}
                   checked={selectedProviders.includes(provider)}
                   onCheckedChange={(checked) => {
-                    if (!!checked) {
-                      onProviderChange(provider);
-                    } else {
-                      onProviderChange(provider);
-                    }
+                    const isChecked = checked === true;
+                    onProviderChange(provider);
                   }}
                 />
                 <label
@@ -454,11 +451,8 @@ const FilterContent = ({
                   id={`type-${type}`}
                   checked={selectedTypes.includes(type)}
                   onCheckedChange={(checked) => {
-                    if (!!checked) {
-                      onTypeChange(type);
-                    } else {
-                      onTypeChange(type);
-                    }
+                    const isChecked = checked === true;
+                    onTypeChange(type);
                   }}
                 />
                 <label
