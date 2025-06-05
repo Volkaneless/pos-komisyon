@@ -131,7 +131,7 @@ const SanalPOS = () => {
       <div className="min-h-screen bg-gray-50">
         {/* SEO Optimized Header */}
         <div className="bg-white border-b">
-          <div className="container mx-auto px-4 py-16 pt-24">
+          <div className="container mx-auto px-4 py-16 pt-32">
             <div className="max-w-4xl">
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Sanal POS Başvurusu - 2025 Komisyon Oranları
@@ -416,7 +416,7 @@ const FilterContent = ({
                   id={`provider-${provider}`}
                   checked={selectedProviders.includes(provider)}
                   onCheckedChange={(checked) => {
-                    if (checked) {
+                    if (checked === true) {
                       onProviderChange(provider);
                     } else {
                       onProviderChange(provider);
@@ -454,7 +454,7 @@ const FilterContent = ({
                   id={`type-${type}`}
                   checked={selectedTypes.includes(type)}
                   onCheckedChange={(checked) => {
-                    if (checked) {
+                    if (checked === true) {
                       onTypeChange(type);
                     } else {
                       onTypeChange(type);
