@@ -134,9 +134,9 @@ const SanalPOS = () => {
       <div className="min-h-screen bg-gray-50">
         {/* SEO Optimized Header */}
         <div className="bg-white border-b">
-          <div className="container mx-auto px-4 py-8">
+          <div className="container mx-auto px-4 py-12 pt-16">
             <div className="max-w-4xl">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 mt-6">
                 Sanal POS Başvurusu - 2025 Komisyon Oranları
               </h1>
               <p className="text-lg text-gray-600 mb-4 leading-relaxed">
@@ -194,7 +194,10 @@ const SanalPOS = () => {
             <div className="hidden lg:block w-80 flex-shrink-0">
               <div className="bg-white rounded-lg shadow-sm border p-6 sticky top-8">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-xl font-semibold text-gray-900">Filtreler</h2>
+                  <h2 className="text-xl font-semibold text-gray-900 flex items-center">
+                    <Filter className="w-5 h-5 mr-2 text-primary" />
+                    Filtreler
+                  </h2>
                   {hasActiveFilters && (
                     <Button variant="ghost" size="sm" onClick={clearFilters}>
                       <X className="w-4 h-4 mr-1" />
@@ -202,6 +205,21 @@ const SanalPOS = () => {
                     </Button>
                   )}
                 </div>
+                
+                {/* Quick Stats */}
+                <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                  <div className="grid grid-cols-2 gap-4 text-center">
+                    <div>
+                      <div className="text-xl font-bold text-primary">{filteredProviders.length}</div>
+                      <div className="text-xs text-gray-600">Toplam Seçenek</div>
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-primary">{Object.keys(uniqueProviders).length}</div>
+                      <div className="text-xs text-gray-600">Farklı Kurum</div>
+                    </div>
+                  </div>
+                </div>
+
                 <FilterContent 
                   uniqueProviders={uniqueProviders}
                   uniqueTypes={uniqueTypes}
@@ -217,6 +235,54 @@ const SanalPOS = () => {
 
             {/* POS Cards */}
             <div className="flex-1">
+              {/* Result Header */}
+              <div className="mb-6 flex items-center justify-between bg-white p-4 rounded-lg border">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {filteredProviders.length} Sanal POS Seçeneği Bulundu
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    {hasActiveFilters ? 'Filtrelere göre sonuçlar' : 'Tüm sanal POS seçenekleri'}
+                  </p>
+                </div>
+                {hasActiveFilters && (
+                  <Button variant="outline" size="sm" onClick={clearFilters}>
+                    Filtreleri Temizle
+                  </Button>
+                )}
+              </div>
+
+              {/* Active Filters Display */}
+              {hasActiveFilters && (
+                <div className="mb-6 bg-white p-4 rounded-lg border">
+                  <h4 className="text-sm font-medium text-gray-700 mb-3">Aktif Filtreler:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProviders.map(provider => (
+                      <span key={provider} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                        {provider}
+                        <button
+                          onClick={() => handleProviderChange(provider)}
+                          className="hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
+                        >
+                          <X className="w-3 h-3" />
+                        </button>
+                      </span>
+                    ))}
+                    {selectedTypes.map(type => (
+                      <span key={type} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                        {type}
+                        <button
+                          onClick={() => handleTypeChange(type)}
+                          className="hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
+                        >
+                          <X className="w-3 h-3" />
+                        </button>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="space-y-4">
                 {filteredProviders.map(provider => (
                   <POSCard key={provider.id} {...provider} />
@@ -224,9 +290,13 @@ const SanalPOS = () => {
               </div>
 
               {filteredProviders.length === 0 && (
-                <div className="text-center py-12">
-                  <p className="text-gray-500 text-lg mb-4">Seçtiğiniz kriterlere uygun POS bulunamadı.</p>
-                  <Button onClick={clearFilters}>Filtreleri Temizle</Button>
+                <div className="text-center py-12 bg-white rounded-lg border">
+                  <div className="max-w-md mx-auto">
+                    <Filter className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">Sonuç Bulunamadı</h3>
+                    <p className="text-gray-500 mb-4">Seçtiğiniz kriterlere uygun POS bulunamadı. Lütfen filtrelerinizi gözden geçirin.</p>
+                    <Button onClick={clearFilters}>Filtreleri Temizle</Button>
+                  </div>
                 </div>
               )}
             </div>
@@ -269,47 +339,29 @@ const FilterContent = ({
 }) => (
   <ScrollArea className="h-[calc(100vh-200px)]">
     <div className="space-y-6">
-      {/* Active Filters */}
-      {hasActiveFilters && (
-        <div>
-          <h3 className="font-medium text-gray-900 mb-3">Aktif Filtreler</h3>
-          <div className="flex flex-wrap gap-2">
-            {selectedProviders.map(provider => (
-              <span key={provider} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                {provider}
-                <button
-                  onClick={() => onProviderChange(provider)}
-                  className="hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
-                >
-                  <X className="w-3 h-3" />
-                </button>
-              </span>
-            ))}
-            {selectedTypes.map(type => (
-              <span key={type} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                {type}
-                <button
-                  onClick={() => onTypeChange(type)}
-                  className="hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
-                >
-                  <X className="w-3 h-3" />
-                </button>
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-
       {/* Provider Filters */}
       <div>
-        <h3 className="font-medium text-gray-900 mb-3">Kurum</h3>
-        <div className="space-y-3">
-          {Object.entries(uniqueProviders).map(([provider, count]) => (
-            <div key={provider} className="flex items-center space-x-3">
+        <h3 className="font-medium text-gray-900 mb-3 flex items-center justify-between">
+          Kurum
+          <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+            {Object.keys(uniqueProviders).length} Kurum
+          </span>
+        </h3>
+        <div className="space-y-3 max-h-48 overflow-y-auto">
+          {Object.entries(uniqueProviders)
+            .sort(([a], [b]) => a.localeCompare(b))
+            .map(([provider, count]) => (
+            <div key={provider} className="flex items-center space-x-3 hover:bg-gray-50 p-1 rounded">
               <Checkbox
                 id={`provider-${provider}`}
                 checked={selectedProviders.includes(provider)}
-                onCheckedChange={() => onProviderChange(provider)}
+                onCheckedChange={(checked) => {
+                  if (checked) {
+                    onProviderChange(provider);
+                  } else {
+                    onProviderChange(provider);
+                  }
+                }}
               />
               <label
                 htmlFor={`provider-${provider}`}
@@ -327,14 +379,27 @@ const FilterContent = ({
 
       {/* Type Filters */}
       <div>
-        <h3 className="font-medium text-gray-900 mb-3">POS Türü</h3>
+        <h3 className="font-medium text-gray-900 mb-3 flex items-center justify-between">
+          POS Türü
+          <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+            {Object.keys(uniqueTypes).length} Tür
+          </span>
+        </h3>
         <div className="space-y-3">
-          {Object.entries(uniqueTypes).map(([type, count]) => (
-            <div key={type} className="flex items-center space-x-3">
+          {Object.entries(uniqueTypes)
+            .sort(([a], [b]) => a.localeCompare(b))
+            .map(([type, count]) => (
+            <div key={type} className="flex items-center space-x-3 hover:bg-gray-50 p-1 rounded">
               <Checkbox
                 id={`type-${type}`}
                 checked={selectedTypes.includes(type)}
-                onCheckedChange={() => onTypeChange(type)}
+                onCheckedChange={(checked) => {
+                  if (checked) {
+                    onTypeChange(type);
+                  } else {
+                    onTypeChange(type);
+                  }
+                }}
               />
               <label
                 htmlFor={`type-${type}`}
@@ -349,6 +414,24 @@ const FilterContent = ({
           ))}
         </div>
       </div>
+
+      {/* Filter Summary */}
+      {hasActiveFilters && (
+        <div className="border-t pt-4">
+          <div className="text-sm text-gray-600 mb-2">
+            Toplam {selectedProviders.length + selectedTypes.length} filtre aktif
+          </div>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={onClearFilters}
+            className="w-full"
+          >
+            <X className="w-4 h-4 mr-2" />
+            Tüm Filtreleri Temizle
+          </Button>
+        </div>
+      )}
     </div>
   </ScrollArea>
 );
