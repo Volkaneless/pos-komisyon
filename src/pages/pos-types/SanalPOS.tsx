@@ -416,9 +416,9 @@ const FilterContent = ({
                   id={`provider-${provider}`}
                   checked={selectedProviders.includes(provider)}
                   onCheckedChange={(checked) => {
-                    if (checked === true) {
+                    if (checked) {
                       onProviderChange(provider);
-                    } else if (checked === false) {
+                    } else {
                       onProviderChange(provider);
                     }
                   }}
@@ -454,9 +454,9 @@ const FilterContent = ({
                   id={`type-${type}`}
                   checked={selectedTypes.includes(type)}
                   onCheckedChange={(checked) => {
-                    if (checked === true) {
+                    if (checked) {
                       onTypeChange(type);
-                    } else if (checked === false) {
+                    } else {
                       onTypeChange(type);
                     }
                   }}
