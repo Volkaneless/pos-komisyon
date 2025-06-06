@@ -70,7 +70,9 @@ const FilterContent = ({
                   id={`provider-${provider}`}
                   checked={selectedProviders.includes(provider)}
                   onCheckedChange={(checked) => {
-                    if (checked === true || checked === false) {
+                    if (checked === true) {
+                      onProviderChange(provider);
+                    } else if (checked === false) {
                       onProviderChange(provider);
                     }
                   }}
@@ -106,7 +108,9 @@ const FilterContent = ({
                   id={`type-${type}`}
                   checked={selectedTypes.includes(type)}
                   onCheckedChange={(checked) => {
-                    if (checked === true || checked === false) {
+                    if (checked === true) {
+                      onTypeChange(type);
+                    } else if (checked === false) {
                       onTypeChange(type);
                     }
                   }}

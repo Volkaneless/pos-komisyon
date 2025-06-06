@@ -144,7 +144,16 @@ const SanalPOS = () => {
 
               <div className="space-y-4">
                 {filteredProviders.map(provider => (
-                  <POSCard key={provider.id} {...provider} />
+                  <POSCard 
+                    key={provider.id} 
+                    id={provider.id}
+                    logo={provider.logo}
+                    name={provider.name}
+                    type={provider.type}
+                    monthly_fee={provider.monthly_fee}
+                    commission_rate={provider.commission_rate}
+                    features={provider.features}
+                  />
                 ))}
               </div>
 
