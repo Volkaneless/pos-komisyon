@@ -1,64 +1,569 @@
 
-import { Banknote } from "lucide-react";
-import POSTypePage from "@/components/pos-types/POSTypePage";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import BankaPOSFeatures from "@/components/pos-types/banka/BankaPOSFeatures";
-import BankaPOSFAQ from "@/components/pos-types/banka/BankaPOSFAQ";
-import BankaPOSAgreements from "@/components/pos-types/banka/BankaPOSAgreements";
-import BankaPOSProviderCards from "@/components/pos-types/banka/BankaPOSProviderCards";
+import { useState } from "react";
+import { bankaPOSProviders } from "@/data/pos-types/bankaPOS";
+import POSCard from "@/components/POSCard";
+import FAQ from "@/components/FAQ";
+import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
 import MetaTags from "@/components/MetaTags";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Filter, X, Search, TrendingUp, Building, Banknote } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Slider } from "@/components/ui/slider";
 
 const BankaPOS = () => {
+  const [filteredProviders, setFilteredProviders] = useState(bankaPOSProviders);
+  const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [commissionRange, setCommissionRange] = useState<number[]>([0, 3]);
+
+  // Extract unique provider names (first word) and count
+  const uniqueProviders = bankaPOSProviders.reduce((acc, curr) => {
+    const name = curr.name.split(" ")[0];
+    acc[name] = (acc[name] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+
+  // Extract unique types and count
+  const uniqueTypes = bankaPOSProviders.reduce((acc, curr) => {
+    acc[curr.type] = (acc[curr.type] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+
+  // Calculate commission range
+  const allCommissions = bankaPOSProviders.map(p => parseFloat(p.commission_rate));
+  const minCommission = Math.min(...allCommissions);
+  const maxCommission = Math.max(...allCommissions);
+
+  const applyFilters = (providers: string[], types: string[], search: string, commissionFilter: number[]) => {
+    let filtered = bankaPOSProviders;
+    
+    // Apply provider filter
+    if (providers.length > 0) {
+      filtered = filtered.filter(provider => 
+        providers.some(p => provider.name.toLowerCase().includes(p.toLowerCase()))
+      );
+    }
+    
+    // Apply type filter
+    if (types.length > 0) {
+      filtered = filtered.filter(provider => types.includes(provider.type));
+    }
+
+    // Apply search filter
+    if (search.trim()) {
+      const searchLower = search.toLowerCase().trim();
+      filtered = filtered.filter(provider => 
+        provider.name.toLowerCase().includes(searchLower) ||
+        provider.type.toLowerCase().includes(searchLower) ||
+        provider.commission_rate.toString().includes(searchLower)
+      );
+    }
+
+    // Apply commission filter
+    filtered = filtered.filter(provider => {
+      const commission = parseFloat(provider.commission_rate);
+      return commission >= commissionFilter[0] && commission <= commissionFilter[1];
+    });
+    
+    setFilteredProviders(filtered);
+  };
+
+  const handleProviderChange = (provider: string) => {
+    const newSelected = selectedProviders.includes(provider)
+      ? selectedProviders.filter(p => p !== provider)
+      : [...selectedProviders, provider];
+    
+    setSelectedProviders(newSelected);
+    applyFilters(newSelected, selectedTypes, searchTerm, commissionRange);
+  };
+
+  const handleTypeChange = (type: string) => {
+    const newSelected = selectedTypes.includes(type)
+      ? selectedTypes.filter(t => t !== type)
+      : [...selectedTypes, type];
+    
+    setSelectedTypes(newSelected);
+    applyFilters(selectedProviders, newSelected, searchTerm, commissionRange);
+  };
+
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
+    applyFilters(selectedProviders, selectedTypes, value, commissionRange);
+  };
+
+  const handleCommissionChange = (value: number[]) => {
+    setCommissionRange(value);
+    applyFilters(selectedProviders, selectedTypes, searchTerm, value);
+  };
+
+  const clearFilters = () => {
+    setSelectedProviders([]);
+    setSelectedTypes([]);
+    setSearchTerm("");
+    setCommissionRange([minCommission, maxCommission]);
+    setFilteredProviders(bankaPOSProviders);
+  };
+
+  const hasActiveFilters = selectedProviders.length > 0 || selectedTypes.length > 0 || searchTerm.trim() || 
+    (commissionRange[0] !== minCommission || commissionRange[1] !== maxCommission);
+
+  // Calculate statistics
+  const avgCommission = (filteredProviders.reduce((sum, p) => sum + parseFloat(p.commission_rate), 0) / filteredProviders.length).toFixed(2);
+  const lowestCommission = Math.min(...filteredProviders.map(p => parseFloat(p.commission_rate))).toFixed(2);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Banka POS Komisyon Oranları 2025 - Güncel Karşılaştırma",
+    "description": "2025 yılı güncel banka POS komisyon oranları ve başvuru seçenekleri. İşletmeniz için en uygun banka POS çözümünü bulun.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": bankaPOSProviders.length,
+      "itemListElement": bankaPOSProviders.map((provider, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "FinancialProduct",
+          "name": provider.name,
+          "description": `${provider.name} banka POS çözümü - %${provider.commission_rate} komisyon oranı`
+        }
+      }))
+    }
+  };
+
   return (
     <>
       <MetaTags
-        title="Banka POS Komisyon Oranları 2025 | POS Compare"
-        description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
-        keywords="banka pos, fiziksel pos, banka pos komisyon oranları 2025, pos karşılaştırma, pos cihazı ücretleri"
+        title="Banka POS Komisyon Oranları 2025 - Güncel Karşılaştırma"
+        description="2025 yılı güncel banka POS komisyon oranları ve başvuru seçenekleri. İşletmeniz için en uygun banka POS çözümünü bulun ve hemen başvurun."
+        keywords="banka pos komisyon oranları 2025, fiziksel pos, banka pos başvuru, pos karşılaştırma, pos cihazı ücretleri"
         canonicalPath="/pos-types/banka"
         priority={20}
-      />
-      
-      <POSTypePage
-        title="Banka POS Komisyon Oranları 2025"
-        description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
-        type="Banka POS"
-        Icon={Banknote}
-        whatIsContent="Banka POS'ları, bankaların işletmelere sunduğu güvenilir ödeme çözümleridir. Yüksek işlem hacmi ve çoklu ödeme seçenekleri sunar."
-        advantages={[
-          "Güvenilir banka altyapısı",
-          "7/24 teknik destek",
-          "Farklı kart ve taksit seçenekleri",
-          "Kapsamlı raporlama özellikleri",
-          "Geniş servis ağı"
-        ]}
+        structuredData={structuredData}
       />
 
-      <div className="container mx-auto px-4 py-8">
-        <Tabs defaultValue="features" className="mb-12">
-          <TabsList className="w-full justify-start space-x-4 border-b rounded-none">
-            <TabsTrigger value="features">Özellikler</TabsTrigger>
-            <TabsTrigger value="faq">Sık Sorulan Sorular</TabsTrigger>
-            <TabsTrigger value="agreements">Özel Anlaşmalar</TabsTrigger>
-          </TabsList>
+      <div className="min-h-screen bg-gray-50">
+        {/* SEO Optimized Header */}
+        <div className="bg-white border-b">
+          <div className="container mx-auto px-4 py-16 pt-32">
+            <div className="max-w-4xl">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                <Banknote className="w-10 h-10 text-primary" />
+                Banka POS Komisyon Oranları 2025
+              </h1>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü 
+                kolayca bulun. Güvenilir banka altyapısı ile profesyonel ödeme çözümleri.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div className="bg-primary/10 text-primary px-3 py-2 rounded-lg text-center">
+                  <div className="font-semibold">{filteredProviders.length}</div>
+                  <div className="text-xs">Banka POS</div>
+                </div>
+                <div className="bg-green-50 text-green-700 px-3 py-2 rounded-lg text-center">
+                  <div className="font-semibold">%{lowestCommission}</div>
+                  <div className="text-xs">En Düşük Komisyon</div>
+                </div>
+                <div className="bg-blue-50 text-blue-700 px-3 py-2 rounded-lg text-center">
+                  <div className="font-semibold">%{avgCommission}</div>
+                  <div className="text-xs">Ortalama Komisyon</div>
+                </div>
+                <div className="bg-purple-50 text-purple-700 px-3 py-2 rounded-lg text-center">
+                  <div className="font-semibold">{Object.keys(uniqueProviders).length}</div>
+                  <div className="text-xs">Farklı Banka</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <TabsContent value="features" className="mt-6">
-            <BankaPOSFeatures />
-          </TabsContent>
+        {/* Main Content */}
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Mobile Filter Button */}
+            <div className="lg:hidden">
+              <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="outline" className="w-full relative">
+                    <Filter className="w-4 h-4 mr-2" />
+                    Filtrele
+                    {hasActiveFilters && (
+                      <Badge className="ml-2 h-5 min-w-5 p-0 flex items-center justify-center text-xs">
+                        {selectedProviders.length + selectedTypes.length + (searchTerm ? 1 : 0) + (commissionRange[0] !== minCommission || commissionRange[1] !== maxCommission ? 1 : 0)}
+                      </Badge>
+                    )}
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-80 p-0">
+                  <SheetHeader className="p-6 border-b">
+                    <SheetTitle className="flex items-center gap-2">
+                      <Filter className="w-5 h-5" />
+                      Filtreler
+                    </SheetTitle>
+                  </SheetHeader>
+                  <FilterContent 
+                    uniqueProviders={uniqueProviders}
+                    uniqueTypes={uniqueTypes}
+                    selectedProviders={selectedProviders}
+                    selectedTypes={selectedTypes}
+                    searchTerm={searchTerm}
+                    commissionRange={commissionRange}
+                    minCommission={minCommission}
+                    maxCommission={maxCommission}
+                    onProviderChange={handleProviderChange}
+                    onTypeChange={handleTypeChange}
+                    onSearchChange={handleSearchChange}
+                    onCommissionChange={handleCommissionChange}
+                    onClearFilters={clearFilters}
+                    hasActiveFilters={hasActiveFilters}
+                    isMobile={true}
+                  />
+                </SheetContent>
+              </Sheet>
+            </div>
 
-          <TabsContent value="faq" className="mt-6">
-            <BankaPOSFAQ />
-          </TabsContent>
+            {/* Desktop Sidebar */}
+            <div className="hidden lg:block w-80 flex-shrink-0">
+              <div className="bg-white rounded-lg shadow-sm border sticky top-8">
+                <div className="p-6 border-b">
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-xl font-semibold text-gray-900 flex items-center">
+                      <Filter className="w-5 h-5 mr-2 text-primary" />
+                      Filtreler
+                    </h2>
+                    {hasActiveFilters && (
+                      <Button variant="ghost" size="sm" onClick={clearFilters}>
+                        <X className="w-4 h-4 mr-1" />
+                        Temizle
+                      </Button>
+                    )}
+                  </div>
+                  
+                  {/* Quick Stats */}
+                  <div className="grid grid-cols-2 gap-3 p-4 bg-gray-50 rounded-lg">
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-primary">{filteredProviders.length}</div>
+                      <div className="text-xs text-gray-600">Toplam Seçenek</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-green-600">%{lowestCommission}</div>
+                      <div className="text-xs text-gray-600">En Düşük</div>
+                    </div>
+                  </div>
+                </div>
 
-          <TabsContent value="agreements" className="mt-6">
-            <BankaPOSAgreements />
-          </TabsContent>
-        </Tabs>
+                <FilterContent 
+                  uniqueProviders={uniqueProviders}
+                  uniqueTypes={uniqueTypes}
+                  selectedProviders={selectedProviders}
+                  selectedTypes={selectedTypes}
+                  searchTerm={searchTerm}
+                  commissionRange={commissionRange}
+                  minCommission={minCommission}
+                  maxCommission={maxCommission}
+                  onProviderChange={handleProviderChange}
+                  onTypeChange={handleTypeChange}
+                  onSearchChange={handleSearchChange}
+                  onCommissionChange={handleCommissionChange}
+                  onClearFilters={clearFilters}
+                  hasActiveFilters={hasActiveFilters}
+                  isMobile={false}
+                />
+              </div>
+            </div>
 
-        <BankaPOSProviderCards />
+            {/* POS Cards */}
+            <div className="flex-1">
+              {/* Result Header */}
+              <div className="mb-6 bg-white rounded-lg border p-4 md:p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                      <TrendingUp className="w-5 h-5 text-primary" />
+                      {filteredProviders.length} Banka POS Seçeneği Bulundu
+                    </h3>
+                    <p className="text-sm text-gray-600 mt-1">
+                      {hasActiveFilters ? 'Filtrelere göre sonuçlar' : 'Tüm banka POS seçenekleri'}
+                    </p>
+                  </div>
+                  {hasActiveFilters && (
+                    <Button variant="outline" size="sm" onClick={clearFilters} className="shrink-0">
+                      <X className="w-4 h-4 mr-1" />
+                      Filtreleri Temizle
+                    </Button>
+                  )}
+                </div>
+
+                {/* Active Filters Display */}
+                {hasActiveFilters && (
+                  <div className="mt-4 pt-4 border-t">
+                    <h4 className="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2">
+                      <Filter className="w-4 h-4" />
+                      Aktif Filtreler:
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {searchTerm && (
+                        <Badge variant="secondary" className="flex items-center gap-2">
+                          <Search className="w-3 h-3" />
+                          "{searchTerm}"
+                          <button
+                            onClick={() => handleSearchChange("")}
+                            className="hover:bg-gray-300 rounded-full w-4 h-4 flex items-center justify-center ml-1"
+                          >
+                            <X className="w-3 h-3" />
+                          </button>
+                        </Badge>
+                      )}
+                      {(commissionRange[0] !== minCommission || commissionRange[1] !== maxCommission) && (
+                        <Badge variant="secondary" className="flex items-center gap-2">
+                          Komisyon: %{commissionRange[0]} - %{commissionRange[1]}
+                          <button
+                            onClick={() => handleCommissionChange([minCommission, maxCommission])}
+                            className="hover:bg-gray-300 rounded-full w-4 h-4 flex items-center justify-center ml-1"
+                          >
+                            <X className="w-3 h-3" />
+                          </button>
+                        </Badge>
+                      )}
+                      {selectedProviders.map(provider => (
+                        <Badge key={provider} variant="secondary" className="flex items-center gap-2">
+                          <Building className="w-3 h-3" />
+                          {provider}
+                          <button
+                            onClick={() => handleProviderChange(provider)}
+                            className="hover:bg-gray-300 rounded-full w-4 h-4 flex items-center justify-center ml-1"
+                          >
+                            <X className="w-3 h-3" />
+                          </button>
+                        </Badge>
+                      ))}
+                      {selectedTypes.map(type => (
+                        <Badge key={type} variant="secondary" className="flex items-center gap-2">
+                          {type}
+                          <button
+                            onClick={() => handleTypeChange(type)}
+                            className="hover:bg-gray-300 rounded-full w-4 h-4 flex items-center justify-center ml-1"
+                          >
+                            <X className="w-3 h-3" />
+                          </button>
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className="space-y-4">
+                {filteredProviders.map(provider => (
+                  <POSCard key={provider.id} {...provider} />
+                ))}
+              </div>
+
+              {filteredProviders.length === 0 && (
+                <div className="text-center py-12 bg-white rounded-lg border">
+                  <div className="max-w-md mx-auto">
+                    <Filter className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">Sonuç Bulunamadı</h3>
+                    <p className="text-gray-500 mb-4">Seçtiğiniz kriterlere uygun POS bulunamadı. Lütfen filtrelerinizi gözden geçirin.</p>
+                    <Button onClick={clearFilters}>Filtreleri Temizle</Button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="container mx-auto px-4 py-16">
+          <FAQ />
+        </div>
+
+        {/* Latest Blog Posts */}
+        <div className="container mx-auto px-4 py-16">
+          <LatestBlogPosts />
+        </div>
       </div>
     </>
   );
 };
+
+// Filter Content Component
+const FilterContent = ({ 
+  uniqueProviders, 
+  uniqueTypes, 
+  selectedProviders, 
+  selectedTypes, 
+  searchTerm,
+  commissionRange,
+  minCommission,
+  maxCommission,
+  onProviderChange, 
+  onTypeChange, 
+  onSearchChange,
+  onCommissionChange,
+  onClearFilters, 
+  hasActiveFilters,
+  isMobile = false
+}: {
+  uniqueProviders: Record<string, number>;
+  uniqueTypes: Record<string, number>;
+  selectedProviders: string[];
+  selectedTypes: string[];
+  searchTerm: string;
+  commissionRange: number[];
+  minCommission: number;
+  maxCommission: number;
+  onProviderChange: (provider: string) => void;
+  onTypeChange: (type: string) => void;
+  onSearchChange: (value: string) => void;
+  onCommissionChange: (value: number[]) => void;
+  onClearFilters: () => void;
+  hasActiveFilters: boolean;
+  isMobile?: boolean;
+}) => (
+  <div className={`${isMobile ? 'h-[calc(100vh-120px)]' : 'max-h-[calc(100vh-200px)]'}`}>
+    <ScrollArea className="h-full">
+      <div className="p-6 space-y-6">
+        {/* Search */}
+        <div>
+          <h3 className="font-medium text-gray-900 mb-3 flex items-center gap-2">
+            <Search className="w-4 h-4" />
+            Arama
+          </h3>
+          <Input
+            placeholder="Banka adı, POS türü veya komisyon ara..."
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
+            className="w-full"
+          />
+        </div>
+
+        {/* Commission Range Filter */}
+        <div>
+          <h3 className="font-medium text-gray-900 mb-3">
+            Komisyon Oranı: %{commissionRange[0]} - %{commissionRange[1]}
+          </h3>
+          <div className="px-2">
+            <Slider
+              value={commissionRange}
+              onValueChange={onCommissionChange}
+              max={maxCommission}
+              min={minCommission}
+              step={0.1}
+              className="w-full"
+            />
+            <div className="flex justify-between text-xs text-gray-500 mt-2">
+              <span>%{minCommission}</span>
+              <span>%{maxCommission}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Provider Filters */}
+        <div>
+          <h3 className="font-medium text-gray-900 mb-3 flex items-center justify-between">
+            <span className="flex items-center gap-2">
+              <Building className="w-4 h-4" />
+              Banka
+            </span>
+            <Badge variant="outline" className="text-xs">
+              {Object.keys(uniqueProviders).length}
+            </Badge>
+          </h3>
+          <div className="space-y-3 max-h-48 overflow-y-auto">
+            {Object.entries(uniqueProviders)
+              .sort(([a], [b]) => a.localeCompare(b))
+              .map(([provider, count]) => (
+              <div key={provider} className="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded transition-colors">
+                <Checkbox
+                  id={`provider-${provider}`}
+                  checked={selectedProviders.includes(provider)}
+                  onCheckedChange={(checked) => {
+                    if (checked === true) {
+                      onProviderChange(provider);
+                    } else if (checked === false) {
+                      onProviderChange(provider);
+                    }
+                  }}
+                />
+                <label
+                  htmlFor={`provider-${provider}`}
+                  className="text-sm text-gray-700 cursor-pointer flex-1 font-medium"
+                >
+                  {provider}
+                </label>
+                <Badge variant="secondary" className="text-xs">
+                  {count}
+                </Badge>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Type Filters */}
+        <div>
+          <h3 className="font-medium text-gray-900 mb-3 flex items-center justify-between">
+            <span>POS Türü</span>
+            <Badge variant="outline" className="text-xs">
+              {Object.keys(uniqueTypes).length}
+            </Badge>
+          </h3>
+          <div className="space-y-3">
+            {Object.entries(uniqueTypes)
+              .sort(([a], [b]) => a.localeCompare(b))
+              .map(([type, count]) => (
+              <div key={type} className="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded transition-colors">
+                <Checkbox
+                  id={`type-${type}`}
+                  checked={selectedTypes.includes(type)}
+                  onCheckedChange={(checked) => {
+                    if (checked === true) {
+                      onTypeChange(type);
+                    } else if (checked === false) {
+                      onTypeChange(type);
+                    }
+                  }}
+                />
+                <label
+                  htmlFor={`type-${type}`}
+                  className="text-sm text-gray-700 cursor-pointer flex-1 font-medium"
+                >
+                  {type}
+                </label>
+                <Badge variant="secondary" className="text-xs">
+                  {count}
+                </Badge>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Filter Actions */}
+        {hasActiveFilters && (
+          <div className="border-t pt-4">
+            <div className="text-sm text-gray-600 mb-3">
+              Toplam {selectedProviders.length + selectedTypes.length + (searchTerm ? 1 : 0) + (commissionRange[0] !== minCommission || commissionRange[1] !== maxCommission ? 1 : 0)} filtre aktif
+            </div>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={onClearFilters}
+              className="w-full"
+            >
+              <X className="w-4 h-4 mr-2" />
+              Tüm Filtreleri Temizle
+            </Button>
+          </div>
+        )}
+      </div>
+    </ScrollArea>
+  </div>
+);
 
 export default BankaPOS;
