@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { bankaPOSProviders } from "@/data/pos-types/bankaPOS";
 import POSCard from "@/components/POSCard";
