@@ -483,7 +483,13 @@ const FilterContent = ({
                 <Checkbox
                   id={`provider-${provider}`}
                   checked={selectedProviders.includes(provider)}
-                  onCheckedChange={() => onProviderChange(provider)}
+                  onCheckedChange={(checked) => {
+                    if (checked === true) {
+                      onProviderChange(provider);
+                    } else if (checked === false) {
+                      onProviderChange(provider);
+                    }
+                  }}
                 />
                 <label
                   htmlFor={`provider-${provider}`}
@@ -515,7 +521,13 @@ const FilterContent = ({
                 <Checkbox
                   id={`type-${type}`}
                   checked={selectedTypes.includes(type)}
-                  onCheckedChange={() => onTypeChange(type)}
+                  onCheckedChange={(checked) => {
+                    if (checked === true) {
+                      onTypeChange(type);
+                    } else if (checked === false) {
+                      onTypeChange(type);
+                    }
+                  }}
                 />
                 <label
                   htmlFor={`type-${type}`}
