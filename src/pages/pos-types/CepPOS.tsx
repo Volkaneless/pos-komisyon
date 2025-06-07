@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { cepPOSProviders } from "@/data/pos-types/cepPOS";
 import POSCard from "@/components/POSCard";
@@ -488,13 +489,7 @@ const FilterContent = ({
                 <Checkbox
                   id={`provider-${provider}`}
                   checked={selectedProviders.includes(provider)}
-                  onCheckedChange={(checked) => {
-                    if (checked === true) {
-                      onProviderChange(provider);
-                    } else if (checked === false) {
-                      onProviderChange(provider);
-                    }
-                  }}
+                  onCheckedChange={() => onProviderChange(provider)}
                 />
                 <label
                   htmlFor={`provider-${provider}`}
@@ -526,13 +521,7 @@ const FilterContent = ({
                 <Checkbox
                   id={`type-${type}`}
                   checked={selectedTypes.includes(type)}
-                  onCheckedChange={(checked) => {
-                    if (checked === true) {
-                      onTypeChange(type);
-                    } else if (checked === false) {
-                      onTypeChange(type);
-                    }
-                  }}
+                  onCheckedChange={() => onTypeChange(type)}
                 />
                 <label
                   htmlFor={`type-${type}`}

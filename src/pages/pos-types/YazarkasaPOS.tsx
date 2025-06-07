@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Terminal, ShieldCheck, Receipt, CreditCard, Banknote, Clock, Shield, Zap, ChartBar, DollarSign, Users, Award, ShoppingCart, CheckCircle, Tag, Settings, Calendar, Filter, X, Search, TrendingUp, Building } from "lucide-react";
@@ -482,13 +483,7 @@ const FilterContent = ({
                 <Checkbox
                   id={`provider-${provider}`}
                   checked={selectedProviders.includes(provider)}
-                  onCheckedChange={(checked) => {
-                    if (checked === true) {
-                      onProviderChange(provider);
-                    } else if (checked === false) {
-                      onProviderChange(provider);
-                    }
-                  }}
+                  onCheckedChange={() => onProviderChange(provider)}
                 />
                 <label
                   htmlFor={`provider-${provider}`}
@@ -520,13 +515,7 @@ const FilterContent = ({
                 <Checkbox
                   id={`type-${type}`}
                   checked={selectedTypes.includes(type)}
-                  onCheckedChange={(checked) => {
-                    if (checked === true) {
-                      onTypeChange(type);
-                    } else if (checked === false) {
-                      onTypeChange(type);
-                    }
-                  }}
+                  onCheckedChange={() => onTypeChange(type)}
                 />
                 <label
                   htmlFor={`type-${type}`}
