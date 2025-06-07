@@ -1,74 +1,50 @@
-import { POSProvider } from "@/types/pos";
+
+import type { POSProvider } from "@/types/pos";
 
 export const cepPOSProviders: POSProvider[] = [
   {
     id: "logo-isbasi-cep",
-    logo: "/logos/logo.png",
     name: "Logo İşbaşı Cep POS",
     type: "Cep POS",
-    monthly_fee: "0TL",
-    commission_rate: "3,99",
+    logo: "/logos/logo.webp",
+    monthly_fee: "0 TL",
+    commission_rate: "1.49",
     features: [
-      "Akıllı telefon uyumlu",
-      "Hızlı kurulum",
+      "Telefon uygulaması",
+      "NFC teknolojisi",
+      "QR kod ödeme",
       "Anlık bildirimler",
-      "Detaylı raporlama"
+      "E-fatura entegrasyonu"
     ]
   },
   {
     id: "akbank-cebe",
-    logo: "/logos/akbank.png",
     name: "Akbank Cebe POS",
     type: "Cep POS",
-    monthly_fee: "0TL",
-    commission_rate: "1,79",
+    logo: "/logos/akbank.webp",
+    monthly_fee: "0 TL",
+    commission_rate: "1.79",
     features: [
-      "Kolay kullanım",
-      "Güvenli altyapı",
-      "7/24 destek",
-      "Hızlı para transferi"
+      "iOS ve Android",
+      "Temassız ödeme",
+      "Güvenli işlemler",
+      "Hızlı kurulum",
+      "Müşteri desteği"
     ]
   },
   {
     id: "vallet-mobil",
-    logo: "/logos/vallet.png",
-    name: "Vallet Mobil Pos",
+    name: "Vallet Mobil POS",
     type: "Cep POS",
-    monthly_fee: "0TL",
-    commission_rate: "0,29",
+    logo: "/logos/vallet.webp",
+    monthly_fee: "0 TL",
+    commission_rate: "1.69",
     features: [
-      "Düşük komisyon",
-      "Anında aktivasyon",
-      "Tüm kartlarla uyumlu",
-      "Mobil uygulama"
-    ]
-  },
-  {
-    id: "paytr-neopos",
-    logo: "/logos/paytr.png",
-    name: "PayTR NeoPOS+",
-    type: "Cep POS",
-    monthly_fee: "0TL",
-    commission_rate: "0,59",
-    features: [
-      "Modern arayüz",
-      "Hızlı işlem",
+      "Kolay kullanım",
+      "Çoklu ödeme seçenekleri",
+      "Detaylı raporlar",
       "Güvenli altyapı",
-      "Teknik destek"
-    ]
-  },
-  {
-    id: "esnekpos-cep",
-    logo: "/logos/esnek.png",
-    name: "EsnekPOS Cep POS",
-    type: "Cep POS",
-    monthly_fee: "0TL",
-    commission_rate: "2,69",
-    features: [
-      "Esnek kullanım",
-      "Kolay entegrasyon",
-      "Online destek",
-      "Gelişmiş raporlama"
+      "Hızlı aktivasyon"
     ]
   }
 ];
