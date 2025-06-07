@@ -1,50 +1,46 @@
-
-import type { POSProvider } from "@/types/pos";
+import { POSProvider } from "@/types/pos";
 
 export const mobilPOSProviders: POSProvider[] = [
   {
-    id: "enpara-mobil-pos",
+    id: "enpara-mobil",
+    logo: "/logos/enpara.png",
     name: "Enpara Mobil POS",
-    type: "Mobil POS",
-    logo: "/logos/enpara.webp",
-    monthly_fee: "59 TL",
-    commission_rate: "1.79",
+    type: "Mobil (Taşınabilir) POS",
+    monthly_fee: "0TL",
+    commission_rate: "1,99",
     features: [
-      "4G ve Wi-Fi desteği",
-      "Uzun batarya ömrü",
-      "Su geçirmez tasarım",
-      "Temassız ödeme",
-      "Hızlı kurulum"
+      "Mobil cihazlarla uyumlu",
+      "Hızlı kurulum",
+      "7/24 teknik destek",
+      "Tüm kartlarla uyumlu"
     ]
   },
   {
-    id: "paycell-mobil-pos",
-    name: "Paycell Mobil POS",
-    type: "Mobil POS",
-    logo: "/logos/paycell.webp",
-    monthly_fee: "49 TL",
-    commission_rate: "1.89",
+    id: "esnek-mobil",
+    logo: "/logos/esnek.png",
+    name: "Esnek POS",
+    type: "Mobil (Taşınabilir) POS",
+    monthly_fee: "0TL",
+    commission_rate: "0,1",
     features: [
-      "Bluetooth bağlantı",
-      "Kompakt tasarım",
-      "Çoklu kart desteği",
-      "Offline işlem",
-      "Güvenli şifreleme"
-    ]
-  },
-  {
-    id: "vallet-mobil-pos",
-    name: "Vallet Mobil POS",
-    type: "Mobil POS",
-    logo: "/logos/vallet.webp",
-    monthly_fee: "69 TL",
-    commission_rate: "1.69",
-    features: [
-      "Android entegrasyonu",
-      "QR kod desteği",
-      "Gelişmiş raporlama",
+      "Düşük komisyon oranı",
       "Kolay kullanım",
-      "7/24 destek"
+      "Hızlı para transferi",
+      "Mobil uygulama desteği"
+    ]
+  },
+  {
+    id: "paycell-mobil",
+    logo: "/logos/paycell.png",
+    name: "Paycell POS",
+    type: "Mobil (Taşınabilir) POS",
+    monthly_fee: "249 TL / Ay",
+    commission_rate: "2,7",
+    features: [
+      "Profesyonel destek",
+      "Gelişmiş raporlama",
+      "Güvenli işlem altyapısı",
+      "Çoklu kullanıcı desteği"
     ]
   }
 ];
