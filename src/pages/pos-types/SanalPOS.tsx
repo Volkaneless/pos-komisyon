@@ -136,7 +136,8 @@ const SanalPOS = () => {
     }]
   };
 
-  return <>
+  return (
+    <>
       <MetaTags 
         title="Sanal POS Komisyon Oranları 2025 - En Uygun Sanal POS" 
         description="2025 yılı güncel sanal POS komisyon oranları, karşılaştırma ve hesaplama araçları. E-ticaret işletmeniz için en uygun sanal POS çözümünü bulun." 
@@ -534,7 +535,8 @@ const SanalPOS = () => {
             <LatestBlogPosts />
           </div>
         </div>
-    </>;
+    </>
+  );
 };
 
 export default SanalPOS;
