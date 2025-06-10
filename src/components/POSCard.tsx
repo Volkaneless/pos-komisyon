@@ -16,65 +16,64 @@ interface POSCardProps {
 
 const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features }: POSCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow">
-      <div className="flex items-start justify-between mb-3">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-gray-100 rounded-md flex items-center justify-center flex-shrink-0">
+    <div className="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4 flex-1">
+          <div className="w-12 h-12 bg-gray-100 rounded-md flex items-center justify-center flex-shrink-0">
             <img 
               src={logo} 
               alt={`${name} Logo`} 
-              className="w-5 h-5 object-contain"
+              className="w-8 h-8 object-contain"
             />
           </div>
-          <div>
-            <h3 className="font-semibold text-sm">{name}</h3>
-            <p className="text-xs text-gray-500">{type}</p>
+          
+          <div className="flex-1">
+            <h3 className="font-semibold text-lg mb-1">{name}</h3>
+            <p className="text-sm text-gray-500 mb-3">{type}</p>
+            
+            <div className="flex items-center gap-6 text-sm">
+              <div>
+                <span className="text-gray-500">Aylık Ücret: </span>
+                <span className="font-medium">{monthly_fee}</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <span className="text-gray-500">Komisyon: </span>
+                <span className="font-medium">%{commission_rate}</span>
+                <HoverCard>
+                  <HoverCardTrigger>
+                    <Info className="w-3 h-3 text-gray-400 ml-1" />
+                  </HoverCardTrigger>
+                  <HoverCardContent>
+                    Bu oran, işlem tutarı üzerinden alınan komisyon oranını gösterir.
+                  </HoverCardContent>
+                </HoverCard>
+              </div>
+            </div>
+            
+            <div className="flex flex-wrap gap-4 mt-3">
+              {features.slice(0, 3).map((feature, index) => (
+                <div key={index} className="flex items-center gap-1">
+                  <Check className="h-3 w-3 text-primary flex-shrink-0" />
+                  <span className="text-xs text-gray-600">{feature}</span>
+                </div>
+              ))}
+              {features.length > 3 && (
+                <span className="text-xs text-gray-500">+{features.length - 3} özellik daha</span>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div className="grid grid-cols-2 gap-3 mb-3 text-xs">
-        <div>
-          <p className="text-gray-500 mb-1">Aylık Ücret</p>
-          <p className="font-medium">{monthly_fee}</p>
-        </div>
-        <div>
-          <div className="flex items-center gap-1 mb-1">
-            <p className="text-gray-500">Komisyon</p>
-            <HoverCard>
-              <HoverCardTrigger>
-                <Info className="w-3 h-3 text-gray-400" />
-              </HoverCardTrigger>
-              <HoverCardContent>
-                Bu oran, işlem tutarı üzerinden alınan komisyon oranını gösterir.
-              </HoverCardContent>
-            </HoverCard>
-          </div>
-          <p className="font-medium">%{commission_rate}</p>
-        </div>
-      </div>
-      
-      <div className="space-y-1 mb-3">
-        {features.slice(0, 2).map((feature, index) => (
-          <div key={index} className="flex items-center gap-2">
-            <Check className="h-3 w-3 text-primary flex-shrink-0" />
-            <span className="text-xs text-gray-600">{feature}</span>
-          </div>
-        ))}
-        {features.length > 2 && (
-          <p className="text-xs text-gray-500">+{features.length - 2} özellik daha</p>
-        )}
-      </div>
 
-      <div className="flex gap-2">
-        <Button size="sm" className="bg-primary text-white hover:bg-primary/90 flex-1 text-xs">
-          Başvur
-        </Button>
-        <Link to={`/pos/${id}`} className="flex-1">
-          <Button variant="outline" size="sm" className="w-full text-xs">
-            İncele
+        <div className="flex gap-3 ml-6">
+          <Button size="sm" className="bg-primary text-white hover:bg-primary/90 text-sm px-6">
+            Başvur
           </Button>
-        </Link>
+          <Link to={`/pos/${id}`}>
+            <Button variant="outline" size="sm" className="text-sm px-6">
+              İncele
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
