@@ -16,32 +16,31 @@ interface POSCardProps {
 
 const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features }: POSCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm border p-4 mb-4">
-      <div className="flex items-center justify-between mb-4">
+    <div className="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow">
+      <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-gray-100 rounded-md flex items-center justify-center flex-shrink-0">
             <img 
               src={logo} 
               alt={`${name} Logo`} 
-              className="w-6 h-6 object-contain"
+              className="w-5 h-5 object-contain"
             />
           </div>
-          <h3 className="font-semibold text-base">{name}</h3>
+          <div>
+            <h3 className="font-semibold text-sm">{name}</h3>
+            <p className="text-xs text-gray-500">{type}</p>
+          </div>
         </div>
       </div>
       
-      <div className="space-y-3 mb-4 border-b pb-4">
+      <div className="grid grid-cols-2 gap-3 mb-3 text-xs">
         <div>
-          <p className="text-gray-500 text-xs mb-1">POS Türü</p>
-          <p className="font-medium text-sm">{type}</p>
+          <p className="text-gray-500 mb-1">Aylık Ücret</p>
+          <p className="font-medium">{monthly_fee}</p>
         </div>
         <div>
-          <p className="text-gray-500 text-xs mb-1">Aidat Ödemesi</p>
-          <p className="font-medium text-sm">{monthly_fee}</p>
-        </div>
-        <div>
-          <div className="flex items-center gap-1">
-            <p className="text-gray-500 text-xs mb-1">Komisyon Oranı</p>
+          <div className="flex items-center gap-1 mb-1">
+            <p className="text-gray-500">Komisyon</p>
             <HoverCard>
               <HoverCardTrigger>
                 <Info className="w-3 h-3 text-gray-400" />
@@ -51,28 +50,28 @@ const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features 
               </HoverCardContent>
             </HoverCard>
           </div>
-          <p className="font-medium text-sm">{commission_rate}</p>
+          <p className="font-medium">%{commission_rate}</p>
         </div>
       </div>
       
-      <div className="space-y-2 mb-4">
-        {features.slice(0, 3).map((feature, index) => (
+      <div className="space-y-1 mb-3">
+        {features.slice(0, 2).map((feature, index) => (
           <div key={index} className="flex items-center gap-2">
             <Check className="h-3 w-3 text-primary flex-shrink-0" />
             <span className="text-xs text-gray-600">{feature}</span>
           </div>
         ))}
-        {features.length > 3 && (
-          <p className="text-xs text-gray-500">+{features.length - 3} özellik daha</p>
+        {features.length > 2 && (
+          <p className="text-xs text-gray-500">+{features.length - 2} özellik daha</p>
         )}
       </div>
 
       <div className="flex gap-2">
-        <Button size="sm" className="bg-primary text-white hover:bg-primary/90 flex-1">
-          Hemen Başvur
+        <Button size="sm" className="bg-primary text-white hover:bg-primary/90 flex-1 text-xs">
+          Başvur
         </Button>
         <Link to={`/pos/${id}`} className="flex-1">
-          <Button variant="outline" size="sm" className="w-full">
+          <Button variant="outline" size="sm" className="w-full text-xs">
             İncele
           </Button>
         </Link>

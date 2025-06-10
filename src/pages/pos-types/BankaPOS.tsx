@@ -7,7 +7,6 @@ import BankaPOSFeatures from "@/components/pos-types/banka/BankaPOSFeatures";
 import BankaPOSFAQ from "@/components/pos-types/banka/BankaPOSFAQ";
 import BankaPOSAgreements from "@/components/pos-types/banka/BankaPOSAgreements";
 import MetaTags from "@/components/MetaTags";
-import { SidebarProvider, Sidebar, SidebarContent } from "@/components/ui/sidebar";
 import POSFilterSidebar from "@/components/POSFilterSidebar";
 import POSCard from "@/components/POSCard";
 import { bankaPOSProviders } from "@/data/pos-types/bankaPOS";
@@ -95,33 +94,35 @@ const BankaPOS = () => {
       
       {/* Header Section */}
       <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12 px-0 mx-0 my-[45px] py-[19px]">
+        <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Banka POS Komisyon Oranları 2025</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun.
           </p>
         </div>
 
-        <div className="mb-12">
+        <div className="mb-8">
           <div className="prose prose-lg max-w-none mb-8">
             Banka POS'ları, bankaların işletmelere sunduğu güvenilir ödeme çözümleridir. Yüksek işlem hacmi ve çoklu ödeme seçenekleri sunar.
           </div>
         </div>
       </div>
 
-      {/* Sidebar and Content */}
-      <SidebarProvider>
-        <div className="flex w-full">
-          <Sidebar className="hidden md:block">
-            <SidebarContent>
+      {/* Main Content with Sidebar */}
+      <div className="container mx-auto px-4">
+        <div className="flex gap-8">
+          {/* Sidebar */}
+          <div className="w-80 flex-shrink-0 hidden lg:block">
+            <div className="bg-white rounded-lg border p-6 sticky top-4">
               <POSFilterSidebar
                 providers={bankaPOSProviders}
                 onFilter={applyFilters}
               />
-            </SidebarContent>
-          </Sidebar>
+            </div>
+          </div>
 
-          <div className="flex-1 container mx-auto px-4">
+          {/* Content */}
+          <div className="flex-1 min-w-0">
             {/* Provider Cards */}
             <div className="mb-8">
               <div className="flex items-center justify-between mb-6">
@@ -130,7 +131,7 @@ const BankaPOS = () => {
                 </h2>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {filteredProviders.map(provider => (
                   <POSCard key={provider.id} {...provider} />
                 ))}
@@ -165,7 +166,7 @@ const BankaPOS = () => {
             </Tabs>
           </div>
         </div>
-      </SidebarProvider>
+      </div>
     </>
   );
 };
