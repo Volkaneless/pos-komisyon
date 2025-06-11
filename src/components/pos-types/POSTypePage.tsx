@@ -54,18 +54,12 @@ const POSTypePage = ({
         </div>
 
         <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">{type} Çözümleri ({filteredProviders.length})</h2>
-          <div className="grid grid-cols-1 gap-6">
-            {filteredProviders.map(provider => (
+          <h2 className="text-2xl font-bold mb-6">Popüler {type} Çözümleri</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {filteredProviders.slice(0, 2).map(provider => (
               <POSCard key={provider.id} {...provider} />
             ))}
           </div>
-          
-          {filteredProviders.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-500">Bu kategoride POS bulunamadı.</p>
-            </div>
-          )}
         </div>
       </div>
     </div>
