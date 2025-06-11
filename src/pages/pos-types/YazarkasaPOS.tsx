@@ -1,4 +1,5 @@
-import { Terminal } from "lucide-react";
+
+import { Terminal, Tag, DollarSign, Calendar, CheckCircle, Settings } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
