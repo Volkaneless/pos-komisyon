@@ -81,7 +81,8 @@ const MobilPOS = () => {
     setFilteredProviders(filtered);
   };
 
-  return <>
+  return (
+    <>
       <MetaTags 
         title={`Mobil POS Komisyon Oranları ${currentYear} - En Uygun Mobil POS Ücretleri`} 
         description={`${currentYear} yılı güncel mobil POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun mobil POS çözümünü bulun.`} 
@@ -99,9 +100,7 @@ const MobilPOS = () => {
       />
 
       <div className="container mx-auto px-4 py-16">
-        {/* Main Content with Sidebar */}
         <div className="flex gap-8">
-          {/* Sidebar */}
           <div className="w-80 flex-shrink-0 hidden lg:block">
             <div className="bg-white rounded-lg border p-6 sticky top-4">
               <POSFilterSidebar
@@ -111,9 +110,7 @@ const MobilPOS = () => {
             </div>
           </div>
 
-          {/* Content */}
           <div className="flex-1 min-w-0">
-            {/* Provider Cards */}
             <div className="mb-8">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold">
@@ -313,7 +310,6 @@ const MobilPOS = () => {
             </div>
 
             <div className="bg-gray-50 p-8 rounded-xl my-16">
-              
               <FAQ />
             </div>
             
@@ -339,7 +335,8 @@ const MobilPOS = () => {
           </div>
         </div>
       </div>
-    </>;
+    </>
+  );
 };
 
 export default MobilPOS;
