@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Banknote } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
@@ -19,6 +18,7 @@ interface FilterState {
 }
 
 const BankaPOS = () => {
+  const currentYear = new Date().getFullYear();
   const [filteredProviders, setFilteredProviders] = useState(bankaPOSProviders);
 
   const applyFilters = (filters: FilterState) => {
@@ -81,20 +81,21 @@ const BankaPOS = () => {
   return (
     <>
       <MetaTags
-        title="Banka POS Komisyon Oranları 2025 | POS Compare"
-        description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
-        keywords="banka pos, fiziksel pos, banka pos komisyon oranları 2025, pos karşılaştırma, pos cihazı ücretleri"
+        title={`Banka POS Komisyon Oranları ${currentYear} | POS Compare`}
+        description={`Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun. ${currentYear} güncel fiyatlar.`}
+        keywords={`banka pos, fiziksel pos, banka pos komisyon oranları ${currentYear}, pos karşılaştırma, pos cihazı ücretleri`}
         canonicalPath="/pos-types/banka"
         priority={20}
       />
       
       <POSTypePage 
-        title="Banka POS Komisyon Oranları 2025" 
-        description="Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun."
+        title={`Banka POS Komisyon Oranları ${currentYear}`}
+        description={`Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun. ${currentYear} güncel fiyatlar ve özellikler.`}
         type="Banka POS" 
         Icon={Banknote} 
-        whatIsContent="Banka POS'ları, bankaların işletmelere sunduğu güvenilir ödeme çözümleridir. Yüksek işlem hacmi ve çoklu ödeme seçenekleri sunar."
-        advantages={["Banka güvencesi", "Yüksek işlem kapasitesi", "7/24 teknik destek", "Geniş kart desteği"]}
+        whatIsContent={`Banka POS'ları, bankaların işletmelere sunduğu güvenilir ödeme çözümleridir. ${currentYear} yılında yüksek işlem hacmi ve çoklu ödeme seçenekleri sunan bu cihazlar, işletmenizin ödeme altyapısını güçlendirmeye odaklanır.`}
+        advantages={["Banka güvencesi ve kurumsal destek", "Yüksek işlem kapasitesi", "7/24 profesyonel teknik destek", "Geniş kart ve ödeme yöntemi desteği", "Gelişmiş güvenlik protokolleri", "Detaylı raporlama ve analiz araçları"]}
+        breadcrumbPath="/pos-types/banka"
       />
 
       <div className="container mx-auto px-4">

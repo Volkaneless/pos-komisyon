@@ -1,4 +1,3 @@
-
 import { Terminal, Tag, DollarSign, Calendar, CheckCircle, Settings } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
@@ -92,12 +91,13 @@ const YazarkasaPOS = () => {
       />
       
       <POSTypePage 
-        title="Yazar Kasa POS Cihazı Komisyon Oranları" 
+        title={`Yazar Kasa POS Cihazı Komisyon Oranları ${currentYear}`}
         description={`En son teknoloji yazar kasa POS cihazlarını karşılaştırın, size en uygun ÖKC POS çözümünü bulun. ${currentYear} güncel bilgiler ve fiyatlar.`} 
         type="Yazar Kasa (ÖKC) POS" 
         Icon={Terminal} 
         whatIsContent={`Yazar kasa POS cihazları (ÖKC POS), geleneksel yazar kasalar ile ödeme sistemlerinin bir araya getirildiği entegre cihazlardır. ${currentYear} yılında işletmeler için zorunlu olan bu cihazlar, hem fiş/fatura kesme işlemlerini hem de kredi kartı ile ödeme alma işlemlerini tek bir cihaz üzerinden gerçekleştirebilmenizi sağlar.`} 
         advantages={["Çift fonksiyonlu kullanım (hem yazar kasa hem POS)", "Yasal gerekliliklere uygunluk", "Tek cihazla çoklu işlem yapabilme", "Stok ve satış takibi entegrasyonu", "Mali raporlamalarda kolaylık"]} 
+        breadcrumbPath="/pos-types/yazarkasa"
       />
 
       <div className="container mx-auto px-4">

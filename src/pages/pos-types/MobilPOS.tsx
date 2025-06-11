@@ -1,9 +1,7 @@
-import { Helmet } from "react-helmet";
-import { Smartphone, CreditCard, ShieldCheck, Globe, WifiHigh, TrendingUp } from "lucide-react";
+import { Smartphone } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
-import CanonicalLink from "@/components/CanonicalLink";
 import MetaTags from "@/components/MetaTags";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -86,17 +84,18 @@ const MobilPOS = () => {
       <MetaTags 
         title={`Mobil POS Komisyon Oranları ${currentYear} - En Uygun Mobil POS Ücretleri`} 
         description={`${currentYear} yılı güncel mobil POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun mobil POS çözümünü bulun.`} 
-        keywords="mobil pos komisyon oranları, mobil pos başvuru, mobil ödeme sistemleri, taşınabilir pos cihazları, mobil pos çözümleri, enpara mobil pos, paycell mobil pos" 
+        keywords={`mobil pos komisyon oranları, mobil pos başvuru, mobil ödeme sistemleri, taşınabilir pos cihazları, mobil pos çözümleri, enpara mobil pos, paycell mobil pos`}
         canonicalPath="/pos-types/mobil" 
       />
 
       <POSTypePage 
         title={`Mobil POS Komisyon Oranları ${currentYear}`} 
-        description="Mobil ve taşınabilir POS çözümleri için en uygun komisyon oranları ve karşılaştırmalar" 
+        description={`Mobil ve taşınabilir POS çözümleri için en uygun komisyon oranları ve karşılaştırmalar. ${currentYear} güncel fiyatlar ve özellikler.`}
         type="Mobil (Taşınabilir) POS" 
         Icon={Smartphone} 
-        whatIsContent="Mobil POS cihazları, işletmelerin hareket halindeyken ödeme almalarını sağlayan taşınabilir cihazlardır. Bu cihazlar, kablosuz internet veya mobil veri bağlantısı üzerinden çalışır ve kredi kartı ödemelerini güvenli bir şekilde işler." 
+        whatIsContent={`Mobil POS cihazları, işletmelerin hareket halindeyken ödeme almalarını sağlayan taşınabilir cihazlardır. ${currentYear} yılında bu cihazlar, kablosuz internet veya mobil veri bağlantısı üzerinden çalışır ve kredi kartı ödemelerini güvenli bir şekilde işler.`}
         advantages={["Hareket halindeyken ödeme alma imkanı", "Kolay taşınabilirlik", "Düşük maliyetli çözüm", "Hızlı kurulum ve kullanım", "Tüm kredi kartlarıyla uyumluluk", "7/24 teknik destek", "Detaylı satış raporlaması", "Güvenli işlem altyapısı"]} 
+        breadcrumbPath="/pos-types/mobil"
       />
 
       <div className="container mx-auto px-4 py-16">
