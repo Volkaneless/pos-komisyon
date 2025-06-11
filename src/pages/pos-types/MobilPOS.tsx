@@ -1,4 +1,4 @@
-import { Smartphone } from "lucide-react";
+import { Smartphone, ShieldCheck, WifiHigh, TrendingUp } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
 import FAQ from "@/components/FAQ";
 import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
