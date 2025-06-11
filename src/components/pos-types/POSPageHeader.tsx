@@ -1,8 +1,6 @@
-
 import { LucideIcon, Calendar, Clock } from "lucide-react";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
 import { Badge } from "@/components/ui/badge";
-
 interface POSPageHeaderProps {
   title: string;
   description: string;
@@ -10,21 +8,24 @@ interface POSPageHeaderProps {
   Icon: LucideIcon;
   breadcrumbPath?: string;
 }
-
-const POSPageHeader = ({ title, description, type, Icon, breadcrumbPath }: POSPageHeaderProps) => {
+const POSPageHeader = ({
+  title,
+  description,
+  type,
+  Icon,
+  breadcrumbPath
+}: POSPageHeaderProps) => {
   const currentDate = new Date();
   const createdDate = new Date('2024-01-01'); // You can make this dynamic per page if needed
-  
+
   const formatDate = (date: Date) => {
-    return date.toLocaleDateString('tr-TR', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    return date.toLocaleDateString('tr-TR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
     });
   };
-
-  return (
-    <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-b">
+  return <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-b py-[93px]">
       <div className="container mx-auto px-4 py-8">
         {/* Breadcrumb Navigation */}
         <Breadcrumb className="mb-6">
@@ -86,8 +87,6 @@ const POSPageHeader = ({ title, description, type, Icon, breadcrumbPath }: POSPa
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default POSPageHeader;
