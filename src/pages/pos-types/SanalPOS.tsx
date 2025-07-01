@@ -1,8 +1,8 @@
 
 import { Cloud } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
+import POSTypeLayout from "@/components/pos-types/POSTypeLayout";
 import MetaTags from "@/components/MetaTags";
-import SanalPOSLayout from "@/components/pos-types/sanal/SanalPOSLayout";
 import { sanalPOSProviders } from "@/data/pos-types/sanalPOSData";
 
 const SanalPOS = () => {
@@ -37,21 +37,15 @@ const SanalPOS = () => {
         description={`E-ticaret ve online ödemeler için en uygun sanal POS çözümleri ve komisyon oranları. ${currentYear} güncel fiyatlar ve gelişmiş entegrasyon seçenekleri.`}
         type="Sanal POS" 
         Icon={Cloud} 
-        whatIsContent={
-          <div className="prose prose-lg max-w-none mb-8">
-            <h2 className="text-3xl font-bold mb-6" id="what-is">Sanal POS Nedir?</h2>
-            <p>
-              Sanal POS, internet üzerinden yapılan ödemeleri güvenli bir şekilde almanızı sağlayan modern bir ödeme sistemidir. 
-              E-ticaret siteleri, online rezervasyon sistemleri ve dijital hizmetler için vazgeçilmez bir çözümdür. 
-              {currentYear} yılında gelişmiş güvenlik özellikleri ve kolay entegrasyon seçenekleriyle işletmenizin online satışlarını güvenle yönetmenizi sağlar.
-            </p>
-          </div>
-        } 
+        whatIsContent={`Sanal POS, internet üzerinden yapılan ödemeleri güvenli bir şekilde almanızı sağlayan modern bir ödeme sistemidir. E-ticaret siteleri, online rezervasyon sistemleri ve dijital hizmetler için vazgeçilmez bir çözümdür. ${currentYear} yılında gelişmiş güvenlik özellikleri ve kolay entegrasyon seçenekleriyle işletmenizin online satışlarını güvenle yönetmenizi sağlar.`}
         advantages={["7/24 kesintisiz hizmet ve teknik destek", "Rekabetçi komisyon oranları", "Hızlı ve kolay entegrasyon", "SSL güvenlik sertifikası", "Geniş banka ve kart desteği", "Detaylı satış ve işlem raporlaması", "Mobil uyumlu altyapı", "Çoklu dil ve para birimi desteği"]} 
         breadcrumbPath="/pos-types/sanal"
       />
 
-      <SanalPOSLayout providers={sanalPOSProviders} />
+      <POSTypeLayout 
+        providers={sanalPOSProviders}
+        typeName="Sanal POS"
+      />
     </>
   );
 };
