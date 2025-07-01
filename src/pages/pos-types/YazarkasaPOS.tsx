@@ -23,6 +23,19 @@ const YazarkasaPOS = () => {
   const currentYear = new Date().getFullYear();
   const [filteredProviders, setFilteredProviders] = useState(yazarkasaPOSProviders);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Yazar Kasa POS nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yazar kasa POS cihazları (ÖKC POS), geleneksel yazar kasalar ile ödeme sistemlerinin bir araya getirildiği entegre cihazlardır. Hem fiş/fatura kesme işlemlerini hem de kredi kartı ile ödeme alma işlemlerini tek bir cihaz üzerinden gerçekleştirebilmenizi sağlar."
+      }
+    }]
+  };
+
   const applyFilters = (filters: FilterState) => {
     let filtered = yazarkasaPOSProviders;
 
@@ -83,15 +96,16 @@ const YazarkasaPOS = () => {
   return (
     <>
       <MetaTags 
-        title={`Yazar Kasa POS Cihazı Komisyon Oranları | ÖKC POS Fiyatları ${currentYear}`} 
-        description={`Yazar kasa POS cihazları, ÖKC entegreli POS sistemleri ve komisyon oranları hakkında detaylı bilgi alın. ${currentYear} yılı güncel fiyatlar ve özellikler.`} 
-        keywords={`yazar kasa pos, ökc pos, yeni nesil yazar kasa, entegre pos cihazı, yazarkasa pos fiyatları, ${currentYear} pos cihazları, yazarkasa komisyon oranları`} 
+        title={`Yazar Kasa POS Komisyon Oranları ${currentYear} - En Uygun ÖKC POS Çözümleri`} 
+        description={`${currentYear} yılı güncel yazar kasa POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun ÖKC POS çözümünü bulun.`} 
+        keywords={`yazar kasa pos komisyon oranları ${currentYear}, ökc pos çözümleri, yeni nesil yazar kasa, entegre pos cihazı, yazarkasa pos fiyatları, yazarkasa komisyon oranları`} 
         canonicalPath="/pos-types/yazarkasa" 
         priority={20} 
+        structuredData={structuredData}
       />
       
       <POSTypePage 
-        title={`Yazar Kasa POS Cihazı Komisyon Oranları ${currentYear}`}
+        title={`Yazar Kasa POS Komisyon Oranları ${currentYear}`}
         description={`En son teknoloji yazar kasa POS cihazlarını karşılaştırın, size en uygun ÖKC POS çözümünü bulun. ${currentYear} güncel bilgiler ve fiyatlar.`} 
         type="Yazar Kasa (ÖKC) POS" 
         Icon={Terminal} 
@@ -160,7 +174,8 @@ const YazarkasaPOS = () => {
             <section id="karsilastirma" className="my-12">
               <h2 className="text-3xl font-bold mb-8 text-center">En Çok Tercih Edilen Yazar Kasa POS Cihazları</h2>
               <div className="grid md:grid-cols-3 gap-6">
-                {filteredProviders.slice(0, 6).map(provider => <Card key={provider.id} className="hover:shadow-lg transition-shadow">
+                {filteredProviders.slice(0, 6).map(provider => (
+                  <Card key={provider.id} className="hover:shadow-lg transition-shadow">
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between mb-4">
                         <div className="h-12 w-32 relative">
@@ -178,16 +193,19 @@ const YazarkasaPOS = () => {
                         <span className="text-sm text-gray-700">Aylık Ücret: {provider.monthly_fee}</span>
                       </div>
                       <div className="space-y-2 mb-4">
-                        {provider.features.slice(0, 3).map((feature, idx) => <div key={idx} className="flex items-center">
+                        {provider.features.slice(0, 3).map((feature, idx) => (
+                          <div key={idx} className="flex items-center">
                             <CheckCircle className="w-4 h-4 text-primary mr-2" />
                             <span className="text-sm">{feature}</span>
-                          </div>)}
+                          </div>
+                        ))}
                       </div>
                       <Button asChild className="w-full mt-2">
                         <Link to={`/pos/${provider.id}`}>Detayları Gör</Link>
                       </Button>
                     </CardContent>
-                  </Card>)}
+                  </Card>
+                ))}
               </div>
               <div className="text-center mt-8">
                 <Button variant="outline" asChild>

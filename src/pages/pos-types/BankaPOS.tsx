@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Banknote } from "lucide-react";
 import POSTypePage from "@/components/pos-types/POSTypePage";
@@ -20,6 +21,19 @@ interface FilterState {
 const BankaPOS = () => {
   const currentYear = new Date().getFullYear();
   const [filteredProviders, setFilteredProviders] = useState(bankaPOSProviders);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Banka POS nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Banka POS'ları, bankaların işletmelere sunduğu güvenilir ödeme çözümleridir. Yüksek işlem hacmi ve çoklu ödeme seçenekleri sunan bu cihazlar, işletmenizin ödeme altyapısını güçlendirmeye odaklanır."
+      }
+    }]
+  };
 
   const applyFilters = (filters: FilterState) => {
     let filtered = bankaPOSProviders;
@@ -81,11 +95,12 @@ const BankaPOS = () => {
   return (
     <>
       <MetaTags
-        title={`Banka POS Komisyon Oranları ${currentYear} | POS Compare`}
-        description={`Bankaların güncel POS komisyon oranlarını karşılaştırın, işletmeniz için en uygun banka POS çözümünü kolayca bulun. ${currentYear} güncel fiyatlar.`}
-        keywords={`banka pos, fiziksel pos, banka pos komisyon oranları ${currentYear}, pos karşılaştırma, pos cihazı ücretleri`}
+        title={`Banka POS Komisyon Oranları ${currentYear} - En Uygun Banka POS Çözümleri`}
+        description={`${currentYear} yılı güncel banka POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun banka POS çözümünü bulun.`}
+        keywords={`banka pos komisyon oranları ${currentYear}, banka pos başvuru, fiziksel pos cihazları, banka pos çözümleri, pos cihazı ücretleri, banka pos karşılaştırma`}
         canonicalPath="/pos-types/banka"
         priority={20}
+        structuredData={structuredData}
       />
       
       <POSTypePage 

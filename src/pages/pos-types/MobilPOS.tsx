@@ -22,6 +22,19 @@ const MobilPOS = () => {
   const currentYear = new Date().getFullYear();
   const [filteredProviders, setFilteredProviders] = useState(mobilPOSProviders);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Mobil POS nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mobil POS cihazları, işletmelerin hareket halindeyken ödeme almalarını sağlayan taşınabilir cihazlardır. Bu cihazlar, kablosuz internet veya mobil veri bağlantısı üzerinden çalışır ve kredi kartı ödemelerini güvenli bir şekilde işler."
+      }
+    }]
+  };
+
   const applyFilters = (filters: FilterState) => {
     let filtered = mobilPOSProviders;
 
@@ -82,10 +95,12 @@ const MobilPOS = () => {
   return (
     <>
       <MetaTags 
-        title={`Mobil POS Komisyon Oranları ${currentYear} - En Uygun Mobil POS Ücretleri`} 
+        title={`Mobil POS Komisyon Oranları ${currentYear} - En Uygun Mobil POS Çözümleri`} 
         description={`${currentYear} yılı güncel mobil POS komisyon oranları, karşılaştırma ve hesaplama araçları. İşletmeniz için en uygun mobil POS çözümünü bulun.`} 
-        keywords={`mobil pos komisyon oranları, mobil pos başvuru, mobil ödeme sistemleri, taşınabilir pos cihazları, mobil pos çözümleri, enpara mobil pos, paycell mobil pos`}
+        keywords={`mobil pos komisyon oranları ${currentYear}, mobil pos başvuru, taşınabilir pos cihazları, mobil ödeme sistemleri, mobil pos çözümleri, enpara mobil pos, paycell mobil pos`}
         canonicalPath="/pos-types/mobil" 
+        priority={20}
+        structuredData={structuredData}
       />
 
       <POSTypePage 

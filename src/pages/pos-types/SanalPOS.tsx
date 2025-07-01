@@ -7,6 +7,7 @@ import { sanalPOSProviders } from "@/data/pos-types/sanalPOSData";
 
 const SanalPOS = () => {
   const currentYear = new Date().getFullYear();
+  
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -23,9 +24,9 @@ const SanalPOS = () => {
   return (
     <>
       <MetaTags 
-        title={`Sanal POS Komisyon Oranları ${currentYear} - En Uygun Sanal POS`}
+        title={`Sanal POS Komisyon Oranları ${currentYear} - En Uygun Sanal POS Çözümleri`}
         description={`${currentYear} yılı güncel sanal POS komisyon oranları, karşılaştırma ve hesaplama araçları. E-ticaret işletmeniz için en uygun sanal POS çözümünü bulun.`}
-        keywords={`sanal pos komisyon oranları ${currentYear}, sanal pos başvuru, e-ticaret pos, online ödeme sistemleri, sanal pos entegrasyonu, e-ticaret ödeme çözümleri`}
+        keywords={`sanal pos komisyon oranları ${currentYear}, sanal pos başvuru, e-ticaret pos çözümleri, online ödeme sistemleri, sanal pos entegrasyonu, e-ticaret ödeme çözümleri`}
         canonicalPath="/pos-types/sanal" 
         priority={20} 
         structuredData={structuredData} 
