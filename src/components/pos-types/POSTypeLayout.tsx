@@ -27,12 +27,24 @@ const POSTypeLayout = ({ providers, typeName }: POSTypeLayoutProps) => {
   const [filteredProviders, setFilteredProviders] = useState(providers);
 
   const applyFilters = (filters: FilterState) => {
-    let filtered = providers;
+    let filtered = [...providers]; // Start with all providers
+
+    // Only apply filters if any filter is actually selected
+    const hasActiveFilters = 
+      filters.providers.length > 0 ||
+      filters.commissionRanges.length > 0 ||
+      filters.monthlyFeeRanges.length > 0 ||
+      filters.features.length > 0;
+
+    if (!hasActiveFilters) {
+      setFilteredProviders(providers);
+      return;
+    }
 
     if (filters.providers.length > 0) {
       filtered = filtered.filter(provider => 
         filters.providers.some(filterProvider => 
-          provider.name.includes(filterProvider)
+          provider.name.toLowerCase().includes(filterProvider.toLowerCase())
         )
       );
     }
@@ -113,7 +125,7 @@ const POSTypeLayout = ({ providers, typeName }: POSTypeLayoutProps) => {
           <div className="mb-8">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold">
-                {typeName} Komisyon Oranları
+                {typeName} Komisyon Oranları ({filteredProviders.length})
               </h2>
             </div>
             
