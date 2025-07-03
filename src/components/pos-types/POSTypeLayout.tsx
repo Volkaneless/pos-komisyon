@@ -87,7 +87,7 @@ const POSTypeLayout = ({ providers, typeName }: POSTypeLayoutProps) => {
     <div className="container mx-auto px-4 py-12">
       {/* Popular Solutions Section */}
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">Popüler {typeName} Çözümleri</h2>
+        <h2 className="text-2xl font-bold mb-6">En İyi {typeName} Komisyon Oranları</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {providers.slice(0, 2).map(provider => (
             <POSCard key={provider.id} {...provider} />
