@@ -113,7 +113,7 @@ const POSTypeLayout = ({ providers, typeName }: POSTypeLayoutProps) => {
           <div className="mb-8">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold">
-                {typeName} Çözümleri ({filteredProviders.length})
+                {typeName} Komisyon Oranları
               </h2>
             </div>
             
