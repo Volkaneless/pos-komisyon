@@ -32,14 +32,37 @@ const POSTypePage = ({
         breadcrumbPath={breadcrumbPath}
       />
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="mb-12">
+      <div className="container mx-auto px-4 py-6 md:py-8">
+        <div className="mb-8">
           {typeof whatIsContent === 'string' ? (
-            <div className="prose prose-lg max-w-none mb-8">
-              <p>{whatIsContent}</p>
+            <div className="prose prose-lg max-w-none mb-6">
+              <p className="text-gray-700 leading-relaxed text-base md:text-lg">
+                {whatIsContent}
+              </p>
+              
+              {/* Extended content section */}
+              <div className="mt-4 space-y-4">
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  İşletmenizin ihtiyaçlarına uygun {type.toLowerCase()} çözümü seçerken, komisyon oranları, 
+                  güvenlik standartları, teknik destek kalitesi ve entegrasyon kolaylığı gibi faktörleri 
+                  değerlendirmeniz önemlidir. Sektörde faaliyet gösteren tüm sağlayıcıları karşılaştırarak 
+                  en uygun seçeneği bulabilirsiniz.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
+                  {advantages.map((advantage, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm md:text-base">{advantage}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           ) : (
-            whatIsContent
+            <div className="mb-6">
+              {whatIsContent}
+            </div>
           )}
         </div>
       </div>
