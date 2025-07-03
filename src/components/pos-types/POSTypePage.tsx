@@ -1,7 +1,5 @@
-
 import { LucideIcon } from "lucide-react";
 import POSPageHeader from "./POSPageHeader";
-
 interface POSTypePageProps {
   title: string;
   description: string;
@@ -11,7 +9,6 @@ interface POSTypePageProps {
   advantages: string[];
   breadcrumbPath?: string;
 }
-
 const POSTypePage = ({
   title,
   description,
@@ -21,21 +18,13 @@ const POSTypePage = ({
   advantages,
   breadcrumbPath
 }: POSTypePageProps) => {
-  return (
-    <div>
+  return <div>
       {/* Header Component */}
-      <POSPageHeader 
-        title={title}
-        description={description}
-        type={type}
-        Icon={Icon}
-        breadcrumbPath={breadcrumbPath}
-      />
+      <POSPageHeader title={title} description={description} type={type} Icon={Icon} breadcrumbPath={breadcrumbPath} />
 
       <div className="container mx-auto px-4 py-6 md:py-8">
         <div className="mb-8">
-          {typeof whatIsContent === 'string' ? (
-            <div className="prose prose-lg max-w-none mb-6">
+          {typeof whatIsContent === 'string' ? <div className="prose prose-lg max-w-none mb-6">
               <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                 {whatIsContent}
               </p>
@@ -49,25 +38,13 @@ const POSTypePage = ({
                   en uygun seçeneği bulabilirsiniz.
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
-                  {advantages.map((advantage, index) => (
-                    <div key={index} className="flex items-start gap-2">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-gray-700 text-sm md:text-base">{advantage}</span>
-                    </div>
-                  ))}
-                </div>
+                
               </div>
-            </div>
-          ) : (
-            <div className="mb-6">
+            </div> : <div className="mb-6">
               {whatIsContent}
-            </div>
-          )}
+            </div>}
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default POSTypePage;
