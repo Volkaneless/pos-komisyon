@@ -3,7 +3,7 @@ import type { POSProvider } from "@/types/pos";
 
 export const bankPOSProviders: POSProvider[] = [
   {
-    id: "teb-pos",
+    id: "teb-pos-yazarkasa",
     name: "TEB POS",
     type: "Yazar Kasa (ÖKC) POS",
     logo: "/logos/teb.webp",
@@ -17,7 +17,7 @@ export const bankPOSProviders: POSProvider[] = [
     ]
   },
   {
-    id: "halkbank-pos",
+    id: "halkbank-pos-yazarkasa",
     name: "Halkbank POS",
     type: "Yazar Kasa (ÖKC) POS",
     logo: "/logos/halkbank.webp",
@@ -31,7 +31,7 @@ export const bankPOSProviders: POSProvider[] = [
     ]
   },
   {
-    id: "ziraat-pos",
+    id: "ziraat-pos-yazarkasa",
     name: "Ziraat POS",
     type: "Yazar Kasa (ÖKC) POS",
     logo: "/logos/ziraat.webp",
@@ -45,7 +45,7 @@ export const bankPOSProviders: POSProvider[] = [
     ]
   },
   {
-    id: "kuveyt-turk-pos",
+    id: "kuveyt-turk-pos-yazarkasa",
     name: "Kuveyt Türk POS",
     type: "Yazar Kasa (ÖKC) POS",
     logo: "/logos/kuveyt-turk.webp",
@@ -56,6 +56,62 @@ export const bankPOSProviders: POSProvider[] = [
       "Tüm kartlarla uyumlu",
       "Hızlı kurulum",
       "7/24 destek"
+    ]
+  },
+  {
+    id: "garanti-pos-yazarkasa",
+    name: "Garanti BBVA POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    logo: "/logos/garanti.webp",
+    monthly_fee: "139 TL / Ay",
+    commission_rate: "1,85",
+    features: [
+      "GarantiPAY entegrasyonu",
+      "Yazar kasa desteği",
+      "Güvenli altyapı",
+      "7/24 destek"
+    ]
+  },
+  {
+    id: "akbank-pos-yazarkasa",
+    name: "Akbank POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    logo: "/logos/akbank.webp",
+    monthly_fee: "119 TL / Ay",
+    commission_rate: "1,79",
+    features: [
+      "Axess kart desteği",
+      "Yazar kasa entegrasyonu",
+      "Güvenli altyapı",
+      "7/24 teknik destek"
+    ]
+  },
+  {
+    id: "vakifbank-pos-yazarkasa",
+    name: "VakıfBank POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    logo: "/logos/vakifbank.webp",
+    monthly_fee: "129 TL / Ay",
+    commission_rate: "1,85",
+    features: [
+      "World kart desteği",
+      "Yazar kasa entegrasyonu",
+      "7/24 teknik destek",
+      "Güvenli işlem altyapısı"
+    ]
+  },
+  {
+    id: "isbank-pos-yazarkasa",
+    name: "İş Bankası POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    logo: "/logos/isbank.webp",
+    monthly_fee: "149 TL / Ay",
+    commission_rate: "1,95",
+    features: [
+      "Maximum kart desteği",
+      "Yazar kasa entegrasyonu",
+      "3D Secure güvenliği",
+      "7/24 teknik destek"
     ]
   }
 ];

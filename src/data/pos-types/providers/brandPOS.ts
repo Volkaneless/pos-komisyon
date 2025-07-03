@@ -1,13 +1,14 @@
+
 import type { POSProvider } from "@/types/pos";
 
-export const brandPOSProviders = [
+export const brandPOSProviders: POSProvider[] = [
   {
     id: "beko-pos",
     logo: "/lovable-uploads/12b9f566-b156-421b-8f7d-cb5fe8fc500a.png",
     name: "Beko POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthly_fee: "0 TL",
-    commission_rate: "%0.99 - %1.85",
+    commission_rate: "0,99",
     features: [
       "Kolay kullanım",
       "Hızlı kurulum",
@@ -21,7 +22,7 @@ export const brandPOSProviders = [
     name: "Beko 300 TR POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthly_fee: "0 TL",
-    commission_rate: "%0.89 - %1.75",
+    commission_rate: "0,89",
     features: [
       "Kompakt tasarım",
       "Hızlı işlem süreci",
@@ -36,7 +37,7 @@ export const brandPOSProviders = [
     name: "Ingenico POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthly_fee: "0 TL",
-    commission_rate: "%0.79 - %1.95",
+    commission_rate: "0,79",
     features: [
       "Temassız ödeme",
       "Hızlı işlem",
@@ -50,7 +51,7 @@ export const brandPOSProviders = [
     name: "Paygo POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthly_fee: "0 TL",
-    commission_rate: "%0.85 - %1.80",
+    commission_rate: "0,85",
     features: [
       "Modern arayüz",
       "Hızlı kurulum",
@@ -65,7 +66,7 @@ export const brandPOSProviders = [
     name: "Hugin POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthly_fee: "0 TL",
-    commission_rate: "%0.90 - %1.85",
+    commission_rate: "0,90",
     features: [
       "GİB onaylı",
       "Kullanıcı dostu arayüz",
@@ -80,13 +81,43 @@ export const brandPOSProviders = [
     name: "Move 5000F POS",
     type: "Yazar Kasa (ÖKC) POS",
     monthly_fee: "0 TL",
-    commission_rate: "%0.95 - %1.90",
+    commission_rate: "0,95",
     features: [
       "Dokunmatik ekran",
       "Hızlı işletim sistemi",
       "Mobil bağlantı özellikleri",
       "Şık ve modern tasarım",
       "Çoklu ödeme seçeneği"
+    ]
+  },
+  {
+    id: "verifone-pos",
+    logo: "/lovable-uploads/12b9f566-b156-421b-8f7d-cb5fe8fc500a.png",
+    name: "Verifone POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    monthly_fee: "0 TL",
+    commission_rate: "0,89",
+    features: [
+      "Güvenli işlem altyapısı",
+      "Hızlı kurulum",
+      "Kolay kullanım",
+      "7/24 teknik destek",
+      "Çoklu kart desteği"
+    ]
+  },
+  {
+    id: "casio-pos",
+    logo: "/lovable-uploads/12b9f566-b156-421b-8f7d-cb5fe8fc500a.png",
+    name: "Casio POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    monthly_fee: "0 TL",
+    commission_rate: "0,92",
+    features: [
+      "Modern tasarım",
+      "Dayanıklı yapı",
+      "Kolay entegrasyon",
+      "Teknik destek",
+      "Stok yönetimi"
     ]
   }
 ];

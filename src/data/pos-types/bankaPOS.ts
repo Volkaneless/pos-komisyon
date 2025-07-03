@@ -1,3 +1,4 @@
+
 import type { POSProvider } from "@/types/pos";
 
 export const bankaPOSProviders: POSProvider[] = [
@@ -93,7 +94,7 @@ export const bankaPOSProviders: POSProvider[] = [
   },
   {
     id: "isbank-sanal-pos",
-    name: "İş Bankası Sanal POS",
+    name: "İş Bankası POS",
     type: "Banka POS",
     logo: "/logos/isbank.webp",
     monthly_fee: "149 TL / Ay",
@@ -108,7 +109,7 @@ export const bankaPOSProviders: POSProvider[] = [
   },
   {
     id: "vakifbank-sanal-pos",
-    name: "VakıfBank Sanal POS",
+    name: "VakıfBank POS",
     type: "Banka POS",
     logo: "/logos/vakifbank.webp",
     monthly_fee: "129 TL / Ay",
@@ -123,7 +124,7 @@ export const bankaPOSProviders: POSProvider[] = [
   },
   {
     id: "denizbank-sanal-pos",
-    name: "Denizbank Sanal POS",
+    name: "Denizbank POS",
     type: "Banka POS",
     logo: "/logos/denizbank.webp",
     monthly_fee: "139 TL / Ay",
@@ -134,6 +135,51 @@ export const bankaPOSProviders: POSProvider[] = [
       "Gelişmiş raporlama",
       "Uluslararası kart kabulü",
       "Dinamik kur çevrimi"
+    ]
+  },
+  {
+    id: "akbank-pos",
+    name: "Akbank POS",
+    type: "Banka POS",
+    logo: "/logos/akbank.webp",
+    monthly_fee: "119 TL / Ay",
+    commission_rate: "1,79",
+    features: [
+      "Axess kart program desteği",
+      "Mobil ödeme çözümleri",
+      "Güvenli altyapı",
+      "Kolay entegrasyon",
+      "7/24 teknik destek"
+    ]
+  },
+  {
+    id: "finansbank-pos",
+    name: "QNB Finansbank POS",
+    type: "Banka POS",
+    logo: "/logos/qnb-finansbank.webp",
+    monthly_fee: "129 TL / Ay",
+    commission_rate: "1,85",
+    features: [
+      "Finanscard program desteği",
+      "E-ticaret entegrasyonu",
+      "Mobil POS çözümleri",
+      "Güvenli işlem altyapısı",
+      "7/24 müşteri desteği"
+    ]
+  },
+  {
+    id: "ing-pos",
+    name: "ING Bank POS",
+    type: "Banka POS",
+    logo: "/logos/ing.webp",
+    monthly_fee: "139 TL / Ay",
+    commission_rate: "1,89",
+    features: [
+      "Dijital bankacılık entegrasyonu",
+      "Modern ödeme çözümleri",
+      "Güvenli altyapı",
+      "Kolay kullanım",
+      "7/24 teknik destek"
     ]
   }
 ];

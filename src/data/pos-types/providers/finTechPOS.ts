@@ -85,5 +85,61 @@ export const finTechPOSProviders: POSProvider[] = [
       "Hızlı kurulum",
       "Teknik destek"
     ]
+  },
+  {
+    id: "iyzico-pos",
+    name: "iyzico POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    logo: "/logos/iyzico.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,95",
+    features: [
+      "Entegre yazarkasa",
+      "Kolay entegrasyon",
+      "Gelişmiş fraud koruması",
+      "Teknik destek"
+    ]
+  },
+  {
+    id: "vallet-pos",
+    name: "Vallet POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    logo: "/logos/vallet.webp",
+    monthly_fee: "0TL",
+    commission_rate: "0,49",
+    features: [
+      "Düşük komisyon",
+      "Anında aktivasyon",
+      "Yazar kasa entegrasyonu",
+      "7/24 destek"
+    ]
+  },
+  {
+    id: "paytr-pos",
+    name: "PayTR POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    logo: "/logos/paytr.webp",
+    monthly_fee: "0TL",
+    commission_rate: "0,59",
+    features: [
+      "Hızlı kurulum",
+      "Düşük komisyon",
+      "Yazar kasa desteği",
+      "7/24 destek"
+    ]
+  },
+  {
+    id: "moka-pos",
+    name: "Moka POS",
+    type: "Yazar Kasa (ÖKC) POS",
+    logo: "/logos/moka.webp",
+    monthly_fee: "0TL",
+    commission_rate: "1,89",
+    features: [
+      "Entegre yazarkasa",
+      "Kolay entegrasyon",
+      "Güvenli altyapı",
+      "7/24 destek"
+    ]
   }
 ];

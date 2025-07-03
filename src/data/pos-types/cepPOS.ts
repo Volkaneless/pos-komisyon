@@ -1,3 +1,4 @@
+
 import { POSProvider } from "@/types/pos";
 
 export const cepPOSProviders: POSProvider[] = [
@@ -69,6 +70,76 @@ export const cepPOSProviders: POSProvider[] = [
       "Kolay entegrasyon",
       "Online destek",
       "Gelişmiş raporlama"
+    ]
+  },
+  {
+    id: "tosla-cep",
+    logo: "/logos/tosla.png",
+    name: "Tosla Cep POS",
+    type: "Cep POS",
+    monthly_fee: "0TL",
+    commission_rate: "1,69",
+    features: [
+      "Modern arayüz",
+      "Kolay kullanım",
+      "Hızlı kurulum",
+      "Teknik destek"
+    ]
+  },
+  {
+    id: "qnbpay-cep",
+    logo: "/logos/qnbpay.png",
+    name: "QNBpay Cep POS",
+    type: "Cep POS",
+    monthly_fee: "0TL",
+    commission_rate: "1,99",
+    features: [
+      "Hızlı kurulum",
+      "Kolay kullanım",
+      "Ücretsiz kurulum",
+      "7/24 destek"
+    ]
+  },
+  {
+    id: "paycell-cep",
+    logo: "/logos/paycell.png",
+    name: "Paycell Cep POS",
+    type: "Cep POS",
+    monthly_fee: "0TL",
+    commission_rate: "2,58",
+    features: [
+      "Online ödeme",
+      "Güvenli altyapı",
+      "Kolay entegrasyon",
+      "7/24 destek"
+    ]
+  },
+  {
+    id: "sipay-cep",
+    logo: "/logos/sipay.png",
+    name: "Sipay Cep POS",
+    type: "Cep POS",
+    monthly_fee: "0TL",
+    commission_rate: "1,89",
+    features: [
+      "Cep telefonu uyumlu",
+      "Kolay entegrasyon",
+      "Güvenli altyapı",
+      "7/24 destek"
+    ]
+  },
+  {
+    id: "moka-cep",
+    logo: "/logos/moka.png",
+    name: "Moka Cep POS",
+    type: "Cep POS",
+    monthly_fee: "0TL",
+    commission_rate: "1,89",
+    features: [
+      "Cep telefonu uyumlu",
+      "Kolay entegrasyon",
+      "Güvenli altyapı",
+      "7/24 destek"
     ]
   }
 ];
