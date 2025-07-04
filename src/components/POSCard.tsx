@@ -16,28 +16,31 @@ interface POSCardProps {
 
 const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features }: POSCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4 flex-1">
-          <div className="w-12 h-12 bg-gray-100 rounded-md flex items-center justify-center flex-shrink-0">
+    <div className="bg-white rounded-lg shadow-sm border p-4 md:p-6 hover:shadow-md transition-shadow">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+        <div className="flex items-center gap-4 flex-1 min-w-0">
+          <div className="w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center flex-shrink-0 border">
             <img 
-              src={logo} 
+              src={logo || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=64&h=64&fit=crop&crop=center"} 
               alt={`${name} Logo`} 
-              className="w-8 h-8 object-contain"
+              className="w-12 h-12 object-contain"
+              onError={(e) => {
+                e.currentTarget.src = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=64&h=64&fit=crop&crop=center";
+              }}
             />
           </div>
           
-          <div className="flex-1">
-            <h3 className="font-semibold text-lg mb-1">{name}</h3>
+          <div className="flex-1 min-w-0">
+            <h3 className="font-semibold text-lg mb-1 truncate">{name}</h3>
             <p className="text-sm text-gray-500 mb-3">{type}</p>
             
-            <div className="flex items-center gap-6 text-sm">
-              <div>
-                <span className="text-gray-500">Aylık Ücret: </span>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-sm">
+              <div className="flex items-center gap-2">
+                <span className="text-gray-500">Aylık Ücret:</span>
                 <span className="font-medium">{monthly_fee}</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-gray-500">Komisyon: </span>
+                <span className="text-gray-500">Komisyon:</span>
                 <span className="font-medium">%{commission_rate}</span>
                 <HoverCard>
                   <HoverCardTrigger>
@@ -50,26 +53,26 @@ const POSCard = ({ id, logo, name, type, monthly_fee, commission_rate, features 
               </div>
             </div>
             
-            <div className="flex flex-wrap gap-4 mt-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-3">
               {features.slice(0, 3).map((feature, index) => (
                 <div key={index} className="flex items-center gap-1">
                   <Check className="h-3 w-3 text-primary flex-shrink-0" />
-                  <span className="text-xs text-gray-600">{feature}</span>
+                  <span className="text-xs text-gray-600 truncate">{feature}</span>
                 </div>
               ))}
-              {features.length > 3 && (
-                <span className="text-xs text-gray-500">+{features.length - 3} özellik daha</span>
-              )}
             </div>
+            {features.length > 3 && (
+              <span className="text-xs text-gray-500 mt-2 block">+{features.length - 3} özellik daha</span>
+            )}
           </div>
         </div>
 
-        <div className="flex gap-3 ml-6">
-          <Button size="sm" className="bg-primary text-white hover:bg-primary/90 text-sm px-6">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:ml-6 lg:flex-shrink-0">
+          <Button size="sm" className="bg-primary text-white hover:bg-primary/90 text-sm px-4 sm:px-6 w-full sm:w-auto">
             Başvur
           </Button>
-          <Link to={`/pos/${id}`}>
-            <Button variant="outline" size="sm" className="text-sm px-6">
+          <Link to={`/pos/${id}`} className="w-full sm:w-auto">
+            <Button variant="outline" size="sm" className="text-sm px-4 sm:px-6 w-full">
               İncele
             </Button>
           </Link>
