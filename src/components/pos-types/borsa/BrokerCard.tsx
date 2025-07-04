@@ -21,12 +21,9 @@ const BrokerCard = ({ provider }: BrokerCardProps) => {
           <div className="flex items-center gap-4">
             <div className="bg-gray-50 p-3 rounded-lg border flex-shrink-0">
               <img 
-                src={provider.logo || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=64&h=64&fit=crop&crop=center"} 
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=64&h=64&fit=crop&crop=center" 
                 alt={provider.name} 
                 className="h-12 w-12 object-contain" 
-                onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=64&h=64&fit=crop&crop=center";
-                }}
               />
             </div>
             <div className="min-w-0 flex-1">
