@@ -8,7 +8,7 @@ interface POSHeaderProps {
 
 const POSHeader = ({ provider }: POSHeaderProps) => {
   // Fallback image if provider.logo is not available or valid
-  const logoSrc = provider.logo || "/logo.svg";
+  const logoSrc = "/lovable-uploads/022dd1e4-49bd-409f-9b2a-2da2b294b413.png";
   
   // Generate dynamic description text based on provider name
   const getProviderDescription = (providerName: string) => {

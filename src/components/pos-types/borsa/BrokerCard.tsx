@@ -21,7 +21,7 @@ const BrokerCard = ({ provider }: BrokerCardProps) => {
           <div className="flex items-center gap-4">
             <div className="bg-gray-50 p-3 rounded-lg border flex-shrink-0">
               <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=64&h=64&fit=crop&crop=center" 
+                src="/lovable-uploads/022dd1e4-49bd-409f-9b2a-2da2b294b413.png" 
                 alt={provider.name} 
                 className="h-12 w-12 object-contain" 
               />
