@@ -5,7 +5,7 @@ import POSFilter from "../components/POSFilter";
 import FAQ from "../components/FAQ";
 import POSArticle from "../components/POSArticle";
 import { posProviders } from "../data/posProviders";
-import MetaTags from "@/components/MetaTags";
+import EnhancedMetaTags from "@/components/SEO/EnhancedMetaTags";
 
 const Index = () => {
   const [filteredProviders, setFilteredProviders] = useState(posProviders);
@@ -37,12 +37,13 @@ const Index = () => {
   return (
     <>
       {/* Homepage meta tags with high priority and canonical URL */}
-      <MetaTags
+      <EnhancedMetaTags
         title={pageTitle}
         description={pageDescription}
         keywords="pos komisyon oranları 2025, banka pos cihazı, pos komisyon hesaplama, pos karşılaştırma, en uygun pos"
         canonicalPath="/"
-        priority={50}
+        ogType="website"
+        schemaType="WebSite"
       />
 
       <div className="min-h-screen">
