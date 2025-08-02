@@ -1,7 +1,7 @@
 
 import POSDetailPage from "@/components/pos/POSDetailPage";
 import { yazarkasaPOSProviders } from "@/data/pos-types/yazarkasaPOS";
-import MetaTags from "@/components/MetaTags";
+import EnhancedMetaTags from "@/components/SEO/EnhancedMetaTags";
 
 const ZiraatPOS = () => {
   const provider = yazarkasaPOSProviders.find(p => p.id === "ziraat-pos");
@@ -12,20 +12,18 @@ const ZiraatPOS = () => {
 
   return (
     <>
-      <MetaTags
+      <EnhancedMetaTags
         title={`Ziraat POS Komisyon Oranları ${new Date().getFullYear()}`}
         description={`${new Date().getFullYear()} Ziraat POS komisyon oranları, özellikleri ve detaylı karşılaştırma. İşletmeniz için en uygun Ziraat POS çözümünü keşfedin.`}
+        keywords={`ziraat pos komisyon oranları ${new Date().getFullYear()}, ziraat pos cihazı, ziraat bankası pos`}
         canonicalPath="/pos/ziraat-pos"
-        priority={20}
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Product",
-          "name": "Ziraat POS",
-          "description": `Ziraat POS komisyon oranları ve detaylı bilgiler. ${new Date().getFullYear()} güncel bilgileri.`,
-          "brand": {
-            "@type": "Brand",
-            "name": "Ziraat Bankası"
-          }
+        ogType="product"
+        schemaType="Product"
+        productInfo={{
+          name: "Ziraat POS",
+          description: `Ziraat POS komisyon oranları ve detaylı bilgiler. ${new Date().getFullYear()} güncel bilgileri.`,
+          brand: "Ziraat Bankası",
+          category: "POS Cihazı"
         }}
       />
       <POSDetailPage provider={provider} />

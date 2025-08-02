@@ -147,7 +147,7 @@ export const routes: Route[] = [
   // individual POS provider routes
   { path: "/pos/akbank-fiziki-pos", element: <AkbankFizikiPOS /> },
   { path: "/pos/akbank-sanal-pos", element: <AkbankSanalPOS /> },
-  { path: "/pos/akbank-yazarkasa-pos", element: <AkbankYazarkasaPOS /> },
+  { path: "/pos/akbank-yazarkasa", element: <AkbankYazarkasaPOS /> },
   { path: "/pos/akbank-cebe-pos", element: <AkbankCebePOS /> },
   { path: "/pos/beko-pos", element: <BekoPOS /> },
   { path: "/pos/beko-300-tr-pos", element: <Beko300TRPOS /> },

@@ -152,7 +152,7 @@ export function generateSitemapUrls(): SitemapUrl[] {
 
   // Add individual POS provider pages
   const posProviders = [
-    'garanti-pos', 'isbank-pos', 'akbank-fiziki', 'akbank-sanal', 'akbank-cebe', 'akbank-yazarkasa',
+    'garanti-pos', 'garanti-sanal-pos', 'isbank-pos', 'akbank-fiziki-pos', 'akbank-sanal-pos', 'akbank-cebe-pos', 'akbank-yazarkasa',
     'iyzico-sanal', 'paytr-sanal', 'param-sanal', 'brisa-sanal', 'paycell-mobil', 'enpara-mobil',
     'odeal-pos', 'tosla-sanal', 'moka-sanal', 'sipay-sanal', 'paygo-pos', 'qnb-pay-pos',
     'vakifbank-sanal', 'denizbank-sanal', 'teb-pos', 'ziraat-pos', 'kuveyt-turk-pos',
