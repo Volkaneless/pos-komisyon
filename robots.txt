@@ -2,56 +2,37 @@
 User-agent: *
 Allow: /
 
-# Allow crawling of all content
+# Crawl-delay to prevent overloading
+Crawl-delay: 1
+
+# High priority pages for indexing
 Allow: /pos-types/
 Allow: /pos/
 Allow: /blog/
-Allow: /about
-Allow: /contact
 Allow: /calculator
-Allow: /kripto-borsalari/
-Allow: /emlakci-komisyon
-Allow: /shopier-komisyon
-Allow: /trendyol-komisyon
-Allow: /dolap-komisyon
-Allow: /hepsiburada-komisyon
-Allow: /param-guvende-komisyon
-Allow: /n11-komisyon
-Allow: /amazon-komisyon
 
-# Specific priority for YazarKasa POS pages
-Allow: /pos-types/yazarkasa
-Allow: /pos/beko-pos
-Allow: /pos/hugin-pos
+# Disallow duplicate content patterns
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /pos/:id
+Disallow: /_redirects
+Disallow: /ads.txt
+
+# Canonical URLs - ensure these are the preferred versions
+Allow: /pos/akbank-yazarkasa
+Allow: /pos/akbank-fiziki-pos
+Allow: /pos/akbank-cebe-pos
+Allow: /pos/garanti-sanal-pos
 Allow: /pos/ziraat-pos
-Allow: /pos/ingenico-pos
-Allow: /pos/paygo-pos
-Allow: /pos/move-5000f-pos
-Allow: /pos/beko-300-tr-pos
-Allow: /pos/halkbank-pos
 Allow: /pos/teb-pos
+Allow: /pos/halkbank-pos
 Allow: /pos/kuveyt-turk-pos
 
-# Specific priority for Sanal POS pages
-Allow: /pos-types/sanal
-Allow: /pos/iyzico-sanal-pos
-Allow: /pos/paytr-sanal
-Allow: /pos/param-sanal
-Allow: /pos/shopify-sanal
-Allow: /pos/vallet-sanal
-Allow: /pos/paycell-sanal
-Allow: /pos/moka-sanal
-Allow: /pos/tosla-sanal
-Allow: /pos/esnekpos-sanal
-
-# Important sections to index
-Allow: /blog/pos-cihazi-nedir-nasil-kullanilir
-Allow: /blog/pos-cihazi-nasil-alinir
-Allow: /blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler
+# Blog content priority
 Allow: /blog/pos-komisyon-oranlari-2025
+Allow: /blog/pos-cihazi-nasil-alinir
 Allow: /blog/sanal-pos-fiziki-pos-karsilastirma
-Allow: /blog/pos-komisyon-oranlari
-Allow: /blog/sanal-pos-vs-fiziki-pos-hangisi-daha-avantajli
 
 # Sitemap location
 Sitemap: https://poskomisyon.com/sitemap.xml
