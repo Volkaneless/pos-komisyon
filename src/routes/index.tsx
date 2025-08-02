@@ -14,6 +14,7 @@ import HepsiburadaCalculator from "../pages/HepsiburadaCalculator";
 import ParamGuvendeCalculator from "../pages/ParamGuvendeCalculator";
 import N11Calculator from "../pages/N11Calculator";
 import AmazonCalculator from "../pages/AmazonCalculator";
+import CompoundInterestCalculator from "../pages/CompoundInterestCalculator";
 import CryptoExchanges from "../pages/CryptoExchanges";
 import CryptoExchangeDetail from "../pages/CryptoExchangeDetail";
 import EmlakciKomisyon from "../pages/EmlakciKomisyon";
@@ -120,6 +121,7 @@ export const routes: Route[] = [
   { path: "/param-guvende-komisyon", element: <ParamGuvendeCalculator /> },
   { path: "/n11-komisyon", element: <N11Calculator /> },
   { path: "/amazon-komisyon", element: <AmazonCalculator /> },
+  { path: "/bilesik-faiz-hesaplama", element: <CompoundInterestCalculator /> },
   { path: "/kripto-borsalari", element: <CryptoExchanges /> },
   { path: "/kripto-borsalari/:id", element: <CryptoExchangeDetail /> },
   { path: "/emlakci-komisyon", element: <EmlakciKomisyon /> },
