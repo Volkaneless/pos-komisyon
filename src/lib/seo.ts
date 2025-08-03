@@ -169,7 +169,7 @@ export function generateDefaultSEO(path: string): SEOConfig {
   const defaultConfigs: Record<string, SEOConfig> = {
     '/': {
       title: `POS Komisyon Oranları ${currentYear} - En Uygun POS Komisyon`,
-      description: `${currentYear} güncel POS komisyon oranları karşılaştırması. Sanal POS, fiziki POS, cep POS ve daha fazlası için en uygun çözümleri bulun.`,
+      description: `3 Ağustos ${currentYear} tarihli güncel verilerle bankaların POS cihazı komisyon oranlarını karşılaştırın. En uygun POS komisyon oranları ve detaylı bilgiler.`,
       keywords: `pos komisyon oranları ${currentYear}, pos karşılaştırma, sanal pos, fiziki pos, cep pos, pos hesaplama`,
       canonicalPath: '/',
       ogType: 'website'
