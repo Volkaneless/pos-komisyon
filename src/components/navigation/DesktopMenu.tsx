@@ -57,6 +57,14 @@ const DesktopMenu = () => {
         )}
       </div>
 
+      {/* Desi Hesaplama */}
+      <Link 
+        to="/desi-hesaplama" 
+        className="text-gray-700 hover:text-primary font-medium transition-colors duration-200"
+      >
+        Desi Hesaplama
+      </Link>
+
       {/* Blog */}
       <Link 
         to="/blog" 

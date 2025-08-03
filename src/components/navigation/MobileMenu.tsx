@@ -56,6 +56,15 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             POS Hesaplayıcı
           </Link>
 
+          <Link
+            to="/desi-hesaplama"
+            onClick={handleLinkClick}
+            className="flex items-center gap-3 p-3 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-200"
+          >
+            <Package className="w-5 h-5" />
+            Desi Hesaplama
+          </Link>
+
           {/* POS Solutions Section */}
           <div className="py-2">
             <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 mb-2">

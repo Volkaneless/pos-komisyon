@@ -18,6 +18,9 @@ import CompoundInterestCalculator from "../pages/CompoundInterestCalculator";
 import CryptoExchanges from "../pages/CryptoExchanges";
 import CryptoExchangeDetail from "../pages/CryptoExchangeDetail";
 import EmlakciKomisyon from "../pages/EmlakciKomisyon";
+import DesiHesaplama from "../pages/DesiHesaplama";
+import ArasKargoDesiHesaplama from "../pages/desi/ArasKargoDesiHesaplama";
+import PTTKargoDesiHesaplama from "../pages/desi/PTTKargoDesiHesaplama";
 
 // POS Types
 import BankaPOS from "../pages/pos-types/BankaPOS";
@@ -125,6 +128,9 @@ export const routes: Route[] = [
   { path: "/kripto-borsalari", element: <CryptoExchanges /> },
   { path: "/kripto-borsalari/:id", element: <CryptoExchangeDetail /> },
   { path: "/emlakci-komisyon", element: <EmlakciKomisyon /> },
+  { path: "/desi-hesaplama", element: <DesiHesaplama /> },
+  { path: "/desi-hesaplama/aras-kargo-desi-hesaplama", element: <ArasKargoDesiHesaplama /> },
+  { path: "/desi-hesaplama/ptt-kargo-desi-hesaplama", element: <PTTKargoDesiHesaplama /> },
 
   // POS Types
   { path: "/pos-types/banka", element: <BankaPOS /> },
