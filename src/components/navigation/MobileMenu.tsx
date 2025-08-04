@@ -1,5 +1,5 @@
 
-import { X, Home, Calculator, Smartphone, CreditCard, Cloud, BookOpen } from "lucide-react";
+import { X, Home, Calculator, Smartphone, CreditCard, Cloud, BookOpen, Package } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface MobileMenuProps {

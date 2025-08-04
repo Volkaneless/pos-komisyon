@@ -279,8 +279,8 @@ const PTTKargoDesiHesaplama = () => {
               {faqData.map((faq, index) => (
                 <Card key={index}>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-lg mb-3">{faq.soru}</h3>
-                    <p className="text-gray-700">{faq.cevap}</p>
+                    <h3 className="font-semibold text-lg mb-3">{faq.question}</h3>
+                    <p className="text-gray-700">{faq.answer}</p>
                   </CardContent>
                 </Card>
               ))}
