@@ -25,6 +25,7 @@ import SuratKargoDesiHesaplama from "../pages/desi/SuratKargoDesiHesaplama";
 import YurticiKargoDesiHesaplama from "../pages/desi/YurticiKargoDesiHesaplama";
 import MNGKargoDesiHesaplama from "../pages/desi/MNGKargoDesiHesaplama";
 import TrendyolDesiHesaplama from "../pages/desi/TrendyolDesiHesaplama";
+import KiraArtisOrani from "../pages/KiraArtisOrani";
 
 // POS Types
 import BankaPOS from "../pages/pos-types/BankaPOS";
@@ -242,5 +243,6 @@ export const routes: Route[] = [
   { path: "/desi-hesaplama/surat-kargo-desi-hesaplama", element: <SuratKargoDesiHesaplama /> },
   { path: "/desi-hesaplama/yurtici-kargo-desi-hesaplama", element: <YurticiKargoDesiHesaplama /> },
   { path: "/desi-hesaplama/mng-kargo-desi-hesaplama", element: <MNGKargoDesiHesaplama /> },
-  { path: "/desi-hesaplama/trendyol-desi-hesaplama", element: <TrendyolDesiHesaplama /> }
+  { path: "/desi-hesaplama/trendyol-desi-hesaplama", element: <TrendyolDesiHesaplama /> },
+  { path: "/kira-artis-orani-hesaplama", element: <KiraArtisOrani /> }
 ];
