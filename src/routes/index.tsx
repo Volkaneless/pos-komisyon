@@ -21,6 +21,10 @@ import EmlakciKomisyon from "../pages/EmlakciKomisyon";
 import DesiHesaplama from "../pages/DesiHesaplama";
 import ArasKargoDesiHesaplama from "../pages/desi/ArasKargoDesiHesaplama";
 import PTTKargoDesiHesaplama from "../pages/desi/PTTKargoDesiHesaplama";
+import SuratKargoDesiHesaplama from "../pages/desi/SuratKargoDesiHesaplama";
+import YurticiKargoDesiHesaplama from "../pages/desi/YurticiKargoDesiHesaplama";
+import MNGKargoDesiHesaplama from "../pages/desi/MNGKargoDesiHesaplama";
+import TrendyolDesiHesaplama from "../pages/desi/TrendyolDesiHesaplama";
 
 // POS Types
 import BankaPOS from "../pages/pos-types/BankaPOS";
@@ -232,5 +236,11 @@ export const routes: Route[] = [
   { path: "/pos/global-yatirim", element: <BrokerDetail /> },
   { path: "/pos/piapiri", element: <BrokerDetail /> },
   { path: "/pos/forinvest", element: <BrokerDetail /> },
-  { path: "/pos/slayz", element: <BrokerDetail /> }
+  { path: "/pos/slayz", element: <BrokerDetail /> },
+  
+  // Desi calculation pages
+  { path: "/desi-hesaplama/surat-kargo-desi-hesaplama", element: <SuratKargoDesiHesaplama /> },
+  { path: "/desi-hesaplama/yurtici-kargo-desi-hesaplama", element: <YurticiKargoDesiHesaplama /> },
+  { path: "/desi-hesaplama/mng-kargo-desi-hesaplama", element: <MNGKargoDesiHesaplama /> },
+  { path: "/desi-hesaplama/trendyol-desi-hesaplama", element: <TrendyolDesiHesaplama /> }
 ];
