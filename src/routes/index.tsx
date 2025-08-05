@@ -46,6 +46,7 @@ import POSKomisyonOranlari2025 from "../pages/blog/pos-komisyon-oranlari-2025";
 // GDPR Pages
 import GizlilikPolitikasi from "../pages/GizlilikPolitikasi";
 import CerezPolitikasi from "../pages/CerezPolitikasi";
+import SitemapXML from "../pages/SitemapXML";
 
 // POS Detail Pages
 import AkbankFizikiPOS from "../pages/pos/AkbankFizikiPOS";
@@ -156,6 +157,7 @@ export const routes: Route[] = [
   // GDPR Pages
   { path: "/gizlilik-politikasi", element: <GizlilikPolitikasi /> },
   { path: "/cerez-politikasi", element: <CerezPolitikasi /> },
+  { path: "/sitemap.xml", element: <SitemapXML /> },
   
   // individual POS provider routes
   { path: "/pos/akbank-fiziki-pos", element: <AkbankFizikiPOS /> },
