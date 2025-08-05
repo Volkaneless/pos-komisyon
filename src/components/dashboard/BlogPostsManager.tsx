@@ -23,17 +23,17 @@ const BlogPostsManager = () => {
     queryKey: ["blog-posts"],
     queryFn: async () => {
       const { data, error } = await supabase
-        .from("blog_posts" as any)
+        .from("blog_posts")
         .select("*")
         .order("date", { ascending: false });
       
       if (error) throw error;
       
-      return (data || []).map((post: any) => ({
+      return (data || []).map(post => ({
         ...post,
-        category: post.category || "general",
-        image: post.image || "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        slug: post.slug || generateSlug(post.title)
+        category: "general" as const,
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        slug: generateSlug(post.title) // Always generate slug from title
       })) as BlogPost[];
     },
   });
@@ -44,7 +44,7 @@ const BlogPostsManager = () => {
       
       if (currentPost.id) {
         const { error } = await supabase
-          .from("blog_posts" as any)
+          .from("blog_posts")
           .update({ ...postData, slug })
           .eq("id", currentPost.id);
         
@@ -52,7 +52,7 @@ const BlogPostsManager = () => {
         toast.success("Blog yazısı güncellendi");
       } else {
         const { error } = await supabase
-          .from("blog_posts" as any)
+          .from("blog_posts")
           .insert([{ ...postData, slug }]);
         
         if (error) throw error;
@@ -73,7 +73,7 @@ const BlogPostsManager = () => {
     
     try {
       const { error } = await supabase
-        .from("blog_posts" as any)
+        .from("blog_posts")
         .delete()
         .eq("id", id);
       

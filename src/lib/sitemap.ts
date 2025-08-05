@@ -1,6 +1,5 @@
 /**
- * Legacy sitemap generation utilities
- * NOTE: This file is deprecated in favor of the new dynamic sitemap system in sitemapService.ts
+ * Dynamic sitemap generation utilities
  */
 
 interface SitemapUrl {
@@ -9,10 +8,6 @@ interface SitemapUrl {
   changefreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
   priority?: number;
 }
-
-/**
- * @deprecated Use generateSitemapXML from sitemapService.ts instead
- */
 
 /**
  * Generate all sitemap URLs for the application
