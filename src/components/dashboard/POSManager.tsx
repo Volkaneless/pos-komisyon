@@ -16,12 +16,12 @@ const POSManager = () => {
     queryKey: ["pos-providers"],
     queryFn: async () => {
       const { data, error } = await supabase
-        .from("pos_providers")
+        .from("pos_providers" as any)
         .select("*")
         .order("name");
       
       if (error) throw error;
-      return data as POSProvider[];
+      return data as unknown as POSProvider[];
     },
   });
 
@@ -29,7 +29,7 @@ const POSManager = () => {
     try {
       if (currentPOS.id) {
         const { error } = await supabase
-          .from("pos_providers")
+          .from("pos_providers" as any)
           .update(posData)
           .eq("id", currentPOS.id);
         
@@ -37,7 +37,7 @@ const POSManager = () => {
         toast.success("POS güncellendi");
       } else {
         const { error } = await supabase
-          .from("pos_providers")
+          .from("pos_providers" as any)
           .insert([{ 
             ...posData, 
             id: posData.name.toLowerCase().replace(/\s+/g, "-") 
@@ -61,7 +61,7 @@ const POSManager = () => {
     
     try {
       const { error } = await supabase
-        .from("pos_providers")
+        .from("pos_providers" as any)
         .delete()
         .eq("id", id);
       
