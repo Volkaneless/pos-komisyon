@@ -185,16 +185,34 @@ export function generateSitemapUrls(): SitemapUrl[] {
 
   // Add individual POS provider pages
   const posProviders = [
-    'garanti-pos', 'garanti-sanal-pos', 'isbank-pos', 'akbank-fiziki-pos', 'akbank-sanal-pos', 'akbank-cebe-pos', 'akbank-yazarkasa',
-    'iyzico-sanal', 'paytr-sanal', 'param-sanal', 'brisa-sanal', 'paycell-mobil', 'enpara-mobil',
-    'odeal-pos', 'tosla-sanal', 'moka-sanal', 'sipay-sanal', 'paygo-pos', 'qnb-pay-pos',
-    'vakifbank-sanal', 'denizbank-sanal', 'teb-pos', 'ziraat-pos', 'kuveyt-turk-pos',
-    'halkbank-pos', 'continental-pos', 'ingenico-pos', 'hugin-pos', 'move-5000f-pos',
-    'inpos-m530', 'beko-pos', 'beko-300-tr-pos', 'logo-isbasi-pos', 'logo-isbasi-cep',
-    'cepte-iste-pos', 'enpara-pos', 'paycell-sanal', 'vallet-mobil', 'vallet-sanal',
-    'simpra-sanal', 'elektra-web-sanal', 'jameson-sanal', 'tosla-isim-pos', 'tosla-isim-sanal',
-    'virtual-pos', 'param-pos-sanal', 'shopify-sanal', 'esnek-pos-sanal', 'esnek-sanal',
-    'esnek-pos-android', 'esnek-pos-cep', 'esnek-pos-pazaryeri'
+    'akbank-fiziki-pos', 'akbank-sanal-pos', 'akbank-yazarkasa', 'akbank-cebe-pos',
+    'beko-pos', 'beko-300-tr-pos', 'brisa-sanal-pos', 'cepteb-iste-pos', 'denizbank-sanal-pos',
+    'elektraweb-sanal-pos', 'enpara-mobil-pos', 'enpara-pos', 'esnek-pos-android', 
+    'esnek-pos-cep', 'esnek-pos-pazaryeri', 'esnek-pos-sanal', 'esnek-sanal-pos',
+    'garanti-pos', 'garanti-sanal-pos', 'halkbank-pos', 'hugin-pos', 'ingenico-pos',
+    'isbank-aninda-pos', 'isbank-sanal-pos', 'iyzico-sanal-pos', 'jameson-sanal-pos',
+    'kuveyt-turk-pos', 'logo-isbasi-cep-pos', 'logo-isbasi-pos', 'moka-sanal-pos',
+    'move-5000f-pos', 'odeal-pos', 'param-sanal-pos', 'paygo-pos', 'paytr-neo-pos',
+    'paytr-sanal-pos', 'paycell-mobil-pos', 'paycell-sanal-pos', 'qnb-pay-pos',
+    'qnb-pay-sanal-pos', 'shopify-sanal-pos', 'simpra-sanal-pos', 'sipay-sanal-pos',
+    'teb-pos', 'tosla-isim-pos', 'tosla-isim-sanal-pos', 'tosla-sanal-pos',
+    'vakifbank-sanal-pos', 'vallet-mobil-pos', 'vallet-sanal-pos', 'ziraat-pos',
+    'virtual-sanal', 'continental-sanal', 'inpos-m530-sanal', 'parampos-sanal'
+  ];
+
+  // Add broker detail pages
+  const brokerProviders = [
+    'midas', 'matriks', 'is-yatirim', 'qnb-finansinvest', 'deniz-yatirim',
+    'ak-yatirim', 'seker-yatirim', 'garanti-bbva-yatirim', 'ziraat-yatirim',
+    'vakif-yatirim', 'halk-yatirim', 'yapi-kredi-yatirim', 'meksa-yatirim',
+    'anadolu-yatirim', 'burgan-yatirim', 'integral-yatirim', 'global-yatirim',
+    'piapiri', 'forinvest', 'slayz'
+  ];
+
+  // Add desi calculation pages
+  const desiPages = [
+    'aras-kargo-desi-hesaplama', 'ptt-kargo-desi-hesaplama', 'surat-kargo-desi-hesaplama',
+    'yurtici-kargo-desi-hesaplama', 'mng-kargo-desi-hesaplama', 'trendyol-desi-hesaplama'
   ];
 
   posProviders.forEach(provider => {
@@ -206,8 +224,43 @@ export function generateSitemapUrls(): SitemapUrl[] {
     });
   });
 
+  // Add broker detail pages
+  brokerProviders.forEach(broker => {
+    urls.push({
+      url: `${domain}/pos/${broker}`,
+      lastmod: currentDateTime,
+      changefreq: 'weekly',
+      priority: 0.6
+    });
+  });
+
+  // Add desi calculation pages
+  desiPages.forEach(desiPage => {
+    urls.push({
+      url: `${domain}/desi-hesaplama/${desiPage}`,
+      lastmod: currentDateTime,
+      changefreq: 'weekly',
+      priority: 0.6
+    });
+  });
+
+  // Add missing pages
+  const additionalPages = [
+    { path: '/shopier-komisyon', priority: 0.7 }
+  ];
+
+  additionalPages.forEach(page => {
+    urls.push({
+      url: `${domain}${page.path}`,
+      lastmod: currentDateTime,
+      changefreq: 'weekly',
+      priority: page.priority
+    });
+  });
+
   // Add blog post URLs
   const blogPosts = [
+    'pos-komisyon-oranlari',
     'pos-cihazi-nedir-nasil-kullanilir',
     'pos-cihazi-nasil-alinir', 
     'pos-cihazi-secerken-dikkat-edilmesi-gerekenler',
