@@ -26,6 +26,7 @@ import YurticiKargoDesiHesaplama from "../pages/desi/YurticiKargoDesiHesaplama";
 import MNGKargoDesiHesaplama from "../pages/desi/MNGKargoDesiHesaplama";
 import TrendyolDesiHesaplama from "../pages/desi/TrendyolDesiHesaplama";
 import KiraArtisOrani from "../pages/KiraArtisOrani";
+import SitemapXML from "../pages/SitemapXML";
 
 // POS Types
 import BankaPOS from "../pages/pos-types/BankaPOS";
@@ -244,5 +245,8 @@ export const routes: Route[] = [
   { path: "/desi-hesaplama/yurtici-kargo-desi-hesaplama", element: <YurticiKargoDesiHesaplama /> },
   { path: "/desi-hesaplama/mng-kargo-desi-hesaplama", element: <MNGKargoDesiHesaplama /> },
   { path: "/desi-hesaplama/trendyol-desi-hesaplama", element: <TrendyolDesiHesaplama /> },
-  { path: "/kira-artis-orani-hesaplama", element: <KiraArtisOrani /> }
+  { path: "/kira-artis-orani-hesaplama", element: <KiraArtisOrani /> },
+  
+  // Dynamic sitemap.xml endpoint
+  { path: "/sitemap.xml", element: <SitemapXML /> }
 ];

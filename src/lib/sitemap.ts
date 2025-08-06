@@ -1,5 +1,5 @@
 /**
- * Dynamic sitemap generation utilities
+ * Dynamic sitemap generation utilities with Turkish timezone support
  */
 
 interface SitemapUrl {
@@ -10,17 +10,26 @@ interface SitemapUrl {
 }
 
 /**
+ * Get current Turkish time in ISO format with timezone
+ */
+function getTurkishDateTime(): string {
+  const now = new Date();
+  const turkishTime = new Date(now.getTime() + (3 * 60 * 60 * 1000)); // UTC+3
+  return turkishTime.toISOString().replace('Z', '+03:00');
+}
+
+/**
  * Generate all sitemap URLs for the application
  */
 export function generateSitemapUrls(): SitemapUrl[] {
   const domain = 'https://poskomisyon.com';
-  const currentDate = new Date().toISOString().split('T')[0];
+  const currentDateTime = getTurkishDateTime();
   
   const urls: SitemapUrl[] = [
     // Home page
     {
       url: `${domain}/`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'daily',
       priority: 1.0
     },
@@ -28,37 +37,37 @@ export function generateSitemapUrls(): SitemapUrl[] {
     // Main POS Type pages
     {
       url: `${domain}/pos-types/sanal`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.9
     },
     {
       url: `${domain}/pos-types/banka`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.9
     },
     {
       url: `${domain}/pos-types/cep`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.9
     },
     {
       url: `${domain}/pos-types/mobil`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.9
     },
     {
       url: `${domain}/pos-types/yazarkasa`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.8
     },
     {
-      url: `${domain}/pos-types/borsa-araci-kurum`,
-      lastmod: currentDate,
+      url: `${domain}/pos-types/borsa`,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.8
     },
@@ -66,51 +75,75 @@ export function generateSitemapUrls(): SitemapUrl[] {
     // Calculator pages
     {
       url: `${domain}/calculator`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.8
     },
     {
-      url: `${domain}/amazon-calculator`,
-      lastmod: currentDate,
+      url: `${domain}/amazon-komisyon`,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.7
     },
     {
-      url: `${domain}/trendyol-calculator`,
-      lastmod: currentDate,
+      url: `${domain}/trendyol-komisyon`,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.7
     },
     {
-      url: `${domain}/hepsiburada-calculator`,
-      lastmod: currentDate,
+      url: `${domain}/hepsiburada-komisyon`,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.7
     },
     {
-      url: `${domain}/n11-calculator`,
-      lastmod: currentDate,
+      url: `${domain}/n11-komisyon`,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.7
     },
     {
-      url: `${domain}/dolap-calculator`,
-      lastmod: currentDate,
+      url: `${domain}/dolap-komisyon`,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.7
     },
     {
-      url: `${domain}/param-guvende-calculator`,
-      lastmod: currentDate,
+      url: `${domain}/param-guvende-komisyon`,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.7
+    },
+    {
+      url: `${domain}/bilesik-faiz-hesaplama`,
+      lastmod: currentDateTime,
+      changefreq: 'weekly',
+      priority: 0.6
+    },
+    {
+      url: `${domain}/emlakci-komisyon`,
+      lastmod: currentDateTime,
+      changefreq: 'weekly',
+      priority: 0.6
+    },
+    {
+      url: `${domain}/desi-hesaplama`,
+      lastmod: currentDateTime,
+      changefreq: 'weekly',
+      priority: 0.6
+    },
+    {
+      url: `${domain}/kira-artis-orani-hesaplama`,
+      lastmod: currentDateTime,
+      changefreq: 'weekly',
+      priority: 0.6
     },
     
     // Crypto page
     {
-      url: `${domain}/crypto-exchanges`,
-      lastmod: currentDate,
+      url: `${domain}/kripto-borsalari`,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.6
     },
@@ -118,19 +151,19 @@ export function generateSitemapUrls(): SitemapUrl[] {
     // Static pages
     {
       url: `${domain}/about`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'monthly',
       priority: 0.5
     },
     {
       url: `${domain}/contact`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'monthly',
       priority: 0.5
     },
     {
       url: `${domain}/blog`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.7
     },
@@ -138,13 +171,13 @@ export function generateSitemapUrls(): SitemapUrl[] {
     // Legal pages
     {
       url: `${domain}/gizlilik-politikasi`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'yearly',
       priority: 0.3
     },
     {
       url: `${domain}/cerez-politikasi`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'yearly',
       priority: 0.3
     }
@@ -167,7 +200,7 @@ export function generateSitemapUrls(): SitemapUrl[] {
   posProviders.forEach(provider => {
     urls.push({
       url: `${domain}/pos/${provider}`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'weekly',
       priority: 0.6
     });
@@ -185,7 +218,7 @@ export function generateSitemapUrls(): SitemapUrl[] {
   blogPosts.forEach(post => {
     urls.push({
       url: `${domain}/blog/${post}`,
-      lastmod: currentDate,
+      lastmod: currentDateTime,
       changefreq: 'monthly',
       priority: 0.6
     });
