@@ -1,14 +1,9 @@
 /**
  * Dynamic sitemap generation utilities with Turkish timezone support
  */
-import { posProviders as allPosProviders } from '@/data/posProviders';
 
 interface SitemapUrl {
   url: string;
-  lastmod?: string;
-  changefreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
-  priority?: number;
-}
   lastmod?: string;
   changefreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
   priority?: number;
