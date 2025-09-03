@@ -2,6 +2,10 @@
  * Dynamic sitemap generation utilities with Turkish timezone support
  */
 
+import { posProviders as allProviders } from '@/data/posProviders';
+import { blogPosts as allBlogPosts } from '@/data/blogPosts';
+import { routes as appRoutes } from '@/routes';
+
 interface SitemapUrl {
   url: string;
   lastmod?: string;

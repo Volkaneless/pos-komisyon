@@ -2,228 +2,255 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poskomisyon.com/</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- Main Pages -->
   <url>
     <loc>https://poskomisyon.com/calculator</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/trendyol-komisyon</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/amazon-komisyon</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/hepsiburada-komisyon</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/n11-komisyon</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/dolap-komisyon</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/param-guvende-komisyon</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/kira-artis-orani-hesaplama</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/bilesik-faiz-hesaplama</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/emlakci-komisyon</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/desi-hesaplama</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/kripto-borsalari</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/about</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/contact</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/blog</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  <!-- POS Types -->
   <url>
     <loc>https://poskomisyon.com/pos-types/sanal</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/pos-types/banka</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/pos-types/cep</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/pos-types/mobil</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/pos-types/yazarkasa</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/pos-types/borsa</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Legal Pages -->
   <url>
     <loc>https://poskomisyon.com/gizlilik-politikasi</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://poskomisyon.com/cerez-politikasi</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
-  <!-- POS Provider Pages -->
+  <!-- Additional Pages -->
   <url>
-    <loc>https://poskomisyon.com/pos/garanti-pos</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
+    <loc>https://poskomisyon.com/shopier-komisyon</loc>
+    <lastmod>2025-09-03T12:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/pos/garanti-sanal-pos</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/pos/isbank-aninda-pos</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/pos/akbank-fiziki-pos</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/pos/akbank-sanal-pos</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/pos/akbank-cebe-pos</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/pos/akbank-yazarkasa</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/pos/iyzico-sanal-pos</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 
+  <!-- POS Provider Pages -->
+  <url><loc>https://poskomisyon.com/pos/akbank-fiziki-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/akbank-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/akbank-yazarkasa</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/akbank-cebe-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/beko-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/beko-300-tr-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/brisa-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/cepteb-iste-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/denizbank-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/elektraweb-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/enpara-mobil-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/enpara-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/esnek-pos-android</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/esnek-pos-cep</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/esnek-pos-pazaryeri</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/esnek-pos-sanal</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/esnek-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/garanti-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/garanti-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/halkbank-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/hugin-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/ingenico-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/isbank-aninda-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/isbank-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/iyzico-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/jameson-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/kuveyt-turk-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/logo-isbasi-cep-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/logo-isbasi-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/moka-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/move-5000f-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/odeal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/param-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/paygo-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/paytr-neo-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/paytr-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/paycell-mobil-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/paycell-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/qnb-pay-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/qnb-pay-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/shopify-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/simpra-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/sipay-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/teb-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/tosla-isim-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/tosla-isim-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/tosla-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/vakifbank-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/vallet-mobil-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/vallet-sanal-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/ziraat-pos</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/virtual-sanal</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/continental-sanal</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/inpos-m530-sanal</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/parampos-sanal</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- Broker Detail Pages -->
+  <url><loc>https://poskomisyon.com/pos/midas</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/matriks</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/is-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/qnb-finansinvest</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/deniz-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/ak-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/seker-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/garanti-bbva-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/ziraat-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/vakif-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/halk-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/yapi-kredi-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/meksa-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/anadolu-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/burgan-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/integral-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/global-yatirim</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/piapiri</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/forinvest</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/pos/slayz</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- Desi Calculation Pages -->
+  <url><loc>https://poskomisyon.com/desi-hesaplama/aras-kargo-desi-hesaplama</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/desi-hesaplama/ptt-kargo-desi-hesaplama</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/desi-hesaplama/surat-kargo-desi-hesaplama</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/desi-hesaplama/yurtici-kargo-desi-hesaplama</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/desi-hesaplama/mng-kargo-desi-hesaplama</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/desi-hesaplama/trendyol-desi-hesaplama</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
   <!-- Blog Posts -->
-  <url>
-    <loc>https://poskomisyon.com/blog/pos-cihazi-nedir-nasil-kullanilir</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/blog/pos-cihazi-nasil-alinir</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/blog/pos-komisyon-oranlari-2025</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://poskomisyon.com/blog/sanal-pos-fiziki-pos-karsilastirma</loc>
-    <lastmod>2025-08-06T14:11:00+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <url><loc>https://poskomisyon.com/blog/pos-cihazi-nedir-nasil-kullanilir</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/blog/pos-cihazi-nasil-alinir</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/blog/pos-komisyon-oranlari-2025</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/blog/pos-komisyon-oranlari</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://poskomisyon.com/blog/sanal-pos-fiziki-pos-karsilastirma</loc><lastmod>2025-09-03T12:00:00+03:00</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
