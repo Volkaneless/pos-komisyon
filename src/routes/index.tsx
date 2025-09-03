@@ -37,12 +37,7 @@ import CepPOS from "../pages/pos-types/CepPOS";
 import BorsaAraciKurum from "../pages/pos-types/BorsaAraciKurum";
 
 // Blog Posts
-import POSKomisyonOranlari from "../pages/blog/pos-komisyon-oranlari";
-import POSCihaziNasil from "../pages/blog/pos-cihazi-nasil-alinir";
-import POSCihaziNedir from "../pages/blog/pos-cihazi-nedir-nasil-kullanilir";
-import POSDikkatEdilmesi from "../pages/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler";
-import SanalPOSFizikiPOS from "../pages/blog/sanal-pos-fiziki-pos-karsilastirma";
-import POSKomisyonOranlari2025 from "../pages/blog/pos-komisyon-oranlari-2025";
+import BlogDetail from "../pages/blog/BlogDetail";
 
 // GDPR Pages
 import GizlilikPolitikasi from "../pages/GizlilikPolitikasi";
@@ -147,12 +142,7 @@ export const routes: Route[] = [
   { path: "/pos-types/borsa", element: <BorsaAraciKurum /> },
 
   // Blog Posts
-  { path: "/blog/pos-komisyon-oranlari", element: <POSKomisyonOranlari /> },
-  { path: "/blog/pos-cihazi-nasil-alinir", element: <POSCihaziNasil /> },
-  { path: "/blog/pos-cihazi-nedir-nasil-kullanilir", element: <POSCihaziNedir /> },
-  { path: "/blog/pos-cihazi-secerken-dikkat-edilmesi-gerekenler", element: <POSDikkatEdilmesi /> },
-  { path: "/blog/sanal-pos-fiziki-pos-karsilastirma", element: <SanalPOSFizikiPOS /> },
-  { path: "/blog/pos-komisyon-oranlari-2025", element: <POSKomisyonOranlari2025 /> },
+  { path: "/blog/:slug", element: <BlogDetail /> },
 
   // GDPR Pages
   { path: "/gizlilik-politikasi", element: <GizlilikPolitikasi /> },
