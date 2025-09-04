@@ -89,13 +89,13 @@ const BlogDetailLayout = ({
           <div className="max-w-4xl">
             <div 
               className="prose prose-lg max-w-none 
-                prose-headings:text-foreground prose-headings:font-bold prose-headings:mb-4 prose-headings:mt-8
+                prose-headings:text-foreground prose-headings:font-bold prose-headings:mb-6 prose-headings:mt-8
                 prose-h2:text-2xl prose-h2:font-bold prose-h2:mb-6 prose-h2:mt-8
-                prose-h3:text-xl prose-h3:font-semibold prose-h3:mb-4 prose-h3:mt-6
-                prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-4
+                prose-h3:text-xl prose-h3:font-semibold prose-h3:mb-4 prose-h3:mt-8
+                prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6 prose-p:mt-0
                 prose-strong:text-foreground prose-strong:font-semibold
-                prose-ul:text-muted-foreground prose-ul:mb-4 prose-li:mb-2
-                prose-ol:text-muted-foreground prose-ol:mb-4 prose-ol:list-decimal
+                prose-ul:text-muted-foreground prose-ul:mb-6 prose-li:mb-2
+                prose-ol:text-muted-foreground prose-ol:mb-6 prose-ol:list-decimal
                 prose-table:w-full prose-table:border-collapse prose-table:mb-6
                 prose-th:border prose-th:border-border prose-th:bg-muted prose-th:p-3 prose-th:text-left prose-th:font-semibold
                 prose-td:border prose-td:border-border prose-td:p-3"
