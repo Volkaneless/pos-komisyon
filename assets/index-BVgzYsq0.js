@@ -451,14 +451,24 @@ ${wne().map(r=>`
                 prose-ol:text-muted-foreground prose-ol:mb-6 prose-ol:list-decimal
                 prose-table:w-full prose-table:border-collapse prose-table:mb-6
                 prose-th:border prose-th:border-border prose-th:bg-muted prose-th:p-3 prose-th:text-left prose-th:font-semibold
-                prose-td:border prose-td:border-border prose-td:p-3`,dangerouslySetInnerHTML:{__html:o}})})]})})]}),q0={"pos-komisyon-hesaplama-rehberi":{title:"POS Komisyon Hesaplama Rehberi 2025",description:"İşletmeniz için en uygun POS çözümünü bulmak amacıyla komisyon hesaplama yöntemlerini ve önemli faktörleri detaylı olarak inceliyoruz.",category:"Rehber",author:"POS Uzmanı",date:"15 Mart 2025",readTime:"8 dk okuma",image:"/lovable-uploads/d4ad8ba0-3294-424a-85ca-6334f725c5a3.png",content:`
-      <p>POS cihazı komisyon hesaplaması, işletmenizin karlılığını doğrudan etkileyen kritik bir konudur. Doğru hesaplama yöntemleri ile maliyetlerinizi optimize edebilir ve daha iyi anlaşmalar yapabilirsiniz.</p>
+                prose-td:border prose-td:border-border prose-td:p-3`,dangerouslySetInnerHTML:{__html:o}})})]})})]}),q0={"pos-komisyon-hesaplama-rehberi":{title:"POS Komisyon Hesaplama: Formül, Excel Araçları ve Banka Oranları",description:"POS komisyon hesaplama formülü, excel araçları ve banka oranları hakkında detaylı rehber.",category:"POS Hesaplama",author:"POS Komisyon",date:"15 Mart 2024",readTime:"5 dakika",image:"/lovable-uploads/94b76f85-f46d-4697-9e85-37175b139351.png",content:`
+      <p>POS cihazları, işletmelerin ödeme süreçlerini hızlandıran önemli bir araçtır. Ancak, POS cihazı kullanımında komisyon oranlarını doğru hesaplamak, işletme maliyetlerini optimize etmek için kritik öneme sahiptir. Bu yazıda, POS komisyon hesaplama formülü, bankaların POS komisyon oranları ve en uygun seçenekleri nasıl bulacağınızı detaylı bir şekilde açıklıyoruz.</p>
 
-      <h3>Temel Hesaplama Yöntemi</h3>
-      <p>Komisyon hesaplaması için temel formül: <strong>Toplam Komisyon = (İşlem Tutarı × Komisyon Oranı) + Sabit Ücret</strong>. Bu formül tüm POS işlemlerinde geçerlidir ve günlük hesaplamalarınızda kullanabilirsiniz.</p>
-
-      <h3>Maliyet Optimizasyonu</h3>
-      <p>Farklı bankaların tekliflerini karşılaştırın, işlem hacminizi artırarak pazarlık yapın ve gereksiz taksit seçeneklerini azaltın. Düzenli olarak komisyon oranlarınızı gözden geçirerek uzun vadede önemli tasarruflar sağlayabilirsiniz.</p>
+      <h3>POS Komisyon Hesaplama Formülü</h3>
+      
+      <p>POS komisyonları, işlem tutarınıza ve bankanın belirlediği oranlara göre hesaplanır. İşte temel formül:</p>
+      
+      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; font-family: monospace; text-align: center; font-weight: bold;">
+        POS Komisyonu = (İşlem Tutarı x Komisyon Oranı) + Sabit Ücret (Varsa)
+      </div>
+      
+      <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <strong>Örnek:</strong><br/><br/>
+        İşlem Tutarı: 1.000 TL<br/>
+        Komisyon Oranı: %2<br/>
+        Sabit Ücret: 1 TL<br/><br/>
+        <strong>Toplam Komisyon:</strong> (1.000 x 0.02) + 1 = 21 TL
+      </div>
     `},"sanal-pos-fiziki-pos-karsilastirma":{title:"Sanal POS vs Fiziki POS: Hangisi Daha Avantajlı?",description:"E-ticaret ve fiziki mağaza işletmecileri için sanal POS ve fiziki POS çözümlerinin avantaj ve dezavantajlarını karşılaştırıyoruz.",category:"Karşılaştırma",author:"Ödeme Uzmanı",date:"20 Mart 2025",readTime:"6 dk okuma",image:"/lovable-uploads/d4ad8ba0-3294-424a-85ca-6334f725c5a3.png",content:`
       <p>İşletmeniz için doğru POS çözümünü seçmek, müşteri deneyimi ve operasyonel verimlilik açısından kritik önem taşır. Sanal ve fiziki POS sistemlerinin kendine özgü avantajları bulunmaktadır.</p>
 
