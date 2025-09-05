@@ -8,13 +8,9 @@ import { posProviders } from "../data/posProviders";
 import EnhancedMetaTags from "@/components/SEO/EnhancedMetaTags";
 const Index = () => {
   const [filteredProviders, setFilteredProviders] = useState(posProviders);
-  const currentDate = new Date().toLocaleDateString('tr-TR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
+  const currentDate = "5 Eylül 2025";
   const pageTitle = "POS Komisyon Oranları 2025 - En Uygun POS Komisyon";
-  const pageDescription = `${currentDate} tarihli güncel verilerle bankaların POS cihazı komisyon oranlarını karşılaştırın. En uygun POS komisyon oranları ve detaylı bilgiler.`;
+  const pageDescription = "5 Eylül 2025 tarihli en uygun POS komisyon oranları ve hesaplama yöntemleri. Denizbank, Ziraat ve diğer bankaların 2025 sanal POS komisyon oranlarını karşılaştırın";
   const handleFilter = (selectedProviders: string[], selectedTypes: string[]) => {
     if (selectedProviders.length === 0 && selectedTypes.length === 0) {
       setFilteredProviders(posProviders);
