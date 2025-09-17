@@ -6,7 +6,7 @@ import SanalPOSStats from "./SanalPOSStats";
 import SanalPOSFeatureTabs from "./SanalPOSFeatureTabs";
 import SanalPOSContent from "./SanalPOSContent";
 import FAQ from "@/components/FAQ";
-import LatestBlogPosts from "@/components/pos/LatestBlogPosts";
+
 import { useState } from "react";
 
 interface FilterState {
@@ -130,7 +130,7 @@ const SanalPOSLayout = ({ providers }: SanalPOSLayoutProps) => {
           <SanalPOSFeatureTabs />
           <SanalPOSContent />
           <FAQ />
-          <LatestBlogPosts />
+          
         </div>
       </div>
     </div>

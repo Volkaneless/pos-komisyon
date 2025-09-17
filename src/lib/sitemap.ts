@@ -3,7 +3,7 @@
  */
 
 import { posProviders as allProviders } from '@/data/posProviders';
-import { blogPosts as allBlogPosts } from '@/data/blogPosts';
+
 import { routes as appRoutes } from '@/routes';
 
 interface SitemapUrl {
@@ -165,12 +165,6 @@ export function generateSitemapUrls(): SitemapUrl[] {
       changefreq: 'monthly',
       priority: 0.5
     },
-    {
-      url: `${domain}/blog`,
-      lastmod: currentDateTime,
-      changefreq: 'weekly',
-      priority: 0.7
-    },
     
     // Legal pages
     {
@@ -262,24 +256,6 @@ export function generateSitemapUrls(): SitemapUrl[] {
     });
   });
 
-  // Add blog post URLs
-  const blogPosts = [
-    'pos-komisyon-oranlari',
-    'pos-cihazi-nedir-nasil-kullanilir',
-    'pos-cihazi-nasil-alinir', 
-    'pos-cihazi-secerken-dikkat-edilmesi-gerekenler',
-    'pos-komisyon-oranlari-2025',
-    'sanal-pos-fiziki-pos-karsilastirma'
-  ];
-
-  blogPosts.forEach(post => {
-    urls.push({
-      url: `${domain}/blog/${post}`,
-      lastmod: currentDateTime,
-      changefreq: 'monthly',
-      priority: 0.6
-    });
-  });
 
   return urls;
 }

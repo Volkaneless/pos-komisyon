@@ -4,7 +4,7 @@ import Index from "../pages/Index";
 import About from "../pages/About";
 import Calculator from "../pages/Calculator";
 import Contact from "../pages/Contact";
-import Blog from "../pages/Blog";
+
 import Dashboard from "../pages/Dashboard";
 import POSDetail from "../pages/POSDetail";
 import ShopierPage from "../pages/ShopierPage";
@@ -36,8 +36,6 @@ import MobilPOS from "../pages/pos-types/MobilPOS";
 import CepPOS from "../pages/pos-types/CepPOS";
 import BorsaAraciKurum from "../pages/pos-types/BorsaAraciKurum";
 
-// Blog Posts
-import BlogDetail from "../pages/blog/BlogDetail";
 
 // GDPR Pages
 import GizlilikPolitikasi from "../pages/GizlilikPolitikasi";
@@ -115,7 +113,7 @@ export const routes: Route[] = [
   { path: "/about", element: <About /> },
   { path: "/calculator", element: <Calculator /> },
   { path: "/contact", element: <Contact /> },
-  { path: "/blog", element: <Blog /> },
+  
   { path: "/dashboard", element: <Dashboard /> },
   { path: "/pos/:id", element: <POSDetail /> },
   { path: "/shopier-komisyon", element: <ShopierPage /> },
@@ -141,8 +139,6 @@ export const routes: Route[] = [
   { path: "/pos-types/cep", element: <CepPOS /> },
   { path: "/pos-types/borsa", element: <BorsaAraciKurum /> },
 
-  // Blog Posts
-  { path: "/blog/:slug", element: <BlogDetail /> },
 
   // GDPR Pages
   { path: "/gizlilik-politikasi", element: <GizlilikPolitikasi /> },

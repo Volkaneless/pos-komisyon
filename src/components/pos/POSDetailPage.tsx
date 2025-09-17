@@ -4,7 +4,7 @@ import POSHeader from "./POSHeader";
 import POSInfo from "./POSInfo";
 import POSTabs from "./POSTabs";
 import POSProviderFAQ from "./POSProviderFAQ";
-import LatestBlogPosts from "./LatestBlogPosts";
+
 import SimilarProviders from "./SimilarProviders";
 import { BookOpen } from "lucide-react";
 import type { POSProvider } from "@/types/pos";
@@ -70,14 +70,6 @@ const POSDetailPage = ({ provider }: POSDetailPageProps) => {
             <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
               <h3 className="text-xl font-semibold mb-4">Benzer POS Çözümleri</h3>
               <SimilarProviders currentProvider={provider} />
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-primary" />
-                İlgili Blog Yazıları
-              </h3>
-              <LatestBlogPosts category={provider.type === "Sanal POS" ? "social-media" : "adsense"} />
             </div>
           </div>
         </div>
